@@ -103,5 +103,54 @@
     "title": "DSCI 522",
     "section": "Some Tips 💡",
     "text": "Some Tips 💡\n\n\nInclude estimated computation time if analysis is expected to take long\nRound numbers to 2 decimal places when appropriate\nMake sure packages listed under environment.yml has exact version numbers listed. For example, pandas==2.2.3 instead of pandas&gt;=2.2.3.\nDo not copy and paste data description from the internet, that would be plagiarism. Write your own descriptions, and cite the source you used.\nHow to cite packages?\n\nR : citation(package = \"&lt;package_name&gt;\")\nPython : pip show --verbose &lt;package_name&gt;"
+  },
+  {
+    "objectID": "lec1.html#who-loves-cooking",
+    "href": "lec1.html#who-loves-cooking",
+    "title": "DSCI 522 Lecture 1",
+    "section": "👩‍🍳 Who loves cooking?",
+    "text": "👩‍🍳 Who loves cooking?"
+  },
+  {
+    "objectID": "lec1.html#consequences-of-untested-systems",
+    "href": "lec1.html#consequences-of-untested-systems",
+    "title": "DSCI 522 Lecture 1",
+    "section": "💥 Consequences of Untested Systems",
+    "text": "💥 Consequences of Untested Systems\nUntested system for radiation therapy: Terac-25\n\n\nSource: Cleveland Clinic"
+  },
+  {
+    "objectID": "lec1.html#consequences-of-untrustworthy-and-unreproducible-paper",
+    "href": "lec1.html#consequences-of-untrustworthy-and-unreproducible-paper",
+    "title": "DSCI 522 Lecture 1",
+    "section": "💥 Consequences of Untrustworthy and Unreproducible Paper",
+    "text": "💥 Consequences of Untrustworthy and Unreproducible Paper\n\n\nSource: Timbers, T. A., Ostblom, J., D’Andrea, F., Lourenzutti, R., & Chen, D. Reproducible and Trustworthy Workflows for Data Science"
+  },
+  {
+    "objectID": "lec1.html#data-science-is",
+    "href": "lec1.html#data-science-is",
+    "title": "DSCI 522 Lecture 1",
+    "section": "👩‍💻 Data Science is…",
+    "text": "👩‍💻 Data Science is…"
+  },
+  {
+    "objectID": "lec1.html#data-science-is-1",
+    "href": "lec1.html#data-science-is-1",
+    "title": "DSCI 522 Lecture 1",
+    "section": "👩‍💻 Data Science is…",
+    "text": "👩‍💻 Data Science is…\n\n\nSource: Timbers, T. A., Ostblom, J., D’Andrea, F., Lourenzutti, R., & Chen, D. Reproducible and Trustworthy Workflows for Data Science"
+  },
+  {
+    "objectID": "lec1.html#reproducible-analysis",
+    "href": "lec1.html#reproducible-analysis",
+    "title": "DSCI 522 Lecture 1",
+    "section": "💡 Reproducible analysis:",
+    "text": "💡 Reproducible analysis:\n\n\nSource: Timbers, T. A., Ostblom, J., D’Andrea, F., Lourenzutti, R., & Chen, D. Reproducible and Trustworthy Workflows for Data Science"
+  },
+  {
+    "objectID": "lec1.html#auditabletransparent-analysis",
+    "href": "lec1.html#auditabletransparent-analysis",
+    "title": "DSCI 522 Lecture 1",
+    "section": "🧐 Auditable/transparent analysis:",
+    "text": "🧐 Auditable/transparent analysis:\n\n\nSource: Timbers, T. A., Ostblom, J., D’Andrea, F., Lourenzutti, R., & Chen, D. Reproducible and Trustworthy Workflows for Data Science"
   }
 ]
