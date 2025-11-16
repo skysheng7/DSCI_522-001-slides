@@ -11,11 +11,11 @@ format:
     logo: images/mds-hex-sticker.png
 ---
 
-# Welcome to Lab 1! 🎉
+## Welcome to Lab 1! 🎉
 
 ## ⚠️  Lab Attendence Policies
 
-- Lab attendance is mandatory - Come to lab!
+- Lab attendance is mandatory!
 
 ::: {style="font-size: 0.75em;"}
 > ‼️ Students are expected to attend 100% of their scheduled lab hours and attendance will be taken at the beginning of each lab session. Students must make formal requests for academic concession in the event that they cannot attend a lab session by filling out the academic concession form and sending it to the course instructor. Applying for academic concession does not promise the granting of academic concession. Each application will be evaluated in the context of UBC's Academic concession policy. Students missing **more than 20% of the total scheduled lab hours** for a course without having received an academic concession will receive a possible maximum course grade of 50% and an "F" standing for the course on the transcript. For all other policies, please see the general MDS policies.
@@ -36,7 +36,35 @@ format:
 - If genAI tool is used but not acknowledged, everyone in your team will face consequences of **academic misconduct**.
 :::
 
-## Equal Contribution
+## 🧚🏻 Once upon a time... 
+
+📜 Legend says there is a super powerful dragon...
+
+![](images/1.JPG)
+
+---
+
+![](images/2.JPG)
+
+---
+
+![](images/3.JPG)
+
+---
+
+![](images/4.JPG)
+
+---
+
+![](images/5.JPG)
+
+::: {style="position: absolute; bottom: 10px; right: 20px; font-size: 0.5em;"}
+Source: [Raya and the Last Dragon](https://www.imdb.com/title/tt5109280/)
+:::
+
+## Don't be this dragon! 🐉 
+
+**Equal Contribution**
 
 * Everyone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.
 

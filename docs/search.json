@@ -35,11 +35,18 @@
     "text": "License\nThis work is licensed under the MIT License."
   },
   {
+    "objectID": "lab1-intro.html#welcome-to-lab-1",
+    "href": "lab1-intro.html#welcome-to-lab-1",
+    "title": "DSCI 522",
+    "section": "Welcome to Lab 1! 🎉",
+    "text": "Welcome to Lab 1! 🎉"
+  },
+  {
     "objectID": "lab1-intro.html#lab-attendence-policies",
     "href": "lab1-intro.html#lab-attendence-policies",
     "title": "DSCI 522",
     "section": "⚠️ Lab Attendence Policies",
-    "text": "⚠️ Lab Attendence Policies\n\nLab attendance is mandatory - Come to lab!\n\n\n\n‼️ Students are expected to attend 100% of their scheduled lab hours and attendance will be taken at the beginning of each lab session. Students must make formal requests for academic concession in the event that they cannot attend a lab session by filling out the academic concession form and sending it to the course instructor. Applying for academic concession does not promise the granting of academic concession. Each application will be evaluated in the context of UBC’s Academic concession policy. Students missing more than 20% of the total scheduled lab hours for a course without having received an academic concession will receive a possible maximum course grade of 50% and an “F” standing for the course on the transcript. For all other policies, please see the general MDS policies."
+    "text": "⚠️ Lab Attendence Policies\n\nLab attendance is mandatory!\n\n\n\n‼️ Students are expected to attend 100% of their scheduled lab hours and attendance will be taken at the beginning of each lab session. Students must make formal requests for academic concession in the event that they cannot attend a lab session by filling out the academic concession form and sending it to the course instructor. Applying for academic concession does not promise the granting of academic concession. Each application will be evaluated in the context of UBC’s Academic concession policy. Students missing more than 20% of the total scheduled lab hours for a course without having received an academic concession will receive a possible maximum course grade of 50% and an “F” standing for the course on the transcript. For all other policies, please see the general MDS policies."
   },
   {
     "objectID": "lab1-intro.html#ai-tools-policy",
@@ -49,11 +56,18 @@
     "text": "AI Tools Policy🤖\n\n\n\n\n\n\nImportant Guidelines\n\n\n\nAI tools are allowed, but you must include proper acknowledgement.\nDocument:\n\nwhich tool you used?\nhow you interacted with it?\nwhat is your prompts?\nhow do you verify the output?\n…\n\nEveryone in your team holds the equal responsibility for the code and documentation you submit as a group.\nIf genAI tool is used but not acknowledged, everyone in your team will face consequences of academic misconduct."
   },
   {
-    "objectID": "lab1-intro.html#equal-contribution",
-    "href": "lab1-intro.html#equal-contribution",
+    "objectID": "lab1-intro.html#once-upon-a-time",
+    "href": "lab1-intro.html#once-upon-a-time",
     "title": "DSCI 522",
-    "section": "Equal Contribution",
-    "text": "Equal Contribution\n\nEveryone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.\nThe full expectations are written out at the end of your milestone 1 assignment."
+    "section": "🧚🏻 Once upon a time…",
+    "text": "🧚🏻 Once upon a time…\n📜 Legend says there is a super powerful dragon…"
+  },
+  {
+    "objectID": "lab1-intro.html#dont-be-this-dragon",
+    "href": "lab1-intro.html#dont-be-this-dragon",
+    "title": "DSCI 522",
+    "section": "Don’t be this dragon! 🐉",
+    "text": "Don’t be this dragon! 🐉\nEqual Contribution\n\nEveryone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.\nThe full expectations are written out at the end of your milestone 1 assignment."
   },
   {
     "objectID": "lab1-intro.html#communications",
