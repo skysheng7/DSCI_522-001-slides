@@ -81,7 +81,7 @@
     "href": "lab1-intro.html#simple-simple-simple",
     "title": "DSCI 522",
     "section": "🙏 SIMPLE, SIMPLE SIMPLE!!",
-    "text": "🙏 SIMPLE, SIMPLE SIMPLE!!\n\nFocus on building a simple project first\nClassification OR regression only\nDon’t use crazy models\nThis is NOT for job interviews\nGroups that achieve a MVP (Minimum Viable Product) at the end of the lab will get stickers and Posit cheatsheet!"
+    "text": "🙏 SIMPLE, SIMPLE SIMPLE!!\n\n\nFocus on building a simple project first\nClassification OR regression only\nDon’t use crazy models\nThis is NOT for job interviews\nGroups that achieve a MVP (Minimum Viable Product) at the end of the lab will get stickers and Posit cheatsheet!"
   },
   {
     "objectID": "lab1-intro.html#ice-breaking-activity",
@@ -91,17 +91,10 @@
     "text": "Ice Breaking Activity ❄️\nTime to get to know each other!\n\nShare your name and background\nOne fun fact about yourself\n\n\n\n\n\n\n\nWhat do you expect from your team?\n\n\n\nAre you a last-minute genius? procrastinator? planner?\nWhat is your strength (e.g., planning, leadership, proof-reading, etc)?\nShare your experience when a group project went horribly wrong\nShare your experience when a group project went extremely well\nDo you prefer written or verbal communication?"
   },
   {
-    "objectID": "lab1-intro.html#documentation-tips",
-    "href": "lab1-intro.html#documentation-tips",
+    "objectID": "lab1-intro.html#some-tips",
+    "href": "lab1-intro.html#some-tips",
     "title": "DSCI 522",
-    "section": "Documentation Tips 📝",
-    "text": "Documentation Tips 📝\n\nInclude estimated computation time if analysis is expected to take long\nRound numbers to 2 decimal places when appropriate"
-  },
-  {
-    "objectID": "lab1-intro.html#questions",
-    "href": "lab1-intro.html#questions",
-    "title": "DSCI 522",
-    "section": "Questions? 🤔",
-    "text": "Questions? 🤔\nFeel free to ask for help throughout the lab!"
+    "section": "Some Tips 💡",
+    "text": "Some Tips 💡\n\n\nInclude estimated computation time if analysis is expected to take long\nRound numbers to 2 decimal places when appropriate\nMake sure packages listed under environment.yml has exact version numbers listed. For example, pandas==2.2.3 instead of pandas&gt;=2.2.3.\nDo not copy and paste data description from the internet, that would be plagiarism. Write your own descriptions, and cite the source you used.\nHow to cite packages?\n\nR : citation(package = \"&lt;package_name&gt;\")\nPython : pip show --verbose &lt;package_name&gt;"
   }
 ]
