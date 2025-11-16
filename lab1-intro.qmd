@@ -91,12 +91,13 @@ format:
 
 ## 🙏 SIMPLE, SIMPLE SIMPLE!!
 
+::: {style="font-size: 0.85em;"}
 - Focus on building a **simple project** first
 - **Classification OR regression** only
 - Don't use crazy models
 - This is NOT for job interviews
 - Groups that achieve a MVP (**M**inimum **V**iable **P**roduct) at the end of the lab will get stickers and Posit cheatsheet!
-
+:::
 
 ::: {layout-ncol=3}
 ![](images/s1.jpg)
@@ -122,16 +123,19 @@ Time to get to know each other!
 - Do you prefer written or verbal communication?
 :::
 
-## Documentation Tips 📝
+## Some Tips 💡
 
+::: {style="font-size: 0.9em;"}
 - Include **estimated computation time** if analysis is expected to take long
 - Round numbers to 2 decimal places when appropriate
+- Make sure packages listed under `environment.yml` has exact version numbers listed. For example, `pandas==2.2.3` instead of `pandas>=2.2.3`.
+- Do not copy and paste data description from the internet, that would be plagiarism. Write your own descriptions, and cite the source you used.
+- How to cite packages? 
+  - R : `citation(package = "<package_name>")`
+  - Python : `pip show --verbose <package_name>`
+:::
 
-## Questions? 🤔
+
+# Questions? 🤔
 
 Feel free to ask for help throughout the lab!
-
----
-
-**Good luck!** 🎉
-
