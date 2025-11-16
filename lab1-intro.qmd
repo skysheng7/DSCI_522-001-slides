@@ -1,39 +1,103 @@
 ---
-title: "DSCI 522 Lab 1"
+title: "DSCI 522"
 subtitle: "Reproducible and Trustworthy Data Science Workflow"
-author: "Sky (Kehan) Sheng"
 format:
   revealjs:
-    theme: simple
+    theme: default
     transition: slide
     slide-number: true
     chalkboard: true
 ---
 
-## Welcome to Lab 1! 🎉
+# Welcome to Lab 1! 🎉
 
-- Introduction to reproducible workflows
-- Setting expectations
-- Getting started with your first project
+## ⚠️  Lab Attendence Policies
 
-## Lab Policies 📋
+- Lab attendance is mandatory - Come to lab!
 
-::: {.incremental}
-- **Attendance is mandatory** - Come to class!
-- **Grade recovery**: Fix problems by next week → get 50% of grade back
-- **Communication**: English only during lab sessions
-- **Platforms**: Use only designated platforms (no mini groups)
+::: {style="font-size: 0.8em;"}
+> ‼️ Students are expected to attend 100% of their scheduled lab hours and attendance will be taken at the beginning of each lab session. Students must make formal requests for academic concession in the event that they cannot attend a lab session by filling out the academic concession form and sending it to the course instructor. Applying for academic concession does not promise the granting of academic concession. Each application will be evaluated in the context of UBC's Academic concession policy. Students missing **more than 20% of the total scheduled lab hours** for a course without having received an academic concession will receive a possible maximum course grade of 50% and an "F" standing for the course on the transcript. For all other policies, please see the general MDS policies.
 :::
 
-## Group Expectations 👥
+## AI Tools Policy🤖
 
+::: {.callout-important}
+## Important Guidelines
+- AI tools are allowed, but you must include proper acknowledgement in your code. 
+- Revisit MDS genAI use policy if you are in doubt.
+- Document which tool you used, how you interacted with it, what is your prompts, how do you verify the output, etc.
+- Everyone in your team holds the equal responsibility for the code and documentation you submit as a group.
+- If genAI tool is used but not acknowledged, everyone in your team will face consequences of academic misconduct.
+:::
+
+## Equal Contribution
+
+* Everyone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.
+
+* The full expectations are written out at the end of your [milestone 1 assignment](https://pages.github.ubc.ca/mds-2025-26/DSCI_522_dsci-workflows_students/release/m1/m1.html).
+
+## 🗣️ Communications
+
+* **English only** in all group discussions to ensure everyone is involved!
+
+* ❌ Do NOT use these platforms: *Below is just a list of examples, not exhaustive list:*
+
+::: {layout-ncol=3}
+![](images/Facebook.png){width=95}
+
+![](images/Instagram.png){width=95}
+
+![](images/Whatsapp.png){width=95}
+
+![](images/Wechat.png){width=95}
+
+![](images/X.png){width=95}
+:::
+
+## ✅ Use GitHub Issues for Communication
+
+::: {layout-ncol=1}
+![](images/Github.png){width=120}
+:::
+
+::: {style="font-size: 0.95em;"}
 ::: {.callout-tip}
-## Discussion Time
-Talk to your group members:
+## Why GitHub Issues?
+- Transparent and trackable: TAs and instructors can see communications and contributions
+- Everyone is **included** in the loop
+:::
 
-- What do they expect from you?
-- What are your expectations from them?
-- How will you communicate?
+::: {.callout-warning}
+## No Mini Groups!
+**EVERYONE** must be involved in conversations. Do not create smaller subgroups within your team. 
+
+💙 It's ok you have your favorite person, but this is a professional setting. Please be fair, collaborative, and inclusive for the group project! Nobody wants to feel left behind or isolated 😢.
+:::
+:::
+
+# Group Building 👥
+
+## Different Work Styles 
+
+- Everyone has a different work style
+- The smartest person in the room is the room itself. 
+- Everyone has their unique talents and weaknesses. Learn from each other.
+
+## 🙏 SIMPLE, SIMPLE SIMPLE!!
+
+- Focus on building a **simple project** first
+- **Classification OR regression** only
+- Don't use crazy models
+- This is NOT for job interviews
+- Groups that achieve a MVP (**M**inimum **V**iable **P**roduct) at the end of the lab will get stickers and Posit cheatsheet!
+
+
+::: {layout-ncol=3}
+![](images/s1.jpg)
+
+![](images/s2.jpg)
+
+![](images/s3.jpg)
 :::
 
 ## Ice Breaking Activity ❄️
@@ -41,112 +105,21 @@ Talk to your group members:
 Time to get to know each other!
 
 - Share your name and background
-- What interests you about data science?
 - One fun fact about yourself
 
-## Different Workflows 🔄
-
-::: {.incremental}
-- Everyone has a different workflow
-- That's okay! Learn from each other
-- Focus on **simple projects** first
-- Build complexity gradually
+::: {.callout-tip}
+## What do you expect from your team?
+- Are you a last-minute genius? procrastinator? planner?
+- What is your strength (e.g., planning, leadership, proof-reading, etc)?
+- Share your experience when a group project went horribly wrong
+- Share your experience when a group project went extremely well
+- Do you prefer written or verbal communication?
 :::
 
-## Lab Structure (Today) ⏰
+## Documentation Tips 📝
 
-::: {.fragment}
-**First 30 minutes:**
-
-- Demo of individual assignment
-- Questions and clarifications
-:::
-
-::: {.fragment}
-**Remaining time:**
-
-- Work on your project
-- Collaborate with your group
-- Get help as needed
-:::
-
-## Using AI Tools 🤖
-
-::: {.callout-important}
-## Important Guidelines
-- AI tools are allowed
-- **Must include proper annotations**
-- Document what AI helped with
-- Understand the code you submit
-:::
-
-## Today's Goal: MVP 🎯
-
-::: {.incremental}
-- Complete the **Simplest Minimum Viable Product**
-- Groups that finish get:
-  - 🌟 Stickers
-  - 📄 Posit cheatsheet
-:::
-
-::: {.callout-note}
-Focus on completion, not perfection!
-:::
-
-## Analysis Guidelines 📊
-
-::: {.callout-warning}
-## Keep It Simple!
-- **Classification OR regression** only
-- Don't use crazy models
-- This is NOT for job interviews
-- Save complex analyses for after class
-:::
-
-## Empathy in Pull Requests 💙
-
-::: {.fragment}
-Writing good PRs is a skill!
-:::
-
-::: {.fragment}
-Read: [On Empathy & Pull Requests](https://slack.engineering/on-empathy-pull-requests/)
-:::
-
-::: {.fragment}
-**Key points:**
-
-- Be clear and descriptive
-- Be kind and constructive
-- Think about the reviewer
-:::
-
-## README Best Practices 📝
-
-Your README should include:
-
-::: {.incremental}
-- Project description
-- How to run the analysis
-- **Estimated time** if analysis takes long
-- Dependencies and requirements
-:::
-
-## Quiz Reminder 📅
-
-::: {.callout-note}
-## Week 3
-Quiz on reproducible workflows and basic concepts
-:::
-
-## Let's Get Started! 🚀
-
-::: {.incremental}
-1. Form your groups
-2. Discuss expectations
-3. Start working on your MVP
-4. Ask questions!
-:::
+- Include **estimated computation time** if analysis is expected to take long
+- Round numbers to 2 decimal places when appropriate
 
 ## Questions? 🤔
 

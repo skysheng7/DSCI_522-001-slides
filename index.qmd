@@ -6,27 +6,17 @@ author: "Sky (Kehan) Sheng"
 
 ## Welcome
 
-This site contains lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow.
-
-## Available Slides
-
-- [Lab 1 Introduction](lab1-intro.html) - Introduction to reproducible workflows, lab policies, and getting started
-
-## About the Course
-
-DSCI 522 focuses on reproducible and trustworthy data science workflows. Students learn best practices for:
-
-- Version control with Git and GitHub
-- Collaborative data science projects
-- Reproducible analysis pipelines
-- Documentation and communication
-- Code review and empathy in pull requests
+This site contains lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow, in section 001, for 2025W1.
 
 ## Instructor
 
 **Sky (Kehan) Sheng**  
-University of British Columbia  
-[www.skysheng.io](https://www.skysheng.io)
+* University of British Columbia  
+* [www.skysheng.io](https://www.skysheng.io)
+
+## Available Slides
+
+- [Lab 1 Introduction](lab1-intro.html) - Introduction to reproducible workflows, lab policies, and getting started
 
 ## License
 

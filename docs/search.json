@@ -46,7 +46,7 @@
     "href": "lab1-intro.html#welcome-to-lab-1",
     "title": "DSCI 522 Lab 1",
     "section": "Welcome to Lab 1! 🎉",
-    "text": "Welcome to Lab 1! 🎉\n\nIntroduction to reproducible workflows\nSetting expectations\nGetting started with your first project"
+    "text": "Welcome to Lab 1! 🎉\n\nMeet your team!\nGet started with your first project"
   },
   {
     "objectID": "lab1-intro.html#lab-policies",
@@ -58,23 +58,23 @@
   {
     "objectID": "lab1-intro.html#group-expectations",
     "href": "lab1-intro.html#group-expectations",
-    "title": "DSCI 522 Lab 1",
+    "title": "DSCI 522",
     "section": "Group Expectations 👥",
-    "text": "Group Expectations 👥\n\n\n\n\n\n\nDiscussion Time\n\n\nTalk to your group members:\n\nWhat do they expect from you?\nWhat are your expectations from them?\nHow will you communicate?"
+    "text": "Group Expectations 👥"
   },
   {
     "objectID": "lab1-intro.html#ice-breaking-activity",
     "href": "lab1-intro.html#ice-breaking-activity",
-    "title": "DSCI 522 Lab 1",
+    "title": "DSCI 522",
     "section": "Ice Breaking Activity ❄️",
-    "text": "Ice Breaking Activity ❄️\nTime to get to know each other!\n\nShare your name and background\nWhat interests you about data science?\nOne fun fact about yourself"
+    "text": "Ice Breaking Activity ❄️\nTime to get to know each other!\n\nShare your name and background\nOne fun fact about yourself\n\n\n\n\n\n\n\nWhat do you expect from your team?\n\n\n\nAre you a last-minute genius? procrastinator? planner?\nWhat is your strength (e.g., planning, leadership, proof-reading, etc)?\nShare your experience when a group project went horribly wrong\nShare your experience when a group project went extremely well\nDo you prefer written or verbal communication?"
   },
   {
     "objectID": "lab1-intro.html#different-workflows",
     "href": "lab1-intro.html#different-workflows",
-    "title": "DSCI 522 Lab 1",
+    "title": "DSCI 522",
     "section": "Different Workflows 🔄",
-    "text": "Different Workflows 🔄\n\n\nEveryone has a different workflow\nThat’s okay! Learn from each other\nFocus on simple projects first\nBuild complexity gradually"
+    "text": "Different Workflows 🔄\n\nEveryone has a different workflow\nThat’s okay! Learn from each other\nFocus on simple projects first\nBuild complexity gradually\n\n\n\n\n\n\n\nWhat do you expect from your team?\n\n\nTalk to your group members:\n\nAre you a last-minute genius? procrastinator? planner?\nWhat are your past experiences of when a group project went horribly wrong?\nWhat are your past experiences of when a group project went extremely well?\nDo you prefer written or verbal communication?"
   },
   {
     "objectID": "lab1-intro.html#lab-structure-today",
@@ -86,57 +86,120 @@
   {
     "objectID": "lab1-intro.html#using-ai-tools",
     "href": "lab1-intro.html#using-ai-tools",
-    "title": "DSCI 522 Lab 1",
+    "title": "DSCI 522",
     "section": "Using AI Tools 🤖",
-    "text": "Using AI Tools 🤖\n\n\n\n\n\n\nImportant Guidelines\n\n\n\nAI tools are allowed\nMust include proper annotations\nDocument what AI helped with\nUnderstand the code you submit"
+    "text": "Using AI Tools 🤖\n\n\n\n\n\n\nImportant Guidelines\n\n\n\nAI tools are allowed, but you must include proper acknowledgement in your code.\nRevisit MDS genAI use policy if you are in doubt.\nDocument which tool you used, how you interacted with it, what is your prompts, how do you verify the output, etc.\nEveryone in your team holds the equal responsibility for the code and documentation you submit as a group."
   },
   {
     "objectID": "lab1-intro.html#todays-goal-mvp",
     "href": "lab1-intro.html#todays-goal-mvp",
-    "title": "DSCI 522 Lab 1",
+    "title": "DSCI 522",
     "section": "Today’s Goal: MVP 🎯",
     "text": "Today’s Goal: MVP 🎯\n\n\nComplete the Simplest Minimum Viable Product\nGroups that finish get:\n\n🌟 Stickers\n📄 Posit cheatsheet\n\n\n\n\n\n\n\n\n\nNote\n\n\nFocus on completion, not perfection!"
   },
   {
     "objectID": "lab1-intro.html#analysis-guidelines",
     "href": "lab1-intro.html#analysis-guidelines",
-    "title": "DSCI 522 Lab 1",
+    "title": "DSCI 522",
     "section": "Analysis Guidelines 📊",
     "text": "Analysis Guidelines 📊\n\n\n\n\n\n\nKeep It Simple!\n\n\n\nClassification OR regression only\nDon’t use crazy models\nThis is NOT for job interviews\nSave complex analyses for after class"
   },
   {
     "objectID": "lab1-intro.html#empathy-in-pull-requests",
     "href": "lab1-intro.html#empathy-in-pull-requests",
-    "title": "DSCI 522 Lab 1",
+    "title": "DSCI 522",
     "section": "Empathy in Pull Requests 💙",
     "text": "Empathy in Pull Requests 💙\n\nWriting good PRs is a skill!\n\n\nRead: On Empathy & Pull Requests\n\n\nKey points:\n\nBe clear and descriptive\nBe kind and constructive\nThink about the reviewer"
   },
   {
     "objectID": "lab1-intro.html#readme-best-practices",
     "href": "lab1-intro.html#readme-best-practices",
-    "title": "DSCI 522 Lab 1",
+    "title": "DSCI 522",
     "section": "README Best Practices 📝",
     "text": "README Best Practices 📝\nYour README should include:\n\n\nProject description\nHow to run the analysis\nEstimated time if analysis takes long\nDependencies and requirements"
   },
   {
     "objectID": "lab1-intro.html#quiz-reminder",
     "href": "lab1-intro.html#quiz-reminder",
-    "title": "DSCI 522 Lab 1",
+    "title": "DSCI 522",
     "section": "Quiz Reminder 📅",
     "text": "Quiz Reminder 📅\n\n\n\n\n\n\nWeek 3\n\n\nQuiz on reproducible workflows and basic concepts"
   },
   {
     "objectID": "lab1-intro.html#lets-get-started",
     "href": "lab1-intro.html#lets-get-started",
-    "title": "DSCI 522 Lab 1",
+    "title": "DSCI 522",
     "section": "Let’s Get Started! 🚀",
     "text": "Let’s Get Started! 🚀\n\n\nForm your groups\nDiscuss expectations\nStart working on your MVP\nAsk questions!"
   },
   {
     "objectID": "lab1-intro.html#questions",
     "href": "lab1-intro.html#questions",
-    "title": "DSCI 522 Lab 1",
+    "title": "DSCI 522",
     "section": "Questions? 🤔",
     "text": "Questions? 🤔\nFeel free to ask for help throughout the lab!"
+  },
+  {
+    "objectID": "lab1-intro.html#lab-attendence-policies",
+    "href": "lab1-intro.html#lab-attendence-policies",
+    "title": "DSCI 522",
+    "section": "⚠️ Lab Attendence Policies",
+    "text": "⚠️ Lab Attendence Policies\n\nLab attendance is mandatory - Come to lab!\n\n\n\n‼️ Students are expected to attend 100% of their scheduled lab hours and attendance will be taken at the beginning of each lab session. Students must make formal requests for academic concession in the event that they cannot attend a lab session by filling out the academic concession form and sending it to the course instructor. Applying for academic concession does not promise the granting of academic concession. Each application will be evaluated in the context of UBC’s Academic concession policy. Students missing more than 20% of the total scheduled lab hours for a course without having received an academic concession will receive a possible maximum course grade of 50% and an “F” standing for the course on the transcript. For all other policies, please see the general MDS policies."
+  },
+  {
+    "objectID": "lab1-intro.html#communications",
+    "href": "lab1-intro.html#communications",
+    "title": "DSCI 522",
+    "section": "🗣️ Communications",
+    "text": "🗣️ Communications\n\nEnglish only in all group discussions to ensure everyone is involved!\n❌ Do NOT use these platforms: Below is just a list of examples, not exhaustive list:"
+  },
+  {
+    "objectID": "lab1-intro.html#do-not-use-these-platforms",
+    "href": "lab1-intro.html#do-not-use-these-platforms",
+    "title": "DSCI 522",
+    "section": "❌ Do NOT Use These Platforms",
+    "text": "❌ Do NOT Use These Platforms\nBelow is just a list of examples, not exhaustive list:"
+  },
+  {
+    "objectID": "lab1-intro.html#use-these-platforms",
+    "href": "lab1-intro.html#use-these-platforms",
+    "title": "DSCI 522",
+    "section": "✅ Use These Platforms",
+    "text": "✅ Use These Platforms\n\n\n\n\n\n\n\n\n\nGitHub Issues (Preferred)\n\n\n\n\n\n\n\nSlack Group Messages\n\n\n\n\n\n\n\n\n\n\n\n\nWhy GitHub Issues?\n\n\n\nTransparent and trackable: TAs and instructors can see communications and contributions\nEveryone is included in the loop\n\n\n\n\n\n\n\n\n\n\nNo Mini Groups!\n\n\nEVERYONE must be involved in conversations. Do not create smaller subgroups within your team.\n💙 It’s ok you have your favorite person, but this is a professional setting. Please be fair, collaborative, and inclusive for the group project! Nobody wants to feel left behind or isolated."
+  },
+  {
+    "objectID": "lab1-intro.html#ai-tools-policy",
+    "href": "lab1-intro.html#ai-tools-policy",
+    "title": "DSCI 522",
+    "section": "AI Tools Policy🤖",
+    "text": "AI Tools Policy🤖\n\n\n\n\n\n\nImportant Guidelines\n\n\n\nAI tools are allowed, but you must include proper acknowledgement in your code.\nRevisit MDS genAI use policy if you are in doubt.\nDocument which tool you used, how you interacted with it, what is your prompts, how do you verify the output, etc.\nEveryone in your team holds the equal responsibility for the code and documentation you submit as a group.\nIf genAI tool is used but not acknowledged, everyone in your team will face consequences of academic misconduct."
+  },
+  {
+    "objectID": "lab1-intro.html#equal-contribution",
+    "href": "lab1-intro.html#equal-contribution",
+    "title": "DSCI 522",
+    "section": "Equal Contribution",
+    "text": "Equal Contribution\n\nEveryone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.\nThe full expectations are written out at the end of your milestone 1 assignment."
+  },
+  {
+    "objectID": "lab1-intro.html#use-github-issues-for-communication",
+    "href": "lab1-intro.html#use-github-issues-for-communication",
+    "title": "DSCI 522",
+    "section": "✅ Use GitHub Issues for Communication",
+    "text": "✅ Use GitHub Issues for Communication\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy GitHub Issues?\n\n\n\nTransparent and trackable: TAs and instructors can see communications and contributions\nEveryone is included in the loop\n\n\n\n\n\n\n\n\n\n\nNo Mini Groups!\n\n\nEVERYONE must be involved in conversations. Do not create smaller subgroups within your team.\n💙 It’s ok you have your favorite person, but this is a professional setting. Please be fair, collaborative, and inclusive for the group project! Nobody wants to feel left behind or isolated 😢."
+  },
+  {
+    "objectID": "lab1-intro.html#different-work-styles",
+    "href": "lab1-intro.html#different-work-styles",
+    "title": "DSCI 522",
+    "section": "Different Work Styles",
+    "text": "Different Work Styles\n\nEveryone has a different work style\nThe smartest person in the room is the room itself.\nEveryone has their unique talents and weaknesses. Learn from each other."
+  },
+  {
+    "objectID": "lab1-intro.html#simple-simple-simple",
+    "href": "lab1-intro.html#simple-simple-simple",
+    "title": "DSCI 522",
+    "section": "🙏 SIMPLE, SIMPLE SIMPLE!!",
+    "text": "🙏 SIMPLE, SIMPLE SIMPLE!!\n\nFocus on building a simple project first\nGroups that achieve a MVP (Minimum Viable Product) at the end of the lab will get stickers and Posit cheatsheet!"
   }
 ]

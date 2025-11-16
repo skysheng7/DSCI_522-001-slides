@@ -9,8 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-01c78b5cd655e4cd89133cf59d535862.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.36">
 
-  <meta name="author" content="Sky (Kehan) Sheng">
-  <title>DSCI 522 Lab Slides – DSCI 522 Lab 1</title>
+  <title>DSCI 522 Lab Slides – DSCI 522</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,7 +28,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-423d414d36ce366a9d05f36d06304417.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-bbe7401fe57d4b791b917637bb662036.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -129,98 +128,31 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">DSCI 522 Lab 1</h1>
+  <h1 class="title">DSCI 522</h1>
   <p class="subtitle">Reproducible and Trustworthy Data Science Workflow</p>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Sky (Kehan) Sheng 
-</div>
-</div>
 </div>
 
 </section>
-<section id="welcome-to-lab-1" class="slide level2">
-<h2>Welcome to Lab 1! 🎉</h2>
-<ul>
-<li>Introduction to reproducible workflows</li>
-<li>Setting expectations</li>
-<li>Getting started with your first project</li>
-</ul>
+<section>
+<section id="welcome-to-lab-1" class="title-slide slide level1 center">
+<h1>Welcome to Lab 1! 🎉</h1>
+
 </section>
-<section id="lab-policies" class="slide level2">
-<h2>Lab Policies 📋</h2>
-<div>
+<section id="lab-attendence-policies" class="slide level2">
+<h2>⚠️ Lab Attendence Policies</h2>
 <ul>
-<li class="fragment"><strong>Attendance is mandatory</strong> - Come to class!</li>
-<li class="fragment"><strong>Grade recovery</strong>: Fix problems by next week → get 50% of grade back</li>
-<li class="fragment"><strong>Communication</strong>: English only during lab sessions</li>
-<li class="fragment"><strong>Platforms</strong>: Use only designated platforms (no mini groups)</li>
+<li>Lab attendance is mandatory - Come to lab!</li>
 </ul>
+<div style="font-size: 0.8em;">
+<blockquote>
+<p>‼️ Students are expected to attend 100% of their scheduled lab hours and attendance will be taken at the beginning of each lab session. Students must make formal requests for academic concession in the event that they cannot attend a lab session by filling out the academic concession form and sending it to the course instructor. Applying for academic concession does not promise the granting of academic concession. Each application will be evaluated in the context of UBC’s Academic concession policy. Students missing <strong>more than 20% of the total scheduled lab hours</strong> for a course without having received an academic concession will receive a possible maximum course grade of 50% and an “F” standing for the course on the transcript. For all other policies, please see the general MDS policies.</p>
+</blockquote>
 </div>
 </section>
-<section id="group-expectations" class="slide level2">
-<h2>Group Expectations 👥</h2>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Discussion Time</strong></p>
-</div>
-<div class="callout-content">
-<p>Talk to your group members:</p>
-<ul>
-<li>What do they expect from you?</li>
-<li>What are your expectations from them?</li>
-<li>How will you communicate?</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="ice-breaking-activity" class="slide level2">
-<h2>Ice Breaking Activity ❄️</h2>
-<p>Time to get to know each other!</p>
-<ul>
-<li>Share your name and background</li>
-<li>What interests you about data science?</li>
-<li>One fun fact about yourself</li>
-</ul>
-</section>
-<section id="different-workflows" class="slide level2">
-<h2>Different Workflows 🔄</h2>
-<div>
-<ul>
-<li class="fragment">Everyone has a different workflow</li>
-<li class="fragment">That’s okay! Learn from each other</li>
-<li class="fragment">Focus on <strong>simple projects</strong> first</li>
-<li class="fragment">Build complexity gradually</li>
-</ul>
-</div>
-</section>
-<section id="lab-structure-today" class="slide level2">
-<h2>Lab Structure (Today) ⏰</h2>
-<div class="fragment">
-<p><strong>First 30 minutes:</strong></p>
-<ul>
-<li>Demo of individual assignment</li>
-<li>Questions and clarifications</li>
-</ul>
-</div>
-<div class="fragment">
-<p><strong>Remaining time:</strong></p>
-<ul>
-<li>Work on your project</li>
-<li>Collaborate with your group</li>
-<li>Get help as needed</li>
-</ul>
-</div>
-</section>
-<section id="using-ai-tools" class="slide level2">
-<h2>Using AI Tools 🤖</h2>
+<section id="ai-tools-policy" class="slide level2">
+<h2>AI Tools Policy🤖</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -231,10 +163,157 @@ Sky (Kehan) Sheng
 </div>
 <div class="callout-content">
 <ul>
-<li>AI tools are allowed</li>
-<li><strong>Must include proper annotations</strong></li>
-<li>Document what AI helped with</li>
-<li>Understand the code you submit</li>
+<li>AI tools are allowed, but you must include proper acknowledgement in your code.</li>
+<li>Revisit MDS genAI use policy if you are in doubt.</li>
+<li>Document which tool you used, how you interacted with it, what is your prompts, how do you verify the output, etc.</li>
+<li>Everyone in your team holds the equal responsibility for the code and documentation you submit as a group.</li>
+<li>If genAI tool is used but not acknowledged, everyone in your team will face consequences of academic misconduct.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="equal-contribution" class="slide level2">
+<h2>Equal Contribution</h2>
+<ul>
+<li><p>Everyone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.</p></li>
+<li><p>The full expectations are written out at the end of your <a href="https://pages.github.ubc.ca/mds-2025-26/DSCI_522_dsci-workflows_students/release/m1/m1.html">milestone 1 assignment</a>.</p></li>
+</ul>
+</section>
+<section id="communications" class="slide level2">
+<h2>🗣️ Communications</h2>
+<ul>
+<li><p><strong>English only</strong> in all group discussions to ensure everyone is involved!</p></li>
+<li><p>❌ Do NOT use these platforms: <em>Below is just a list of examples, not exhaustive list:</em></p></li>
+</ul>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="images/Facebook.png" width="95"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="images/Instagram.png" width="95"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="images/Whatsapp.png" width="95"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="images/Wechat.png" width="95"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="images/X.png" width="95"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="use-github-issues-for-communication" class="slide level2">
+<h2>✅ Use GitHub Issues for Communication</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="images/Github.png" width="120"></p>
+</div>
+</div>
+</div>
+<div style="font-size: 0.95em;">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Why GitHub Issues?</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Transparent and trackable: TAs and instructors can see communications and contributions</li>
+<li>Everyone is <strong>included</strong> in the loop</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>No Mini Groups!</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>EVERYONE</strong> must be involved in conversations. Do not create smaller subgroups within your team.</p>
+<p>💙 It’s ok you have your favorite person, but this is a professional setting. Please be fair, collaborative, and inclusive for the group project! Nobody wants to feel left behind or isolated 😢.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="group-building" class="title-slide slide level1 center">
+<h1>Group Building 👥</h1>
+
+</section>
+<section id="different-work-styles" class="slide level2">
+<h2>Different Work Styles</h2>
+<ul>
+<li>Everyone has a different work style</li>
+<li>The smartest person in the room is the room itself.</li>
+<li>Everyone has their unique talents and weaknesses. Learn from each other.</li>
+</ul>
+</section>
+<section id="simple-simple-simple" class="slide level2">
+<h2>🙏 SIMPLE, SIMPLE SIMPLE!!</h2>
+<ul>
+<li>Focus on building a <strong>simple project</strong> first</li>
+<li>Groups that achieve a MVP (<strong>M</strong>inimum <strong>V</strong>iable <strong>P</strong>roduct) at the end of the lab will get stickers and Posit cheatsheet!</li>
+</ul>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="images/s1.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="images/s2.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="images/s3.jpg"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="ice-breaking-activity" class="slide level2">
+<h2>Ice Breaking Activity ❄️</h2>
+<p>Time to get to know each other!</p>
+<ul>
+<li>Share your name and background</li>
+<li>One fun fact about yourself</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>What do you expect from your team?</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Are you a last-minute genius? procrastinator? planner?</li>
+<li>What is your strength (e.g., planning, leadership, proof-reading, etc)?</li>
+<li>Share your experience when a group project went horribly wrong</li>
+<li>Share your experience when a group project went extremely well</li>
+<li>Do you prefer written or verbal communication?</li>
 </ul>
 </div>
 </div>
@@ -352,7 +431,7 @@ Sky (Kehan) Sheng
 <p><strong>Good luck!</strong> 🎉</p>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
