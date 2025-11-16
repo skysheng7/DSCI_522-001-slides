@@ -91,7 +91,7 @@ format:
 
 ## 🙏 SIMPLE, SIMPLE SIMPLE!!
 
-::: {style="font-size: 0.85em;"}
+::: {style="font-size: 0.8em;"}
 - Focus on building a **simple project** first
 - **Classification OR regression** only
 - Don't use crazy models
@@ -125,7 +125,7 @@ Time to get to know each other!
 
 ## Some Tips 💡
 
-::: {style="font-size: 0.9em;"}
+::: {style="font-size: 0.85em;"}
 - Include **estimated computation time** if analysis is expected to take long
 - Round numbers to 2 decimal places when appropriate
 - Make sure packages listed under `environment.yml` has exact version numbers listed. For example, `pandas==2.2.3` instead of `pandas>=2.2.3`.
