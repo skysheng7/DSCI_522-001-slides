@@ -7,6 +7,7 @@ format:
     transition: slide
     slide-number: true
     chalkboard: true
+    logo: images/mds-hex-sticker.png
 ---
 
 # Welcome to Lab 1! 🎉
