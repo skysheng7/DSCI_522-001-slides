@@ -11,8 +11,8 @@ This site contains lab slides for DSCI 522 - Reproducible and Trustworthy Data S
 ## Instructor
 
 **Sky (Kehan) Sheng**  
-* University of British Columbia  
-* [www.skysheng.io](https://www.skysheng.io)
+University of British Columbia  
+[www.skysheng.io](https://www.skysheng.io)
 
 ## Available Slides
 
