@@ -159,5 +159,54 @@
     "title": "DSCI 522 Lecture 1",
     "section": "🔥 Roast my repo!",
     "text": "🔥 Roast my repo!\n\nhttps://shorturl.at/QSv7M"
+  },
+  {
+    "objectID": "lec1.html#clean-well-documented-and-distributable-code",
+    "href": "lec1.html#clean-well-documented-and-distributable-code",
+    "title": "DSCI 522 Lecture 1",
+    "section": "✨ Clean, well documented and distributable code",
+    "text": "✨ Clean, well documented and distributable code\n\n\n\nPractice\nBenefit\n\n\n\n\nWell-documented\nEasily understandable\n\n\nModular code\nEasy to reuse\n\n\nWell-tested code\nReliable\n\n\nPortable across machines\nEasily accessible\n\n\n\n\nSource: Ma, E. J. (2024, October 25). The Human Dimension to Clean, Distributable, and Documented Data Science Code."
+  },
+  {
+    "objectID": "lec1.html#why-do-we-need-virtual-environment",
+    "href": "lec1.html#why-do-we-need-virtual-environment",
+    "title": "DSCI 522 Lecture 1",
+    "section": "Why do we need virtual environment?",
+    "text": "Why do we need virtual environment?"
+  },
+  {
+    "objectID": "lec1.html#toothbrushes-for-different-projects",
+    "href": "lec1.html#toothbrushes-for-different-projects",
+    "title": "DSCI 522 Lecture 1",
+    "section": "🦷 Toothbrushes for different “projects”",
+    "text": "🦷 Toothbrushes for different “projects”"
+  },
+  {
+    "objectID": "lec1.html#which-toothbrush-should-i-use-for-my-oral-hygiene",
+    "href": "lec1.html#which-toothbrush-should-i-use-for-my-oral-hygiene",
+    "title": "DSCI 522 Lecture 1",
+    "section": "Which toothbrush should I use for my oral hygiene??",
+    "text": "Which toothbrush should I use for my oral hygiene??"
+  },
+  {
+    "objectID": "lec1.html#organize-tools-into-separate-boxes",
+    "href": "lec1.html#organize-tools-into-separate-boxes",
+    "title": "DSCI 522 Lecture 1",
+    "section": "📦 Organize tools into separate boxes",
+    "text": "📦 Organize tools into separate boxes"
+  },
+  {
+    "objectID": "lec1.html#organize-programming-language-packages-into-separate-virtual-environments",
+    "href": "lec1.html#organize-programming-language-packages-into-separate-virtual-environments",
+    "title": "DSCI 522 Lecture 1",
+    "section": "Organize programming language & packages into separate virtual environments",
+    "text": "Organize programming language & packages into separate virtual environments"
+  },
+  {
+    "objectID": "lec1.html#different-virtual-environment-management-tools",
+    "href": "lec1.html#different-virtual-environment-management-tools",
+    "title": "DSCI 522 Lecture 1",
+    "section": "🔧 Different virtual environment management tools",
+    "text": "🔧 Different virtual environment management tools\n\n\nFor R:\n\npackrat\nrenv\nconda\n\n\nFor Python:\n\nvenv\nvirtualenv\nconda\nmamba\npoetry\npipenv\n…"
   }
 ]

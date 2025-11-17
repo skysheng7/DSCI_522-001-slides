@@ -105,3 +105,102 @@ Source: [Timbers, T. A., Ostblom, J., D'Andrea, F., Lourenzutti, R., & Chen, D. 
 :::
 
 ::::
+
+
+---
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {style="background-color: #f9e6a3; padding: 30px; border-radius: 20px; position: relative;"}
+::: {style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%);"}
+😟
+:::
+
+::: {style="font-size: 0.7em;"}
+- It does not run anymore! 😱
+- Complex execution
+- Different code chunks run on different computers with different operating systems
+- Different code chunks take in different data sources (stored in various locations on my computer)
+- No modular scripts/functions, hard to reuse
+- Not tested at all
+- Heavy cognitive load for new user (my poor biology colleagues)
+- The file name is long & not intuitive
+:::
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="background-color: #b8d98f; padding: 30px; border-radius: 20px; position: relative;"}
+::: {style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%);"}
+😊
+:::
+
+- Well documented
+- Organized into different "chapters"
+- "It run on my computer at that time"
+:::
+:::
+
+::::
+
+## ✨ Clean, well documented and distributable code
+
+| **Practice** | **Benefit** |
+|--------------|-------------|
+| Well-documented | Easily understandable |
+| Modular code | Easy to reuse |
+| Well-tested code | Reliable |
+| Portable across machines | Easily accessible |
+
+::: {style="position: absolute; bottom: 0px; right: 0px; font-size: 0.5em;"}
+Source: Ma, E. J. (2024, October 25). The Human Dimension to Clean, Distributable, and Documented Data Science Code.
+:::
+
+## Why do we need virtual environment?
+
+![](images/slide3.png){style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 0px;"}
+
+## 🦷 Toothbrushes for different “projects”
+
+![](images/slide15.png){style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 0px;"}
+
+## Which toothbrush should I use for my oral hygiene??
+
+![](images/slide16.png){style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 0px;"}
+
+## 📦 Organize tools into separate boxes
+
+![](images/slide17.png){style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 0px;"}
+
+## Organize programming language & packages into separate virtual environments
+
+![](images/slide18.png){style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 0px;"}
+
+## 🔧 Different virtual environment management tools
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### For R:
+
+- packrat
+- renv
+- conda
+:::
+
+::: {.column width="50%"}
+### For Python:
+
+- venv
+- virtualenv
+- conda
+- mamba
+- poetry
+- pipenv
+- ...
+:::
+
+::::
+
+# 🤩 Let's create our conda virtual environment!
