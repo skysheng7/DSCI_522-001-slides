@@ -44,7 +44,7 @@ Untested system for radiation therapy: Terac-25
 Source: [Cleveland Clinic](https://en.wikipedia.org/wiki/Therac-25)
 :::
 
-## 💥 Consequences of Untrustworthy and Unreproducible Paper
+## 💥 Consequences of Untrustworthy and non-reproducible Paper
 
 ![](images/retract_paper.png){style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 80px;"}
 
