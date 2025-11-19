@@ -1,0 +1,51 @@
+---
+title: "DSCI 522 Lecture 2"
+subtitle: "Conda-lock, Containerization, and Docker"
+author: "Sky Sheng"
+format:
+  revealjs:
+    theme: default
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    logo: images/mds-hex-sticker.png
+---
+
+
+
+![](images/otter_works_computer.jpg){style="margin-bottom: 0px;"}
+
+## `environment.yml` file
+
+![](images/conda2.png){style="margin-bottom: 0px;"}
+
+## `environment.yml` file with package versions listed
+
+The python script is here: [GitHub repo: append_version_to_environment_yml](https://github.com/skysheng7/append_version_to_environment_yml.git)
+
+![](images/conda3.png){style="margin-bottom: 0px;"}
+
+## Conda-lock
+
+![](images/conda4.png){style="margin-bottom: 0px;"}
+
+# 🧐 Why do we need Conda-lock?
+
+* Conda-lock solves the dependency for all platforms (Linux, Windows, MacOS)
+* Conda tree
+
+## Docker
+
+![](images/conda5.png){style="margin-bottom: 0px;"}
+
+## Docker Container
+
+![](images/container.png){style="margin-bottom: 0px;"}
+
+## Virtual Machine vs. Container
+
+![](images/vm_docker_compare.png){style="margin-bottom: 0px;"}
+
+::: {style="position: absolute; bottom: 10px; right: 20px; font-size: 0.5em;"}
+Source: [eG innovations](https://www.eginnovations.com/blog/containers-vs-vms/)
+:::
