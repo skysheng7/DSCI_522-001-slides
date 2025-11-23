@@ -32,8 +32,16 @@ The python script is here: [GitHub repo: append_version_to_environment_yml](http
 # 🧐 Why do we need Conda-lock?
 
 * Conda-lock solves the dependency for all platforms (Linux, Windows, MacOS)
-* [Here is a conda tree](https://github.com/skysheng7/DSCI_522-001-slides/support_files/tree.pdf) showing how Conda solves dependencies for a simple conda environment.
+* [Here is a conda tree](https://github.com/skysheng7/DSCI_522-001-slides/blob/main/support_files/tree.pdf) showing how Conda solves dependencies for a simple conda environment.
+* Below is the code I used to generate the conda tree: 
 
+```{bash}
+#| eval: false
+conda activate myenv
+conda install -c conda-forge graphviz conda-tree
+conda-tree deptree --dot > file.dot
+dot -Tpdf file.dot -o tree.pdf
+```
 ## Docker
 
 ![](images/conda5.png){style="margin-bottom: 0px;"}
