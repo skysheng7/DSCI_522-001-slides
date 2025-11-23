@@ -1,0 +1,282 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DSCI 522 Slides",
+    "section": "",
+    "text": "This site contains lecture and lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow, in section 001, for 2025W1."
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "DSCI 522 Slides",
+    "section": "",
+    "text": "This site contains lecture and lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow, in section 001, for 2025W1."
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "DSCI 522 Slides",
+    "section": "Instructor",
+    "text": "Instructor\nSky (Kehan) Sheng\nUniversity of British Columbia\nwww.skysheng.io"
+  },
+  {
+    "objectID": "index.html#available-slides",
+    "href": "index.html#available-slides",
+    "title": "DSCI 522 Slides",
+    "section": "Available Slides",
+    "text": "Available Slides\n\nLectures\n\nLecture 1 - Introduction to Reproducible and Trustworthy Data Science Workflow\nLecture 2 - Conda-lock, Containerization, and Docker\nLecture 3 - Customizing and Building Containers\n\n\n\nLabs\n\nLab 1 Introduction - Introduction to reproducible workflows, lab policies, and getting started"
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "DSCI 522 Slides",
+    "section": "License",
+    "text": "License\nThis work is licensed under the MIT License."
+  },
+  {
+    "objectID": "lec3.html#how-is-your-group-collaboration-going",
+    "href": "lec3.html#how-is-your-group-collaboration-going",
+    "title": "DSCI 522 Lecture 3",
+    "section": "How is your group collaboration going?",
+    "text": "How is your group collaboration going?\n\n\n\n(A)\n\n\n\n\n\n\n(B)\n\n\n\n\n\n\n\n\n(C)\n\n\n\n\n\n\n(D)\n\n\n\n\n\n\nSource"
+  },
+  {
+    "objectID": "lec3.html#lets-build-our-own-container",
+    "href": "lec3.html#lets-build-our-own-container",
+    "title": "DSCI 522 Lecture 3",
+    "section": "Let’s build our own container!",
+    "text": "Let’s build our own container!"
+  },
+  {
+    "objectID": "lab1-intro.html#lab-attendence-policies",
+    "href": "lab1-intro.html#lab-attendence-policies",
+    "title": "DSCI 522 Lab 1",
+    "section": "⚠️ Lab Attendence Policies",
+    "text": "⚠️ Lab Attendence Policies\n\nLab attendance is mandatory!\n\n\n\n‼️ Students are expected to attend 100% of their scheduled lab hours and attendance will be taken at the beginning of each lab session. Students must make formal requests for academic concession in the event that they cannot attend a lab session by filling out the academic concession form and sending it to the course instructor. Applying for academic concession does not promise the granting of academic concession. Each application will be evaluated in the context of UBC’s Academic concession policy. Students missing more than 20% of the total scheduled lab hours for a course without having received an academic concession will receive a possible maximum course grade of 50% and an “F” standing for the course on the transcript. For all other policies, please see the general MDS policies."
+  },
+  {
+    "objectID": "lab1-intro.html#ai-tools-policy",
+    "href": "lab1-intro.html#ai-tools-policy",
+    "title": "DSCI 522 Lab 1",
+    "section": "AI Tools Policy🤖",
+    "text": "AI Tools Policy🤖\n\n\n\n\n\n\nImportant Guidelines\n\n\n\nAI tools are allowed, but you must include proper acknowledgement.\nDocument:\n\nwhich tool you used?\nhow you interacted with it?\nwhat is your prompts?\nhow do you verify the output?\n…\n\nEveryone in your team holds the equal responsibility for the code and documentation you submit as a group.\nIf genAI tool is used but not acknowledged, everyone in your team will face consequences of academic misconduct."
+  },
+  {
+    "objectID": "lab1-intro.html#once-upon-a-time",
+    "href": "lab1-intro.html#once-upon-a-time",
+    "title": "DSCI 522 Lab 1",
+    "section": "🧚🏻 Once upon a time…",
+    "text": "🧚🏻 Once upon a time…\n📜 Legend says there is a super powerful dragon…\n\n\nSource: Raya and the Last Dragon"
+  },
+  {
+    "objectID": "lab1-intro.html#dont-be-this-dragon",
+    "href": "lab1-intro.html#dont-be-this-dragon",
+    "title": "DSCI 522 Lab 1",
+    "section": "Don’t be this dragon! 🐉",
+    "text": "Don’t be this dragon! 🐉\nEqual Contribution\n\nEveryone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.\nThe full expectations are written out at the end of your milestone 1 assignment."
+  },
+  {
+    "objectID": "lab1-intro.html#communications",
+    "href": "lab1-intro.html#communications",
+    "title": "DSCI 522 Lab 1",
+    "section": "🗣️ Communications",
+    "text": "🗣️ Communications\n\nEnglish only in all group discussions to ensure everyone is involved!\n❌ Do NOT use these platforms: Below is just a list of examples, not exhaustive list:"
+  },
+  {
+    "objectID": "lab1-intro.html#use-github-issues-for-communication",
+    "href": "lab1-intro.html#use-github-issues-for-communication",
+    "title": "DSCI 522 Lab 1",
+    "section": "✅ Use GitHub Issues for Communication",
+    "text": "✅ Use GitHub Issues for Communication\n\n\n\n\n\n\n\n\n\n\nWhy GitHub Issues?\n\n\n\nTransparent and trackable: TAs and instructors can see communications and contributions\nEveryone is included in the loop\n\n\n\n\n\n\n\n\n\n\nNo Mini Groups!\n\n\nEVERYONE must be involved in conversations. Do not create smaller subgroups within your team.\n💙 It’s ok you have your favorite person, but this is a professional setting. Please be fair, collaborative, and inclusive for the group project! Nobody wants to feel left behind or isolated 😢."
+  },
+  {
+    "objectID": "lab1-intro.html#different-work-styles",
+    "href": "lab1-intro.html#different-work-styles",
+    "title": "DSCI 522 Lab 1",
+    "section": "Different Work Styles",
+    "text": "Different Work Styles\n\nLearn from each other. The smartest person in the room is the room itself.\n\n\n\n\n\nImage generated by OpenAI GPT-5"
+  },
+  {
+    "objectID": "lab1-intro.html#simple-simple-simple",
+    "href": "lab1-intro.html#simple-simple-simple",
+    "title": "DSCI 522 Lab 1",
+    "section": "🙏 SIMPLE, SIMPLE, SIMPLE!!",
+    "text": "🙏 SIMPLE, SIMPLE, SIMPLE!!\n\n\nFocus on building a simple project first\nClassification OR regression only\nDon’t use crazy models\nThis is NOT for job interviews\nGroups that achieve a MVP (Minimum Viable Product) at the end of the lab will get stickers and Posit cheatsheet!"
+  },
+  {
+    "objectID": "lab1-intro.html#ice-breaking-activity",
+    "href": "lab1-intro.html#ice-breaking-activity",
+    "title": "DSCI 522 Lab 1",
+    "section": "Ice Breaking Activity ❄️",
+    "text": "Ice Breaking Activity ❄️\nTime to get to know each other!\n\nShare your name and background\nOne fun fact about yourself\n\n\n\n\n\n\n\nWhat do you expect from your team?\n\n\n\nAre you a last-minute genius? procrastinator? planner?\nWhat is your strength (e.g., planning, leadership, proof-reading, etc)?\nShare your experience when a group project went horribly wrong\nShare your experience when a group project went extremely well\nDo you prefer written or verbal communication?"
+  },
+  {
+    "objectID": "lab1-intro.html#some-tips",
+    "href": "lab1-intro.html#some-tips",
+    "title": "DSCI 522 Lab 1",
+    "section": "Some Tips 💡",
+    "text": "Some Tips 💡\n\n\nInclude estimated computation time if analysis is expected to take long\nRound numbers to 2 decimal places when appropriate\nMake sure packages listed under environment.yml has exact version numbers listed. For example, pandas==2.2.3 instead of pandas&gt;=2.2.3.\nDo not copy and paste data description from the internet, that would be plagiarism. Write your own descriptions, and cite the source you used.\nHow to cite packages?\n\nR : citation(package = \"&lt;package_name&gt;\")\nPython : pip show --verbose &lt;package_name&gt;"
+  },
+  {
+    "objectID": "lec1.html#who-loves-cooking",
+    "href": "lec1.html#who-loves-cooking",
+    "title": "DSCI 522 Lecture 1",
+    "section": "👩‍🍳 Who loves cooking?",
+    "text": "👩‍🍳 Who loves cooking?"
+  },
+  {
+    "objectID": "lec1.html#consequences-of-untested-systems",
+    "href": "lec1.html#consequences-of-untested-systems",
+    "title": "DSCI 522 Lecture 1",
+    "section": "💥 Consequences of Untested Systems",
+    "text": "💥 Consequences of Untested Systems\nUntested system for radiation therapy: Terac-25\n\n\nSource: Cleveland Clinic"
+  },
+  {
+    "objectID": "lec1.html#consequences-of-untrustworthy-and-non-reproducible-paper",
+    "href": "lec1.html#consequences-of-untrustworthy-and-non-reproducible-paper",
+    "title": "DSCI 522 Lecture 1",
+    "section": "💥 Consequences of Untrustworthy and non-reproducible Paper",
+    "text": "💥 Consequences of Untrustworthy and non-reproducible Paper\n\n\nSource: Timbers, T. A., Ostblom, J., D’Andrea, F., Lourenzutti, R., & Chen, D. Reproducible and Trustworthy Workflows for Data Science"
+  },
+  {
+    "objectID": "lec1.html#data-science-is",
+    "href": "lec1.html#data-science-is",
+    "title": "DSCI 522 Lecture 1",
+    "section": "👩‍💻 Data Science is…",
+    "text": "👩‍💻 Data Science is…"
+  },
+  {
+    "objectID": "lec1.html#data-science-is-1",
+    "href": "lec1.html#data-science-is-1",
+    "title": "DSCI 522 Lecture 1",
+    "section": "👩‍💻 Data Science is…",
+    "text": "👩‍💻 Data Science is…\n\n\nSource: Timbers, T. A., Ostblom, J., D’Andrea, F., Lourenzutti, R., & Chen, D. Reproducible and Trustworthy Workflows for Data Science"
+  },
+  {
+    "objectID": "lec1.html#reproducible-analysis",
+    "href": "lec1.html#reproducible-analysis",
+    "title": "DSCI 522 Lecture 1",
+    "section": "💡 Reproducible analysis:",
+    "text": "💡 Reproducible analysis:\n\n\nSource: Timbers, T. A., Ostblom, J., D’Andrea, F., Lourenzutti, R., & Chen, D. Reproducible and Trustworthy Workflows for Data Science"
+  },
+  {
+    "objectID": "lec1.html#auditabletransparent-analysis",
+    "href": "lec1.html#auditabletransparent-analysis",
+    "title": "DSCI 522 Lecture 1",
+    "section": "🧐 Auditable/transparent analysis:",
+    "text": "🧐 Auditable/transparent analysis:\n\n\nSource: Timbers, T. A., Ostblom, J., D’Andrea, F., Lourenzutti, R., & Chen, D. Reproducible and Trustworthy Workflows for Data Science"
+  },
+  {
+    "objectID": "lec1.html#roast-my-repo",
+    "href": "lec1.html#roast-my-repo",
+    "title": "DSCI 522 Lecture 1",
+    "section": "🔥 Roast my repo!",
+    "text": "🔥 Roast my repo!\n\nhttps://shorturl.at/QSv7M"
+  },
+  {
+    "objectID": "lec1.html#what-is-version-control",
+    "href": "lec1.html#what-is-version-control",
+    "title": "DSCI 522 Lecture 1",
+    "section": "what is version control?",
+    "text": "what is version control?\n\nVersion control (for transparency and collaboration)"
+  },
+  {
+    "objectID": "lec1.html#share-your-story",
+    "href": "lec1.html#share-your-story",
+    "title": "DSCI 522 Lecture 1",
+    "section": "💭 Share your story",
+    "text": "💭 Share your story\n\nThink and write down a non-reproducible, or non-auditable, workflow you have used before at work, on a personal project, or in course work, that negatively impacted your work somehow (make sure to include this in the story).\nShare your story in the Google Doc\nActivity in textbook"
+  },
+  {
+    "objectID": "lec1.html#clean-well-documented-and-distributable-code",
+    "href": "lec1.html#clean-well-documented-and-distributable-code",
+    "title": "DSCI 522 Lecture 1",
+    "section": "✨ Clean, well documented and distributable code",
+    "text": "✨ Clean, well documented and distributable code\n\n\n\nPractice\nBenefit\n\n\n\n\nWell-documented\nEasily understandable\n\n\nModular code\nEasy to reuse\n\n\nWell-tested code\nReliable\n\n\nPortable across machines\nEasily accessible\n\n\n\n\nSource: Ma, E. J. (2024, October 25). The Human Dimension to Clean, Distributable, and Documented Data Science Code."
+  },
+  {
+    "objectID": "lec1.html#why-do-we-need-virtual-environment",
+    "href": "lec1.html#why-do-we-need-virtual-environment",
+    "title": "DSCI 522 Lecture 1",
+    "section": "Why do we need virtual environment?",
+    "text": "Why do we need virtual environment?"
+  },
+  {
+    "objectID": "lec1.html#toothbrushes-for-different-projects",
+    "href": "lec1.html#toothbrushes-for-different-projects",
+    "title": "DSCI 522 Lecture 1",
+    "section": "🦷 Toothbrushes for different “projects”",
+    "text": "🦷 Toothbrushes for different “projects”"
+  },
+  {
+    "objectID": "lec1.html#which-toothbrush-should-i-use-for-my-oral-hygiene",
+    "href": "lec1.html#which-toothbrush-should-i-use-for-my-oral-hygiene",
+    "title": "DSCI 522 Lecture 1",
+    "section": "Which toothbrush should I use for my oral hygiene??",
+    "text": "Which toothbrush should I use for my oral hygiene??"
+  },
+  {
+    "objectID": "lec1.html#organize-tools-into-separate-boxes",
+    "href": "lec1.html#organize-tools-into-separate-boxes",
+    "title": "DSCI 522 Lecture 1",
+    "section": "📦 Organize tools into separate boxes",
+    "text": "📦 Organize tools into separate boxes"
+  },
+  {
+    "objectID": "lec1.html#organize-programming-language-packages-into-separate-virtual-environments",
+    "href": "lec1.html#organize-programming-language-packages-into-separate-virtual-environments",
+    "title": "DSCI 522 Lecture 1",
+    "section": "Organize programming language & packages into separate virtual environments",
+    "text": "Organize programming language & packages into separate virtual environments"
+  },
+  {
+    "objectID": "lec1.html#different-virtual-environment-management-tools",
+    "href": "lec1.html#different-virtual-environment-management-tools",
+    "title": "DSCI 522 Lecture 1",
+    "section": "🔧 Different virtual environment management tools",
+    "text": "🔧 Different virtual environment management tools\n\n\nFor R:\n\npackrat\nrenv\nconda\n\n\nFor Python:\n\nvenv\nvirtualenv\nconda\nmamba\npoetry\npipenv\n…"
+  },
+  {
+    "objectID": "lec2.html#environment.yml-file",
+    "href": "lec2.html#environment.yml-file",
+    "title": "DSCI 522 Lecture 2",
+    "section": "environment.yml file",
+    "text": "environment.yml file"
+  },
+  {
+    "objectID": "lec2.html#environment.yml-file-with-package-versions-listed",
+    "href": "lec2.html#environment.yml-file-with-package-versions-listed",
+    "title": "DSCI 522 Lecture 2",
+    "section": "environment.yml file with package versions listed",
+    "text": "environment.yml file with package versions listed\nThe python script is here: GitHub repo: append_version_to_environment_yml"
+  },
+  {
+    "objectID": "lec2.html#conda-lock",
+    "href": "lec2.html#conda-lock",
+    "title": "DSCI 522 Lecture 2",
+    "section": "Conda-lock",
+    "text": "Conda-lock"
+  },
+  {
+    "objectID": "lec2.html#docker",
+    "href": "lec2.html#docker",
+    "title": "DSCI 522 Lecture 2",
+    "section": "Docker",
+    "text": "Docker"
+  },
+  {
+    "objectID": "lec2.html#docker-container",
+    "href": "lec2.html#docker-container",
+    "title": "DSCI 522 Lecture 2",
+    "section": "Docker Container",
+    "text": "Docker Container"
+  },
+  {
+    "objectID": "lec2.html#virtual-machine-vs.-container",
+    "href": "lec2.html#virtual-machine-vs.-container",
+    "title": "DSCI 522 Lecture 2",
+    "section": "Virtual Machine vs. Container",
+    "text": "Virtual Machine vs. Container\n\n\nSource: eG innovations"
+  }
+]
