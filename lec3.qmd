@@ -2,6 +2,8 @@
 title: "DSCI 522 Lecture 3"
 subtitle: "Customizing and Building Containers"
 author: "Sky Sheng"
+execute:
+  eval: false
 format:
   revealjs:
     theme: default
@@ -142,7 +144,6 @@ format:
 ⚠️ Command lines are very sensitive to whitespace and quotation marks! 
 
 ```{bash}
-#| eval: false
 docker run \
     --rm \
     -p 8788:8787 \
@@ -154,7 +155,6 @@ docker run \
 ## Docker-compose file: `docker-compose.yml`
 
 ```{yaml}
-#| eval: false
 services:
   analysis-env:
     image: rocker/rstudio:4.4.2

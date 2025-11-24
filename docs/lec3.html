@@ -480,30 +480,28 @@ Sky Sheng
 <section id="docker-recap" class="slide level2">
 <h2>🚢 Docker Recap</h2>
 <p>⚠️ Command lines are very sensitive to whitespace and quotation marks!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>#| eval: false</span>
-<span id="cb1-2"><a></a>docker run \</span>
-<span id="cb1-3"><a></a>    --rm \</span>
-<span id="cb1-4"><a></a>    -p 8788:8787 \</span>
-<span id="cb1-5"><a></a>    -e PASSWORD="apassword" \</span>
-<span id="cb1-6"><a></a>    rocker/rstudio:4.4.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>docker run \</span>
+<span id="cb1-2"><a></a>    --rm \</span>
+<span id="cb1-3"><a></a>    -p 8788:8787 \</span>
+<span id="cb1-4"><a></a>    -e PASSWORD="apassword" \</span>
+<span id="cb1-5"><a></a>    rocker/rstudio:4.4.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="docker-compose-file-docker-compose.yml" class="slide level2">
 <h2>Docker-compose file: <code>docker-compose.yml</code></h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {yaml} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>#| eval: false</span>
-<span id="cb2-2"><a></a>services:</span>
-<span id="cb2-3"><a></a>  analysis-env:</span>
-<span id="cb2-4"><a></a>    image: rocker/rstudio:4.4.2</span>
-<span id="cb2-5"><a></a>    ports:</span>
-<span id="cb2-6"><a></a>      - "8787:8787"</span>
-<span id="cb2-7"><a></a>    volumes:</span>
-<span id="cb2-8"><a></a>      - .:/home/rstudio/project</span>
-<span id="cb2-9"><a></a>    environment:</span>
-<span id="cb2-10"><a></a>      PASSWORD: password</span>
-<span id="cb2-11"><a></a>    deploy:</span>
-<span id="cb2-12"><a></a>      resources:</span>
-<span id="cb2-13"><a></a>        limits:</span>
-<span id="cb2-14"><a></a>          memory: 5G</span>
-<span id="cb2-15"><a></a>    platform: linux/amd64</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {yaml} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>services:</span>
+<span id="cb2-2"><a></a>  analysis-env:</span>
+<span id="cb2-3"><a></a>    image: rocker/rstudio:4.4.2</span>
+<span id="cb2-4"><a></a>    ports:</span>
+<span id="cb2-5"><a></a>      - "8787:8787"</span>
+<span id="cb2-6"><a></a>    volumes:</span>
+<span id="cb2-7"><a></a>      - .:/home/rstudio/project</span>
+<span id="cb2-8"><a></a>    environment:</span>
+<span id="cb2-9"><a></a>      PASSWORD: password</span>
+<span id="cb2-10"><a></a>    deploy:</span>
+<span id="cb2-11"><a></a>      resources:</span>
+<span id="cb2-12"><a></a>        limits:</span>
+<span id="cb2-13"><a></a>          memory: 5G</span>
+<span id="cb2-14"><a></a>    platform: linux/amd64</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="todays-topic-lets-build-our-own-container" class="slide level2">
 <h2>Today’s topic: Let’s build our own <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/120-containerization-3.html">container</a>!</h2>
