@@ -161,10 +161,10 @@ docker run \
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWxxaDBuOG1wdnhzcXFhYXc4bzNuZGhjamJrYTRkcjJkemlycWdxMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jnhXd7KT8UTk5WIgiV/giphy.gif" style="width: 90%; max-width: 700px;"/>
 </div>
 
-<p style="position: fixed; bottom: 10px; right: 10px; font-size: 20px; color: gray; z-index: 1000;">Source: Minions movie</p>
+<p style="position: fixed; bottom: 0px; right: 0px; font-size: 20px; color: gray; z-index: 1000;">Source: Minions movie</p>
 
 
-## Docker-compose file: `docker-compose.yml`
+## `docker-compose.yml` file comes to the rescue!
 
 ```{yaml}
 services:
