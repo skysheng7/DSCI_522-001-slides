@@ -299,6 +299,10 @@ Sky Sheng
 <td>List all packages in environment</td>
 <td><code>conda list</code></td>
 </tr>
+<tr class="odd">
+<td>Remove a package from <strong>current</strong> environment</td>
+<td><code>conda remove &lt;package_name&gt;</code></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -319,34 +323,30 @@ Sky Sheng
 </thead>
 <tbody>
 <tr class="odd">
-<td>Remove a package from <strong>current</strong> environment</td>
-<td><code>conda remove &lt;package_name&gt;</code></td>
-</tr>
-<tr class="even">
 <td>Update a package in <strong>current</strong> environment</td>
 <td><code>conda update &lt;package_name&gt;</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Remove a package in <strong>other</strong> environment</td>
 <td><code>conda remove -n &lt;env_name&gt; &lt;package_name&gt;</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Update a package in <strong>other</strong> environment</td>
 <td><code>conda update -n &lt;env_name&gt; &lt;package_name&gt;</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Update all packages in <strong>current</strong> environment</td>
 <td><code>conda update --all</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Share environment</td>
 <td><code>conda env export --from-history &gt; environment.yml</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Create conda environment from <code>environment.yml</code></td>
 <td><code>conda env create --file environment.yml</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Duplicate a conda environment</td>
 <td><code>conda create --name &lt;new_env&gt; --clone &lt;old_env&gt;</code></td>
 </tr>

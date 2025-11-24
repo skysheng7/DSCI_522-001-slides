@@ -53,14 +53,14 @@
     "href": "lec3.html#conda-cheat-sheet-part-1",
     "title": "DSCI 522 Lecture 3",
     "section": "Conda Cheat Sheet Part 1️⃣",
-    "text": "Conda Cheat Sheet Part 1️⃣\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nCreate a new conda environment\nconda create -n &lt;env_name&gt;\n\n\nCreate with specific Python version\nconda create --name &lt;env_name&gt; python=3.11\n\n\nCreate with packages\nconda create --name &lt;env_name&gt; numpy pandas\n\n\nList all conda environments\nconda env list or conda info --envs\n\n\nActivate a conda environment\nconda activate &lt;env_name&gt;\n\n\nDeactivate a conda environment\nconda deactivate\n\n\nRemove a conda environment\nconda env remove -n &lt;env_name&gt;\n\n\nList all packages in environment\nconda list"
+    "text": "Conda Cheat Sheet Part 1️⃣\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nCreate a new conda environment\nconda create -n &lt;env_name&gt;\n\n\nCreate with specific Python version\nconda create --name &lt;env_name&gt; python=3.11\n\n\nCreate with packages\nconda create --name &lt;env_name&gt; numpy pandas\n\n\nList all conda environments\nconda env list or conda info --envs\n\n\nActivate a conda environment\nconda activate &lt;env_name&gt;\n\n\nDeactivate a conda environment\nconda deactivate\n\n\nRemove a conda environment\nconda env remove -n &lt;env_name&gt;\n\n\nList all packages in environment\nconda list\n\n\nRemove a package from current environment\nconda remove &lt;package_name&gt;"
   },
   {
     "objectID": "lec3.html#conda-cheat-sheet-part-2",
     "href": "lec3.html#conda-cheat-sheet-part-2",
     "title": "DSCI 522 Lecture 3",
     "section": "Conda Cheat Sheet Part 2️⃣",
-    "text": "Conda Cheat Sheet Part 2️⃣\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nRemove a package from current environment\nconda remove &lt;package_name&gt;\n\n\nUpdate a package in current environment\nconda update &lt;package_name&gt;\n\n\nRemove a package in other environment\nconda remove -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate a package in other environment\nconda update -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate all packages in current environment\nconda update --all\n\n\nShare environment\nconda env export --from-history &gt; environment.yml\n\n\nCreate conda environment from environment.yml\nconda env create --file environment.yml\n\n\nDuplicate a conda environment\nconda create --name &lt;new_env&gt; --clone &lt;old_env&gt;"
+    "text": "Conda Cheat Sheet Part 2️⃣\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nUpdate a package in current environment\nconda update &lt;package_name&gt;\n\n\nRemove a package in other environment\nconda remove -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate a package in other environment\nconda update -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate all packages in current environment\nconda update --all\n\n\nShare environment\nconda env export --from-history &gt; environment.yml\n\n\nCreate conda environment from environment.yml\nconda env create --file environment.yml\n\n\nDuplicate a conda environment\nconda create --name &lt;new_env&gt; --clone &lt;old_env&gt;"
   },
   {
     "objectID": "lec3.html#command-line-notes",

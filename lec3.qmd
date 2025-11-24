@@ -13,21 +13,21 @@ format:
 
 ## iClicker: How is your group collaboration going? {style="font-size: 0.8em;"}
 
-::: {.column width="32%"}
+::: {.column width="33%"}
 <div style="text-align: center; font-weight: bold; font-size: 24px; margin-bottom: 10px;">(A)</div>
 <div style="text-align: center;">
 <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHRiejRzbDhlOGcyNTI5aGc5MTl0ZWJiMnEwNW1tZWFueTQxZDZ3ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gl8ymnpv4Sqha/giphy.gif" style="width: 60%; max-width: 400px;"/>
 </div>
 :::
 
-::: {.column width="32%"}
+::: {.column width="33%"}
 <div style="text-align: center; font-weight: bold; font-size: 24px; margin-bottom: 10px;">(B)</div>
 <div style="text-align: center;">
 <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExODc3cXlvZHd1MmlybDZxenM5ZTNiOHcyZXd5djFmaDluamRvNWV0ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gcW5zU5Te3qPm/giphy.gif" style="width: 65%; max-width: 400px;"/>
 </div>
 :::
 
-::: {.column width="32%"}
+::: {.column width="33%"}
 <div style="text-align: center; font-weight: bold; font-size: 24px; margin-bottom: 10px;">(C)</div>
 <div style="text-align: center;">
 <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3RvMTcxZXkyOHZlcWY1N2NsYnNndjNndmJobXlzeHd3a3lxeW9oZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lJNoBCvQYp7nq/giphy.gif" style="width: 60%; max-width: 400px;"/>
@@ -67,6 +67,7 @@ format:
 | Deactivate a conda environment | `conda deactivate` |
 | Remove a conda environment | `conda env remove -n <env_name>` |
 | List all packages in environment | `conda list` |
+| Remove a package from **current** environment| `conda remove <package_name>` |
 :::
 
 ## Conda Cheat Sheet Part 2️⃣ 
@@ -74,7 +75,6 @@ format:
 ::: {style="font-size: 0.65em;"}
 | Task | Command |
 |------|---------|
-| Remove a package from **current** environment| `conda remove <package_name>` |
 | Update a package in **current** environment | `conda update <package_name>` |
 | Remove a package in **other** environment | `conda remove -n <env_name> <package_name>` |
 | Update a package in **other** environment | `conda update -n <env_name> <package_name>` |
