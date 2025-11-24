@@ -46,11 +46,9 @@ format:
 
 <p style="position: fixed; bottom: 0px; right: 0px; font-size: 20px; color: gray; z-index: 1000;">[Source](https://giphy.com)</p>
 
-## [Conda](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/085-virtual_env-python-conda.html) Recap
+## [Conda](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/085-virtual_env-python-conda.html) Recap: 🧐 How to...
 
 ::: {style="font-size: 0.7em;"}
-🧐 What are the commands for the following tasks?
-
 - Create a new conda environment
 - List all conda environments
 - Activate a conda environment
@@ -67,7 +65,7 @@ format:
 
 ## Conda Cheat Sheet Part 1️⃣ 
 
-::: {style="font-size: 0.75em;"}
+::: {style="font-size: 0.7em;"}
 | Task | Command |
 |------|---------|
 | Create a new conda environment | `conda create -n <env_name>` |
@@ -82,7 +80,7 @@ format:
 
 ## Conda Cheat Sheet Part 2️⃣ 
 
-::: {style="font-size: 0.68em;"}
+::: {style="font-size: 0.65em;"}
 | Task | Command |
 |------|---------|
 | Remove a package from **current** environment| `conda remove <package_name>` |

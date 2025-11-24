@@ -42,11 +42,11 @@
     "text": "iClicker: How is your group collaboration going?\n\n\n\n(A)\n\n\n\n\n\n\n(B)\n\n\n\n\n\n\n\n\n\n\n(C)\n\n\n\n\n\n\n\n\nSource"
   },
   {
-    "objectID": "lec3.html#conda-recap",
-    "href": "lec3.html#conda-recap",
+    "objectID": "lec3.html#conda-recap-how-to",
+    "href": "lec3.html#conda-recap-how-to",
     "title": "DSCI 522 Lecture 3",
-    "section": "Conda Recap",
-    "text": "Conda Recap\n\n🧐 What are the commands for the following tasks?\n\nCreate a new conda environment\nList all conda environments\nActivate a conda environment\nDeactivate a conda environment\nRemove a conda environment\nList all packages in a conda environment\nRemove a package from a conda environment\nUpdate a package in a conda environment\nUpdate all packages in a conda environment\nShare a conda environment with someone else\nCreate a conda environment from environment.yml file\nDuplicate a conda environment"
+    "section": "Conda Recap: 🧐 How to…",
+    "text": "Conda Recap: 🧐 How to…\n\n\nCreate a new conda environment\nList all conda environments\nActivate a conda environment\nDeactivate a conda environment\nRemove a conda environment\nList all packages in a conda environment\nRemove a package from a conda environment\nUpdate a package in a conda environment\nUpdate all packages in a conda environment\nShare a conda environment with someone else\nCreate a conda environment from environment.yml file\nDuplicate a conda environment"
   },
   {
     "objectID": "lec3.html#conda-cheat-sheet-part-1",
