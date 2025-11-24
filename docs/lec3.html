@@ -479,12 +479,17 @@ Sky Sheng
 </section>
 <section id="docker-recap" class="slide level2">
 <h2>🚢 Docker Recap</h2>
-<p>⚠️ Command lines are very sensitive to whitespace and quotation marks!</p>
+<ol type="1">
+<li>⚠️ Command lines are very sensitive to whitespace and quotation marks!</li>
+</ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>docker run \</span>
 <span id="cb1-2"><a></a>    --rm \</span>
 <span id="cb1-3"><a></a>    -p 8788:8787 \</span>
 <span id="cb1-4"><a></a>    -e PASSWORD="apassword" \</span>
 <span id="cb1-5"><a></a>    rocker/rstudio:4.4.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>🏷️ Don’t use the TAG <code>latest</code> for the image, use the specific version tag instead.</li>
+</ol>
 </section>
 <section id="docker-compose-file-docker-compose.yml" class="slide level2">
 <h2>Docker-compose file: <code>docker-compose.yml</code></h2>
@@ -492,7 +497,7 @@ Sky Sheng
 <span id="cb2-2"><a></a>  analysis-env:</span>
 <span id="cb2-3"><a></a>    image: rocker/rstudio:4.4.2</span>
 <span id="cb2-4"><a></a>    ports:</span>
-<span id="cb2-5"><a></a>      - "8787:8787"</span>
+<span id="cb2-5"><a></a>      - "8789:8787"</span>
 <span id="cb2-6"><a></a>    volumes:</span>
 <span id="cb2-7"><a></a>      - .:/home/rstudio/project</span>
 <span id="cb2-8"><a></a>    environment:</span>
@@ -502,6 +507,13 @@ Sky Sheng
 <span id="cb2-12"><a></a>        limits:</span>
 <span id="cb2-13"><a></a>          memory: 5G</span>
 <span id="cb2-14"><a></a>    platform: linux/amd64</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="how-to-use-docker-compose.yml" class="slide level2">
+<h2>How to use <code>docker-compose.yml</code>?</h2>
+<ul>
+<li>Launch the container: <code>docker compose up</code></li>
+<li>Stop the container: type <code>Cntrl + C</code> in the terminal where you launched the container, and then type <code>docker-compose rm</code></li>
+</ul>
 </section>
 <section id="todays-topic-lets-build-our-own-container" class="slide level2">
 <h2>Today’s topic: Let’s build our own <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/120-containerization-3.html">container</a>!</h2>

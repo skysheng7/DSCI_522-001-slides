@@ -141,7 +141,7 @@ format:
 
 ## 🚢 Docker Recap
 
-⚠️ Command lines are very sensitive to whitespace and quotation marks! 
+1. ⚠️ Command lines are very sensitive to whitespace and quotation marks! 
 
 ```{bash}
 docker run \
@@ -152,6 +152,8 @@ docker run \
 
 ```
 
+2. 🏷️ Don't use the TAG `latest` for the image, use the specific version tag instead.
+
 ## Docker-compose file: `docker-compose.yml`
 
 ```{yaml}
@@ -159,7 +161,7 @@ services:
   analysis-env:
     image: rocker/rstudio:4.4.2
     ports:
-      - "8787:8787"
+      - "8789:8787"
     volumes:
       - .:/home/rstudio/project
     environment:
@@ -170,6 +172,11 @@ services:
           memory: 5G
     platform: linux/amd64
 ```
+
+## How to use `docker-compose.yml`?
+
+* Launch the container: `docker compose up`
+* Stop the container: type `Cntrl + C` in the terminal where you launched the container, and then type `docker-compose rm`
 
 ## Today's topic: Let's build our own [container](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/120-containerization-3.html)!
 
