@@ -192,3 +192,8 @@ services:
 ## Today's topic: Let's build our own [container](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/120-containerization-3.html)!
 
 ![](images/docker_otter.png){style="position: fixed; bottom: -100px; left: -55px; margin: 0; padding: 0;"}
+
+# Docker images for RStudio, VSCode, and Cursor!
+
+* Daniel has kindly created this tutorial on how to build docker image for R environment managed by `renv`: [docker-renv](https://github.com/chendaniely/docker-renv.git)
+* Sky has created this tutorial for how to build docker image for VSCode & Cursor: [docker-vscode-cursor](https://github.com/skysheng7/docker-vscode-cursor.git)
