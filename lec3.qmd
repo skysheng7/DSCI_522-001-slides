@@ -11,7 +11,7 @@ format:
     logo: images/mds-hex-sticker.png
 ---
 
-## iClicker: How is your group collaboration going? {style="font-size: 0.8em;"}
+## iClicker: How is your group collaboration going?
 
 ::: {.column width="33%"}
 <div style="text-align: center; font-weight: bold; font-size: 24px; margin-bottom: 10px;">(A)</div>
@@ -110,7 +110,7 @@ format:
 |#Explicit lock file from `conda-lock.yml` <br> `conda-lock render -p linux-64` | `conda-linux-64.lock` |
 :::
 
-## 🙀 `conda-lock.yml` VS `conda-linux-64.lock`?
+## 🙀 `conda-lock.yml` VS `conda-linux-64.lock`? {style="font-size: 0.8em;"}
 
 ::: {style="font-size: 0.73em;"}
 | Feature | `conda-lock.yml` | `conda-linux-64.lock` |
