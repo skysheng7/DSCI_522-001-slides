@@ -35,18 +35,67 @@
     "text": "License\nThis work is licensed under the MIT License."
   },
   {
-    "objectID": "lec3.html#how-is-your-group-collaboration-going",
-    "href": "lec3.html#how-is-your-group-collaboration-going",
+    "objectID": "lec3.html#iclicker-how-is-your-group-collaboration-going",
+    "href": "lec3.html#iclicker-how-is-your-group-collaboration-going",
     "title": "DSCI 522 Lecture 3",
-    "section": "How is your group collaboration going?",
-    "text": "How is your group collaboration going?\n\n\n\n(A)\n\n\n\n\n\n\n(B)\n\n\n\n\n\n\n\n\n\n\n(C)\n\n\n\n\n\n\n\n\nSource"
+    "section": "iClicker: How is your group collaboration going?",
+    "text": "iClicker: How is your group collaboration going?\n\n\n\n(A)\n\n\n\n\n\n\n(B)\n\n\n\n\n\n\n\n\n\n\n(C)\n\n\n\n\n\n\n\n\nSource"
   },
   {
-    "objectID": "lec3.html#lets-build-our-own-container",
-    "href": "lec3.html#lets-build-our-own-container",
+    "objectID": "lec3.html#conda-recap",
+    "href": "lec3.html#conda-recap",
     "title": "DSCI 522 Lecture 3",
-    "section": "Let’s build our own container!",
-    "text": "Let’s build our own container!"
+    "section": "Conda Recap",
+    "text": "Conda Recap\n\n🧐 What are the commands for the following tasks?\n\nCreate a new conda environment\nList all conda environments\nActivate a conda environment\nDeactivate a conda environment\nRemove a conda environment\nList all packages in a conda environment\nRemove a package from a conda environment\nUpdate a package in a conda environment\nUpdate all packages in a conda environment\nShare a conda environment with someone else\nCreate a conda environment from environment.yml file\nDuplicate a conda environment"
+  },
+  {
+    "objectID": "lec3.html#conda-cheat-sheet-part-1",
+    "href": "lec3.html#conda-cheat-sheet-part-1",
+    "title": "DSCI 522 Lecture 3",
+    "section": "Conda Cheat Sheet Part 1️⃣",
+    "text": "Conda Cheat Sheet Part 1️⃣\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nCreate a new conda environment\nconda create -n &lt;env_name&gt;\n\n\nCreate with specific Python version\nconda create --name &lt;env_name&gt; python=3.11\n\n\nCreate with packages\nconda create --name &lt;env_name&gt; numpy pandas\n\n\nList all conda environments\nconda env list or conda info --envs\n\n\nActivate a conda environment\nconda activate &lt;env_name&gt;\n\n\nDeactivate a conda environment\nconda deactivate\n\n\nRemove a conda environment\nconda env remove -n &lt;env_name&gt;\n\n\nList all packages in environment\nconda list"
+  },
+  {
+    "objectID": "lec3.html#conda-cheat-sheet-part-2",
+    "href": "lec3.html#conda-cheat-sheet-part-2",
+    "title": "DSCI 522 Lecture 3",
+    "section": "Conda Cheat Sheet Part 2️⃣",
+    "text": "Conda Cheat Sheet Part 2️⃣\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nRemove a package from current environment\nconda remove &lt;package_name&gt;\n\n\nUpdate a package in current environment\nconda update &lt;package_name&gt;\n\n\nRemove a package in other environment\nconda remove -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate a package in other environment\nconda update -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate all packages in current environment\nconda update --all\n\n\nShare environment\nconda env export --from-history &gt; environment.yml\n\n\nCreate conda environment from environment.yml\nconda env create --file environment.yml\n\n\nDuplicate a conda environment\nconda create --name &lt;new_env&gt; --clone &lt;old_env&gt;"
+  },
+  {
+    "objectID": "lec3.html#command-line-notes",
+    "href": "lec3.html#command-line-notes",
+    "title": "DSCI 522 Lecture 3",
+    "section": "Command Line Notes",
+    "text": "Command Line Notes\n\n--name and -n are equivalent.\n--file and -f are equivalent.\n-p and --platform are equivalent, to specify the platform (e.g., linux-64, osx-arm64, win-64).\nMore command line review cheatsheet is here."
+  },
+  {
+    "objectID": "lec3.html#conda-lock-recap",
+    "href": "lec3.html#conda-lock-recap",
+    "title": "DSCI 522 Lecture 3",
+    "section": "Conda-lock Recap",
+    "text": "Conda-lock Recap\n🔒 What are the commands for the following tasks?\n\nGenerate a general conda-lock file for all platforms\nGenerate a conda-lock file for a specific platform"
+  },
+  {
+    "objectID": "lec3.html#conda-lock-cheat-sheet",
+    "href": "lec3.html#conda-lock-cheat-sheet",
+    "title": "DSCI 522 Lecture 3",
+    "section": "Conda-lock Cheat Sheet",
+    "text": "Conda-lock Cheat Sheet\n\n\n\n\n\n\n\n\nCommand\nOutput\n\n\n\n\n#General file all platforms  conda-lock lock --file environment.yml\nconda-lock.yml\n\n\n#General file for one platform (e.g., Linux)  conda-lock lock --file environment.yml -p linux-64\nconda-lock.yml\n\n\n#Explicit lock file for one platform (e.g., Linux)  conda-lock -k explicit --file environment.yml -p linux-64\nconda-linux-64.lock\n\n\n#Explicit lock file from conda-lock.yml  conda-lock render -p linux-64\nconda-linux-64.lock"
+  },
+  {
+    "objectID": "lec3.html#conda-lock.yml-vs-conda-linux-64.lock",
+    "href": "lec3.html#conda-lock.yml-vs-conda-linux-64.lock",
+    "title": "DSCI 522 Lecture 3",
+    "section": "🙀 conda-lock.yml VS conda-linux-64.lock?",
+    "text": "🙀 conda-lock.yml VS conda-linux-64.lock?\n\n\n\n\n\n\n\n\n\nFeature\nconda-lock.yml\nconda-linux-64.lock\n\n\n\n\nFormat\nUnified YAML (multi-platform)\nExplicit (single-platform)\n\n\nContent\nStructured metadata + dependencies for all platforms\nSimple list of package URLs\n\n\nFile Size\nLarger (contains all platforms)\nSmaller (one platform only)\n\n\nInstallation\nconda-lock install --name &lt;env_name&gt; conda-lock.yml\nconda create --name &lt;env_name&gt; --file conda-linux-64.lock\n\n\nUse case\nDevelopment across multiple platforms\nProduction deployment, Docker, single platform\n\n\nSpeed\nSlightly slower (conda-lock processes it)\nFastest"
+  },
+  {
+    "objectID": "lec3.html#todays-topic-lets-build-our-own-container",
+    "href": "lec3.html#todays-topic-lets-build-our-own-container",
+    "title": "DSCI 522 Lecture 3",
+    "section": "Today’s topic: Let’s build our own container!",
+    "text": "Today’s topic: Let’s build our own container!"
   },
   {
     "objectID": "lab1-intro.html#lab-attendence-policies",

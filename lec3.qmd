@@ -11,7 +11,7 @@ format:
     logo: images/mds-hex-sticker.png
 ---
 
-## How is your group collaboration going? 
+## iClicker: How is your group collaboration going? 
 
 ::::: columns
 ::: {.column width="40%"}
@@ -46,6 +46,94 @@ format:
 
 <p style="position: fixed; bottom: 0px; right: 0px; font-size: 20px; color: gray; z-index: 1000;">[Source](https://giphy.com)</p>
 
-## Let's build our own container!
+## [Conda](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/085-virtual_env-python-conda.html) Recap
+
+::: {style="font-size: 0.7em;"}
+🧐 What are the commands for the following tasks?
+
+- Create a new conda environment
+- List all conda environments
+- Activate a conda environment
+- Deactivate a conda environment
+- Remove a conda environment
+- List all packages in a conda environment
+- Remove a package from a conda environment
+- Update a package in a conda environment
+- Update all packages in a conda environment
+- Share a conda environment with someone else
+- Create a conda environment from `environment.yml` file
+- Duplicate a conda environment
+:::
+
+## Conda Cheat Sheet Part 1️⃣ 
+
+::: {style="font-size: 0.75em;"}
+| Task | Command |
+|------|---------|
+| Create a new conda environment | `conda create -n <env_name>` |
+| Create with specific Python version | `conda create --name <env_name> python=3.11` |
+| Create with packages | `conda create --name <env_name> numpy pandas` |
+| List all conda environments | `conda env list` or `conda info --envs` |
+| Activate a conda environment | `conda activate <env_name>` |
+| Deactivate a conda environment | `conda deactivate` |
+| Remove a conda environment | `conda env remove -n <env_name>` |
+| List all packages in environment | `conda list` |
+:::
+
+## Conda Cheat Sheet Part 2️⃣ 
+
+::: {style="font-size: 0.68em;"}
+| Task | Command |
+|------|---------|
+| Remove a package from **current** environment| `conda remove <package_name>` |
+| Update a package in **current** environment | `conda update <package_name>` |
+| Remove a package in **other** environment | `conda remove -n <env_name> <package_name>` |
+| Update a package in **other** environment | `conda update -n <env_name> <package_name>` |
+| Update all packages in **current** environment | `conda update --all` |
+| Share environment | `conda env export --from-history > environment.yml` |
+| Create conda environment from `environment.yml` | `conda env create --file environment.yml` |
+| Duplicate a conda environment | `conda create --name <new_env> --clone <old_env>` |
+:::
+
+## Command Line Notes
+
+* `--name` and `-n` are equivalent.
+* `--file` and `-f` are equivalent.
+* `-p` and `--platform` are equivalent, to specify the platform (e.g., `linux-64`, `osx-arm64`, `win-64`).
+* More command line review cheatsheet is [here](https://github.com/skysheng7/linux_command_in_aws_ec2/blob/main/linux_cheatsheet/basic_command_line.md).
+
+## [Conda-lock](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/090-conda-lock.html) Recap
+
+🔒 What are the commands for the following tasks?
+
+- Generate a general conda-lock file for all platforms
+- Generate a conda-lock file for a specific platform
+
+
+## Conda-lock Cheat Sheet
+
+::: {style="font-size: 0.7em;"}
+|Command | Output |
+|-------------------|-------|
+|#General file all platforms <br> `conda-lock lock --file environment.yml` | `conda-lock.yml` |
+|#General file for one platform (e.g., Linux) <br> `conda-lock lock --file environment.yml -p linux-64` | `conda-lock.yml` |
+|#Explicit lock file for one platform (e.g., Linux) <br> `conda-lock -k explicit --file environment.yml -p linux-64` | `conda-linux-64.lock` |
+|#Explicit lock file from `conda-lock.yml` <br> `conda-lock render -p linux-64` | `conda-linux-64.lock` |
+:::
+
+## 🙀 `conda-lock.yml` VS `conda-linux-64.lock`?
+
+::: {style="font-size: 0.73em;"}
+| Feature | `conda-lock.yml` | `conda-linux-64.lock` |
+|------|-----------------------|----------------------------|
+| **Format** | Unified YAML (multi-platform) | Explicit (single-platform) |
+| **Content** | Structured metadata + dependencies for all platforms | Simple list of package URLs |
+| **File Size** | Larger (contains all platforms) | Smaller (one platform only) |
+| **Installation** | `conda-lock install --name <env_name> conda-lock.yml` | `conda create --name <env_name> --file conda-linux-64.lock` |
+| **Use case** | Development across multiple platforms | Production deployment, Docker, single platform |
+| **Speed** | Slightly slower (conda-lock processes it) | Fastest |
+:::
+
+## Today's topic: Let's build our own [container](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/120-containerization-3.html)!
 
 ![](images/docker_otter.png){style="position: fixed; bottom: -100px; left: -55px; margin: 0; padding: 0;"}

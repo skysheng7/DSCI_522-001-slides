@@ -141,8 +141,8 @@ Sky Sheng
 </div>
 
 </section>
-<section id="how-is-your-group-collaboration-going" class="slide level2">
-<h2>How is your group collaboration going?</h2>
+<section id="iclicker-how-is-your-group-collaboration-going" class="slide level2">
+<h2>iClicker: How is your group collaboration going?</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div style="text-align: center; font-weight: bold; font-size: 24px; margin-bottom: 10px;">
@@ -176,8 +176,233 @@ Sky Sheng
 <a href="https://giphy.com">Source</a>
 </p>
 </section>
-<section id="lets-build-our-own-container" class="slide level2">
-<h2>Let’s build our own container!</h2>
+<section id="conda-recap" class="slide level2">
+<h2><a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/085-virtual_env-python-conda.html">Conda</a> Recap</h2>
+<div style="font-size: 0.7em;">
+<p>🧐 What are the commands for the following tasks?</p>
+<ul>
+<li>Create a new conda environment</li>
+<li>List all conda environments</li>
+<li>Activate a conda environment</li>
+<li>Deactivate a conda environment</li>
+<li>Remove a conda environment</li>
+<li>List all packages in a conda environment</li>
+<li>Remove a package from a conda environment</li>
+<li>Update a package in a conda environment</li>
+<li>Update all packages in a conda environment</li>
+<li>Share a conda environment with someone else</li>
+<li>Create a conda environment from <code>environment.yml</code> file</li>
+<li>Duplicate a conda environment</li>
+</ul>
+</div>
+</section>
+<section id="conda-cheat-sheet-part-1" class="slide level2">
+<h2>Conda Cheat Sheet Part 1️⃣</h2>
+<div style="font-size: 0.75em;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create a new conda environment</td>
+<td><code>conda create -n &lt;env_name&gt;</code></td>
+</tr>
+<tr class="even">
+<td>Create with specific Python version</td>
+<td><code>conda create --name &lt;env_name&gt; python=3.11</code></td>
+</tr>
+<tr class="odd">
+<td>Create with packages</td>
+<td><code>conda create --name &lt;env_name&gt; numpy pandas</code></td>
+</tr>
+<tr class="even">
+<td>List all conda environments</td>
+<td><code>conda env list</code> or <code>conda info --envs</code></td>
+</tr>
+<tr class="odd">
+<td>Activate a conda environment</td>
+<td><code>conda activate &lt;env_name&gt;</code></td>
+</tr>
+<tr class="even">
+<td>Deactivate a conda environment</td>
+<td><code>conda deactivate</code></td>
+</tr>
+<tr class="odd">
+<td>Remove a conda environment</td>
+<td><code>conda env remove -n &lt;env_name&gt;</code></td>
+</tr>
+<tr class="even">
+<td>List all packages in environment</td>
+<td><code>conda list</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="conda-cheat-sheet-part-2" class="slide level2">
+<h2>Conda Cheat Sheet Part 2️⃣</h2>
+<div style="font-size: 0.68em;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Remove a package from <strong>current</strong> environment</td>
+<td><code>conda remove &lt;package_name&gt;</code></td>
+</tr>
+<tr class="even">
+<td>Update a package in <strong>current</strong> environment</td>
+<td><code>conda update &lt;package_name&gt;</code></td>
+</tr>
+<tr class="odd">
+<td>Remove a package in <strong>other</strong> environment</td>
+<td><code>conda remove -n &lt;env_name&gt; &lt;package_name&gt;</code></td>
+</tr>
+<tr class="even">
+<td>Update a package in <strong>other</strong> environment</td>
+<td><code>conda update -n &lt;env_name&gt; &lt;package_name&gt;</code></td>
+</tr>
+<tr class="odd">
+<td>Update all packages in <strong>current</strong> environment</td>
+<td><code>conda update --all</code></td>
+</tr>
+<tr class="even">
+<td>Share environment</td>
+<td><code>conda env export --from-history &gt; environment.yml</code></td>
+</tr>
+<tr class="odd">
+<td>Create conda environment from <code>environment.yml</code></td>
+<td><code>conda env create --file environment.yml</code></td>
+</tr>
+<tr class="even">
+<td>Duplicate a conda environment</td>
+<td><code>conda create --name &lt;new_env&gt; --clone &lt;old_env&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="command-line-notes" class="slide level2">
+<h2>Command Line Notes</h2>
+<ul>
+<li><code>--name</code> and <code>-n</code> are equivalent.</li>
+<li><code>--file</code> and <code>-f</code> are equivalent.</li>
+<li><code>-p</code> and <code>--platform</code> are equivalent, to specify the platform (e.g., <code>linux-64</code>, <code>osx-arm64</code>, <code>win-64</code>).</li>
+<li>More command line review cheatsheet is <a href="https://github.com/skysheng7/linux_command_in_aws_ec2/blob/main/linux_cheatsheet/basic_command_line.md">here</a>.</li>
+</ul>
+</section>
+<section id="conda-lock-recap" class="slide level2">
+<h2><a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/090-conda-lock.html">Conda-lock</a> Recap</h2>
+<p>🔒 What are the commands for the following tasks?</p>
+<ul>
+<li>Generate a general conda-lock file for all platforms</li>
+<li>Generate a conda-lock file for a specific platform</li>
+</ul>
+</section>
+<section id="conda-lock-cheat-sheet" class="slide level2">
+<h2>Conda-lock Cheat Sheet</h2>
+<div style="font-size: 0.7em;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 73%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>#General file all platforms <br> <code>conda-lock lock --file environment.yml</code></td>
+<td><code>conda-lock.yml</code></td>
+</tr>
+<tr class="even">
+<td>#General file for one platform (e.g., Linux) <br> <code>conda-lock lock --file environment.yml -p linux-64</code></td>
+<td><code>conda-lock.yml</code></td>
+</tr>
+<tr class="odd">
+<td>#Explicit lock file for one platform (e.g., Linux) <br> <code>conda-lock -k explicit --file environment.yml -p linux-64</code></td>
+<td><code>conda-linux-64.lock</code></td>
+</tr>
+<tr class="even">
+<td>#Explicit lock file from <code>conda-lock.yml</code> <br> <code>conda-lock render -p linux-64</code></td>
+<td><code>conda-linux-64.lock</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="conda-lock.yml-vs-conda-linux-64.lock" class="slide level2">
+<h2>🙀 <code>conda-lock.yml</code> VS <code>conda-linux-64.lock</code>?</h2>
+<div style="font-size: 0.73em;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 40%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th><code>conda-lock.yml</code></th>
+<th><code>conda-linux-64.lock</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Format</strong></td>
+<td>Unified YAML (multi-platform)</td>
+<td>Explicit (single-platform)</td>
+</tr>
+<tr class="even">
+<td><strong>Content</strong></td>
+<td>Structured metadata + dependencies for all platforms</td>
+<td>Simple list of package URLs</td>
+</tr>
+<tr class="odd">
+<td><strong>File Size</strong></td>
+<td>Larger (contains all platforms)</td>
+<td>Smaller (one platform only)</td>
+</tr>
+<tr class="even">
+<td><strong>Installation</strong></td>
+<td><code>conda-lock install --name &lt;env_name&gt; conda-lock.yml</code></td>
+<td><code>conda create --name &lt;env_name&gt; --file conda-linux-64.lock</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Use case</strong></td>
+<td>Development across multiple platforms</td>
+<td>Production deployment, Docker, single platform</td>
+</tr>
+<tr class="even">
+<td><strong>Speed</strong></td>
+<td>Slightly slower (conda-lock processes it)</td>
+<td>Fastest</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="todays-topic-lets-build-our-own-container" class="slide level2">
+<h2>Today’s topic: Let’s build our own <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/120-containerization-3.html">container</a>!</h2>
 
 
 
