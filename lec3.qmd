@@ -134,6 +134,20 @@ format:
 | **Speed** | Slightly slower (conda-lock processes it) | Fastest |
 :::
 
+## Some data science conventions
+
+::: {style="font-size: 0.8em;"}
+* 🐍 Use snake_case for all folder & file names (lowercase + underscore)
+* Use Markdown for documentation. 
+    * Need a review? [Here is the markdown tutorial](https://www.markdowntutorial.com/)
+* yaml (`.yml` or `.yaml`) files for data storage and system configurations (NOT for documentation)
+    * YAML = Yet Another Markup Language
+    * No use of strict symbols (e.g., braces, square brackets)
+    * Use `#` for comments
+    * Python style indentation using whitespace (NOT TABS)
+    * JSON is **subset** of YAML. JSON file can be parsed by a YAML parser.
+:::
+
 ## Today's topic: Let's build our own [container](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/120-containerization-3.html)!
 
 ![](images/docker_otter.png){style="position: fixed; bottom: -100px; left: -55px; margin: 0; padding: 0;"}

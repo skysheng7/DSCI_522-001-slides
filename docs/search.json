@@ -91,6 +91,13 @@
     "text": "🙀 conda-lock.yml VS conda-linux-64.lock?\n\n\n\n\n\n\n\n\n\nFeature\nconda-lock.yml\nconda-linux-64.lock\n\n\n\n\nFormat\nUnified YAML (multi-platform)\nExplicit (single-platform)\n\n\nContent\nStructured metadata + dependencies for all platforms\nSimple list of package URLs\n\n\nFile Size\nLarger (contains all platforms)\nSmaller (one platform only)\n\n\nInstallation\nconda-lock install --name &lt;env_name&gt; conda-lock.yml\nconda create --name &lt;env_name&gt; --file conda-linux-64.lock\n\n\nUse case\nDevelopment across multiple platforms\nProduction deployment, Docker, single platform\n\n\nSpeed\nSlightly slower (conda-lock processes it)\nFastest"
   },
   {
+    "objectID": "lec3.html#some-data-science-conventions",
+    "href": "lec3.html#some-data-science-conventions",
+    "title": "DSCI 522 Lecture 3",
+    "section": "Some data science conventions",
+    "text": "Some data science conventions\n\n\n🐍 Use snake_case for all folder & file names (lowercase + underscore)\nUse Markdown for documentation.\n\nNeed a review? Here is the markdown tutorial\n\nyaml (.yml or .yaml) files for data storage and system configurations (NOT for documentation)\n\nYAML = Yet Another Markup Language\nNo use of strict symbols (e.g., braces, square brackets)\nUse # for comments\nPython style indentation using whitespace (NOT TABS)\nJSON is subset of YAML. JSON file can be parsed by a YAML parser."
+  },
+  {
     "objectID": "lec3.html#todays-topic-lets-build-our-own-container",
     "href": "lec3.html#todays-topic-lets-build-our-own-container",
     "title": "DSCI 522 Lecture 3",
