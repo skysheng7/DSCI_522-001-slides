@@ -98,6 +98,20 @@
     "text": "Some data science conventions\n\n\n🐍 Use snake_case for all folder & file names (lowercase + underscore)\nUse Markdown for documentation.\n\nNeed a review? Here is the markdown tutorial\n\nyaml (.yml or .yaml) files for data storage and system configurations (NOT for documentation)\n\nYAML = Yet Another Markup Language\nNo use of strict symbols (e.g., braces, square brackets)\nUse # for comments\nPython style indentation using whitespace (NOT TABS)\nJSON is subset of YAML. JSON file can be parsed by a YAML parser."
   },
   {
+    "objectID": "lec3.html#docker-recap",
+    "href": "lec3.html#docker-recap",
+    "title": "DSCI 522 Lecture 3",
+    "section": "🚢 Docker Recap",
+    "text": "🚢 Docker Recap\n⚠️ Command lines are very sensitive to whitespace and quotation marks!\n#| eval: false\ndocker run \\\n    --rm \\\n    -p 8788:8787 \\\n    -e PASSWORD=\"apassword\" \\\n    rocker/rstudio:4.4.2"
+  },
+  {
+    "objectID": "lec3.html#docker-compose-file-docker-compose.yml",
+    "href": "lec3.html#docker-compose-file-docker-compose.yml",
+    "title": "DSCI 522 Lecture 3",
+    "section": "Docker-compose file: docker-compose.yml",
+    "text": "Docker-compose file: docker-compose.yml\n#| eval: false\nservices:\n  analysis-env:\n    image: rocker/rstudio:4.4.2\n    ports:\n      - \"8787:8787\"\n    volumes:\n      - .:/home/rstudio/project\n    environment:\n      PASSWORD: password\n    deploy:\n      resources:\n        limits:\n          memory: 5G\n    platform: linux/amd64"
+  },
+  {
     "objectID": "lec3.html#todays-topic-lets-build-our-own-container",
     "href": "lec3.html#todays-topic-lets-build-our-own-container",
     "title": "DSCI 522 Lecture 3",

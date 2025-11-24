@@ -148,6 +148,40 @@ format:
     * JSON is **subset** of YAML. JSON file can be parsed by a YAML parser.
 :::
 
+## 🚢 Docker Recap
+
+⚠️ Command lines are very sensitive to whitespace and quotation marks! 
+
+```{bash}
+#| eval: false
+docker run \
+    --rm \
+    -p 8788:8787 \
+    -e PASSWORD="apassword" \
+    rocker/rstudio:4.4.2
+
+```
+
+## Docker-compose file: `docker-compose.yml`
+
+```{yaml}
+#| eval: false
+services:
+  analysis-env:
+    image: rocker/rstudio:4.4.2
+    ports:
+      - "8787:8787"
+    volumes:
+      - .:/home/rstudio/project
+    environment:
+      PASSWORD: password
+    deploy:
+      resources:
+        limits:
+          memory: 5G
+    platform: linux/amd64
+```
+
 ## Today's topic: Let's build our own [container](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/120-containerization-3.html)!
 
 ![](images/docker_otter.png){style="position: fixed; bottom: -100px; left: -55px; margin: 0; padding: 0;"}
