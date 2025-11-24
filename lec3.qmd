@@ -164,7 +164,7 @@ docker run \
 <p style="position: fixed; bottom: 0px; right: 0px; font-size: 20px; color: gray; z-index: 1000;">Source: Minions movie</p>
 
 
-## `docker-compose.yml` file comes to the rescue!
+## 🤩 `docker-compose.yml` file comes to the rescue!
 
 ```{yaml}
 services:
@@ -183,7 +183,7 @@ services:
     platform: linux/amd64
 ```
 
-## How to use `docker-compose.yml`?
+## 😳 But how to use `docker-compose.yml`?
 
 * Launch the container: `docker compose up`
 * Stop the container: type `Cntrl + C` in the terminal where you launched the container, and then type `docker-compose rm`

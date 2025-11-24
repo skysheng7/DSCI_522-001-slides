@@ -108,15 +108,15 @@
     "objectID": "lec3.html#docker-compose.yml-file-comes-to-the-rescue",
     "href": "lec3.html#docker-compose.yml-file-comes-to-the-rescue",
     "title": "DSCI 522 Lecture 3",
-    "section": "docker-compose.yml file comes to the rescue!",
-    "text": "docker-compose.yml file comes to the rescue!\nservices:\n  analysis-env:\n    image: rocker/rstudio:4.4.2\n    ports:\n      - \"8789:8787\"\n    volumes:\n      - .:/home/rstudio/project\n    environment:\n      PASSWORD: password\n    deploy:\n      resources:\n        limits:\n          memory: 5G\n    platform: linux/amd64"
+    "section": "🤩 docker-compose.yml file comes to the rescue!",
+    "text": "🤩 docker-compose.yml file comes to the rescue!\nservices:\n  analysis-env:\n    image: rocker/rstudio:4.4.2\n    ports:\n      - \"8789:8787\"\n    volumes:\n      - .:/home/rstudio/project\n    environment:\n      PASSWORD: password\n    deploy:\n      resources:\n        limits:\n          memory: 5G\n    platform: linux/amd64"
   },
   {
-    "objectID": "lec3.html#how-to-use-docker-compose.yml",
-    "href": "lec3.html#how-to-use-docker-compose.yml",
+    "objectID": "lec3.html#but-how-to-use-docker-compose.yml",
+    "href": "lec3.html#but-how-to-use-docker-compose.yml",
     "title": "DSCI 522 Lecture 3",
-    "section": "How to use docker-compose.yml?",
-    "text": "How to use docker-compose.yml?\n\nLaunch the container: docker compose up\nStop the container: type Cntrl + C in the terminal where you launched the container, and then type docker-compose rm\nRead more in the textbook here"
+    "section": "😳 But how to use docker-compose.yml?",
+    "text": "😳 But how to use docker-compose.yml?\n\nLaunch the container: docker compose up\nStop the container: type Cntrl + C in the terminal where you launched the container, and then type docker-compose rm\nRead more in the textbook here"
   },
   {
     "objectID": "lec3.html#todays-topic-lets-build-our-own-container",
