@@ -13,7 +13,6 @@ format:
 
 ## iClicker: How is your group collaboration going? {style="font-size: 0.8em;"}
 
-::::: columns
 ::: {.column width="32%"}
 <div style="text-align: center; font-weight: bold; font-size: 24px; margin-bottom: 10px;">(A)</div>
 <div style="text-align: center;">
@@ -35,7 +34,6 @@ format:
 </div>
 :::
 
-:::::
 
 <p style="position: fixed; bottom: 0px; right: 0px; font-size: 20px; color: gray; z-index: 1000;">[Source](https://giphy.com)</p>
 
