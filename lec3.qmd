@@ -13,7 +13,7 @@ format:
     logo: images/mds-hex-sticker.png
 ---
 
-## iClicker: How is your group collaboration going?
+## 😺 iClicker: How is your group collaboration going?
 
 ::: {.column width="33%"}
 <div style="text-align: center; font-weight: bold; font-size: 24px; margin-bottom: 10px;">(A)</div>
@@ -56,7 +56,7 @@ format:
 - Duplicate a conda environment
 :::
 
-## Conda Cheat Sheet Part 1️⃣ 
+## 📜 Conda Cheat Sheet Part 1️⃣ 
 
 ::: {style="font-size: 0.7em;"}
 | Task | Command |
@@ -72,7 +72,7 @@ format:
 | Remove a package from **current** environment| `conda remove <package_name>` |
 :::
 
-## Conda Cheat Sheet Part 2️⃣ 
+## 📜 Conda Cheat Sheet Part 2️⃣ 
 
 ::: {style="font-size: 0.65em;"}
 | Task | Command |
@@ -86,7 +86,7 @@ format:
 | Duplicate a conda environment | `conda create --name <new_env> --clone <old_env>` |
 :::
 
-## Command Line Notes
+## 📕 Command Line Notes
 
 * `--name` and `-n` are equivalent.
 * `--file` and `-f` are equivalent.
@@ -101,7 +101,7 @@ format:
 - Generate a conda-lock file for a specific platform
 
 
-## Conda-lock Cheat Sheet
+## 📜 Conda-lock Cheat Sheet
 
 ::: {style="font-size: 0.7em;"}
 |Command | Output |
@@ -153,6 +153,7 @@ docker run \
 ```
 
 2. 🏷️ Don't use the TAG `latest` for the image, use the specific version tag instead.
+3. Docker cheatsheet is available in [textbook](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/110-containerization-2.html)
 
 ## Docker-compose file: `docker-compose.yml`
 
@@ -177,6 +178,7 @@ services:
 
 * Launch the container: `docker compose up`
 * Stop the container: type `Cntrl + C` in the terminal where you launched the container, and then type `docker-compose rm`
+* Read more in the textbook [here](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/115-docker-compose.html)
 
 ## Today's topic: Let's build our own [container](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/120-containerization-3.html)!
 

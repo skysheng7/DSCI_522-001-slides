@@ -38,8 +38,8 @@
     "objectID": "lec3.html#iclicker-how-is-your-group-collaboration-going",
     "href": "lec3.html#iclicker-how-is-your-group-collaboration-going",
     "title": "DSCI 522 Lecture 3",
-    "section": "iClicker: How is your group collaboration going?",
-    "text": "iClicker: How is your group collaboration going?\n\n\n(A)\n\n\n\n\n\n\n(B)\n\n\n\n\n\n\n(C)\n\n\n\n\n\nSource"
+    "section": "😺 iClicker: How is your group collaboration going?",
+    "text": "😺 iClicker: How is your group collaboration going?\n\n\n(A)\n\n\n\n\n\n\n(B)\n\n\n\n\n\n\n(C)\n\n\n\n\n\nSource"
   },
   {
     "objectID": "lec3.html#conda-recap-how-to",
@@ -52,22 +52,22 @@
     "objectID": "lec3.html#conda-cheat-sheet-part-1",
     "href": "lec3.html#conda-cheat-sheet-part-1",
     "title": "DSCI 522 Lecture 3",
-    "section": "Conda Cheat Sheet Part 1️⃣",
-    "text": "Conda Cheat Sheet Part 1️⃣\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nCreate a new conda environment\nconda create -n &lt;env_name&gt;\n\n\nCreate with specific Python version\nconda create --name &lt;env_name&gt; python=3.11\n\n\nCreate with packages\nconda create --name &lt;env_name&gt; numpy pandas\n\n\nList all conda environments\nconda env list or conda info --envs\n\n\nActivate a conda environment\nconda activate &lt;env_name&gt;\n\n\nDeactivate a conda environment\nconda deactivate\n\n\nRemove a conda environment\nconda env remove -n &lt;env_name&gt;\n\n\nList all packages in environment\nconda list\n\n\nRemove a package from current environment\nconda remove &lt;package_name&gt;"
+    "section": "📜 Conda Cheat Sheet Part 1️⃣",
+    "text": "📜 Conda Cheat Sheet Part 1️⃣\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nCreate a new conda environment\nconda create -n &lt;env_name&gt;\n\n\nCreate with specific Python version\nconda create --name &lt;env_name&gt; python=3.11\n\n\nCreate with packages\nconda create --name &lt;env_name&gt; numpy pandas\n\n\nList all conda environments\nconda env list or conda info --envs\n\n\nActivate a conda environment\nconda activate &lt;env_name&gt;\n\n\nDeactivate a conda environment\nconda deactivate\n\n\nRemove a conda environment\nconda env remove -n &lt;env_name&gt;\n\n\nList all packages in environment\nconda list\n\n\nRemove a package from current environment\nconda remove &lt;package_name&gt;"
   },
   {
     "objectID": "lec3.html#conda-cheat-sheet-part-2",
     "href": "lec3.html#conda-cheat-sheet-part-2",
     "title": "DSCI 522 Lecture 3",
-    "section": "Conda Cheat Sheet Part 2️⃣",
-    "text": "Conda Cheat Sheet Part 2️⃣\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nUpdate a package in current environment\nconda update &lt;package_name&gt;\n\n\nRemove a package in other environment\nconda remove -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate a package in other environment\nconda update -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate all packages in current environment\nconda update --all\n\n\nShare environment\nconda env export --from-history &gt; environment.yml\n\n\nCreate conda environment from environment.yml\nconda env create --file environment.yml\n\n\nDuplicate a conda environment\nconda create --name &lt;new_env&gt; --clone &lt;old_env&gt;"
+    "section": "📜 Conda Cheat Sheet Part 2️⃣",
+    "text": "📜 Conda Cheat Sheet Part 2️⃣\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nUpdate a package in current environment\nconda update &lt;package_name&gt;\n\n\nRemove a package in other environment\nconda remove -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate a package in other environment\nconda update -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate all packages in current environment\nconda update --all\n\n\nShare environment\nconda env export --from-history &gt; environment.yml\n\n\nCreate conda environment from environment.yml\nconda env create --file environment.yml\n\n\nDuplicate a conda environment\nconda create --name &lt;new_env&gt; --clone &lt;old_env&gt;"
   },
   {
     "objectID": "lec3.html#command-line-notes",
     "href": "lec3.html#command-line-notes",
     "title": "DSCI 522 Lecture 3",
-    "section": "Command Line Notes",
-    "text": "Command Line Notes\n\n--name and -n are equivalent.\n--file and -f are equivalent.\n-p and --platform are equivalent, to specify the platform (e.g., linux-64, osx-arm64, win-64).\nMore command line review cheatsheet is here."
+    "section": "📕 Command Line Notes",
+    "text": "📕 Command Line Notes\n\n--name and -n are equivalent.\n--file and -f are equivalent.\n-p and --platform are equivalent, to specify the platform (e.g., linux-64, osx-arm64, win-64).\nMore command line review cheatsheet is here."
   },
   {
     "objectID": "lec3.html#conda-lock-recap",
@@ -80,8 +80,8 @@
     "objectID": "lec3.html#conda-lock-cheat-sheet",
     "href": "lec3.html#conda-lock-cheat-sheet",
     "title": "DSCI 522 Lecture 3",
-    "section": "Conda-lock Cheat Sheet",
-    "text": "Conda-lock Cheat Sheet\n\n\n\n\n\n\n\n\nCommand\nOutput\n\n\n\n\n#General file all platforms  conda-lock lock --file environment.yml\nconda-lock.yml\n\n\n#General file for one platform (e.g., Linux)  conda-lock lock --file environment.yml -p linux-64\nconda-lock.yml\n\n\n#Explicit lock file for one platform (e.g., Linux)  conda-lock -k explicit --file environment.yml -p linux-64\nconda-linux-64.lock\n\n\n#Explicit lock file from conda-lock.yml  conda-lock render -p linux-64\nconda-linux-64.lock"
+    "section": "📜 Conda-lock Cheat Sheet",
+    "text": "📜 Conda-lock Cheat Sheet\n\n\n\n\n\n\n\n\nCommand\nOutput\n\n\n\n\n#General file all platforms  conda-lock lock --file environment.yml\nconda-lock.yml\n\n\n#General file for one platform (e.g., Linux)  conda-lock lock --file environment.yml -p linux-64\nconda-lock.yml\n\n\n#Explicit lock file for one platform (e.g., Linux)  conda-lock -k explicit --file environment.yml -p linux-64\nconda-linux-64.lock\n\n\n#Explicit lock file from conda-lock.yml  conda-lock render -p linux-64\nconda-linux-64.lock"
   },
   {
     "objectID": "lec3.html#conda-lock.yml-vs-conda-linux-64.lock",
@@ -102,7 +102,7 @@
     "href": "lec3.html#docker-recap",
     "title": "DSCI 522 Lecture 3",
     "section": "🚢 Docker Recap",
-    "text": "🚢 Docker Recap\n\n⚠️ Command lines are very sensitive to whitespace and quotation marks!\n\ndocker run \\\n    --rm \\\n    -p 8788:8787 \\\n    -e PASSWORD=\"apassword\" \\\n    rocker/rstudio:4.4.2\n\n🏷️ Don’t use the TAG latest for the image, use the specific version tag instead."
+    "text": "🚢 Docker Recap\n\n⚠️ Command lines are very sensitive to whitespace and quotation marks!\n\ndocker run \\\n    --rm \\\n    -p 8788:8787 \\\n    -e PASSWORD=\"apassword\" \\\n    rocker/rstudio:4.4.2\n\n🏷️ Don’t use the TAG latest for the image, use the specific version tag instead.\nDocker cheatsheet is available in textbook"
   },
   {
     "objectID": "lec3.html#docker-compose-file-docker-compose.yml",
@@ -116,7 +116,7 @@
     "href": "lec3.html#how-to-use-docker-compose.yml",
     "title": "DSCI 522 Lecture 3",
     "section": "How to use docker-compose.yml?",
-    "text": "How to use docker-compose.yml?\n\nLaunch the container: docker compose up\nStop the container: type Cntrl + C in the terminal where you launched the container, and then type docker-compose rm"
+    "text": "How to use docker-compose.yml?\n\nLaunch the container: docker compose up\nStop the container: type Cntrl + C in the terminal where you launched the container, and then type docker-compose rm\nRead more in the textbook here"
   },
   {
     "objectID": "lec3.html#todays-topic-lets-build-our-own-container",
