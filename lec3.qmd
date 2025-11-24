@@ -180,7 +180,6 @@ services:
       resources:
         limits:
           memory: 5G
-    platform: linux/amd64
 ```
 
 ## 😳 But how to use `docker-compose.yml`?
@@ -197,3 +196,178 @@ services:
 
 * Daniel has kindly created this tutorial on how to build docker image for R environment managed by `renv`: [docker-renv](https://github.com/chendaniely/docker-renv.git)
 * Sky has created this tutorial for how to build docker image for VSCode & Cursor: [docker-vscode-cursor](https://github.com/skysheng7/docker-vscode-cursor.git)
+
+# Command line using `docker-compose.yml` file
+
+## Code we run in class: `docker-compose.yml` practice
+
+Step-by-step instructions:
+```{bash}
+# 1. Please first `cd` to a local folder of your choice, don't put all files in your home directory!
+# Example `cd` command: 
+cd /Users/skysheng/Desktop/github/dsci522
+
+# 2. make a new folder called `demo_docker` (or any other name you like)
+mkdir demo_docker
+
+# 3. move into that folder we just created
+cd demo_docker
+
+# 4. create a docker-copose.yml file using nano
+nano docker-compose.yml
+
+```
+
+## Code we run in class: `docker-compose.yml` practice
+
+5. Copy and paste the following code into the `docker-compose.yml` file. Local port is set at 8789, password is set to `password`, username is `rstudio`.
+```{yaml}
+services:
+  analysis-env:
+    image: rocker/rstudio:4.4.2
+    ports:
+      - "8789:8787"
+    volumes:
+      - .:/home/rstudio/project
+    environment:
+      PASSWORD: password
+    deploy:
+      resources:
+        limits:
+          memory: 5G
+```
+
+* You can also create this file using Graphical user interface (GUI) like VSCode. 
+* If you used `nano` to create this file, you need to press `Cntrl + X` to attempt exit, by default it will ask you to save the file. Press `Y` and then press `Enter` to save the file. 
+
+
+## Code we run in class: `docker-compose.yml` practice
+
+```{bash}
+# 6. Print out the content of the file to make sure it is correct.
+cat docker-compose.yml
+
+# 7. Launch the container using docker compose files.
+docker compose up
+```
+
+8. After the container is launched, your terminal will be hanging. You can open your browser and go to `http://localhost:8789` to access RStudio.
+
+9. To stop the container, you need to type `Cntrl + C` in the terminal where you launched the container, and then type: 
+
+```{bash}
+# 10. Remove the container.
+docker-compose rm
+```
+
+# Command line creating `Dockerfile` 
+
+## Code we run in class: `Dockerfile` practice
+
+Step-by-step instructions:
+```{bash}
+# 1. Please first `cd` to a local folder of your choice, don't put all files in your home directory!
+# Example `cd` command: 
+cd /Users/skysheng/Desktop/github/dsci522
+
+# 2. make a new folder called `demo_docker` (or any other name you like)
+mkdir demo_docker
+
+# 3. move into that folder we just created
+cd demo_docker
+
+# 4. create a environment.yml file using nano
+nano environment.yml
+```
+
+## Code we run in class: `Dockerfile` practice
+
+5. Copy and paste the following code into the `environment.yml` file.
+```{yaml}
+name: my_env
+channels:
+- conda-forge
+dependencies:
+- conda-lock=3.0.4
+- pandas=2.3.3
+- pandera=0.26.1
+- pip=25.3
+- python=3.11.14
+- pip:
+  - deepchecks==0.19.1
+```
+
+* You can also create this file using Graphical user interface (GUI) like VSCode. 
+* If you used `nano` to create this file, you need to press `Cntrl + X` to attempt exit, by default it will ask you to save the file. Press `Y` and then press `Enter` to save the file. 
+
+## Code we run in class: `Dockerfile` practice
+
+```{bash}
+# 6. Print out the content of the file to make sure it is correct.
+cat environment.yml
+```
+
+7. Create a conda-lock file using the following command: 
+
+* Macbook users with Apple Silicon chips will need to use the following command to create a explicit lock file for linux OS: 
+
+```{bash}
+conda-lock -k explicit --file environment.yml -p linux-aarch64
+```
+
+* Everyone else can use the following command: 
+
+```{bash}
+conda-lock -k explicit --file environment.yml -p linux-64
+```
+
+## Code we run in class: `Dockerfile` practice
+
+8. Create a Dockerfile file using nano, or you can use GUI like VSCode.
+
+```{bash}
+# 8.Create a Dockerfile file using nano, or you can use GUI like VSCode.
+nano Dockerfile 
+```
+
+9. Copy and paste the following code into the `Dockerfile` file. We use jupyter minimal notebook image as an example, and copy the conda-lock file to the container.
+
+* Macbook users with Apple Silicon chips will need to use the following code: 
+
+```{dockerfile}
+FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
+
+COPY conda-linux-aarch64.lock /tmp/conda-linux-aarch64.lock
+```
+
+* Everyone else can use the following code: 
+
+```{dockerfile}
+FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
+
+COPY conda-linux-64.lock /tmp/conda-linux-64.lock
+```
+
+## Code we run in class: `Dockerfile` practice
+
+10. Build the docker image locally using the following command: 
+
+```{bash}
+# 10. Build the docker image locally, with the tag name `testing_cmds`. 
+# pay attention to the dot at the end of the command! 
+docker build --tag testing_cmds .
+```
+
+11. Run the docker image you just built using the following command: 
+
+* Launch terminal only (Mac M4 chip you may run into bugs here):
+
+```{bash}
+docker run --rm -it testing_cmds ../../bin/bash
+```
+
+* Launch interactive terminal on web browser:
+
+```{bash}
+docker run --rm -it -p 8888:8888 testing_cmds
+```
