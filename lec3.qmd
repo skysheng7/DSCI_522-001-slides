@@ -11,7 +11,7 @@ format:
     logo: images/mds-hex-sticker.png
 ---
 
-## iClicker: How is your group collaboration going? 
+## iClicker: How is your group collaboration going? {style="font-size: 0.8em;"}
 
 ::::: columns
 ::: {.column width="32%"}
