@@ -28,11 +28,6 @@ Don't use the TAG `latest` for images. Always use **specific version tags** inst
 ### 📜 Basic Docker Run
 
 * Example command to run a docker container:
-    * `--rm`: Automatically remove container when it exits
-    * `-p 8788:8787`: Map host port 8788 to container port 8787
-    * `-e PASSWORD="apassword"`: Set RStudio password to be "appassword"
-    * `rocker/rstudio:4.4.2`: Image name with specific version tag
-* After the docker image successfully runs, you can access RStudio at: `http://localhost:8788`
 
 ```{bash}
 docker run \
@@ -42,6 +37,14 @@ docker run \
     rocker/rstudio:4.4.2
 
 ```
+* Explanation for the command above: 
+    * `--rm`: Automatically remove container when it exits
+    * `-p 8788:8787`: Map host port 8788 to container port 8787
+    * `-e PASSWORD="apassword"`: Set RStudio password to be "appassword"
+    * `rocker/rstudio:4.4.2`: Image name with specific version tag
+* After the docker image successfully runs, you can access RStudio at: `http://localhost:8788`
+
+
 
 ### Essential Docker Commands
 

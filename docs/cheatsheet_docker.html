@@ -236,7 +236,16 @@ Version Tags
 <section id="basic-docker-run" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="basic-docker-run"><span class="header-section-number">1.2</span> 📜 Basic Docker Run</h3>
 <ul>
-<li>Example command to run a docker container:
+<li>Example command to run a docker container:</li>
+</ul>
+<pre class="{bash}"><code>docker run \
+    --rm \
+    -p 8788:8787 \
+    -e PASSWORD="apassword" \
+    rocker/rstudio:4.4.2
+</code></pre>
+<ul>
+<li>Explanation for the command above:
 <ul>
 <li><code>--rm</code>: Automatically remove container when it exits</li>
 <li><code>-p 8788:8787</code>: Map host port 8788 to container port 8787</li>
@@ -245,12 +254,6 @@ Version Tags
 </ul></li>
 <li>After the docker image successfully runs, you can access RStudio at: <code>http://localhost:8788</code></li>
 </ul>
-<pre class="{bash}"><code>docker run \
-    --rm \
-    -p 8788:8787 \
-    -e PASSWORD="apassword" \
-    rocker/rstudio:4.4.2
-</code></pre>
 </section>
 <section id="essential-docker-commands" class="level3" data-number="1.3">
 <h3 data-number="1.3" class="anchored" data-anchor-id="essential-docker-commands"><span class="header-section-number">1.3</span> Essential Docker Commands</h3>
