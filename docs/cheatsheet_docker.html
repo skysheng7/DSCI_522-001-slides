@@ -8,7 +8,7 @@
 
 <meta name="author" content="Sky (Kehan) Sheng">
 
-<title>DSCI 522 Slides</title>
+<title>Docker &amp; Docker Compose Cheatsheet – DSCI 522 Slides</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -154,15 +154,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
-  <li><a href="#instructor" id="toc-instructor" class="nav-link" data-scroll-target="#instructor">Instructor</a></li>
-  <li><a href="#available-slides" id="toc-available-slides" class="nav-link" data-scroll-target="#available-slides">Available Slides</a>
+  <li><a href="#docker-basics" id="toc-docker-basics" class="nav-link active" data-scroll-target="#docker-basics"><span class="header-section-number">1</span> Docker Basics</a>
   <ul class="collapse">
-  <li><a href="#lectures" id="toc-lectures" class="nav-link" data-scroll-target="#lectures">Lectures</a></li>
-  <li><a href="#labs" id="toc-labs" class="nav-link" data-scroll-target="#labs">Labs</a></li>
-  <li><a href="#cheatsheets" id="toc-cheatsheets" class="nav-link" data-scroll-target="#cheatsheets">Cheatsheets</a></li>
+  <li><a href="#important-notes" id="toc-important-notes" class="nav-link" data-scroll-target="#important-notes"><span class="header-section-number">1.1</span> Important Notes</a></li>
+  <li><a href="#basic-docker-run" id="toc-basic-docker-run" class="nav-link" data-scroll-target="#basic-docker-run"><span class="header-section-number">1.2</span> 📜 Basic Docker Run</a></li>
+  <li><a href="#essential-docker-commands" id="toc-essential-docker-commands" class="nav-link" data-scroll-target="#essential-docker-commands"><span class="header-section-number">1.3</span> Essential Docker Commands</a></li>
   </ul></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  <li><a href="#docker-compose" id="toc-docker-compose" class="nav-link" data-scroll-target="#docker-compose"><span class="header-section-number">2</span> Docker Compose</a>
+  <ul class="collapse">
+  <li><a href="#why-use-docker-compose" id="toc-why-use-docker-compose" class="nav-link" data-scroll-target="#why-use-docker-compose"><span class="header-section-number">2.1</span> Why use Docker Compose?</a></li>
+  <li><a href="#basic-commands" id="toc-basic-commands" class="nav-link" data-scroll-target="#basic-commands"><span class="header-section-number">2.2</span> Basic Commands</a></li>
+  <li><a href="#code-we-run-in-class-docker-compose.yml-practice" id="toc-code-we-run-in-class-docker-compose.yml-practice" class="nav-link" data-scroll-target="#code-we-run-in-class-docker-compose.yml-practice"><span class="header-section-number">2.3</span> Code we run in class: <code>docker-compose.yml</code> practice</a></li>
+  </ul></li>
+  <li><a href="#dockerfile" id="toc-dockerfile" class="nav-link" data-scroll-target="#dockerfile"><span class="header-section-number">3</span> Dockerfile</a>
+  <ul class="collapse">
+  <li><a href="#code-we-run-in-class-dockerfile-practice" id="toc-code-we-run-in-class-dockerfile-practice" class="nav-link" data-scroll-target="#code-we-run-in-class-dockerfile-practice"><span class="header-section-number">3.1</span> Code we run in class: <code>Dockerfile</code> practice</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -171,8 +178,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DSCI 522 Slides</h1>
-<p class="subtitle lead">Reproducible and Trustworthy Data Science Workflow</p>
+<h1 class="title">Docker &amp; Docker Compose Cheatsheet</h1>
+<p class="subtitle lead">Quick Reference Guide for Docker Containerization</p>
 </div>
 
 
@@ -195,45 +202,396 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>This site contains lecture and lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow, in section 001, for 2025W1.</p>
+<section id="docker-basics" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="docker-basics"><span class="header-section-number">1</span> Docker Basics</h2>
+<section id="important-notes" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="important-notes"><span class="header-section-number">1.1</span> Important Notes</h3>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Command Line Sensitivity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Command lines are <strong>very sensitive</strong> to whitespace and quotation marks! Pay close attention to syntax.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Version Tags
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Don’t use the TAG <code>latest</code> for images. Always use <strong>specific version tags</strong> instead for reproducibility.</p>
+</div>
+</div>
 </section>
-<section id="instructor" class="level2">
-<h2 class="anchored" data-anchor-id="instructor">Instructor</h2>
-<p><strong>Sky (Kehan) Sheng</strong><br>
-University of British Columbia<br>
-<a href="https://www.skysheng.io">www.skysheng.io</a></p>
-</section>
-<section id="available-slides" class="level2">
-<h2 class="anchored" data-anchor-id="available-slides">Available Slides</h2>
-<section id="lectures" class="level3">
-<h3 class="anchored" data-anchor-id="lectures">Lectures</h3>
+<section id="basic-docker-run" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="basic-docker-run"><span class="header-section-number">1.2</span> 📜 Basic Docker Run</h3>
 <ul>
-<li><a href="lec1.html">Lecture 1</a> - Introduction to Reproducible and Trustworthy Data Science Workflow</li>
-<li><a href="lec2.html">Lecture 2</a> - Conda-lock, Containerization, and Docker</li>
-<li><a href="lec3.html">Lecture 3</a> - Customizing and Building Containers</li>
+<li>Example command to run a docker container:
+<ul>
+<li><code>--rm</code>: Automatically remove container when it exits</li>
+<li><code>-p 8788:8787</code>: Map host port 8788 to container port 8787</li>
+<li><code>-e PASSWORD="apassword"</code>: Set RStudio password to be “appassword”</li>
+<li><code>rocker/rstudio:4.4.2</code>: Image name with specific version tag</li>
+</ul></li>
+<li>After the docker image successfully runs, you can access RStudio at: <code>http://localhost:8788</code></li>
+</ul>
+<pre class="{bash}"><code>docker run \
+    --rm \
+    -p 8788:8787 \
+    -e PASSWORD="apassword" \
+    rocker/rstudio:4.4.2
+</code></pre>
+</section>
+<section id="essential-docker-commands" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="essential-docker-commands"><span class="header-section-number">1.3</span> Essential Docker Commands</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pull an image from Docker Hub</td>
+<td><code>docker pull &lt;image_name&gt;:&lt;tag&gt;</code></td>
+</tr>
+<tr class="even">
+<td>List all local images</td>
+<td><code>docker images</code></td>
+</tr>
+<tr class="odd">
+<td>List running containers</td>
+<td><code>docker ps</code></td>
+</tr>
+<tr class="even">
+<td>List all containers (including stopped)</td>
+<td><code>docker ps -a</code></td>
+</tr>
+<tr class="odd">
+<td>Remove an image</td>
+<td><code>docker rmi &lt;image_name&gt;:&lt;tag&gt;</code></td>
+</tr>
+<tr class="even">
+<td>Remove a container</td>
+<td><code>docker rm &lt;container_id&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Common flags:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--rm</code></td>
+<td>Automatically remove container when it exits</td>
+</tr>
+<tr class="even">
+<td><code>-it</code></td>
+<td>Interactive terminal (combine <code>-i</code> and <code>-t</code>)</td>
+</tr>
+<tr class="odd">
+<td><code>-p &lt;host_port&gt;:&lt;container_port&gt;</code></td>
+<td>Port mapping</td>
+</tr>
+<tr class="even">
+<td><code>-v &lt;host_path&gt;:&lt;container_path&gt;</code></td>
+<td>Volume mounting</td>
+</tr>
+<tr class="odd">
+<td><code>-e &lt;VAR&gt;=&lt;value&gt;</code></td>
+<td>Set environment variable</td>
+</tr>
+<tr class="even">
+<td><code>--platform &lt;platform&gt;</code> or <code>-p &lt;platform&gt;</code></td>
+<td>Specify platform (e.g., <code>linux/amd64</code>)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Read the full docker cheatsheet in <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/110-containerization-2.html">textbook</a></li>
 </ul>
 </section>
-<section id="labs" class="level3">
-<h3 class="anchored" data-anchor-id="labs">Labs</h3>
+</section>
+<section id="docker-compose" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="docker-compose"><span class="header-section-number">2</span> Docker Compose</h2>
+<section id="why-use-docker-compose" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="why-use-docker-compose"><span class="header-section-number">2.1</span> Why use Docker Compose?</h3>
+<p>We use <code>docker-compose.yml</code> file because it simplifies the process of typing complex <code>docker run</code> commands.</p>
+</section>
+<section id="basic-commands" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="basic-commands"><span class="header-section-number">2.2</span> Basic Commands</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Stark docker container</td>
+<td><code>docker compose up</code></td>
+</tr>
+<tr class="even">
+<td>Stop docker container</td>
+<td><code>Ctrl + C</code> (then <code>docker compose rm</code>)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="code-we-run-in-class-docker-compose.yml-practice" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="code-we-run-in-class-docker-compose.yml-practice"><span class="header-section-number">2.3</span> Code we run in class: <code>docker-compose.yml</code> practice</h3>
+<p>Step-by-step instructions:</p>
+<pre class="{bash}"><code># 1. Please first `cd` to a local folder of your choice, don't put all files in your home directory!
+# Example `cd` command: 
+cd /Users/skysheng/Desktop/github/dsci522
+
+# 2. make a new folder called `demo_docker` (or any other name you like)
+mkdir demo_docker
+
+# 3. move into that folder we just created
+cd demo_docker
+
+# 4. create a docker-copose.yml file using nano
+nano docker-compose.yml
+</code></pre>
+<ol start="5" type="1">
+<li>Copy and paste the following code into the <code>docker-compose.yml</code> file. Local port is set at 8789, password is set to <code>password</code>, username is <code>rstudio</code>.</li>
+</ol>
+<pre class="{yaml}"><code>services:
+  analysis-env:
+    image: rocker/rstudio:4.4.2
+    ports:
+      - "8789:8787"
+    volumes:
+      - .:/home/rstudio/project
+    environment:
+      PASSWORD: password
+    deploy:
+      resources:
+        limits:
+          memory: 5G</code></pre>
 <ul>
-<li><a href="lab1-intro.html">Lab 1 Introduction</a> - Introduction to reproducible workflows, lab policies, and getting started</li>
+<li>You can also create this file using Graphical user interface (GUI) like VSCode.</li>
+<li>If you used <code>nano</code> to create this file, you need to press <code>Cntrl + X</code> to attempt exit, by default it will ask you to save the file. Press <code>Y</code> and then press <code>Enter</code> to save the file.</li>
 </ul>
+<pre class="{bash}"><code># 6. Print out the content of the file to make sure it is correct.
+cat docker-compose.yml
+
+# 7. Launch the container using docker compose files.
+docker compose up</code></pre>
+<ol start="8" type="1">
+<li><p>After the container is launched, your terminal will be hanging. You can open your browser and go to <code>http://localhost:8789</code> to access RStudio.</p></li>
+<li><p>To stop the container, you need to type <code>Cntrl + C</code> in the terminal where you launched the container, and then type:</p></li>
+</ol>
+<pre class="{bash}"><code># 10. Remove the container.
+docker-compose rm</code></pre>
 </section>
-<section id="cheatsheets" class="level3">
-<h3 class="anchored" data-anchor-id="cheatsheets">Cheatsheets</h3>
+</section>
+<section id="dockerfile" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="dockerfile"><span class="header-section-number">3</span> Dockerfile</h2>
+<p>A <code>Dockerfile</code> contains instructions for building a custom Docker image.</p>
+<p><strong>Basic structure:</strong></p>
+<pre class="{dockerfile}"><code># Start with a base image
+FROM base_image:tag
+
+# Copy files
+COPY local_path container_path
+
+# Run commands
+RUN command
+
+# Set environment variables
+ENV VAR_NAME=value</code></pre>
+<section id="code-we-run-in-class-dockerfile-practice" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="code-we-run-in-class-dockerfile-practice"><span class="header-section-number">3.1</span> Code we run in class: <code>Dockerfile</code> practice</h3>
+<p>Step-by-step instructions:</p>
+<pre class="{bash}"><code># 1. Please first `cd` to a local folder of your choice, don't put all files in your home directory!
+# Example `cd` command: 
+cd /Users/skysheng/Desktop/github/dsci522
+
+# 2. make a new folder called `demo_docker` (or any other name you like)
+mkdir demo_docker
+
+# 3. move into that folder we just created
+cd demo_docker
+
+# 4. create a environment.yml file using nano
+nano environment.yml</code></pre>
+<ol start="5" type="1">
+<li>Copy and paste the following code into the <code>environment.yml</code> file.</li>
+</ol>
+<pre class="{yaml}"><code>name: my_env
+channels:
+- conda-forge
+dependencies:
+- conda-lock=3.0.4
+- pandas=2.3.3
+- pandera=0.26.1
+- pip=25.3
+- python=3.11.14
+- pip:
+  - deepchecks==0.19.1</code></pre>
 <ul>
-<li><a href="cheatsheet_conda.html">Conda &amp; Conda-lock Cheatsheet</a> - Quick reference for conda environment management and conda-lock</li>
-<li><a href="cheatsheet_docker.html">Docker &amp; Docker Compose Cheatsheet</a> - Quick reference for Docker containerization and Docker Compose</li>
+<li>You can also create this file using Graphical user interface (GUI) like VSCode.</li>
+<li>If you used <code>nano</code> to create this file, you need to press <code>Cntrl + X</code> to attempt exit, by default it will ask you to save the file. Press <code>Y</code> and then press <code>Enter</code> to save the file.</li>
 </ul>
-</section>
-</section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License</h2>
-<p>This work is licensed under the MIT License.</p>
+<pre class="{bash}"><code># 6. Print out the content of the file to make sure it is correct.
+cat environment.yml</code></pre>
+<ol start="7" type="1">
+<li>Create an explicit conda-lock file for linux OS using the following command:</li>
+</ol>
+<ul>
+<li>Macbook users with Apple Silicon chips (M1-M4 chips):
+<ul>
+<li>For <strong>Local testing:</strong> You will need to use the following command (command 1) to test the conda-lock file locally on your machine.</li>
+<li>For <strong>Remote GitHub deployment:</strong> You will need to run command 2 to create a conda-linux64.lock file for deployment on GitHub Actions using Ubuntu machine.</li>
+</ul></li>
+</ul>
+<pre class="{bash}"><code># command 1: 
+conda-lock -k explicit --file environment.yml -p linux-aarch64</code></pre>
+<ul>
+<li>Everyone else can use the following command for both local testing and Remote GitHub deployment:</li>
+</ul>
+<pre class="{bash}"><code># command 2: 
+conda-lock -k explicit --file environment.yml -p linux-64</code></pre>
+<ol start="8" type="1">
+<li>Create a Dockerfile file using nano, or you can use GUI like VSCode.</li>
+</ol>
+<pre class="{bash}"><code># 8.Create a Dockerfile file using nano, or you can use GUI like VSCode.
+nano Dockerfile </code></pre>
+<ol start="9" type="1">
+<li>Copy and paste the following code into the <code>Dockerfile</code> file. We use jupyter minimal notebook image as an example, and copy the conda-lock file to the container.</li>
+</ol>
+<ul>
+<li>Macbook users with Apple Silicon chips will need to:
+<ul>
+<li>For <strong>Local Dockerfile testing:</strong> Use the following code (Dockerfile 1) to copy the conda-linux-aarch64.lock file to the container.</li>
+<li>For <strong>Remote GitHub deployment:</strong> Use the other code (Dockerfile 2) to copy the conda-linux64.lock file to the container for deployment on GitHub Actions using Ubuntu machine.</li>
+</ul></li>
+</ul>
+<pre class="{dockerfile}"><code># Dockerfile 1
+FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
+
+COPY conda-linux-aarch64.lock /tmp/conda-linux-aarch64.lock</code></pre>
+<ul>
+<li>Everyone else can use the following code for both local testing and Remote GitHub deployment:</li>
+</ul>
+<pre class="{dockerfile}"><code># Dockerfile 2
+FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
+
+COPY conda-linux-64.lock /tmp/conda-linux-64.lock</code></pre>
+<ol start="10" type="1">
+<li>Build the docker image locally using the following command:</li>
+</ol>
+<pre class="{bash}"><code># 10. Build the docker image locally, with the tag name `testing_cmds`. 
+# pay attention to the dot at the end of the command! 
+docker build --tag testing_cmds .</code></pre>
+<ol start="11" type="1">
+<li>Run the docker image you just built using the following command:</li>
+</ol>
+<ul>
+<li>If you want to launch container’s terminal only:</li>
+</ul>
+<p><em>Note: For Macbook users with Apple Silicon chips M4 chip, you may run into bugs here. The terminal may open, but once you try to type something, it will crash and come back to the base terminal environment.</em></p>
+<pre class="{bash}"><code>docker run --rm -it testing_cmds ../../bin/bash</code></pre>
+<ul>
+<li>Launch interactive terminal on web browser:</li>
+</ul>
+<p><em>Note: For Macbook users with Apple Silicon chips M4 chip, this will work for you.</em></p>
+<pre class="{bash}"><code>docker run --rm -it -p 8888:8888 testing_cmds</code></pre>
+<p>Watch your terminal output for a unique URL beginning with http://127.0.0.1:8888/lab?token=. You’ll see it displayed as highlighted in the example screenshot below. Copy this URL and open it in your web browser to access the Jupyter Lab interface. You can access the terminal by clicking on the terminal icon inside of the Jupyter Lab interface.</p>
+<p><img src="images/jupyter_example.png" class="img-fluid"></p>
+<ol start="12" type="1">
+<li>Once you are in the terminal, you can test if this command works:</li>
+</ol>
+<p>This command will update the base environment with the packages you specified in the conda-lock file.</p>
+<pre class="{bash}"><code>conda update --quiet --file /tmp/conda-linux-64.lock</code></pre>
+<ol start="13" type="1">
+<li><p>If the above command works, you can exit the terminal by typing <code>exit</code>.</p></li>
+<li><p>Update the <code>Dockerfile</code> to include this newly tested command. <code>Dockerfile</code> now should look like this for Macbook users with Apple Silicon chips M1-M4 chip to test the command locally:</p></li>
+</ol>
+<pre class="{dockerfile}"><code># Dockerfile 1
+FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
+
+COPY conda-linux-aarch64.lock /tmp/conda-linux-aarch64.lock
+
+RUN conda update --quiet --file /tmp/conda-linux-aarch64.lock</code></pre>
+<p><code>Dockerfile</code> now should look like this for everyone else:</p>
+<pre class="{dockerfile}"><code># Dockerfile 2
+FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
+
+COPY conda-linux-64.lock /tmp/conda-linux-64.lock
+
+RUN conda update --quiet --file /tmp/conda-linux-64.lock</code></pre>
+<ol start="15" type="1">
+<li>Re-build the docker image locally using the following command:</li>
+</ol>
+<pre class="{bash}"><code># 15. Re-build the docker image locally, with the tag name `testing_cmds`. 
+# pay attention to the dot at the end of the command! 
+docker build --tag testing_cmds .</code></pre>
+<ol start="16" type="1">
+<li>Run the docker image you just built using the same command as step 11. Then continue to test the following commands line by line in the terminal. Iterate through steps 12-14 (build a docker image –&gt; run the docker container’s terminal –&gt; test new command –&gt; update the Dockerfile to include the new command –&gt; build docker image again …) until you are happy with your Dockerfile.</li>
+</ol>
+<pre class="{bash}"><code># Clean up the cache files in building conda environment.
+conda clean --all -y -f</code></pre>
+<pre class="{bash}"><code># Fix file permissions for the conda directory so all users can access it
+fix-permissions "${CONDA_DIR}"</code></pre>
+<pre class="{bash}"><code># Fix file permissions for the user's home directory so the notebook user can read/write files
+fix-permissions "/home/${NB_USER}"</code></pre>
+<ol start="17" type="1">
+<li>🎉 Final Dockerfile should look like this:</li>
+</ol>
+<ul>
+<li>Dockerfile for Macbook users with Apple Silicon chips M1-M4 chip testing locally:</li>
+</ul>
+<pre class="{dockerfile}"><code># Final Dockerfile
+FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
+
+COPY conda-linux-aarch64.lock /tmp/conda-linux-aarch64.lock
+
+RUN conda update --quiet --file /tmp/conda-linux-aarch64.lock
+RUN conda clean --all -y -f
+RUN fix-permissions "${CONDA_DIR}"
+RUN fix-permissions "/home/${NB_USER}"</code></pre>
+<ul>
+<li>Dockerfile for everyone else &amp; Macbook user using GitHub Actions to deploy docker image remotely:</li>
+</ul>
+<pre class="{dockerfile}"><code># Final Dockerfile
+FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
+
+COPY conda-linux-64.lock /tmp/conda-linux-64.lock
+
+RUN conda update --quiet --file /tmp/conda-linux-64.lock
+RUN conda clean --all -y -f
+RUN fix-permissions "${CONDA_DIR}"
+RUN fix-permissions "/home/${NB_USER}"</code></pre>
+<ol start="18" type="1">
+<li>Follow the same command in steps 10-11 to build and run the docker image you just built.</li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

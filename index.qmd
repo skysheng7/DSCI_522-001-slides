@@ -26,6 +26,11 @@ University of British Columbia
 
 - [Lab 1 Introduction](lab1-intro.html) - Introduction to reproducible workflows, lab policies, and getting started
 
+### Cheatsheets
+
+- [Conda & Conda-lock Cheatsheet](cheatsheet_conda.html) - Quick reference for conda environment management and conda-lock
+- [Docker & Docker Compose Cheatsheet](cheatsheet_docker.html) - Quick reference for Docker containerization and Docker Compose
+
 ## License
 
 This work is licensed under the MIT License.

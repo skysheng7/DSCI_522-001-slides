@@ -8,7 +8,7 @@
 
 <meta name="author" content="Sky (Kehan) Sheng">
 
-<title>DSCI 522 Slides</title>
+<title>Conda &amp; Conda-lock Cheatsheet – DSCI 522 Slides</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -154,15 +154,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
-  <li><a href="#instructor" id="toc-instructor" class="nav-link" data-scroll-target="#instructor">Instructor</a></li>
-  <li><a href="#available-slides" id="toc-available-slides" class="nav-link" data-scroll-target="#available-slides">Available Slides</a>
+  <li><a href="#conda-basics" id="toc-conda-basics" class="nav-link active" data-scroll-target="#conda-basics"><span class="header-section-number">1</span> Conda Basics</a>
   <ul class="collapse">
-  <li><a href="#lectures" id="toc-lectures" class="nav-link" data-scroll-target="#lectures">Lectures</a></li>
-  <li><a href="#labs" id="toc-labs" class="nav-link" data-scroll-target="#labs">Labs</a></li>
-  <li><a href="#cheatsheets" id="toc-cheatsheets" class="nav-link" data-scroll-target="#cheatsheets">Cheatsheets</a></li>
+  <li><a href="#manage-conda-environment" id="toc-manage-conda-environment" class="nav-link" data-scroll-target="#manage-conda-environment"><span class="header-section-number">1.1</span> Manage Conda Environment</a></li>
+  <li><a href="#manage-packages-in-conda-environment" id="toc-manage-packages-in-conda-environment" class="nav-link" data-scroll-target="#manage-packages-in-conda-environment"><span class="header-section-number">1.2</span> Manage Packages in Conda Environment</a></li>
+  <li><a href="#environment-sharing" id="toc-environment-sharing" class="nav-link" data-scroll-target="#environment-sharing"><span class="header-section-number">1.3</span> Environment Sharing</a></li>
   </ul></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  <li><a href="#command-line-notes" id="toc-command-line-notes" class="nav-link" data-scroll-target="#command-line-notes"><span class="header-section-number">2</span> Command Line Notes</a></li>
+  <li><a href="#conda-lock" id="toc-conda-lock" class="nav-link" data-scroll-target="#conda-lock"><span class="header-section-number">3</span> Conda-lock</a>
+  <ul class="collapse">
+  <li><a href="#basic-commands" id="toc-basic-commands" class="nav-link" data-scroll-target="#basic-commands"><span class="header-section-number">3.1</span> 📜 Basic Commands</a></li>
+  <li><a href="#comparing-conda-lock.yml-vs-conda-linux-64.lock" id="toc-comparing-conda-lock.yml-vs-conda-linux-64.lock" class="nav-link" data-scroll-target="#comparing-conda-lock.yml-vs-conda-linux-64.lock"><span class="header-section-number">3.2</span> 🙀 Comparing <code>conda-lock.yml</code> vs <code>conda-linux-64.lock</code></a></li>
+  <li><a href="#creating-environments-from-lock-files" id="toc-creating-environments-from-lock-files" class="nav-link" data-scroll-target="#creating-environments-from-lock-files"><span class="header-section-number">3.3</span> Creating Environments from Lock Files</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -171,8 +175,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DSCI 522 Slides</h1>
-<p class="subtitle lead">Reproducible and Trustworthy Data Science Workflow</p>
+<h1 class="title">Conda &amp; Conda-lock Cheatsheet</h1>
+<p class="subtitle lead">Quick Reference Guide for Conda Environment Management</p>
 </div>
 
 
@@ -195,45 +199,240 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p>This site contains lecture and lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow, in section 001, for 2025W1.</p>
+<section id="conda-basics" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="conda-basics"><span class="header-section-number">1</span> Conda Basics</h2>
+<section id="manage-conda-environment" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="manage-conda-environment"><span class="header-section-number">1.1</span> Manage Conda Environment</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create a new conda environment</td>
+<td><code>conda create -n &lt;env_name&gt;</code></td>
+</tr>
+<tr class="even">
+<td>Create with specific Python version</td>
+<td><code>conda create --name &lt;env_name&gt; python=3.11</code></td>
+</tr>
+<tr class="odd">
+<td>Create with packages</td>
+<td><code>conda create --name &lt;env_name&gt; numpy pandas</code></td>
+</tr>
+<tr class="even">
+<td>List all conda environments</td>
+<td><code>conda env list</code> or <code>conda info --envs</code></td>
+</tr>
+<tr class="odd">
+<td>Activate a conda environment</td>
+<td><code>conda activate &lt;env_name&gt;</code></td>
+</tr>
+<tr class="even">
+<td>Deactivate a conda environment</td>
+<td><code>conda deactivate</code></td>
+</tr>
+<tr class="odd">
+<td>Remove a conda environment</td>
+<td><code>conda env remove -n &lt;env_name&gt;</code></td>
+</tr>
+<tr class="even">
+<td>Duplicate a conda environment</td>
+<td><code>conda create --name &lt;new_env&gt; --clone &lt;old_env&gt;</code></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="instructor" class="level2">
-<h2 class="anchored" data-anchor-id="instructor">Instructor</h2>
-<p><strong>Sky (Kehan) Sheng</strong><br>
-University of British Columbia<br>
-<a href="https://www.skysheng.io">www.skysheng.io</a></p>
+<section id="manage-packages-in-conda-environment" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="manage-packages-in-conda-environment"><span class="header-section-number">1.2</span> Manage Packages in Conda Environment</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>List all packages in environment</td>
+<td><code>conda list</code></td>
+</tr>
+<tr class="even">
+<td>Remove a package from <strong>current</strong> environment</td>
+<td><code>conda remove &lt;package_name&gt;</code></td>
+</tr>
+<tr class="odd">
+<td>Update a package in <strong>current</strong> environment</td>
+<td><code>conda update &lt;package_name&gt;</code></td>
+</tr>
+<tr class="even">
+<td>Remove a package in <strong>other</strong> environment</td>
+<td><code>conda remove -n &lt;env_name&gt; &lt;package_name&gt;</code></td>
+</tr>
+<tr class="odd">
+<td>Update a package in <strong>other</strong> environment</td>
+<td><code>conda update -n &lt;env_name&gt; &lt;package_name&gt;</code></td>
+</tr>
+<tr class="even">
+<td>Update all packages in <strong>current</strong> environment</td>
+<td><code>conda update --all</code></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="available-slides" class="level2">
-<h2 class="anchored" data-anchor-id="available-slides">Available Slides</h2>
-<section id="lectures" class="level3">
-<h3 class="anchored" data-anchor-id="lectures">Lectures</h3>
+<section id="environment-sharing" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="environment-sharing"><span class="header-section-number">1.3</span> Environment Sharing</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Export environment (with history)</td>
+<td><code>conda env export --from-history &gt; environment.yml</code></td>
+</tr>
+<tr class="even">
+<td>Export environment (full)</td>
+<td><code>conda env export &gt; environment.yml</code></td>
+</tr>
+<tr class="odd">
+<td>Create environment from <code>environment.yml</code></td>
+<td><code>conda env create -n &lt;env_name&gt;</code> or <code>conda env create --file environment.yml</code></td>
+</tr>
+<tr class="even">
+<td>Update existing environment from file</td>
+<td><code>conda env update --file environment.yml --prune</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="command-line-notes" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="command-line-notes"><span class="header-section-number">2</span> Command Line Notes</h2>
 <ul>
-<li><a href="lec1.html">Lecture 1</a> - Introduction to Reproducible and Trustworthy Data Science Workflow</li>
-<li><a href="lec2.html">Lecture 2</a> - Conda-lock, Containerization, and Docker</li>
-<li><a href="lec3.html">Lecture 3</a> - Customizing and Building Containers</li>
+<li><code>--name</code> and <code>-n</code> are equivalent</li>
+<li><code>--file</code> and <code>-f</code> are equivalent</li>
+<li><code>--platform</code> and <code>-p</code> are equivalent, this is used to specify the platform (e.g., <code>linux-64</code>, <code>osx-arm64</code>, <code>win-64</code>)</li>
+<li>More command line review cheatsheet is available <a href="https://github.com/skysheng7/linux_command_in_aws_ec2/blob/main/linux_cheatsheet/basic_command_line.md">here</a></li>
 </ul>
 </section>
-<section id="labs" class="level3">
-<h3 class="anchored" data-anchor-id="labs">Labs</h3>
-<ul>
-<li><a href="lab1-intro.html">Lab 1 Introduction</a> - Introduction to reproducible workflows, lab policies, and getting started</li>
-</ul>
+<section id="conda-lock" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="conda-lock"><span class="header-section-number">3</span> Conda-lock</h2>
+<section id="basic-commands" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="basic-commands"><span class="header-section-number">3.1</span> 📜 Basic Commands</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 26%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Output</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>conda-lock lock --file environment.yml</code></td>
+<td><code>conda-lock.yml</code></td>
+<td>General lock file for all platforms</td>
+</tr>
+<tr class="even">
+<td><code>conda-lock lock --file environment.yml -p linux-64</code></td>
+<td><code>conda-lock.yml</code></td>
+<td>General lock file for specific platform (Linux)</td>
+</tr>
+<tr class="odd">
+<td><code>conda-lock -k explicit --file environment.yml -p linux-64</code></td>
+<td><code>conda-linux-64.lock</code></td>
+<td>Explicit lock file for one platform (Linux)</td>
+</tr>
+<tr class="even">
+<td><code>conda-lock render -p linux-64</code></td>
+<td><code>conda-linux-64.lock</code></td>
+<td>Explicit lock file from existing <code>conda-lock.yml</code></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="cheatsheets" class="level3">
-<h3 class="anchored" data-anchor-id="cheatsheets">Cheatsheets</h3>
-<ul>
-<li><a href="cheatsheet_conda.html">Conda &amp; Conda-lock Cheatsheet</a> - Quick reference for conda environment management and conda-lock</li>
-<li><a href="cheatsheet_docker.html">Docker &amp; Docker Compose Cheatsheet</a> - Quick reference for Docker containerization and Docker Compose</li>
-</ul>
+<section id="comparing-conda-lock.yml-vs-conda-linux-64.lock" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="comparing-conda-lock.yml-vs-conda-linux-64.lock"><span class="header-section-number">3.2</span> 🙀 Comparing <code>conda-lock.yml</code> vs <code>conda-linux-64.lock</code></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 40%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th><code>conda-lock.yml</code></th>
+<th><code>conda-linux-64.lock</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Format</strong></td>
+<td>Unified YAML (multi-platform)</td>
+<td>Explicit (single-platform)</td>
+</tr>
+<tr class="even">
+<td><strong>Content</strong></td>
+<td>Structured metadata + dependencies for all platforms</td>
+<td>Simple list of package URLs</td>
+</tr>
+<tr class="odd">
+<td><strong>File Size</strong></td>
+<td>Larger (contains all platforms)</td>
+<td>Smaller (one platform only)</td>
+</tr>
+<tr class="even">
+<td><strong>Installation</strong></td>
+<td><code>conda-lock install --name &lt;env_name&gt; conda-lock.yml</code></td>
+<td><code>conda create --name &lt;env_name&gt; --file conda-linux-64.lock</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Use case</strong></td>
+<td>Development across multiple platforms</td>
+<td>Production deployment, Docker, single platform</td>
+</tr>
+<tr class="even">
+<td><strong>Speed</strong></td>
+<td>Slightly slower (conda-lock processes it)</td>
+<td>Fastest</td>
+</tr>
+</tbody>
+</table>
 </section>
-</section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License</h2>
-<p>This work is licensed under the MIT License.</p>
+<section id="creating-environments-from-lock-files" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="creating-environments-from-lock-files"><span class="header-section-number">3.3</span> Creating Environments from Lock Files</h3>
+<p><strong>From <code>conda-lock.yml</code>:</strong></p>
+<pre class="{bash}"><code>conda-lock install --name &lt;env_name&gt; conda-lock.yml</code></pre>
+<p><strong>From explicit lock file (e.g., <code>conda-linux-64.lock</code>):</strong></p>
+<pre class="{bash}"><code>conda create --name &lt;env_name&gt; --file conda-linux-64.lock</code></pre>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

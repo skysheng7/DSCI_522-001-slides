@@ -20,6 +20,12 @@ website:
         menu:
           - text: "Lab 1"
             href: lab1-intro.html
+      - text: "Cheatsheets"
+        menu:
+          - text: "Conda & Conda-lock"
+            href: cheatsheet_conda.html
+          - text: "Docker & Docker Compose"
+            href: cheatsheet_docker.html
 
 format:
   html:

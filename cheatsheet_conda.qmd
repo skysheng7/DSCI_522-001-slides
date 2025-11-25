@@ -1,0 +1,90 @@
+---
+title: "Conda & Conda-lock Cheatsheet"
+subtitle: "Quick Reference Guide for Conda Environment Management"
+author: "Sky (Kehan) Sheng"
+execute:
+  eval: false
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+---
+
+## Conda Basics
+
+### Manage Conda Environment
+
+| Task | Command |
+|------|---------|
+| Create a new conda environment | `conda create -n <env_name>` |
+| Create with specific Python version | `conda create --name <env_name> python=3.11` |
+| Create with packages | `conda create --name <env_name> numpy pandas` |
+| List all conda environments | `conda env list` or `conda info --envs` |
+| Activate a conda environment | `conda activate <env_name>` |
+| Deactivate a conda environment | `conda deactivate` |
+| Remove a conda environment | `conda env remove -n <env_name>` |
+| Duplicate a conda environment | `conda create --name <new_env> --clone <old_env>` |
+
+
+### Manage Packages in Conda Environment
+
+| Task | Command |
+|------|---------|
+| List all packages in environment | `conda list` |
+| Remove a package from **current** environment| `conda remove <package_name>` |
+| Update a package in **current** environment | `conda update <package_name>` |
+| Remove a package in **other** environment | `conda remove -n <env_name> <package_name>` |
+| Update a package in **other** environment | `conda update -n <env_name> <package_name>` |
+| Update all packages in **current** environment | `conda update --all` |
+
+
+### Environment Sharing
+
+| Task | Command |
+|------|---------|
+| Export environment (with history) | `conda env export --from-history > environment.yml` |
+| Export environment (full) | `conda env export > environment.yml` |
+| Create environment from `environment.yml` | `conda env create -n <env_name>` or `conda env create --file environment.yml` |
+| Update existing environment from file | `conda env update --file environment.yml --prune` |
+
+## Command Line Notes
+
+* `--name` and `-n` are equivalent
+* `--file` and `-f` are equivalent
+* `--platform` and `-p` are equivalent, this is used to specify the platform (e.g., `linux-64`, `osx-arm64`, `win-64`)
+* More command line review cheatsheet is available [here](https://github.com/skysheng7/linux_command_in_aws_ec2/blob/main/linux_cheatsheet/basic_command_line.md)
+
+## Conda-lock
+
+### 📜 Basic Commands
+
+| Command | Output | Description |
+|---------|--------|-------------|
+| `conda-lock lock --file environment.yml` | `conda-lock.yml` | General lock file for all platforms |
+| `conda-lock lock --file environment.yml -p linux-64` | `conda-lock.yml` | General lock file for specific platform (Linux) |
+| `conda-lock -k explicit --file environment.yml -p linux-64` | `conda-linux-64.lock` | Explicit lock file for one platform (Linux) |
+| `conda-lock render -p linux-64` | `conda-linux-64.lock` | Explicit lock file from existing `conda-lock.yml` |
+
+### 🙀 Comparing `conda-lock.yml` vs `conda-linux-64.lock`
+
+| Feature | `conda-lock.yml` | `conda-linux-64.lock` |
+|------|-----------------------|----------------------------|
+| **Format** | Unified YAML (multi-platform) | Explicit (single-platform) |
+| **Content** | Structured metadata + dependencies for all platforms | Simple list of package URLs |
+| **File Size** | Larger (contains all platforms) | Smaller (one platform only) |
+| **Installation** | `conda-lock install --name <env_name> conda-lock.yml` | `conda create --name <env_name> --file conda-linux-64.lock` |
+| **Use case** | Development across multiple platforms | Production deployment, Docker, single platform |
+| **Speed** | Slightly slower (conda-lock processes it) | Fastest |
+
+### Creating Environments from Lock Files
+
+**From `conda-lock.yml`:**
+```{bash}
+conda-lock install --name <env_name> conda-lock.yml
+```
+
+**From explicit lock file (e.g., `conda-linux-64.lock`):**
+```{bash}
+conda create --name <env_name> --file conda-linux-64.lock
+```
