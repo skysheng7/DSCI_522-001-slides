@@ -35,7 +35,6 @@ docker run \
     -p 8788:8787 \
     -e PASSWORD="apassword" \
     rocker/rstudio:4.4.2
-
 ```
 * Explanation for the command above: 
     * `--rm`: Automatically remove container when it exits
@@ -99,7 +98,6 @@ cd demo_docker
 
 # 4. create a docker-copose.yml file using nano
 nano docker-compose.yml
-
 ```
 
 5. Copy and paste the following code into the `docker-compose.yml` file. Local port is set at 8789, password is set to `password`, username is `rstudio`.
