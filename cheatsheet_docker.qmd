@@ -84,19 +84,30 @@ We use `docker-compose.yml` file because it simplifies the process of typing com
 
 ### Code we run in class: `docker-compose.yml` practice
 
-Step-by-step instructions:
+**Step-by-step instructions:**
+
+1. Please first `cd` to a local folder of your choice, don't put all files in your home directory!
+
 ```{bash}
-# 1. Please first `cd` to a local folder of your choice, don't put all files in your home directory!
 # Example `cd` command: 
 cd /Users/skysheng/Desktop/github/dsci522
+```
 
-# 2. make a new folder called `demo_docker` (or any other name you like)
+2. Make a new folder called `demo_docker` (or any other name you like)
+
+```{bash}
 mkdir demo_docker
+```
 
-# 3. move into that folder we just created
+3. Move into that folder we just created
+
+```{bash}
 cd demo_docker
+```
 
-# 4. create a docker-copose.yml file using nano
+4. Create a docker-compose.yml file using nano
+
+```{bash}
 nano docker-compose.yml
 ```
 
@@ -118,14 +129,18 @@ services:
           memory: 5G
 ```
 
-* You can also create this file using Graphical user interface (GUI) like VSCode. 
-* If you used `nano` to create this file, you need to press `Cntrl + X` to attempt exit, by default it will ask you to save the file. Press `Y` and then press `Enter` to save the file. 
+   * You can also create this file using Graphical user interface (GUI) like VSCode. 
+   * If you used `nano` to create this file, you need to press `Cntrl + X` to attempt exit, by default it will ask you to save the file. Press `Y` and then press `Enter` to save the file. 
+
+6. Print out the content of the file to make sure it is correct.
 
 ```{bash}
-# 6. Print out the content of the file to make sure it is correct.
 cat docker-compose.yml
+```
 
-# 7. Launch the container using docker compose files.
+7. Launch the container using docker compose files.
+
+```{bash}
 docker compose up
 ```
 
@@ -134,7 +149,6 @@ docker compose up
 9. To stop the container, you need to type `Cntrl + C` in the terminal where you launched the container, and then type: 
 
 ```{bash}
-# 10. Remove the container.
 docker-compose rm
 ```
 
@@ -160,20 +174,30 @@ ENV VAR_NAME=value
 
 ### Code we run in class: `Dockerfile` practice
 
-Step-by-step instructions:
+**Step-by-step instructions:**
+
+1. Please first `cd` to a local folder of your choice, don't put all files in your home directory!
 
 ```{bash}
-# 1. Please first `cd` to a local folder of your choice, don't put all files in your home directory!
 # Example `cd` command: 
 cd /Users/skysheng/Desktop/github/dsci522
+```
 
-# 2. make a new folder called `demo_docker` (or any other name you like)
+2. Make a new folder called `demo_docker` (or any other name you like)
+
+```{bash}
 mkdir demo_docker
+```
 
-# 3. move into that folder we just created
+3. Move into that folder we just created
+
+```{bash}
 cd demo_docker
+```
 
-# 4. create a environment.yml file using nano
+4. Create a environment.yml file using nano
+
+```{bash}
 nano environment.yml
 ```
 
@@ -192,26 +216,27 @@ dependencies:
   - deepchecks==0.19.1
 ```
 
-* You can also create this file using Graphical user interface (GUI) like VSCode. 
-* If you used `nano` to create this file, you need to press `Cntrl + X` to attempt exit, by default it will ask you to save the file. Press `Y` and then press `Enter` to save the file. 
+   * You can also create this file using Graphical user interface (GUI) like VSCode. 
+   * If you used `nano` to create this file, you need to press `Cntrl + X` to attempt exit, by default it will ask you to save the file. Press `Y` and then press `Enter` to save the file. 
+
+6. Print out the content of the file to make sure it is correct.
 
 ```{bash}
-# 6. Print out the content of the file to make sure it is correct.
 cat environment.yml
 ```
 
 7. Create an explicit conda-lock file for linux OS using the following command: 
 
-* Macbook users with Apple Silicon chips (M1-M4 chips):
-    * For **Local testing:** You will need to use the following command (command 1) to test the conda-lock file locally on your machine. 
-    * For **Remote GitHub deployment:** You will need to run command 2 to create a conda-linux64.lock file for deployment on GitHub Actions using Ubuntu machine.
+   * Macbook users with Apple Silicon chips (M1-M4 chips):
+      * For **Local testing:** You will need to use the following command (command 1) to test the conda-lock file locally on your machine. 
+      * For **Remote GitHub deployment:** You will need to run command 2 to create a conda-linux64.lock file for deployment on GitHub Actions using Ubuntu machine.
 
 ```{bash}
 # command 1: 
 conda-lock -k explicit --file environment.yml -p linux-aarch64
 ```
 
-* Everyone else can use the following command for both local testing and Remote GitHub deployment: 
+   * Everyone else can use the following command for both local testing and Remote GitHub deployment: 
 
 ```{bash}
 # command 2: 
@@ -221,15 +246,14 @@ conda-lock -k explicit --file environment.yml -p linux-64
 8. Create a Dockerfile file using nano, or you can use GUI like VSCode.
 
 ```{bash}
-# 8.Create a Dockerfile file using nano, or you can use GUI like VSCode.
 nano Dockerfile 
 ```
 
 9. Copy and paste the following code into the `Dockerfile` file. We use jupyter minimal notebook image as an example, and copy the conda-lock file to the container.
 
-* Macbook users with Apple Silicon chips will need to:
-    * For **Local Dockerfile testing:** Use the following code (Dockerfile 1) to copy the conda-linux-aarch64.lock file to the container.
-    * For **Remote GitHub deployment:** Use the other code (Dockerfile 2) to copy the conda-linux64.lock file to the container for deployment on GitHub Actions using Ubuntu machine.
+   * Macbook users with Apple Silicon chips will need to:
+      * For **Local Dockerfile testing:** Use the following code (Dockerfile 1) to copy the conda-linux-aarch64.lock file to the container.
+      * For **Remote GitHub deployment:** Use the other code (Dockerfile 2) to copy the conda-linux64.lock file to the container for deployment on GitHub Actions using Ubuntu machine.
 
 ```{dockerfile}
 # Dockerfile 1
@@ -238,7 +262,7 @@ FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
 COPY conda-linux-aarch64.lock /tmp/conda-linux-aarch64.lock
 ```
 
-* Everyone else can use the following code for both local testing and Remote GitHub deployment: 
+   * Everyone else can use the following code for both local testing and Remote GitHub deployment: 
 
 ```{dockerfile}
 # Dockerfile 2
@@ -257,17 +281,17 @@ docker build --tag testing_cmds .
 
 11. Run the docker image you just built using the following command: 
 
-* If you want to launch container's terminal only:
+   * If you want to launch container's terminal only:
 
-*Note: For Macbook users with Apple Silicon chips M4 chip, you may run into bugs here. The terminal may open, but once you try to type something, it will crash and come back to the base terminal environment.*
+   *Note: For Macbook users with Apple Silicon chips M4 chip, you may run into bugs here. The terminal may open, but once you try to type something, it will crash and come back to the base terminal environment.*
 
 ```{bash}
 docker run --rm -it testing_cmds ../../bin/bash
 ```
 
-* Launch interactive terminal on web browser:
+   * Launch interactive terminal on web browser:
 
-*Note: For Macbook users with Apple Silicon chips M4 chip, this will work for you.*
+   *Note: For Macbook users with Apple Silicon chips M4 chip, this will work for you.*
 
 ```{bash}
 docker run --rm -it -p 8888:8888 testing_cmds
@@ -277,9 +301,7 @@ Watch your terminal output for a unique URL beginning with http://127.0.0.1:8888
 
 ![](images/jupyter_example.png)
 
-12. Once you are in the terminal, you can test if this command works:
-
-This command will update the base environment with the packages you specified in the conda-lock file.
+12. Once you are in the terminal, you can test if this command works. This command will update the base environment with the packages you specified in the conda-lock file.
 
 ```{bash}
 conda update --quiet --file /tmp/conda-linux-64.lock
@@ -336,7 +358,7 @@ fix-permissions "/home/${NB_USER}"
 
 17. 🎉 Final Dockerfile should look like this:
 
-* Dockerfile for Macbook users with Apple Silicon chips M1-M4 chip testing locally: 
+   * Dockerfile for Macbook users with Apple Silicon chips M1-M4 chip testing locally: 
 ```{dockerfile}
 # Final Dockerfile
 FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
@@ -349,7 +371,7 @@ RUN fix-permissions "${CONDA_DIR}"
 RUN fix-permissions "/home/${NB_USER}"
 ```
 
-* Dockerfile for everyone else & Macbook user using GitHub Actions to deploy docker image remotely: 
+   * Dockerfile for everyone else & Macbook user using GitHub Actions to deploy docker image remotely: 
 ```{dockerfile}
 # Final Dockerfile
 FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8

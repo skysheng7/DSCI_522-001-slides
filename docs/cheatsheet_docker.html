@@ -363,19 +363,24 @@ Version Tags
 </section>
 <section id="code-we-run-in-class-docker-compose.yml-practice" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="code-we-run-in-class-docker-compose.yml-practice"><span class="header-section-number">2.3</span> Code we run in class: <code>docker-compose.yml</code> practice</h3>
-<p>Step-by-step instructions:</p>
-<pre class="{bash}"><code># 1. Please first `cd` to a local folder of your choice, don't put all files in your home directory!
-# Example `cd` command: 
-cd /Users/skysheng/Desktop/github/dsci522
-
-# 2. make a new folder called `demo_docker` (or any other name you like)
-mkdir demo_docker
-
-# 3. move into that folder we just created
-cd demo_docker
-
-# 4. create a docker-copose.yml file using nano
-nano docker-compose.yml</code></pre>
+<p><strong>Step-by-step instructions:</strong></p>
+<ol type="1">
+<li>Please first <code>cd</code> to a local folder of your choice, don’t put all files in your home directory!</li>
+</ol>
+<pre class="{bash}"><code># Example `cd` command: 
+cd /Users/skysheng/Desktop/github/dsci522</code></pre>
+<ol start="2" type="1">
+<li>Make a new folder called <code>demo_docker</code> (or any other name you like)</li>
+</ol>
+<pre class="{bash}"><code>mkdir demo_docker</code></pre>
+<ol start="3" type="1">
+<li>Move into that folder we just created</li>
+</ol>
+<pre class="{bash}"><code>cd demo_docker</code></pre>
+<ol start="4" type="1">
+<li>Create a docker-compose.yml file using nano</li>
+</ol>
+<pre class="{bash}"><code>nano docker-compose.yml</code></pre>
 <ol start="5" type="1">
 <li>Copy and paste the following code into the <code>docker-compose.yml</code> file. Local port is set at 8789, password is set to <code>password</code>, username is <code>rstudio</code>.</li>
 </ol>
@@ -396,17 +401,19 @@ nano docker-compose.yml</code></pre>
 <li>You can also create this file using Graphical user interface (GUI) like VSCode.</li>
 <li>If you used <code>nano</code> to create this file, you need to press <code>Cntrl + X</code> to attempt exit, by default it will ask you to save the file. Press <code>Y</code> and then press <code>Enter</code> to save the file.</li>
 </ul>
-<pre class="{bash}"><code># 6. Print out the content of the file to make sure it is correct.
-cat docker-compose.yml
-
-# 7. Launch the container using docker compose files.
-docker compose up</code></pre>
+<ol start="6" type="1">
+<li>Print out the content of the file to make sure it is correct.</li>
+</ol>
+<pre class="{bash}"><code>cat docker-compose.yml</code></pre>
+<ol start="7" type="1">
+<li>Launch the container using docker compose files.</li>
+</ol>
+<pre class="{bash}"><code>docker compose up</code></pre>
 <ol start="8" type="1">
 <li><p>After the container is launched, your terminal will be hanging. You can open your browser and go to <code>http://localhost:8789</code> to access RStudio.</p></li>
 <li><p>To stop the container, you need to type <code>Cntrl + C</code> in the terminal where you launched the container, and then type:</p></li>
 </ol>
-<pre class="{bash}"><code># 10. Remove the container.
-docker-compose rm</code></pre>
+<pre class="{bash}"><code>docker-compose rm</code></pre>
 </section>
 </section>
 <section id="dockerfile" class="level2" data-number="3">
@@ -426,19 +433,24 @@ RUN command
 ENV VAR_NAME=value</code></pre>
 <section id="code-we-run-in-class-dockerfile-practice" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="code-we-run-in-class-dockerfile-practice"><span class="header-section-number">3.1</span> Code we run in class: <code>Dockerfile</code> practice</h3>
-<p>Step-by-step instructions:</p>
-<pre class="{bash}"><code># 1. Please first `cd` to a local folder of your choice, don't put all files in your home directory!
-# Example `cd` command: 
-cd /Users/skysheng/Desktop/github/dsci522
-
-# 2. make a new folder called `demo_docker` (or any other name you like)
-mkdir demo_docker
-
-# 3. move into that folder we just created
-cd demo_docker
-
-# 4. create a environment.yml file using nano
-nano environment.yml</code></pre>
+<p><strong>Step-by-step instructions:</strong></p>
+<ol type="1">
+<li>Please first <code>cd</code> to a local folder of your choice, don’t put all files in your home directory!</li>
+</ol>
+<pre class="{bash}"><code># Example `cd` command: 
+cd /Users/skysheng/Desktop/github/dsci522</code></pre>
+<ol start="2" type="1">
+<li>Make a new folder called <code>demo_docker</code> (or any other name you like)</li>
+</ol>
+<pre class="{bash}"><code>mkdir demo_docker</code></pre>
+<ol start="3" type="1">
+<li>Move into that folder we just created</li>
+</ol>
+<pre class="{bash}"><code>cd demo_docker</code></pre>
+<ol start="4" type="1">
+<li>Create a environment.yml file using nano</li>
+</ol>
+<pre class="{bash}"><code>nano environment.yml</code></pre>
 <ol start="5" type="1">
 <li>Copy and paste the following code into the <code>environment.yml</code> file.</li>
 </ol>
@@ -457,18 +469,20 @@ dependencies:
 <li>You can also create this file using Graphical user interface (GUI) like VSCode.</li>
 <li>If you used <code>nano</code> to create this file, you need to press <code>Cntrl + X</code> to attempt exit, by default it will ask you to save the file. Press <code>Y</code> and then press <code>Enter</code> to save the file.</li>
 </ul>
-<pre class="{bash}"><code># 6. Print out the content of the file to make sure it is correct.
-cat environment.yml</code></pre>
-<ol start="7" type="1">
-<li>Create an explicit conda-lock file for linux OS using the following command:</li>
+<ol start="6" type="1">
+<li>Print out the content of the file to make sure it is correct.</li>
 </ol>
+<pre class="{bash}"><code>cat environment.yml</code></pre>
+<ol start="7" type="1">
+<li><p>Create an explicit conda-lock file for linux OS using the following command:</p>
 <ul>
 <li>Macbook users with Apple Silicon chips (M1-M4 chips):
 <ul>
 <li>For <strong>Local testing:</strong> You will need to use the following command (command 1) to test the conda-lock file locally on your machine.</li>
 <li>For <strong>Remote GitHub deployment:</strong> You will need to run command 2 to create a conda-linux64.lock file for deployment on GitHub Actions using Ubuntu machine.</li>
 </ul></li>
-</ul>
+</ul></li>
+</ol>
 <pre class="{bash}"><code># command 1: 
 conda-lock -k explicit --file environment.yml -p linux-aarch64</code></pre>
 <ul>
@@ -479,18 +493,17 @@ conda-lock -k explicit --file environment.yml -p linux-64</code></pre>
 <ol start="8" type="1">
 <li>Create a Dockerfile file using nano, or you can use GUI like VSCode.</li>
 </ol>
-<pre class="{bash}"><code># 8.Create a Dockerfile file using nano, or you can use GUI like VSCode.
-nano Dockerfile </code></pre>
+<pre class="{bash}"><code>nano Dockerfile </code></pre>
 <ol start="9" type="1">
-<li>Copy and paste the following code into the <code>Dockerfile</code> file. We use jupyter minimal notebook image as an example, and copy the conda-lock file to the container.</li>
-</ol>
+<li><p>Copy and paste the following code into the <code>Dockerfile</code> file. We use jupyter minimal notebook image as an example, and copy the conda-lock file to the container.</p>
 <ul>
 <li>Macbook users with Apple Silicon chips will need to:
 <ul>
 <li>For <strong>Local Dockerfile testing:</strong> Use the following code (Dockerfile 1) to copy the conda-linux-aarch64.lock file to the container.</li>
 <li>For <strong>Remote GitHub deployment:</strong> Use the other code (Dockerfile 2) to copy the conda-linux64.lock file to the container for deployment on GitHub Actions using Ubuntu machine.</li>
 </ul></li>
-</ul>
+</ul></li>
+</ol>
 <pre class="{dockerfile}"><code># Dockerfile 1
 FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
 
@@ -524,9 +537,8 @@ docker build --tag testing_cmds .</code></pre>
 <p>Watch your terminal output for a unique URL beginning with http://127.0.0.1:8888/lab?token=. You’ll see it displayed as highlighted in the example screenshot below. Copy this URL and open it in your web browser to access the Jupyter Lab interface. You can access the terminal by clicking on the terminal icon inside of the Jupyter Lab interface.</p>
 <p><img src="images/jupyter_example.png" class="img-fluid"></p>
 <ol start="12" type="1">
-<li>Once you are in the terminal, you can test if this command works:</li>
+<li>Once you are in the terminal, you can test if this command works. This command will update the base environment with the packages you specified in the conda-lock file.</li>
 </ol>
-<p>This command will update the base environment with the packages you specified in the conda-lock file.</p>
 <pre class="{bash}"><code>conda update --quiet --file /tmp/conda-linux-64.lock</code></pre>
 <ol start="13" type="1">
 <li><p>If the above command works, you can exit the terminal by typing <code>exit</code>.</p></li>
