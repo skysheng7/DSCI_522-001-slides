@@ -16,6 +16,8 @@ website:
             href: lec2.html
           - text: "Lecture 3"
             href: lec3.html
+          - text: "Lecture 4"
+            href: lec4.html
       - text: "Labs"
         menu:
           - text: "Lab 1"
