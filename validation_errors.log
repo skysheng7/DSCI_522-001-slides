@@ -1,0 +1,25 @@
+2025-11-26 08:32:22,240 - 
+{
+  "DATA": {
+    "DATAFRAME_CHECK": [
+      {
+        "schema": null,
+        "column": "class",
+        "check": "isin(['Benign', 'Malignant'])",
+        "error": "Column 'class' failed element-wise validator number 0: isin(['Benign', 'Malignant']) failure cases: benign"
+      },
+      {
+        "schema": null,
+        "column": "mean_radius",
+        "check": "in_range(5, 45)",
+        "error": "Column 'mean_radius' failed element-wise validator number 0: in_range(5, 45) failure cases: -9999.0"
+      },
+      {
+        "schema": null,
+        "column": null,
+        "check": "Duplicate rows found.",
+        "error": "DataFrameSchema 'None' failed series or dataframe validator 0: <Check <lambda>: Duplicate rows found.>"
+      }
+    ]
+  }
+}
