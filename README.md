@@ -8,7 +8,7 @@ This repository contains the lab slides for DSCI 522, reproducible and trustwort
 
 The slides are hosted on GitHub Pages:
 
-- **Lab 1 Introduction**: [https://skysheng7.github.io/DSCI_522-001-lab-slides/lab1-intro.html](https://skysheng7.github.io/DSCI_522-001-lab-slides/lab1-intro.html)
+- [http://www.skysheng.io/DSCI_522-001-slides/](http://www.skysheng.io/DSCI_522-001-slides/)
 
 ## Local Development
 

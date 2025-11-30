@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/tabby.min.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-01c78b5cd655e4cd89133cf59d535862.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-01c78b5cd655e4cd89133cf59d535862.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.36">
 
   <meta name="author" content="Sky Sheng">
-  <title>DSCI 522 Slides – DSCI 522 Lecture 4</title>
+  <title>DSCI 522 Slides – DSCI 522 Lecture 1</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -28,79 +28,14 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-bbe7401fe57d4b791b917637bb662036.css">
-  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bbe7401fe57d4b791b917637bb662036.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -194,8 +129,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">DSCI 522 Lecture 4</h1>
-  <p class="subtitle">Data Validation with Pandera</p>
+  <h1 class="title">DSCI 522 Lecture 1</h1>
+  <p class="subtitle">Introduction to Reproducible and Trustworthy Data Science Workflow</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -206,127 +141,68 @@ Sky Sheng
 </div>
 
 </section>
-<section id="recap-docker-image-on-docker-hub-then-what" class="slide level2">
-<h2>Recap: Docker image on Docker Hub, then what?? 🤷‍♀️</h2>
-<ul>
-<li>Check out this <a href="https://hub.docker.com/r/skysheng7/ai_bias/tags">docker image for AI bias work</a></li>
-</ul>
+<section>
+<section id="welcome-back" class="title-slide slide level1 center">
+<h1>Welcome Back! 🎉</h1>
+<p>Hope you had a nice readings week!</p>
+<div class="columns" style="margin-top: -50px; padding-top: -10;">
+<p></p><div class="column" style="width:50%;">
 
-<img data-src="images/docker_hub.png" class="quarto-figure quarto-figure-center r-stretch" style="margin-bottom: 0px;"></section>
-<section id="next-steps-after-docker-image-on-dockerhub" class="slide level2">
-<h2>Next steps after Docker image on DockerHub</h2>
-<div class="smaller" style="font-size: 1em;">
-<ol type="1">
-<li>To access the docker image manually:</li>
-</ol>
-<ul>
-<li><code>docker pull username/image:tag</code></li>
-<li>Example: <code>docker pull ttimbers/breast-cancer-predictor:3f8675c</code></li>
-<li>Run the docker image using the following command</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">docker</span> run <span class="dt">\</span></span>
-<span id="cb1-2"><a></a>--rm <span class="dt">\</span></span>
-<span id="cb1-3"><a></a>-it <span class="dt">\</span></span>
-<span id="cb1-4"><a></a>-p 8887:8888 <span class="dt">\</span></span>
-<span id="cb1-5"><a></a>ttimbers/breast-cancer-predictor:3f8675c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="next-steps-after-docker-image-on-dockerhub-1" class="slide level2">
-<h2>Next steps after Docker image on DockerHub</h2>
-<div class="smaller" style="font-size: 1em;">
-<ol start="2" type="1">
-<li>To access the docker image using Docker Compose:</li>
-</ol>
-<ul>
-<li>Create a <code>docker-compose.yml</code> file</li>
-<li><code>docker compose up</code></li>
-<li><code>docker compose rm</code></li>
-</ul>
-<ol start="3" type="1">
-<li>Update your documentation (README, CONTRIBUTING, etc.) about how others should use your docker image.</li>
-</ol>
-</div>
-</section>
-<section id="lets-organize-our-complete-workflow" class="slide level2">
-<h2>🤩 Let’s organize our complete workflow!</h2>
-<div class="smaller" style="font-size: 0.8em;">
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>🔧 Local Development</strong></p>
-<ol type="1">
-<li><code>conda create</code> &amp; <code>conda install</code></li>
-<li>Create <code>environment.yml</code></li>
-<li>Add version numbers</li>
-<li>Generate <code>conda-lock</code> file</li>
-<li>Write <code>Dockerfile</code></li>
-<li>Create <code>docker-compose.yml</code></li>
-<li>Push to GitHub</li>
-</ol>
 </div><div class="column" style="width:50%;">
-<p><strong>☁️ CI/CD &amp; Deployment</strong></p>
-<ol start="8" type="1">
-<li>Add GitHub Actions workflow yml file</li>
-<li>Add Docker Hub Personal Access Token (PAT)</li>
-<li>Configure GitHub Secrets</li>
-<li>Workflow runs (auto/manual)</li>
-<li>Check Docker Hub for new image</li>
-<li>Locally, <code>docker pull</code> new image</li>
-<li>Locally, command line <code>docker run</code></li>
-</ol>
-</div></div>
-</div>
-</section>
-<section id="new-github-actions-workflow-yml-file" class="slide level2">
-<h2>🐳 New GitHub Actions Workflow yml file</h2>
-<ul>
-<li>Check out this new <a href="https://github.com/ttimbers/breast-cancer-predictor/blob/main/.github/workflows/docker-publish.yml">GitHub Actions workflow yml file</a> Tiffany created</li>
-<li>Now you can replace steps 13 + 14 to: <code>git pull</code> locally to extract updated <code>docker-compose.yml</code> file</li>
-<li>run <code>docker compose up</code> locally to start the container</li>
-<li>run <code>docker compose rm</code> locally to stop the container</li>
-</ul>
-</section>
-<section id="lets-breakdown-the-github-action-workflow" class="slide level2">
-<h2>Let’s breakdown the GitHub Action workflow!</h2>
-<ul>
-<li>Inspect a <a href="https://github.com/skysheng7/AI_bias_in_farming/actions/workflows/docker-publish.yml">workflow output</a></li>
-</ul>
-</section>
-<section id="what-is-in-dockerfile" class="slide level2">
-<h2>🙋‍♀️ What is <code>&amp;&amp; \</code> in Dockerfile?</h2>
-<div class="smaller" style="font-size: 0.8em;">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="co"># build on top of template of minimal notebook</span></span>
-<span id="cb2-2"><a></a><span class="ex">FROM</span> quay.io/jupyter/minimal-notebook:afe30f0c9ad8</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="co"># copy all conda environment dependencies</span></span>
-<span id="cb2-5"><a></a><span class="ex">COPY</span> conda-linux-64.lock /tmp/conda-linux-64.lock</span>
-<span id="cb2-6"><a></a></span>
-<span id="cb2-7"><a></a><span class="co"># copy my local python package files to pip install in docker</span></span>
-<span id="cb2-8"><a></a><span class="ex">COPY</span> pyproject.toml /tmp/pyproject.toml</span>
-<span id="cb2-9"><a></a><span class="ex">COPY</span> src /tmp/src</span>
-<span id="cb2-10"><a></a><span class="ex">COPY</span> README.md /tmp/README.md</span>
-<span id="cb2-11"><a></a></span>
-<span id="cb2-12"><a></a><span class="co"># conda install all the other packages</span></span>
-<span id="cb2-13"><a></a><span class="ex">RUN</span> mamba update <span class="at">--quiet</span> <span class="at">--file</span> /tmp/conda-linux-64.lock <span class="dt">\</span></span>
-<span id="cb2-14"><a></a>    <span class="kw">&amp;&amp;</span> <span class="ex">mamba</span> clean <span class="at">--all</span> <span class="at">-y</span> <span class="at">-f</span> <span class="dt">\</span></span>
-<span id="cb2-15"><a></a>    <span class="kw">&amp;&amp;</span> <span class="ex">fix-permissions</span> <span class="st">"</span><span class="va">${CONDA_DIR}</span><span class="st">"</span> <span class="dt">\</span></span>
-<span id="cb2-16"><a></a>    <span class="kw">&amp;&amp;</span> <span class="ex">fix-permissions</span> <span class="st">"/home/</span><span class="va">${NB_USER}</span><span class="st">"</span></span>
-<span id="cb2-17"><a></a></span>
-<span id="cb2-18"><a></a><span class="co"># install openai using pip because the openai package insatlled from conda has bug</span></span>
-<span id="cb2-19"><a></a><span class="co"># also install my local AI_representation_bias_in_farming as a python package</span></span>
-<span id="cb2-20"><a></a><span class="co"># 2025-06-22: added gpt-image-1 to the list of models</span></span>
-<span id="cb2-21"><a></a><span class="ex">RUN</span> pip install openai==1.57.0 <span class="dt">\</span></span>
-<span id="cb2-22"><a></a>    <span class="kw">&amp;&amp;</span> <span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">-e</span> /tmp </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="today-data-validation" class="slide level2">
-<h2>Today: Data Validation!</h2>
-
-<img data-src="images/garbage_otter.png" class="quarto-figure quarto-figure-center r-stretch" style="margin-bottom: 20px;"><p style="position: fixed; bottom: -10px; right: 0px; font-size: 18px; color: gray; z-index: 1000;">
+<div style="display: flex; justify-content: bottom; align-items: flex-start; margin-top: 0; padding-top: 0;">
+<p><img data-src="images/reading.png" style="margin-bottom: 0px;"></p>
+<p style="position: fixed; bottom: 0px; right: 5px; font-size: 18px; color: gray; z-index: 1000;">
 Image generated by OpenAI GPT-5
 </p>
+</div>
+</div></div>
 </section>
-<section id="remember-this-roast-my-repo" class="slide level2">
-<h2>Remember this roast my repo? 🔥</h2>
+<section id="who-loves-cooking" class="slide level2">
+<h2>👩‍🍳 Who loves cooking?</h2>
+
+<img data-src="images/slide1.png" style="margin-bottom: 0px;" class="r-stretch"></section>
+<section id="consequences-of-untested-systems" class="slide level2">
+<h2>💥 Consequences of Untested Systems</h2>
+<p>Untested system for radiation therapy: Terac-25</p>
+
+<img data-src="images/slide2.png" style="margin-bottom: 0px;" class="r-stretch"><div style="position: absolute; bottom: 10px; right: 20px; font-size: 0.5em;">
+<p>Source: <a href="https://en.wikipedia.org/wiki/Therac-25">Cleveland Clinic</a></p>
+</div>
+</section>
+<section id="consequences-of-untrustworthy-and-non-reproducible-paper" class="slide level2">
+<h2>💥 Consequences of Untrustworthy and non-reproducible Paper</h2>
+
+<img data-src="images/retract_paper.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 80px;" class="r-stretch"><div style="position: absolute; bottom: 0px; right: 0px; font-size: 0.5em;">
+<p>Source: <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/010-intro-to-ds-workflows.html">Timbers, T. A., Ostblom, J., D’Andrea, F., Lourenzutti, R., &amp; Chen, D. Reproducible and Trustworthy Workflows for Data Science</a></p>
+</div>
+</section>
+<section id="data-science-is" class="slide level2">
+<h2>👩‍💻 Data Science is…</h2>
+
+<img data-src="images/slide3.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 0px;" class="r-stretch"></section>
+<section id="data-science-is-1" class="slide level2">
+<h2>👩‍💻 Data Science is…</h2>
+
+<img data-src="images/slide4.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 0px;" class="r-stretch"><div style="position: absolute; bottom: 0px; right: 0px; font-size: 0.5em;">
+<p>Source: <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/010-intro-to-ds-workflows.html">Timbers, T. A., Ostblom, J., D’Andrea, F., Lourenzutti, R., &amp; Chen, D. Reproducible and Trustworthy Workflows for Data Science</a></p>
+</div>
+</section>
+<section id="reproducible-analysis" class="slide level2">
+<h2>💡 Reproducible analysis:</h2>
+
+<img data-src="images/slide5.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 80px;" class="r-stretch"><div style="position: absolute; bottom: 0px; right: 0px; font-size: 0.5em;">
+<p>Source: <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/010-intro-to-ds-workflows.html">Timbers, T. A., Ostblom, J., D’Andrea, F., Lourenzutti, R., &amp; Chen, D. Reproducible and Trustworthy Workflows for Data Science</a></p>
+</div>
+</section>
+<section id="auditabletransparent-analysis" class="slide level2">
+<h2>🧐 Auditable/transparent analysis:</h2>
+
+<img data-src="images/slide6.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 0px;" class="r-stretch"><div style="position: absolute; bottom: 0px; right: 0px; font-size: 0.5em;">
+<p>Source: <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/010-intro-to-ds-workflows.html">Timbers, T. A., Ostblom, J., D’Andrea, F., Lourenzutti, R., &amp; Chen, D. Reproducible and Trustworthy Workflows for Data Science</a></p>
+</div>
+</section>
+<section id="roast-my-repo" class="slide level2">
+<h2>🔥 Roast my repo!</h2>
 <div style="font-size: 1.5em; text-align: left; margin: 0 auto; display: block;">
 <p><a href="https://shorturl.at/QSv7M" class="uri">https://shorturl.at/QSv7M</a></p>
 </div>
@@ -341,33 +217,135 @@ Image generated by OpenAI GPT-5
 </div>
 </div></div>
 </section>
-<section id="data-validation-in-action" class="title-slide slide level1 center">
-<h1>Data validation in action</h1>
-<p>Check out this <a href="https://www.skysheng.io/moo4feed/articles/data_cleaning.html">data cleaning script</a> I created for the Moo4Feed R package</p>
-</section>
+<section class="slide level2">
 
-<section>
-<section id="data-validation-checklist" class="title-slide slide level1 center">
-<h1>✅ Data validation <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/130-data-validation.html">checklist</a></h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="background-color: #f9e6a3; padding: 30px; border-radius: 20px; position: relative;">
+<div style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%);">
+<p>😟</p>
+</div>
+<div style="font-size: 0.7em;">
 <ul>
-<li>Group Milestone 2: Make sure you check all the boxes!</li>
+<li>It does not run anymore! 😱</li>
+<li>It was saved only on my computer, no version control!</li>
+<li>Different code chunks run on different computers with different operating systems</li>
+<li>Different code chunks take in different data sources (stored in various locations on my computer)</li>
+<li>No modular scripts/functions, hard to reuse</li>
+<li>Not tested at all</li>
+<li>Heavy cognitive load for new user (my poor biology colleagues)</li>
+<li>The file name is long &amp; not intuitive</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="background-color: #b8d98f; padding: 30px; border-radius: 20px; position: relative;">
+<div style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%);">
+<p>😊</p>
+</div>
+<ul>
+<li>Well documented</li>
+<li>Organized into different “chapters”</li>
+<li>“It run on my computer at that time”</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="what-is-version-control" class="slide level2">
+<h2>what is version control?</h2>
+<ul>
+<li><a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/050-version-control-2.html">Version control (for transparency and collaboration)</a></li>
+</ul>
+
+<img data-src="images/Github.png" class="quarto-figure quarto-figure-center r-stretch" width="120"></section>
+<section id="share-your-story" class="slide level2">
+<h2>💭 Share your story</h2>
+<ul>
+<li><p>Think and write down a non-reproducible, or non-auditable, workflow you have used before at work, on a personal project, or in course work, that negatively impacted your work somehow (make sure to include this in the story).</p></li>
+<li><p><strong>Share your story in the <a href="https://docs.google.com/document/d/1VzhEGG2NF6d-SSoslFrSNqe1cHDYa1Mc2t8N5XnCkPU/edit?usp=sharing">Google Doc</a></strong></p></li>
+<li><p>Activity in <a href="(https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/010-intro-to-ds-workflows.html)">textbook</a></p></li>
 </ul>
 </section>
-<section id="lets-work-with-pandera" class="slide level2">
-<h2>💻 Let’s work with <a href="https://github.com/skysheng7/DSCI522_data_validation_demo.git">Pandera</a>!</h2>
-
-<img data-src="images/validate_otter.png" class="quarto-figure quarto-figure-center r-stretch" style="margin-bottom: 20px;"><p style="position: fixed; bottom: -10px; right: 0px; font-size: 18px; color: gray; z-index: 1000;">
-Image generated by OpenAI GPT-5
-</p>
+<section id="clean-well-documented-and-distributable-code" class="slide level2">
+<h2>✨ Clean, well documented and distributable code</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><strong>Practice</strong></th>
+<th><strong>Benefit</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Well-documented</td>
+<td>Easily understandable</td>
+</tr>
+<tr class="even">
+<td>Modular code</td>
+<td>Easy to reuse</td>
+</tr>
+<tr class="odd">
+<td>Well-tested code</td>
+<td>Reliable</td>
+</tr>
+<tr class="even">
+<td>Portable across machines</td>
+<td>Easily accessible</td>
+</tr>
+</tbody>
+</table>
+<div style="position: absolute; bottom: 0px; right: 0px; font-size: 0.5em;">
+<p>Source: Ma, E. J. (2024, October 25). The Human Dimension to Clean, Distributable, and Documented Data Science Code.</p>
+</div>
 </section>
-<section id="discuss-with-your-group-how-will-you-conduct-data-validation-for-your-data-to-check-all-the-boxes" class="slide level2">
-<h2>💬 Discuss with your group: How will you conduct data validation for your data to check all the boxes?</h2>
+<section id="why-do-we-need-virtual-environment" class="slide level2">
+<h2>Why do we need virtual environment?</h2>
+
+<img data-src="images/slide3.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 0px;" class="r-stretch"></section>
+<section id="toothbrushes-for-different-projects" class="slide level2">
+<h2>🦷 Toothbrushes for different “projects”</h2>
+
+<img data-src="images/slide15.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 0px;" class="r-stretch"></section>
+<section id="which-toothbrush-should-i-use-for-my-oral-hygiene" class="slide level2">
+<h2>Which toothbrush should I use for my oral hygiene??</h2>
+
+<img data-src="images/slide16.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 0px;" class="r-stretch"></section>
+<section id="organize-tools-into-separate-boxes" class="slide level2">
+<h2>📦 Organize tools into separate boxes</h2>
+
+<img data-src="images/slide17.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 0px;" class="r-stretch"></section>
+<section id="organize-programming-language-packages-into-separate-virtual-environments" class="slide level2">
+<h2>Organize programming language &amp; packages into separate virtual environments</h2>
+
+<img data-src="images/slide18.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 0px;" class="r-stretch"></section>
+<section id="different-virtual-environment-management-tools" class="slide level2">
+<h2>🔧 Different virtual environment management tools</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="for-r">For R:</h3>
 <ul>
-<li>✅ Data validation <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/130-data-validation.html">checklist</a></li>
+<li>packrat</li>
+<li>renv</li>
+<li>conda</li>
 </ul>
-
-
+</div><div class="column" style="width:50%;">
+<h3 id="for-python">For Python:</h3>
+<ul>
+<li>venv</li>
+<li>virtualenv</li>
+<li>conda</li>
+<li>mamba</li>
+<li>poetry</li>
+<li>pipenv</li>
+<li>…</li>
+</ul>
+</div></div>
 </section></section>
+<section id="lets-create-our-conda-virtual-environment" class="title-slide slide level1 center">
+<h1>🤩 Let’s create our conda virtual environment!</h1>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="images/mds-hex-sticker.png" class="slide-logo"></p>
@@ -377,20 +355,20 @@ Image generated by OpenAI GPT-5
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

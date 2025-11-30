@@ -11,23 +11,25 @@ website:
       - text: "Lectures"
         menu:
           - text: "Lecture 1"
-            href: lec1.html
+            href: lectures/lec1.html
           - text: "Lecture 2"
-            href: lec2.html
+            href: lectures/lec2.html
           - text: "Lecture 3"
-            href: lec3.html
+            href: lectures/lec3.html
           - text: "Lecture 4"
-            href: lec4.html
+            href: lectures/lec4.html
+          - text: "Lecture 5"
+            href: lectures/lec5.html
       - text: "Labs"
         menu:
           - text: "Lab 1"
-            href: lab1-intro.html
+            href: labs/lab1-intro.html
       - text: "Cheatsheets"
         menu:
           - text: "Conda & Conda-lock"
-            href: cheatsheet_conda.html
+            href: cheatsheets/cheatsheet_conda.html
           - text: "Docker & Docker Compose"
-            href: cheatsheet_docker.html
+            href: cheatsheets/cheatsheet_docker.html
 
 format:
   html:

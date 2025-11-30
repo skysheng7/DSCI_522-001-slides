@@ -1,0 +1,51 @@
+---
+title: "DSCI 522 Lecture 5"
+subtitle: "Non-interactive scripts"
+author: "Sky Sheng"
+execute:
+  eval: false
+format:
+  revealjs:
+    theme: default
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    logo: images/mds-hex-sticker.png
+---
+
+## iClicker: How are you getting along with Docker?
+
+::: {.columns}
+::: {.column width="50%"}
+<div style="text-align: center; font-weight: bold; font-size: 24px; margin-bottom: 2px;">(A)</div>
+<div style="text-align: center;">
+<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXE4ODVjNW04djRvOW54cHo5enRjbjk1ZDB1cjhzZTE4ejJiZTdmciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6onMzNPjtFeCI/giphy.gif" style="width: 60%; max-width: 400px;"/>
+</div>
+:::
+
+::: {.column width="50%"}
+<div style="text-align: center; font-weight: bold; font-size: 24px; margin-bottom: 2px;">(B)</div>
+<div style="text-align: center;">
+<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTNlamUxbnBuMTN1M3BkMmo1ZWg4d3FnOWlhZjB3bHZqaGFlNmNnOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hEIuLmpW9DmGA/giphy.gif" style="width: 65%; max-width: 400px;"/>
+</div>
+:::
+:::
+
+::: {.columns}
+::: {.column width="50%"}
+<div style="text-align: center; font-weight: bold; font-size: 24px; margin-bottom: 2px;">(C)</div>
+<div style="text-align: center;">
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjhyc29ya2FqZmVzY2Fzc2o5Y3htZTh4bjZxOHBjazJvMXl0NGo2MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2tRNWDWKYQ5Y1Liot4/giphy.gif" style="width: 60%; max-width: 400px;"/>
+</div>
+:::
+
+::: {.column width="50%"}
+<div style="text-align: center; font-weight: bold; font-size: 24px; margin-bottom: 2px;">(D)</div>
+<div style="text-align: center;">
+<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXd4cnNwNDYyeGxlYzRpbWM4OW55OGhjOHBheHE5ZWRuMTZscG1zNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/r5jHiw40rx5OE/giphy.gif" style="width: 60%; max-width: 400px;"/>
+</div>
+:::
+:::
+
+
+<p style="position: fixed; bottom: 0px; right: 0px; font-size: 20px; color: gray; z-index: 1000;">[Source](https://giphy.com)</p>
