@@ -42,7 +42,7 @@ format:
 ::: {.column width="50%"}
 <div style="text-align: center; font-weight: bold; font-size: 24px; margin-bottom: 0px;">(D)</div>
 <div style="text-align: center;">
-<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXd4cnNwNDYyeGxlYzRpbWM4OW55OGhjOHBheHE5ZWRuMTZscG1zNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/r5jHiw40rx5OE/giphy.gif" style="width: 60%; max-width: 400px;"/>
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3k4dHA4d3p1dzJidWV1OGdrc3kwaGc1dHlzbGZnaGFhdGNzbGdmMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gnE4FFhtFoLKM/giphy.gif" style="width: 60%; max-width: 400px;"/>
 </div>
 :::
 :::
