@@ -10,7 +10,7 @@ format:
     transition: slide
     slide-number: true
     chalkboard: true
-    logo: images/mds-hex-sticker.png
+    logo: ../images/mds-hex-sticker.png
 ---
 
 ## iClicker: How are you getting along with Docker?

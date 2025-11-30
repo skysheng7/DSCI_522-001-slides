@@ -10,7 +10,7 @@ format:
     transition: slide
     slide-number: true
     chalkboard: true
-    logo: images/mds-hex-sticker.png
+    logo: ../images/mds-hex-sticker.png
 ---
 
 ## 😺 iClicker: How is your group collaboration going?
@@ -190,7 +190,7 @@ services:
 
 ## Today's topic: Let's build our own [container](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/120-containerization-3.html)!
 
-![](images/docker_otter.png){style="position: fixed; bottom: -100px; left: -55px; margin: 0; padding: 0;"}
+![](../images/docker_otter.png){style="position: fixed; bottom: -100px; left: -55px; margin: 0; padding: 0;"}
 
 # Docker images for RStudio, VSCode, and Cursor!
 

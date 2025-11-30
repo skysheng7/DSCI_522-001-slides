@@ -301,7 +301,7 @@ docker run --rm -it -p 8888:8888 testing_cmds
 
 Watch your terminal output for a unique URL beginning with http://127.0.0.1:8888/lab?token=. You'll see it displayed as highlighted in the example screenshot below. Copy this URL and open it in your web browser to access the Jupyter Lab interface. You can access the terminal by clicking on the terminal icon inside of the Jupyter Lab interface.
 
-![](images/jupyter_example.png)
+![](../images/jupyter_example.png)
 
 12. Once you are in the terminal, you can test if this command works. This command will update the base environment with the packages you specified in the conda-lock file.
 
