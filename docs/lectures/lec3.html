@@ -561,6 +561,7 @@ Source: Minions movie
 </section>
 <section id="code-we-run-in-class-docker-compose.yml-practice-1" class="slide level2">
 <h2>Code we run in class: <code>docker-compose.yml</code> practice</h2>
+<div class="smaller" style="font-size: 0.8em;">
 <ol start="5" type="1">
 <li>Copy and paste the following code into the <code>docker-compose.yml</code> file. Local port is set at 8789, password is set to <code>password</code>, username is <code>rstudio</code>.</li>
 </ol>
@@ -581,9 +582,11 @@ Source: Minions movie
 <li>You can also create this file using Graphical user interface (GUI) like VSCode.</li>
 <li>If you used <code>nano</code> to create this file, you need to press <code>Cntrl + X</code> to attempt exit, by default it will ask you to save the file. Press <code>Y</code> and then press <code>Enter</code> to save the file.</li>
 </ul>
+</div>
 </section>
 <section id="code-we-run-in-class-docker-compose.yml-practice-2" class="slide level2">
 <h2>Code we run in class: <code>docker-compose.yml</code> practice</h2>
+<div class="smaller" style="font-size: 0.9em;">
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a># 6. Print out the content of the file to make sure it is correct.</span>
 <span id="cb5-2"><a></a>cat docker-compose.yml</span>
 <span id="cb5-3"><a></a></span>
@@ -595,6 +598,7 @@ Source: Minions movie
 </ol>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a># 10. Remove the container.</span>
 <span id="cb6-2"><a></a>docker-compose rm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section></section>
 <section>
 <section id="command-line-creating-dockerfile" class="title-slide slide level1 center">
@@ -619,6 +623,7 @@ Source: Minions movie
 </section>
 <section id="code-we-run-in-class-dockerfile-practice-1" class="slide level2">
 <h2>Code we run in class: <code>Dockerfile</code> practice</h2>
+<div class="smaller" style="font-size: 0.8em;">
 <ol start="5" type="1">
 <li>Copy and paste the following code into the <code>environment.yml</code> file.</li>
 </ol>
@@ -637,6 +642,7 @@ Source: Minions movie
 <li>You can also create this file using Graphical user interface (GUI) like VSCode.</li>
 <li>If you used <code>nano</code> to create this file, you need to press <code>Cntrl + X</code> to attempt exit, by default it will ask you to save the file. Press <code>Y</code> and then press <code>Enter</code> to save the file.</li>
 </ul>
+</div>
 </section>
 <section id="code-we-run-in-class-dockerfile-practice-2" class="slide level2">
 <h2>Code we run in class: <code>Dockerfile</code> practice</h2>
@@ -661,6 +667,10 @@ Source: Minions movie
 </ol>
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a># 8.Create a Dockerfile file using nano, or you can use GUI like VSCode.</span>
 <span id="cb12-2"><a></a>nano Dockerfile </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="code-we-run-in-class-dockerfile-practice-4" class="slide level2">
+<h2>Code we run in class: <code>Dockerfile</code> practice</h2>
+<div class="smaller" style="font-size: 0.8em;">
 <ol start="9" type="1">
 <li>Copy and paste the following code into the <code>Dockerfile</code> file. We use jupyter minimal notebook image as an example, and copy the conda-lock file to the container.</li>
 </ol>
@@ -676,8 +686,9 @@ Source: Minions movie
 <div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {dockerfile} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a></a>FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8</span>
 <span id="cb14-2"><a></a></span>
 <span id="cb14-3"><a></a>COPY conda-linux-64.lock /tmp/conda-linux-64.lock</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="code-we-run-in-class-dockerfile-practice-4" class="slide level2">
+<section id="code-we-run-in-class-dockerfile-practice-5" class="slide level2">
 <h2>Code we run in class: <code>Dockerfile</code> practice</h2>
 <ol start="10" type="1">
 <li>Build the docker image locally using the following command:</li>
@@ -685,6 +696,9 @@ Source: Minions movie
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a></a># 10. Build the docker image locally, with the tag name `testing_cmds`. </span>
 <span id="cb15-2"><a></a># pay attention to the dot at the end of the command! </span>
 <span id="cb15-3"><a></a>docker build --tag testing_cmds .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="code-we-run-in-class-dockerfile-practice-6" class="slide level2">
+<h2>Code we run in class: <code>Dockerfile</code> practice</h2>
 <ol start="11" type="1">
 <li>Run the docker image you just built using the following command:</li>
 </ol>

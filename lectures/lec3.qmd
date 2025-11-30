@@ -220,6 +220,7 @@ nano docker-compose.yml
 
 ## Code we run in class: `docker-compose.yml` practice
 
+::: {.smaller style="font-size: 0.8em;"}
 5. Copy and paste the following code into the `docker-compose.yml` file. Local port is set at 8789, password is set to `password`, username is `rstudio`.
 ```{yaml}
 services:
@@ -240,9 +241,11 @@ services:
 * You can also create this file using Graphical user interface (GUI) like VSCode. 
 * If you used `nano` to create this file, you need to press `Cntrl + X` to attempt exit, by default it will ask you to save the file. Press `Y` and then press `Enter` to save the file. 
 
+:::
 
 ## Code we run in class: `docker-compose.yml` practice
 
+::: {.smaller style="font-size: 0.9em;"}
 ```{bash}
 # 6. Print out the content of the file to make sure it is correct.
 cat docker-compose.yml
@@ -259,6 +262,7 @@ docker compose up
 # 10. Remove the container.
 docker-compose rm
 ```
+:::
 
 # Command line creating `Dockerfile` 
 
@@ -282,6 +286,8 @@ nano environment.yml
 
 ## Code we run in class: `Dockerfile` practice
 
+::: {.smaller style="font-size: 0.8em;"}
+
 5. Copy and paste the following code into the `environment.yml` file.
 ```{yaml}
 name: my_env
@@ -299,6 +305,8 @@ dependencies:
 
 * You can also create this file using Graphical user interface (GUI) like VSCode. 
 * If you used `nano` to create this file, you need to press `Cntrl + X` to attempt exit, by default it will ask you to save the file. Press `Y` and then press `Enter` to save the file. 
+
+:::
 
 ## Code we run in class: `Dockerfile` practice
 
@@ -330,6 +338,9 @@ conda-lock -k explicit --file environment.yml -p linux-64
 nano Dockerfile 
 ```
 
+## Code we run in class: `Dockerfile` practice
+
+::: {.smaller style="font-size: 0.8em;"}
 9. Copy and paste the following code into the `Dockerfile` file. We use jupyter minimal notebook image as an example, and copy the conda-lock file to the container.
 
 * Macbook users with Apple Silicon chips will need to use the following code: 
@@ -347,6 +358,7 @@ FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
 
 COPY conda-linux-64.lock /tmp/conda-linux-64.lock
 ```
+:::
 
 ## Code we run in class: `Dockerfile` practice
 
@@ -357,6 +369,8 @@ COPY conda-linux-64.lock /tmp/conda-linux-64.lock
 # pay attention to the dot at the end of the command! 
 docker build --tag testing_cmds .
 ```
+
+## Code we run in class: `Dockerfile` practice
 
 11. Run the docker image you just built using the following command: 
 
