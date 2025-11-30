@@ -32,7 +32,7 @@ format:
 ::: {.column width="33%"}
 <div style="text-align: center; font-weight: bold; font-size: 24px; margin-bottom: 10px;">(C)</div>
 <div style="text-align: center;">
-<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3RvMTcxZXkyOHZlcWY1N2NsYnNndjNndmJobXlzeHd3a3lxeW9oZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lJNoBCvQYp7nq/giphy.gif" style="width: 60%; max-width: 400px;"/>
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmQ3a2VweWowNHlhZ3hmZTFzdmJibWQzd2Jrd2xwa3dlbnFjYmIweiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JIX9t2j0ZTN9S/giphy.gif" style="width: 60%; max-width: 400px;"/>
 </div>
 :::
 
