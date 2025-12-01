@@ -191,7 +191,7 @@ git clone https://github.com/skysheng7/DSCI522_data_validation_demo.git
 
 2. Pull the docker image:
 ```bash
-docker pull ttimbers/breast-cancer-predictor:3f8675c
+docker pull docker pull skysheng7/dsci522:8fcac44
 ```
 
 ## You have already been using scripts!
@@ -243,6 +243,7 @@ docker pull ttimbers/breast-cancer-predictor:3f8675c
 ## 💡 What are the benefits of using scripts?
 
 ::: {.incremental}
+::: {.smaller style="font-size: 0.8em;"}
 * Abstraction: Hide the complexity of the code from the user
 * Reusability: The script can be reused by others
     * e.g., I moved the [update_environment_yml.py](https://github.com/skysheng7/append_version_to_environment_yml/blob/main/update_enviroment_yml.py) script out from my original repository and shared it with you
@@ -250,6 +251,7 @@ docker pull ttimbers/breast-cancer-predictor:3f8675c
 * Automation: Scripts can be used with other tools (e.g., GNU Make) to automate the entire workflow
 * Ease of use: The script can be run with a single command
 * Ease of debugging: Modular code is easier to debug
+:::
 :::
 
 ## 🌟 Read-eval-print-loop (REPL) framework VS Scripts
@@ -417,6 +419,12 @@ if __name__ == '__main__':
     hello()
 ```
 
+# Run the script
+
+```bash
+python otter_greeting.py --name "Oyster" --count 3
+```
+
 ## 🦦 Greet otters using `click`!
 
 ::: {.smaller style="font-size: 0.8em;"}
@@ -463,7 +471,7 @@ def greet_otters(count, name, enthusiasm):
     --------
     Run from command line:
     
-    >>> python greet_otters.py --name "Oyster" --count 3 --enthusiasm high
+    >>> python otter_greeting.py --name "Oyster" --count 3 --enthusiasm high
     
     This will display 3 highly enthusiastic otter greetings for Oyster.
     """
@@ -492,6 +500,12 @@ if __name__ == '__main__':
 
 ```
 :::
+
+# Run the script
+
+```bash
+python otter_greeting.py --name "Oyster" --count 3 --enthusiasm high
+```
 
 ## Tips for python scripts
 
