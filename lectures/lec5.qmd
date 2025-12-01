@@ -49,3 +49,24 @@ format:
 
 
 <p style="position: fixed; bottom: 0px; right: 0px; font-size: 20px; color: gray; z-index: 1000;">[Source](https://giphy.com)</p>
+
+## Q: "I did everything as instructed, why do I still get bugs?" 🥲 
+
+* Bad news: 🐛  are inevitable
+    * Debugging is one of the most important skills to have as a data scientist
+* Good news: Enemies of  🐛:
+    * Documentation, attention to details, perseverance, clean code, testing...
+
+## iClicker: Why do we use `docker-compose` file?
+
+* (A) To create and customize our own docker
+* (B) To easily launch and stop our docker container in one command
+* (C) To document the packages we used so that we can easily share with others
+* (D) To prepare for publishing our docker image on Docker Hub
+
+## Something to look forward to at the end of DSCI 522... 🤩
+
+* AI agents and fully automated data science workflows using Model Context Protocols (MCPs)
+* Most MCP servers are built using Docker containers
+
+# Today's topic: Non-interactive scripts 📜
