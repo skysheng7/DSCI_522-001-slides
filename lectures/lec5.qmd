@@ -383,8 +383,8 @@ Create a new python script called `otter_greeting.py`:
 import click
 
 @click.command()
-@click.argument('count', type=int, help='Number of greetings.')
-@click.argument('name', type=str, help='The person to greet.')
+@click.argument('count', type=int)
+@click.argument('name', type=str)
 def hello(count, name):
     """Simple program that greets NAME for a total of COUNT times."""
     for x in range(count):
@@ -397,7 +397,7 @@ if __name__ == '__main__':
 # Run the script
 
 ```bash
-python otter_greeting.py 3 "Sky"
+python scripts/otter_greeting.py 3 "Sky"
 ```
 
 ## Let's use `click` package in Python to parse command line arguments
@@ -422,14 +422,13 @@ if __name__ == '__main__':
 # Run the script
 
 ```bash
-python otter_greeting.py --name "Oyster" --count 3
+python scripts/otter_greeting.py --name "Oyster" --count 3
 ```
 
 ## 🦦 Greet otters using `click`!
 
 ::: {.smaller style="font-size: 0.8em;"}
 ```bash
-#!/usr/bin/env python3
 """Otter Greeting Generator
 
 This script allows you to greet otters with different levels of enthusiasm.
@@ -504,7 +503,7 @@ if __name__ == '__main__':
 # Run the script
 
 ```bash
-python otter_greeting.py --name "Oyster" --count 3 --enthusiasm high
+python scripts/otter_greeting.py --name "Oyster" --count 3 --enthusiasm high
 ```
 
 ## Tips for python scripts
