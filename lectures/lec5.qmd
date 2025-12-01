@@ -333,6 +333,23 @@ def func(arg1, arg2):
 
 <p style="position: fixed; bottom: 0px; left: 0px; font-size: 18px; color: gray; z-index: 1000;">[Source](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html)</p> 
 
+## Why does docstring style matter?
+
+::: {.incremental}
+::: {.smaller style="font-size: 0.9em;"}
+* Readability: Your collaborators, future users, and future you will thank you for writing clear and concise docstrings.
+* Good docstring should be both human-readable and machine-readable.
+
+* Python Example:
+  * [Source code for `pandas.DataFrame.head`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.head.html)
+  * [API for `pandas.DataFrame.head`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.head.html)
+
+* R Example:
+  * [Source code for `moo4feed` package `cluster_meals`](https://github.com/skysheng7/moo4feed/blob/main/R/cluster_meals.R)
+  * [API for `moo4feed` package `cluster_meals`](https://www.skysheng.io/moo4feed/reference/cluster_meals.html)
+:::
+:::
+
 ## Tips for python scripts
 
 :::{.callout-note}
