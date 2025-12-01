@@ -50,12 +50,45 @@ format:
 
 <p style="position: fixed; bottom: 0px; left: 0px; font-size: 20px; color: gray; z-index: 1000;">[Source](https://giphy.com)</p>
 
+# 🧐 Some questions from last week... 
+
 ## Q: "I did everything as instructed, why do I still get bugs?" 🥲 
 
 * Bad news: 🐛  are inevitable
     * Debugging is one of the most important skills to have as a data scientist
 * Good news: Enemies of  🐛:
     * Documentation, attention to details, perseverance, clean code, testing...
+
+## Q: "conda is not locking my pip packages!" 😱
+
+
+::: {.smaller style="font-size: 0.8em;"}
+
+* Solution: `pip install` packages inside of your Dockerfile
+    * (optional but recommended) Still add version numbers for your pip packages in `environment.yml` file for documentation purposes
+
+```bash
+# build on top of template of minimal notebook
+FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
+
+# copy all conda environment dependencies
+COPY conda-linux-64.lock /tmp/conda-linux-64.lock
+
+# conda install all the other packages
+RUN mamba update --quiet --file /tmp/conda-linux-64.lock \
+    && mamba clean --all -y -f \
+    && fix-permissions "${CONDA_DIR}" \
+    && fix-permissions "/home/${NB_USER}"
+
+# install openai using pip
+RUN pip install openai==1.57.0
+```
+:::
+
+## Q: "The data I'm currently using do not have any missing data, why do I still need to do data validation?"
+
+* What about your future data? 
+* We set up the data validation pipeline so that we can easily validate new data, and get warnings if there are missing values in the future.
 
 ## iClicker: Why do we use `docker-compose` file?
 

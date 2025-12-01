@@ -672,6 +672,20 @@
     "text": "Q: “I did everything as instructed, why do I still get bugs?” 🥲\n\nBad news: 🐛 are inevitable\n\nDebugging is one of the most important skills to have as a data scientist\n\nGood news: Enemies of 🐛:\n\nDocumentation, attention to details, perseverance, clean code, testing…"
   },
   {
+    "objectID": "lectures/lec5.html#q-conda-is-not-locking-my-pip-packages",
+    "href": "lectures/lec5.html#q-conda-is-not-locking-my-pip-packages",
+    "title": "DSCI 522 Lecture 5",
+    "section": "Q: “conda is not locking my pip packages!” 😱",
+    "text": "Q: “conda is not locking my pip packages!” 😱\n\n\nSolution: pip install packages inside of your Dockerfile\n\n(optional but recommended) Still add version numbers for your pip packages in environment.yml file for documentation purposes\n\n\n# build on top of template of minimal notebook\nFROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8\n\n# copy all conda environment dependencies\nCOPY conda-linux-64.lock /tmp/conda-linux-64.lock\n\n# conda install all the other packages\nRUN mamba update --quiet --file /tmp/conda-linux-64.lock \\\n    && mamba clean --all -y -f \\\n    && fix-permissions \"${CONDA_DIR}\" \\\n    && fix-permissions \"/home/${NB_USER}\"\n\n# install openai using pip\nRUN pip install openai==1.57.0"
+  },
+  {
+    "objectID": "lectures/lec5.html#q-the-data-im-currently-using-do-not-have-any-missing-data-why-do-i-still-need-to-do-data-validation",
+    "href": "lectures/lec5.html#q-the-data-im-currently-using-do-not-have-any-missing-data-why-do-i-still-need-to-do-data-validation",
+    "title": "DSCI 522 Lecture 5",
+    "section": "Q: “The data I’m currently using do not have any missing data, why do I still need to do data validation?”",
+    "text": "Q: “The data I’m currently using do not have any missing data, why do I still need to do data validation?”\n\nWhat about your future data?\nWe set up the data validation pipeline so that we can easily validate new data, and get warnings if there are missing values in the future."
+  },
+  {
     "objectID": "lectures/lec5.html#iclicker-why-do-we-use-docker-compose-file",
     "href": "lectures/lec5.html#iclicker-why-do-we-use-docker-compose-file",
     "title": "DSCI 522 Lecture 5",
