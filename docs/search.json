@@ -756,6 +756,13 @@
     "text": "Something to look forward to at the end of DSCI 522… \n\n\n🤖 AI agents and fully automated data science workflows using Model Context Protocols (MCPs)\n🐳 Most MCP servers are built using Docker containers"
   },
   {
+    "objectID": "lectures/lec5.html#early-prep",
+    "href": "lectures/lec5.html#early-prep",
+    "title": "DSCI 522 Lecture 5",
+    "section": "Early Prep:",
+    "text": "Early Prep:\n\nClone the repository:\n\ngit clone https://github.com/skysheng7/DSCI522_data_validation_demo.git\n\nIf you already cloned this repository last time, please git pull to get the latest updates.\n\n\nPull the docker image:\n\ndocker pull ttimbers/breast-cancer-predictor:3f8675c"
+  },
+  {
     "objectID": "lectures/lec5.html#you-have-already-been-using-scripts",
     "href": "lectures/lec5.html#you-have-already-been-using-scripts",
     "title": "DSCI 522 Lecture 5",
@@ -830,7 +837,28 @@
     "href": "lectures/lec5.html#why-does-docstring-style-matter",
     "title": "DSCI 522 Lecture 5",
     "section": "Why does docstring style matter?",
-    "text": "Why does docstring style matter?\n\n\n\nReadability: Your collaborators, future users, and future you will thank you for writing clear and concise docstrings. 🙏\nGood docstring should be both human-readable and machine-readable.\nPython Example:\n\nSource code for pandas.DataFrame.head\nAPI for pandas.DataFrame.head\n\nR Example:\n\nSource code for moo4feed package cluster_meals\nAPI for moo4feed package cluster_meals"
+    "text": "Why does docstring style matter?\n\n\n\nReadability: Your collaborators, future users, and future you will thank you for writing clear and concise docstrings. 🙏\nGood docstring should be both human-readable and machine-readable.\nPython Example:\n\nSource code for pandas.DataFrame.head\nAPI for pandas.DataFrame.head\n\nR roxygen2 Documentation Example:\n\nSource code for moo4feed package cluster_meals\nAPI for moo4feed package cluster_meals"
+  },
+  {
+    "objectID": "lectures/lec5.html#lets-use-click-package-in-python-to-parse-command-line-arguments",
+    "href": "lectures/lec5.html#lets-use-click-package-in-python-to-parse-command-line-arguments",
+    "title": "DSCI 522 Lecture 5",
+    "section": "Let’s use click package in Python to parse command line arguments",
+    "text": "Let’s use click package in Python to parse command line arguments\nCreate a new python script called otter_greeting.py:\nimport click\n\n@click.command()\n@click.argument('count', type=int, help='Number of greetings.')\n@click.argument('name', type=str, help='The person to greet.')\ndef hello(count, name):\n    \"\"\"Simple program that greets NAME for a total of COUNT times.\"\"\"\n    for x in range(count):\n        click.echo(f\"🦦: `Nice to meet you, {name}!`\")\n\nif __name__ == '__main__':\n    hello()"
+  },
+  {
+    "objectID": "lectures/lec5.html#lets-use-click-package-in-python-to-parse-command-line-arguments-1",
+    "href": "lectures/lec5.html#lets-use-click-package-in-python-to-parse-command-line-arguments-1",
+    "title": "DSCI 522 Lecture 5",
+    "section": "Let’s use click package in Python to parse command line arguments",
+    "text": "Let’s use click package in Python to parse command line arguments\nLet’s use options instead of arguments to parse command line arguments:\nimport click\n\n@click.command()\n@click.option('--count', type=int, default=1, help='Number of greetings.')\n@click.option('--name', type=str, prompt='Your name', help='The person to greet.')\ndef hello(count, name):\n    \"\"\"Simple program that greets NAME for a total of COUNT times.\"\"\"\n    for x in range(count):\n        click.echo(f\"🦦: `Nice to meet you, {name}!`\")\n\nif __name__ == '__main__':\n    hello()"
+  },
+  {
+    "objectID": "lectures/lec5.html#greet-otters-using-click",
+    "href": "lectures/lec5.html#greet-otters-using-click",
+    "title": "DSCI 522 Lecture 5",
+    "section": "🦦 Greet otters using click!",
+    "text": "🦦 Greet otters using click!\n\n#!/usr/bin/env python3\n\"\"\"Otter Greeting Generator\n\nThis script allows you to greet otters with different levels of enthusiasm.\n\"\"\"\n\nimport click\n\n@click.command()\n@click.option('--count', default=1, help='Number of otter greetings.')\n@click.option('--name', prompt='Your name', help='The person to greet.')\n@click.option('--enthusiasm', type=click.Choice(['low', 'medium', 'high']), \n              default='medium', help='How enthusiastic should the otters be?')\ndef greet_otters(count, name, enthusiasm):\n    \"\"\" Otter greeting generator\n    \n    Simple program that has adorable otters greet NAME for COUNT times. 🦦\n    \n    Parameters\n    ----------\n    count : int\n        Number of otter greetings to display. Must be a positive integer.\n        Default is 1.\n    name : str\n        The name of the person to greet. Will be prompted if not provided\n        via command line.\n    enthusiasm : {'low', 'medium', 'high'}\n        The enthusiasm level of the otter greetings:\n        - 'low': Simple, calm greeting\n        - 'medium': Friendly greeting with some emojis\n        - 'high': Very excited greeting with lots of emojis and caps\n        Default is 'medium'.\n    \n    Returns\n    -------\n    None\n        Outputs greetings directly to the console using click.echo().\n    \n    Examples\n    --------\n    Run from command line:\n    \n    &gt;&gt;&gt; python greet_otters.py --name \"Oyster\" --count 3 --enthusiasm high\n    \n    This will display 3 highly enthusiastic otter greetings for Oyster.\n    \"\"\"\n    # Different enthusiasm levels\n    emojis = {\n        'low': '🦦',\n        'medium': '🦦✨',\n        'high': '🦦🎉🌊'\n    }\n    \n    messages = {\n        'low': f\"hello {name}.\",\n        'medium': f\"Hello {name}! 🌊\",\n        'high': f\"HELLO {name.upper()}!!! Who is that lovely, amazing, genius friend over there?? The otters are SO excited to see you! 🎊\"\n    }\n    \n    click.echo(f\"\\n{emojis[enthusiasm]} Otter Greetings Incoming! {emojis[enthusiasm]}\\n\")\n    \n    for i in range(count):\n        click.echo(f\"  Otter #{i+1}: {messages[enthusiasm]}\")\n    \n    click.echo(f\"\\n🦦 You've been greeted by {count} friendly otter(s)! 🦦\\n\")\n\nif __name__ == '__main__':\n    greet_otters()"
   },
   {
     "objectID": "lectures/lec5.html#tips-for-python-scripts",
@@ -838,5 +866,12 @@
     "title": "DSCI 522 Lecture 5",
     "section": "Tips for python scripts",
     "text": "Tips for python scripts\n\n\n\n\n\n\nNote\n\n\n\nif __name__ == \"__main__\": lets you source the other functions in the script without running the main function.\nclick commands need to be placed right above the main function.\n\n\n\n\n\nExample:\n# import libraries/packages\nimport click\n\n# parse/define command line arguments below\n# define main function\n@click.command()\n@click.argument('num1', type=int)\n@click.argument('num2', type=int)\ndef main(num1, num2):\n    \"\"\"Simple program that adds two numbers.\"\"\"\n    result = num1 + num2\n    click.echo(f\"The sum of {num1} and {num2} is {result}\")\n\n# call main function\nif __name__ == '__main__':\n    main()"
+  },
+  {
+    "objectID": "lectures/lec5.html#command-line-for-r-docopt-package",
+    "href": "lectures/lec5.html#command-line-for-r-docopt-package",
+    "title": "DSCI 522 Lecture 5",
+    "section": "Command line for R: docopt package",
+    "text": "Command line for R: docopt package\n\nExample:\n\"This script greets you with adorable otters! 🦦\n\nUsage: greet_otters.R --name=&lt;name&gt; [--count=&lt;count&gt;]\n\nOptions:\n--name=&lt;name&gt;      Your name (the person to greet)\n--count=&lt;count&gt;    Number of otter greetings [default: 1]\n\" -&gt; doc\n\nlibrary(docopt)\n\nopt &lt;- docopt(doc)\n\nmain &lt;- function(name, count) {\n  # Convert count to numeric (docopt returns strings)\n  count &lt;- as.numeric(count)\n  \n  # Generate otter greetings\n  cat(\"\\n🦦 Otter Greetings Incoming! 🦦\\n\\n\")\n  \n  for (i in 1:count) {\n    cat(paste0(\"  Otter #\", i, \": Hello \", name, \"! 🌊\\n\"))\n  }\n  \n  cat(paste0(\"\\n🦦 You've been greeted by \", count, \" friendly otter(s)! 🦦\\n\\n\"))\n}\n\nmain(opt$name, opt$count)"
   }
 ]

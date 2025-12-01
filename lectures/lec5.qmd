@@ -181,6 +181,19 @@ format:
 
 # Today's topic: Non-interactive scripts 📜
 
+## Early Prep: 
+
+1. Clone the repository:
+```bash
+git clone https://github.com/skysheng7/DSCI522_data_validation_demo.git
+```
+* If you already cloned this repository last time, please `git pull` to get the latest updates.
+
+2. Pull the docker image:
+```bash
+docker pull ttimbers/breast-cancer-predictor:3f8675c
+```
+
 ## You have already been using scripts!
 
 ::: {.smaller style="font-size: 0.8em;"}
@@ -354,10 +367,130 @@ def func(arg1, arg2):
   * [Source code for `pandas.DataFrame.head`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.head.html)
   * [API for `pandas.DataFrame.head`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.head.html)
 
-* R Example:
+* [R `roxygen2` Documentation](https://roxygen2.r-lib.org/) Example:
   * [Source code for `moo4feed` package `cluster_meals`](https://github.com/skysheng7/moo4feed/blob/main/R/cluster_meals.R)
   * [API for `moo4feed` package `cluster_meals`](https://www.skysheng.io/moo4feed/reference/cluster_meals.html)
 :::
+:::
+
+## Let's use `click` package in Python to parse command line arguments
+
+Create a new python script called `otter_greeting.py`: 
+
+```python
+import click
+
+@click.command()
+@click.argument('count', type=int, help='Number of greetings.')
+@click.argument('name', type=str, help='The person to greet.')
+def hello(count, name):
+    """Simple program that greets NAME for a total of COUNT times."""
+    for x in range(count):
+        click.echo(f"🦦: `Nice to meet you, {name}!`")
+
+if __name__ == '__main__':
+    hello()
+```
+
+# Run the script
+
+```bash
+python otter_greeting.py 3 "Sky"
+```
+
+## Let's use `click` package in Python to parse command line arguments
+
+Let's use options instead of arguments to parse command line arguments:
+
+```python
+import click
+
+@click.command()
+@click.option('--count', type=int, default=1, help='Number of greetings.')
+@click.option('--name', type=str, prompt='Your name', help='The person to greet.')
+def hello(count, name):
+    """Simple program that greets NAME for a total of COUNT times."""
+    for x in range(count):
+        click.echo(f"🦦: `Nice to meet you, {name}!`")
+
+if __name__ == '__main__':
+    hello()
+```
+
+## 🦦 Greet otters using `click`!
+
+::: {.smaller style="font-size: 0.8em;"}
+```bash
+#!/usr/bin/env python3
+"""Otter Greeting Generator
+
+This script allows you to greet otters with different levels of enthusiasm.
+"""
+
+import click
+
+@click.command()
+@click.option('--count', default=1, help='Number of otter greetings.')
+@click.option('--name', prompt='Your name', help='The person to greet.')
+@click.option('--enthusiasm', type=click.Choice(['low', 'medium', 'high']), 
+              default='medium', help='How enthusiastic should the otters be?')
+def greet_otters(count, name, enthusiasm):
+    """ Otter greeting generator
+    
+    Simple program that has adorable otters greet NAME for COUNT times. 🦦
+    
+    Parameters
+    ----------
+    count : int
+        Number of otter greetings to display. Must be a positive integer.
+        Default is 1.
+    name : str
+        The name of the person to greet. Will be prompted if not provided
+        via command line.
+    enthusiasm : {'low', 'medium', 'high'}
+        The enthusiasm level of the otter greetings:
+        - 'low': Simple, calm greeting
+        - 'medium': Friendly greeting with some emojis
+        - 'high': Very excited greeting with lots of emojis and caps
+        Default is 'medium'.
+    
+    Returns
+    -------
+    None
+        Outputs greetings directly to the console using click.echo().
+    
+    Examples
+    --------
+    Run from command line:
+    
+    >>> python greet_otters.py --name "Oyster" --count 3 --enthusiasm high
+    
+    This will display 3 highly enthusiastic otter greetings for Oyster.
+    """
+    # Different enthusiasm levels
+    emojis = {
+        'low': '🦦',
+        'medium': '🦦✨',
+        'high': '🦦🎉🌊'
+    }
+    
+    messages = {
+        'low': f"hello {name}.",
+        'medium': f"Hello {name}! 🌊",
+        'high': f"HELLO {name.upper()}!!! Who is that lovely, amazing, genius friend over there?? The otters are SO excited to see you! 🎊"
+    }
+    
+    click.echo(f"\n{emojis[enthusiasm]} Otter Greetings Incoming! {emojis[enthusiasm]}\n")
+    
+    for i in range(count):
+        click.echo(f"  Otter #{i+1}: {messages[enthusiasm]}")
+    
+    click.echo(f"\n🦦 You've been greeted by {count} friendly otter(s)! 🦦\n")
+
+if __name__ == '__main__':
+    greet_otters()
+
+```
 :::
 
 ## Tips for python scripts
@@ -389,3 +522,61 @@ if __name__ == '__main__':
     main()
 ```
 :::
+
+## Command line for R: [`docopt` package](http://docopt.org/)
+
+::: {.smaller style="font-size: 0.8em;"}
+Example:
+```R
+"This script greets you with adorable otters! 🦦
+
+Usage: greet_otters.R --name=<name> [--count=<count>]
+
+Options:
+--name=<name>      Your name (the person to greet)
+--count=<count>    Number of otter greetings [default: 1]
+" -> doc
+
+library(docopt)
+
+opt <- docopt(doc)
+
+main <- function(name, count) {
+  # Convert count to numeric (docopt returns strings)
+  count <- as.numeric(count)
+  
+  # Generate otter greetings
+  cat("\n🦦 Otter Greetings Incoming! 🦦\n\n")
+  
+  for (i in 1:count) {
+    cat(paste0("  Otter #", i, ": Hello ", name, "! 🌊\n"))
+  }
+  
+  cat(paste0("\n🦦 You've been greeted by ", count, " friendly otter(s)! 🦦\n\n"))
+}
+
+main(opt$name, opt$count)
+```
+:::
+
+# More example of command line in R
+
+* [Demo using `docopt` package](https://github.com/DSCI-310/2024-02-13-scripts.git)
+
+# Saving model objects in Python: pickle
+
+```python
+import pickle
+with open("knn_fit.pickle", 'wb') as f:
+    pickle.dump(knn_fit, f)
+```
+
+# Saving model objects in R: RDS
+
+```R
+# save the model object as 
+saveRDS(final_knn_model, "final_knn_model.rds")
+
+# load the model object from RDS
+final_knn_model <- readRDS("final_knn_model.rds")
+```
