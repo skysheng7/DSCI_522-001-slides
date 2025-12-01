@@ -30,6 +30,7 @@ University of British Columbia
 
 ### Cheatsheets
 
+- [Command Line Cheatsheet](cheatsheets/cheatsheet_command_line.html) - Quick reference for command line operations
 - [Conda & Conda-lock Cheatsheet](cheatsheets/cheatsheet_conda.html) - Quick reference for conda environment management and conda-lock
 - [Docker & Docker Compose Cheatsheet](cheatsheets/cheatsheet_docker.html) - Quick reference for Docker containerization and Docker Compose
 

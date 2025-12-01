@@ -238,32 +238,130 @@
     "text": "🔧 Different virtual environment management tools\n\n\nFor R:\n\npackrat\nrenv\nconda\n\n\nFor Python:\n\nvenv\nvirtualenv\nconda\nmamba\npoetry\npipenv\n…"
   },
   {
-    "objectID": "cheatsheets/cheatsheet_conda.html",
-    "href": "cheatsheets/cheatsheet_conda.html",
-    "title": "Conda & Conda-lock Cheatsheet",
+    "objectID": "cheatsheets/cheatsheet_command_line.html",
+    "href": "cheatsheets/cheatsheet_command_line.html",
+    "title": "Linux Command Line Cheatsheet",
     "section": "",
-    "text": "Task\nCommand\n\n\n\n\nCreate a new conda environment\nconda create -n &lt;env_name&gt;\n\n\nCreate with specific Python version\nconda create --name &lt;env_name&gt; python=3.11\n\n\nCreate with packages\nconda create --name &lt;env_name&gt; numpy pandas\n\n\nList all conda environments\nconda env list or conda info --envs\n\n\nActivate a conda environment\nconda activate &lt;env_name&gt;\n\n\nDeactivate a conda environment\nconda deactivate\n\n\nRemove a conda environment\nconda env remove -n &lt;env_name&gt;\n\n\nDuplicate a conda environment\nconda create --name &lt;new_env&gt; --clone &lt;old_env&gt;\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nList all packages in environment\nconda list\n\n\nRemove a package from current environment\nconda remove &lt;package_name&gt;\n\n\nUpdate a package in current environment\nconda update &lt;package_name&gt;\n\n\nRemove a package in other environment\nconda remove -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate a package in other environment\nconda update -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate all packages in current environment\nconda update --all\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nExport environment (with history)\nconda env export --from-history &gt; environment.yml\n\n\nExport environment (full)\nconda env export &gt; environment.yml\n\n\nCreate environment from environment.yml\nconda env create -n &lt;env_name&gt; or conda env create --file environment.yml\n\n\nUpdate existing environment from file\nconda env update --file environment.yml --prune"
+    "text": "~ — Home directory\n\npwd — Print current working directory\n\nls — List directory contents\n\n-l — Long format (e.g., ls -l)\n\n-lt — Long format, sorted by time (newest first)\n\n-ltr — Long format, sorted by time (oldest first)\n\n-ltrh — Long format, oldest first, human-readable sizes\n\n-a — Show all files including hidden ones\n\n-1 - Show 1 file per line\n\ncd folder_name — Change directory\n\ncd .. — Go to parent directory\n\ncd . — Stay in current directory\n\n\nfind — find files\n\ne.g., find . -name \"*fish*\": find all the files whose name contains fish"
   },
   {
-    "objectID": "cheatsheets/cheatsheet_conda.html#conda-basics",
-    "href": "cheatsheets/cheatsheet_conda.html#conda-basics",
-    "title": "Conda & Conda-lock Cheatsheet",
+    "objectID": "cheatsheets/cheatsheet_command_line.html#basic-navigation-file-inspection",
+    "href": "cheatsheets/cheatsheet_command_line.html#basic-navigation-file-inspection",
+    "title": "Linux Command Line Cheatsheet",
     "section": "",
-    "text": "Task\nCommand\n\n\n\n\nCreate a new conda environment\nconda create -n &lt;env_name&gt;\n\n\nCreate with specific Python version\nconda create --name &lt;env_name&gt; python=3.11\n\n\nCreate with packages\nconda create --name &lt;env_name&gt; numpy pandas\n\n\nList all conda environments\nconda env list or conda info --envs\n\n\nActivate a conda environment\nconda activate &lt;env_name&gt;\n\n\nDeactivate a conda environment\nconda deactivate\n\n\nRemove a conda environment\nconda env remove -n &lt;env_name&gt;\n\n\nDuplicate a conda environment\nconda create --name &lt;new_env&gt; --clone &lt;old_env&gt;\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nList all packages in environment\nconda list\n\n\nRemove a package from current environment\nconda remove &lt;package_name&gt;\n\n\nUpdate a package in current environment\nconda update &lt;package_name&gt;\n\n\nRemove a package in other environment\nconda remove -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate a package in other environment\nconda update -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate all packages in current environment\nconda update --all\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nExport environment (with history)\nconda env export --from-history &gt; environment.yml\n\n\nExport environment (full)\nconda env export &gt; environment.yml\n\n\nCreate environment from environment.yml\nconda env create -n &lt;env_name&gt; or conda env create --file environment.yml\n\n\nUpdate existing environment from file\nconda env update --file environment.yml --prune"
+    "text": "~ — Home directory\n\npwd — Print current working directory\n\nls — List directory contents\n\n-l — Long format (e.g., ls -l)\n\n-lt — Long format, sorted by time (newest first)\n\n-ltr — Long format, sorted by time (oldest first)\n\n-ltrh — Long format, oldest first, human-readable sizes\n\n-a — Show all files including hidden ones\n\n-1 - Show 1 file per line\n\ncd folder_name — Change directory\n\ncd .. — Go to parent directory\n\ncd . — Stay in current directory\n\n\nfind — find files\n\ne.g., find . -name \"*fish*\": find all the files whose name contains fish"
   },
   {
-    "objectID": "cheatsheets/cheatsheet_conda.html#command-line-notes",
-    "href": "cheatsheets/cheatsheet_conda.html#command-line-notes",
-    "title": "Conda & Conda-lock Cheatsheet",
-    "section": "2 Command Line Notes",
-    "text": "2 Command Line Notes\n\n--name and -n are equivalent\n--file and -f are equivalent\n--platform and -p are equivalent, this is used to specify the platform (e.g., linux-64, osx-arm64, win-64)\nMore command line review cheatsheet is available here"
+    "objectID": "cheatsheets/cheatsheet_command_line.html#viewing-file-content",
+    "href": "cheatsheets/cheatsheet_command_line.html#viewing-file-content",
+    "title": "Linux Command Line Cheatsheet",
+    "section": "2 📍 Viewing File Content",
+    "text": "2 📍 Viewing File Content\n\ncat file.txt — Print entire content\n\nhead file.txt — Print first 10 lines\n\ntail file.txt — Print last 10 lines"
   },
   {
-    "objectID": "cheatsheets/cheatsheet_conda.html#conda-lock",
-    "href": "cheatsheets/cheatsheet_conda.html#conda-lock",
-    "title": "Conda & Conda-lock Cheatsheet",
-    "section": "3 Conda-lock",
-    "text": "3 Conda-lock\n\n3.1 📜 Basic Commands\n\n\n\n\n\n\n\n\nCommand\nOutput\nDescription\n\n\n\n\nconda-lock lock --file environment.yml\nconda-lock.yml\nGeneral lock file for all platforms\n\n\nconda-lock lock --file environment.yml -p linux-64\nconda-lock.yml\nGeneral lock file for specific platform (Linux)\n\n\nconda-lock -k explicit --file environment.yml -p linux-64\nconda-linux-64.lock\nExplicit lock file for one platform (Linux)\n\n\nconda-lock render -p linux-64\nconda-linux-64.lock\nExplicit lock file from existing conda-lock.yml\n\n\n\n\n\n3.2 🙀 Comparing conda-lock.yml vs conda-linux-64.lock\n\n\n\n\n\n\n\n\nFeature\nconda-lock.yml\nconda-linux-64.lock\n\n\n\n\nFormat\nUnified YAML (multi-platform)\nExplicit (single-platform)\n\n\nContent\nStructured metadata + dependencies for all platforms\nSimple list of package URLs\n\n\nFile Size\nLarger (contains all platforms)\nSmaller (one platform only)\n\n\nInstallation\nconda-lock install --name &lt;env_name&gt; conda-lock.yml\nconda create --name &lt;env_name&gt; --file conda-linux-64.lock\n\n\nUse case\nDevelopment across multiple platforms\nProduction deployment, Docker, single platform\n\n\nSpeed\nSlightly slower (conda-lock processes it)\nFastest\n\n\n\n\n\n3.3 Creating Environments from Lock Files\nFrom conda-lock.yml:\nconda-lock install --name &lt;env_name&gt; conda-lock.yml\nFrom explicit lock file (e.g., conda-linux-64.lock):\nconda create --name &lt;env_name&gt; --file conda-linux-64.lock"
+    "objectID": "cheatsheets/cheatsheet_command_line.html#editing-files",
+    "href": "cheatsheets/cheatsheet_command_line.html#editing-files",
+    "title": "Linux Command Line Cheatsheet",
+    "section": "3 📍 Editing Files",
+    "text": "3 📍 Editing Files\n\nnano file.txt — Open file in Nano editor\n\nCtrl+O to save, Ctrl+X to exit, Ctrl+K to delete a line\n\n\nvi file.txt — Open file in Vi editor\n\nPress i to insert\n\nPress Esc, then type :wq and hit Enter to save and quit\n\nType :q! and hit Enter to quit without saving"
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_command_line.html#creating-and-modifying-files",
+    "href": "cheatsheets/cheatsheet_command_line.html#creating-and-modifying-files",
+    "title": "Linux Command Line Cheatsheet",
+    "section": "4 📍 Creating and Modifying Files",
+    "text": "4 📍 Creating and Modifying Files\n\ntouch file.txt — Create an empty file or update timestamp if the file already exist\necho \"text\" &gt; file.txt — Write text to file (overwrite)\n\necho \"text\" &gt;&gt; file.txt — Append text to file\n\ncat file1.txt file2.txt &gt; file3.txt — Combine files"
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_command_line.html#file-movement-copying-and-deletion",
+    "href": "cheatsheets/cheatsheet_command_line.html#file-movement-copying-and-deletion",
+    "title": "Linux Command Line Cheatsheet",
+    "section": "5 📍 File Movement, Copying, and Deletion",
+    "text": "5 📍 File Movement, Copying, and Deletion\n\nmv oldname.txt newname.txt — Rename a file\n\nmv file.txt folder/ — Move file to folder\n\ncp file.txt copy.txt — Copy file\n\ncp -r folder1 folder2 — Copy folder recursively\n\nrm file.txt — Delete a file\n\nrm -r folder/ — Recursively delete folder\n\nrm -f file.txt — Force delete file (no warning)\n\nrm -rf folder/ — Forcefully delete folder and contents"
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_command_line.html#directory-management",
+    "href": "cheatsheets/cheatsheet_command_line.html#directory-management",
+    "title": "Linux Command Line Cheatsheet",
+    "section": "6 📍 Directory Management",
+    "text": "6 📍 Directory Management\n\nmkdir new_folder — Create a new folder\n\nmkdir -p parent/child — Create nested folders including parent folders if parent folders do not exist yet\nrmdir empty_folder — Remove empty folder"
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_command_line.html#permissions-ownership",
+    "href": "cheatsheets/cheatsheet_command_line.html#permissions-ownership",
+    "title": "Linux Command Line Cheatsheet",
+    "section": "7 📍 Permissions & Ownership",
+    "text": "7 📍 Permissions & Ownership\n\nchmod 400 key.pem — Change file permission\n\nfirst digit = privillage of owner of the file; second digit = other people in the same group; third digit = everyone else in the world\n4 = read, 2 = write, 1 = execute\n\n7 = 4 + 2 + 1 = read & write & execute\nExamples:\n\n400 = read-only by owner\n\n600 = read/write by owner\n\n756 = full access for owner, read & execute for others in the same group, read & write for everyone else in the world\n\n\nchown user:group folder/ — Change ownership of the folder\nsudo — Run command with superuser privileges, “super user do”"
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_command_line.html#wildcards-patterns",
+    "href": "cheatsheets/cheatsheet_command_line.html#wildcards-patterns",
+    "title": "Linux Command Line Cheatsheet",
+    "section": "8 📍 Wildcards & Patterns",
+    "text": "8 📍 Wildcards & Patterns\n\n* — Wildcard: matches anything\n\nExample: mv fish* folder/\n\n\n? — Matches a single unknown character"
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_command_line.html#print-and-search",
+    "href": "cheatsheets/cheatsheet_command_line.html#print-and-search",
+    "title": "Linux Command Line Cheatsheet",
+    "section": "9 📍 Print and Search",
+    "text": "9 📍 Print and Search\n\necho \"text\" — Print text to terminal\n\ngrep pattern file.txt — Search for pattern\n\n-i — Ignore case\n\n-v — Display lines with no match\n-n — precede each matching line with line number\n-c — Print only total count of matched lines"
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_command_line.html#system-file-info",
+    "href": "cheatsheets/cheatsheet_command_line.html#system-file-info",
+    "title": "Linux Command Line Cheatsheet",
+    "section": "10 📍 System & File Info",
+    "text": "10 📍 System & File Info\n\nhistory — Show command history\n\ndf -h — Show disk space in human-readable format\n\nclear — Clear the screen\n\nwc file.txt — Count number of words in this file\n\n-l — Count number of lines in this file\n\nsort file.txt — Sort lines alphabetically"
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_command_line.html#compression",
+    "href": "cheatsheets/cheatsheet_command_line.html#compression",
+    "title": "Linux Command Line Cheatsheet",
+    "section": "11 📍 Compression",
+    "text": "11 📍 Compression\n\nzip file.zip file.txt — Compress file\n\nunzip file.zip — Decompress file"
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_command_line.html#process-management",
+    "href": "cheatsheets/cheatsheet_command_line.html#process-management",
+    "title": "Linux Command Line Cheatsheet",
+    "section": "12 📍 Process Management",
+    "text": "12 📍 Process Management\n\nCtrl+C — Stop running command\n\nexit — exit the SSH connection to a server, or exit a mode of being a user\nCOMMAND FILE1 | COMMAND — Connect output of commands\n\nfor instance, cat FILE1 | sort"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DSCI 522 Slides",
+    "section": "",
+    "text": "This site contains lecture and lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow, in section 001, for 2025W1."
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "DSCI 522 Slides",
+    "section": "",
+    "text": "This site contains lecture and lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow, in section 001, for 2025W1."
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "DSCI 522 Slides",
+    "section": "Instructor",
+    "text": "Instructor\nSky (Kehan) Sheng\nUniversity of British Columbia\nwww.skysheng.io"
+  },
+  {
+    "objectID": "index.html#available-slides",
+    "href": "index.html#available-slides",
+    "title": "DSCI 522 Slides",
+    "section": "Available Slides",
+    "text": "Available Slides\n\nLectures\n\nLecture 1 - Introduction to Reproducible and Trustworthy Data Science Workflow\nLecture 2 - Conda-lock, Containerization, and Docker\nLecture 3 - Customizing and Building Containers\nLecture 4 - Containerizing Python Applications\nLecture 5 - Non-interactive scripts\n\n\n\nLabs\n\nLab 1 Introduction - Introduction to reproducible workflows, lab policies, and getting started\n\n\n\nCheatsheets\n\nCommand Line Cheatsheet - Quick reference for command line operations\nConda & Conda-lock Cheatsheet - Quick reference for conda environment management and conda-lock\nDocker & Docker Compose Cheatsheet - Quick reference for Docker containerization and Docker Compose"
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "DSCI 522 Slides",
+    "section": "License",
+    "text": "License\nThis work is licensed under the MIT License."
   },
   {
     "objectID": "labs/lab1-intro.html#lab-attendence-policies",
@@ -336,39 +434,32 @@
     "text": "Some Tips 💡\n\n\nInclude estimated computation time if analysis is expected to take long\nRound numbers to 2 decimal places when appropriate\nMake sure packages listed under environment.yml has exact version numbers listed. For example, pandas==2.2.3 instead of pandas&gt;=2.2.3.\nDo not copy and paste data description from the internet, that would be plagiarism. Write your own descriptions, and cite the source you used.\nHow to cite packages?\n\nR : citation(package = \"&lt;package_name&gt;\")\nPython : pip show --verbose &lt;package_name&gt;"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "DSCI 522 Slides",
+    "objectID": "cheatsheets/cheatsheet_conda.html",
+    "href": "cheatsheets/cheatsheet_conda.html",
+    "title": "Conda & Conda-lock Cheatsheet",
     "section": "",
-    "text": "This site contains lecture and lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow, in section 001, for 2025W1."
+    "text": "Task\nCommand\n\n\n\n\nCreate a new conda environment\nconda create -n &lt;env_name&gt;\n\n\nCreate with specific Python version\nconda create --name &lt;env_name&gt; python=3.11\n\n\nCreate with packages\nconda create --name &lt;env_name&gt; numpy pandas\n\n\nList all conda environments\nconda env list or conda info --envs\n\n\nActivate a conda environment\nconda activate &lt;env_name&gt;\n\n\nDeactivate a conda environment\nconda deactivate\n\n\nRemove a conda environment\nconda env remove -n &lt;env_name&gt;\n\n\nDuplicate a conda environment\nconda create --name &lt;new_env&gt; --clone &lt;old_env&gt;\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nList all packages in environment\nconda list\n\n\nRemove a package from current environment\nconda remove &lt;package_name&gt;\n\n\nUpdate a package in current environment\nconda update &lt;package_name&gt;\n\n\nRemove a package in other environment\nconda remove -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate a package in other environment\nconda update -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate all packages in current environment\nconda update --all\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nExport environment (with history)\nconda env export --from-history &gt; environment.yml\n\n\nExport environment (full)\nconda env export &gt; environment.yml\n\n\nCreate environment from environment.yml\nconda env create -n &lt;env_name&gt; or conda env create --file environment.yml\n\n\nUpdate existing environment from file\nconda env update --file environment.yml --prune"
   },
   {
-    "objectID": "index.html#welcome",
-    "href": "index.html#welcome",
-    "title": "DSCI 522 Slides",
+    "objectID": "cheatsheets/cheatsheet_conda.html#conda-basics",
+    "href": "cheatsheets/cheatsheet_conda.html#conda-basics",
+    "title": "Conda & Conda-lock Cheatsheet",
     "section": "",
-    "text": "This site contains lecture and lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow, in section 001, for 2025W1."
+    "text": "Task\nCommand\n\n\n\n\nCreate a new conda environment\nconda create -n &lt;env_name&gt;\n\n\nCreate with specific Python version\nconda create --name &lt;env_name&gt; python=3.11\n\n\nCreate with packages\nconda create --name &lt;env_name&gt; numpy pandas\n\n\nList all conda environments\nconda env list or conda info --envs\n\n\nActivate a conda environment\nconda activate &lt;env_name&gt;\n\n\nDeactivate a conda environment\nconda deactivate\n\n\nRemove a conda environment\nconda env remove -n &lt;env_name&gt;\n\n\nDuplicate a conda environment\nconda create --name &lt;new_env&gt; --clone &lt;old_env&gt;\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nList all packages in environment\nconda list\n\n\nRemove a package from current environment\nconda remove &lt;package_name&gt;\n\n\nUpdate a package in current environment\nconda update &lt;package_name&gt;\n\n\nRemove a package in other environment\nconda remove -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate a package in other environment\nconda update -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate all packages in current environment\nconda update --all\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nExport environment (with history)\nconda env export --from-history &gt; environment.yml\n\n\nExport environment (full)\nconda env export &gt; environment.yml\n\n\nCreate environment from environment.yml\nconda env create -n &lt;env_name&gt; or conda env create --file environment.yml\n\n\nUpdate existing environment from file\nconda env update --file environment.yml --prune"
   },
   {
-    "objectID": "index.html#instructor",
-    "href": "index.html#instructor",
-    "title": "DSCI 522 Slides",
-    "section": "Instructor",
-    "text": "Instructor\nSky (Kehan) Sheng\nUniversity of British Columbia\nwww.skysheng.io"
+    "objectID": "cheatsheets/cheatsheet_conda.html#command-line-notes",
+    "href": "cheatsheets/cheatsheet_conda.html#command-line-notes",
+    "title": "Conda & Conda-lock Cheatsheet",
+    "section": "2 Command Line Notes",
+    "text": "2 Command Line Notes\n\n--name and -n are equivalent\n--file and -f are equivalent\n--platform and -p are equivalent, this is used to specify the platform (e.g., linux-64, osx-arm64, win-64)\nMore command line review cheatsheet is available here"
   },
   {
-    "objectID": "index.html#available-slides",
-    "href": "index.html#available-slides",
-    "title": "DSCI 522 Slides",
-    "section": "Available Slides",
-    "text": "Available Slides\n\nLectures\n\nLecture 1 - Introduction to Reproducible and Trustworthy Data Science Workflow\nLecture 2 - Conda-lock, Containerization, and Docker\nLecture 3 - Customizing and Building Containers\nLecture 4 - Containerizing Python Applications\nLecture 5 - Non-interactive scripts\n\n\n\nLabs\n\nLab 1 Introduction - Introduction to reproducible workflows, lab policies, and getting started\n\n\n\nCheatsheets\n\nConda & Conda-lock Cheatsheet - Quick reference for conda environment management and conda-lock\nDocker & Docker Compose Cheatsheet - Quick reference for Docker containerization and Docker Compose"
-  },
-  {
-    "objectID": "index.html#license",
-    "href": "index.html#license",
-    "title": "DSCI 522 Slides",
-    "section": "License",
-    "text": "License\nThis work is licensed under the MIT License."
+    "objectID": "cheatsheets/cheatsheet_conda.html#conda-lock",
+    "href": "cheatsheets/cheatsheet_conda.html#conda-lock",
+    "title": "Conda & Conda-lock Cheatsheet",
+    "section": "3 Conda-lock",
+    "text": "3 Conda-lock\n\n3.1 📜 Basic Commands\n\n\n\n\n\n\n\n\nCommand\nOutput\nDescription\n\n\n\n\nconda-lock lock --file environment.yml\nconda-lock.yml\nGeneral lock file for all platforms\n\n\nconda-lock lock --file environment.yml -p linux-64\nconda-lock.yml\nGeneral lock file for specific platform (Linux)\n\n\nconda-lock -k explicit --file environment.yml -p linux-64\nconda-linux-64.lock\nExplicit lock file for one platform (Linux)\n\n\nconda-lock render -p linux-64\nconda-linux-64.lock\nExplicit lock file from existing conda-lock.yml\n\n\n\n\n\n3.2 🙀 Comparing conda-lock.yml vs conda-linux-64.lock\n\n\n\n\n\n\n\n\nFeature\nconda-lock.yml\nconda-linux-64.lock\n\n\n\n\nFormat\nUnified YAML (multi-platform)\nExplicit (single-platform)\n\n\nContent\nStructured metadata + dependencies for all platforms\nSimple list of package URLs\n\n\nFile Size\nLarger (contains all platforms)\nSmaller (one platform only)\n\n\nInstallation\nconda-lock install --name &lt;env_name&gt; conda-lock.yml\nconda create --name &lt;env_name&gt; --file conda-linux-64.lock\n\n\nUse case\nDevelopment across multiple platforms\nProduction deployment, Docker, single platform\n\n\nSpeed\nSlightly slower (conda-lock processes it)\nFastest\n\n\n\n\n\n3.3 Creating Environments from Lock Files\nFrom conda-lock.yml:\nconda-lock install --name &lt;env_name&gt; conda-lock.yml\nFrom explicit lock file (e.g., conda-linux-64.lock):\nconda create --name &lt;env_name&gt; --file conda-linux-64.lock"
   },
   {
     "objectID": "cheatsheets/cheatsheet_docker.html",
@@ -397,6 +488,13 @@
     "title": "Docker & Docker Compose Cheatsheet",
     "section": "3 Dockerfile",
     "text": "3 Dockerfile\nA Dockerfile contains instructions for building a custom Docker image.\nBasic structure:\n# Start with a base image\nFROM base_image:tag\n\n# Copy files\nCOPY local_path container_path\n\n# Run commands\nRUN command\n\n# Set environment variables\nENV VAR_NAME=value\n\n3.1 Code we run in class: Dockerfile practice\nStep-by-step instructions:\n\nPlease first cd to a local folder of your choice, don’t put all files in your home directory!\n\n# Example `cd` command: \ncd /Users/skysheng/Desktop/github/dsci522\n\nMake a new folder called demo_docker (or any other name you like)\n\nmkdir demo_docker\n\nMove into that folder we just created\n\ncd demo_docker\n\nCreate a environment.yml file using nano\n\nnano environment.yml\n\nCopy and paste the following code into the environment.yml file.\n\nname: my_env\nchannels:\n- conda-forge\ndependencies:\n- conda-lock=3.0.4\n- pandas=2.3.3\n- pandera=0.26.1\n- pip=25.3\n- python=3.11.14\n- pip:\n  - deepchecks==0.19.1\n\nYou can also create this file using Graphical user interface (GUI) like VSCode.\nIf you used nano to create this file, you need to press Cntrl + X to attempt exit, by default it will ask you to save the file. Press Y and then press Enter to save the file.\n\n\nPrint out the content of the file to make sure it is correct.\n\ncat environment.yml\n\nCreate an explicit conda-lock file for linux OS using the following command:\n\nMacbook users with Apple Silicon chips (M1-M4 chips):\n\nFor Local testing: You will need to use the following command (command 1) to test the conda-lock file locally on your machine.\nFor Remote GitHub deployment: You will need to run command 2 to create a conda-linux64.lock file for deployment on GitHub Actions using Ubuntu machine.\n\n\n\n# command 1: \nconda-lock -k explicit --file environment.yml -p linux-aarch64\n\nEveryone else can use the following command for both local testing and Remote GitHub deployment:\n\n# command 2: \nconda-lock -k explicit --file environment.yml -p linux-64\n\nCreate a Dockerfile file using nano, or you can use GUI like VSCode.\n\nnano Dockerfile \n\nCopy and paste the following code into the Dockerfile file. We use jupyter minimal notebook image as an example, and copy the conda-lock file to the container.\n\nMacbook users with Apple Silicon chips will need to:\n\nFor Local Dockerfile testing: Use the following code (Dockerfile 1) to copy the conda-linux-aarch64.lock file to the container.\nFor Remote GitHub deployment: Use the other code (Dockerfile 2) to copy the conda-linux64.lock file to the container for deployment on GitHub Actions using Ubuntu machine.\n\n\n\n# Dockerfile 1\nFROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8\n\nCOPY conda-linux-aarch64.lock /tmp/conda-linux-aarch64.lock\n\nEveryone else can use the following code for both local testing and Remote GitHub deployment:\n\n# Dockerfile 2\nFROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8\n\nCOPY conda-linux-64.lock /tmp/conda-linux-64.lock\n\nBuild the docker image locally using the following command:\n\n# 10. Build the docker image locally, with the tag name `testing_cmds`. \n# pay attention to the dot at the end of the command! \ndocker build --tag testing_cmds .\n\nRun the docker image you just built using the following command:\n\n\nIf you want to launch container’s terminal only:\n\nNote: For Macbook users with Apple Silicon chips M4 chip, you may run into bugs here. The terminal may open, but once you try to type something, it will crash and come back to the base terminal environment.\ndocker run --rm -it testing_cmds ../../bin/bash\n\nLaunch interactive terminal on web browser:\n\nNote: For Macbook users with Apple Silicon chips M4 chip, this will work for you.\ndocker run --rm -it -p 8888:8888 testing_cmds\nWatch your terminal output for a unique URL beginning with http://127.0.0.1:8888/lab?token=. You’ll see it displayed as highlighted in the example screenshot below. Copy this URL and open it in your web browser to access the Jupyter Lab interface. You can access the terminal by clicking on the terminal icon inside of the Jupyter Lab interface.\n\n\nOnce you are in the terminal, you can test if this command works. This command will update the base environment with the packages you specified in the conda-lock file.\n\nconda update --quiet --file /tmp/conda-linux-64.lock\n\nIf the above command works, you can exit the terminal by typing exit.\nUpdate the Dockerfile to include this newly tested command. Dockerfile now should look like this for Macbook users with Apple Silicon chips M1-M4 chip to test the command locally:\n\n# Dockerfile 1\nFROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8\n\nCOPY conda-linux-aarch64.lock /tmp/conda-linux-aarch64.lock\n\nRUN conda update --quiet --file /tmp/conda-linux-aarch64.lock\nDockerfile now should look like this for everyone else:\n# Dockerfile 2\nFROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8\n\nCOPY conda-linux-64.lock /tmp/conda-linux-64.lock\n\nRUN conda update --quiet --file /tmp/conda-linux-64.lock\n\nRe-build the docker image locally using the following command:\n\n# 15. Re-build the docker image locally, with the tag name `testing_cmds`. \n# pay attention to the dot at the end of the command! \ndocker build --tag testing_cmds .\n\nRun the docker image you just built using the same command as step 11. Then continue to test the following commands line by line in the terminal. Iterate through steps 12-14 (build a docker image –&gt; run the docker container’s terminal –&gt; test new command –&gt; update the Dockerfile to include the new command –&gt; build docker image again …) until you are happy with your Dockerfile.\n\n# Clean up the cache files in building conda environment.\nconda clean --all -y -f\n# Fix file permissions for the conda directory so all users can access it\nfix-permissions \"${CONDA_DIR}\"\n# Fix file permissions for the user's home directory so the notebook user can read/write files\nfix-permissions \"/home/${NB_USER}\"\n\n🎉 Final Dockerfile should look like this:\n\n\nDockerfile for Macbook users with Apple Silicon chips M1-M4 chip testing locally:\n\n# Final Dockerfile\nFROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8\n\nCOPY conda-linux-aarch64.lock /tmp/conda-linux-aarch64.lock\n\nRUN conda update --quiet --file /tmp/conda-linux-aarch64.lock\nRUN conda clean --all -y -f\nRUN fix-permissions \"${CONDA_DIR}\"\nRUN fix-permissions \"/home/${NB_USER}\"\n\nDockerfile for everyone else & Macbook user using GitHub Actions to deploy docker image remotely:\n\n# Final Dockerfile\nFROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8\n\nCOPY conda-linux-64.lock /tmp/conda-linux-64.lock\n\nRUN conda update --quiet --file /tmp/conda-linux-64.lock\nRUN conda clean --all -y -f\nRUN fix-permissions \"${CONDA_DIR}\"\nRUN fix-permissions \"/home/${NB_USER}\"\n\nFollow the same command in steps 10-11 to build and run the docker image you just built."
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_docker.html#conda-docker-github-actions-workflow",
+    "href": "cheatsheets/cheatsheet_docker.html#conda-docker-github-actions-workflow",
+    "title": "Docker & Docker Compose Cheatsheet",
+    "section": "4 Conda + Docker + GitHub Actions Workflow",
+    "text": "4 Conda + Docker + GitHub Actions Workflow\n\n\nconda create & conda install\nCreate environment.yml\nAdd version numbers\nGenerate conda-lock file\nWrite Dockerfile\nCreate docker-compose.yml\nPush to GitHub\nAdd GitHub Actions workflow yml file\nAdd Docker Hub Personal Access Token (PAT)\nConfigure GitHub Secrets\nWorkflow runs (auto/manual)\nCheck Docker Hub for new image\nLocally, docker pull new image\nLocally, command line docker run"
   },
   {
     "objectID": "lectures/lec3.html#iclicker-how-is-your-group-collaboration-going",

@@ -26,6 +26,8 @@ website:
             href: labs/lab1-intro.html
       - text: "Cheatsheets"
         menu:
+          - text: "Command Line"
+            href: cheatsheets/cheatsheet_command_line.html
           - text: "Conda & Conda-lock"
             href: cheatsheets/cheatsheet_conda.html
           - text: "Docker & Docker Compose"

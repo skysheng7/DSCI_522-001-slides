@@ -387,3 +387,23 @@ RUN fix-permissions "/home/${NB_USER}"
 ```
 
 18. Follow the same command in steps 10-11 to build and run the docker image you just built.
+
+## Conda + Docker + GitHub Actions Workflow
+
+![](../images/docker4.png){width="3600px" style="margin-bottom: 0px;"}
+
+1. `conda create` & `conda install`
+2. Create `environment.yml`
+3. Add version numbers
+4. Generate `conda-lock` file
+5. Write `Dockerfile`
+6. Create `docker-compose.yml`
+7. Push to GitHub
+8. Add GitHub Actions workflow yml file
+9. Add Docker Hub Personal Access Token (PAT)
+10. Configure GitHub Secrets
+11. Workflow runs (auto/manual)
+12. Check Docker Hub for new image
+13. Locally, `docker pull` new image
+14. Locally, command line `docker run`
+

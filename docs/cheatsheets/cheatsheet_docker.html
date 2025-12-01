@@ -171,6 +171,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-cheatsheets">    
         <li>
+    <a class="dropdown-item" href="../cheatsheets/cheatsheet_command_line.html">
+ <span class="dropdown-text">Command Line</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../cheatsheets/cheatsheet_conda.html">
  <span class="dropdown-text">Conda &amp; Conda-lock</span></a>
   </li>  
@@ -212,6 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#code-we-run-in-class-dockerfile-practice" id="toc-code-we-run-in-class-dockerfile-practice" class="nav-link" data-scroll-target="#code-we-run-in-class-dockerfile-practice"><span class="header-section-number">3.1</span> Code we run in class: <code>Dockerfile</code> practice</a></li>
   </ul></li>
+  <li><a href="#conda-docker-github-actions-workflow" id="toc-conda-docker-github-actions-workflow" class="nav-link" data-scroll-target="#conda-docker-github-actions-workflow"><span class="header-section-number">4</span> Conda + Docker + GitHub Actions Workflow</a></li>
   </ul>
 </nav>
     </div>
@@ -644,9 +649,29 @@ Version Tags
 <ol start="18" type="1">
 <li>Follow the same command in steps 10-11 to build and run the docker image you just built.</li>
 </ol>
-
-
 </section>
+</section>
+<section id="conda-docker-github-actions-workflow" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="conda-docker-github-actions-workflow"><span class="header-section-number">4</span> Conda + Docker + GitHub Actions Workflow</h2>
+<p><img src="../images/docker4.png" class="img-fluid" style="margin-bottom: 0px;" width="3600"></p>
+<ol type="1">
+<li><code>conda create</code> &amp; <code>conda install</code></li>
+<li>Create <code>environment.yml</code></li>
+<li>Add version numbers</li>
+<li>Generate <code>conda-lock</code> file</li>
+<li>Write <code>Dockerfile</code></li>
+<li>Create <code>docker-compose.yml</code></li>
+<li>Push to GitHub</li>
+<li>Add GitHub Actions workflow yml file</li>
+<li>Add Docker Hub Personal Access Token (PAT)</li>
+<li>Configure GitHub Secrets</li>
+<li>Workflow runs (auto/manual)</li>
+<li>Check Docker Hub for new image</li>
+<li>Locally, <code>docker pull</code> new image</li>
+<li>Locally, command line <code>docker run</code></li>
+</ol>
+
+
 </section>
 
 </main> <!-- /main -->
