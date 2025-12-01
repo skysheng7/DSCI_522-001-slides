@@ -578,7 +578,7 @@
     "href": "lectures/lec5.html#iclicker-why-do-we-use-docker-compose-file",
     "title": "DSCI 522 Lecture 5",
     "section": "iClicker: Why do we use docker-compose file?",
-    "text": "iClicker: Why do we use docker-compose file?\n\n\nTo create and customize our own docker\n\n\nTo easily launch and stop our docker container in one command\n\n\nTo document the packages we used so that we can easily share with others\n\n\nTo prepare for publishing our docker image on Docker Hub"
+    "text": "iClicker: Why do we use docker-compose file?\n\nTo create and customize our own docker\nTo easily launch and stop our docker container in one command\nTo document the packages we used so that we can easily share with others\nTo prepare for publishing our docker image on Docker Hub"
   },
   {
     "objectID": "lectures/lec5.html#something-to-look-forward-to-at-the-end-of-dsci-522",
