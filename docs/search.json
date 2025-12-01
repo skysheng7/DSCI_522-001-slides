@@ -819,6 +819,13 @@
     "text": "Docstring: Numpy Style\n\ndef func(arg1, arg2):\n    \"\"\"Summary line.\n\n    Extended description of function.\n\n    Parameters\n    ----------\n    arg1 : int\n        Description of arg1\n    arg2 : str\n        Description of arg2\n\n    Returns\n    -------\n    bool\n        Description of return value\n\n    Raises\n    ------\n    KeyError\n        when a key error\n    \"\"\"\n    return True\n\n\nSource"
   },
   {
+    "objectID": "lectures/lec5.html#why-does-docstring-style-matter",
+    "href": "lectures/lec5.html#why-does-docstring-style-matter",
+    "title": "DSCI 522 Lecture 5",
+    "section": "Why does docstring style matter?",
+    "text": "Why does docstring style matter?\n\n\n\nReadability: Your collaborators, future users, and future you will thank you for writing clear and concise docstrings.\nGood docstring should be both human-readable and machine-readable.\nPython Example:\n\nSource code for pandas.DataFrame.head\nAPI for pandas.DataFrame.head\n\nR Example:\n\nSource code for moo4feed package cluster_meals\nAPI for moo4feed package cluster_meals"
+  },
+  {
     "objectID": "lectures/lec5.html#tips-for-python-scripts",
     "href": "lectures/lec5.html#tips-for-python-scripts",
     "title": "DSCI 522 Lecture 5",
