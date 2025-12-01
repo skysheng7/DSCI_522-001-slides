@@ -669,21 +669,21 @@
     "href": "lectures/lec5.html#q-i-did-everything-as-instructed-why-do-i-still-get-bugs",
     "title": "DSCI 522 Lecture 5",
     "section": "Q: “I did everything as instructed, why do I still get bugs?” 🥲",
-    "text": "Q: “I did everything as instructed, why do I still get bugs?” 🥲\n\nBad news: 🐛 are inevitable\n\nDebugging is one of the most important skills to have as a data scientist\n\nGood news: Enemies of 🐛:\n\nDocumentation, attention to details, perseverance, clean code, testing…"
+    "text": "Q: “I did everything as instructed, why do I still get bugs?” 🥲\n\n\nBad news: 🐛 are inevitable\n\nDebugging is one of the most important skills to have as a data scientist\n\nGood news: Enemies of 🐛:\n\nDocumentation, attention to details, perseverance, clean code, testing…"
   },
   {
     "objectID": "lectures/lec5.html#q-conda-is-not-locking-my-pip-packages",
     "href": "lectures/lec5.html#q-conda-is-not-locking-my-pip-packages",
     "title": "DSCI 522 Lecture 5",
     "section": "Q: “conda is not locking my pip packages!” 😱",
-    "text": "Q: “conda is not locking my pip packages!” 😱\n\n\nSolution: pip install packages inside of your Dockerfile\n\n(optional but recommended) Still add version numbers for your pip packages in environment.yml file for documentation purposes\n\n\n# build on top of template of minimal notebook\nFROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8\n\n# copy all conda environment dependencies\nCOPY conda-linux-64.lock /tmp/conda-linux-64.lock\n\n# conda install all the other packages\nRUN mamba update --quiet --file /tmp/conda-linux-64.lock \\\n    && mamba clean --all -y -f \\\n    && fix-permissions \"${CONDA_DIR}\" \\\n    && fix-permissions \"/home/${NB_USER}\"\n\n# install openai using pip\nRUN pip install openai==1.57.0"
+    "text": "Q: “conda is not locking my pip packages!” 😱\n\n\n\nSolution: pip install packages inside of your Dockerfile\n\n(optional but recommended) Still add version numbers for your pip packages in environment.yml file for documentation purposes\n\n\n# build on top of template of minimal notebook\nFROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8\n\n# copy all conda environment dependencies\nCOPY conda-linux-64.lock /tmp/conda-linux-64.lock\n\n# conda install all the other packages\nRUN mamba update --quiet --file /tmp/conda-linux-64.lock \\\n    && mamba clean --all -y -f \\\n    && fix-permissions \"${CONDA_DIR}\" \\\n    && fix-permissions \"/home/${NB_USER}\"\n\n# install openai using pip\nRUN pip install openai==1.57.0"
   },
   {
     "objectID": "lectures/lec5.html#q-the-data-im-currently-using-do-not-have-any-missing-data-why-do-i-still-need-to-do-data-validation",
     "href": "lectures/lec5.html#q-the-data-im-currently-using-do-not-have-any-missing-data-why-do-i-still-need-to-do-data-validation",
     "title": "DSCI 522 Lecture 5",
     "section": "Q: “The data I’m currently using do not have any missing data, why do I still need to do data validation?”",
-    "text": "Q: “The data I’m currently using do not have any missing data, why do I still need to do data validation?”\n\nWhat about your future data?\nWe set up the data validation pipeline so that we can easily validate new data, and get warnings if there are missing values in the future."
+    "text": "Q: “The data I’m currently using do not have any missing data, why do I still need to do data validation?”\n\n\nWhat about your future data?\nWe set up the data validation pipeline so that we can easily validate new data, and get warnings if there are missing values in the future."
   },
   {
     "objectID": "lectures/lec5.html#iclicker-why-do-we-use-docker-compose-file",
@@ -740,5 +740,68 @@
     "title": "DSCI 522 Lecture 5",
     "section": "Something to look forward to at the end of DSCI 522… ",
     "text": "Something to look forward to at the end of DSCI 522… \n\n\n🤖 AI agents and fully automated data science workflows using Model Context Protocols (MCPs)\n🐳 Most MCP servers are built using Docker containers"
+  },
+  {
+    "objectID": "lectures/lec5.html#you-have-already-been-using-scripts",
+    "href": "lectures/lec5.html#you-have-already-been-using-scripts",
+    "title": "DSCI 522 Lecture 5",
+    "section": "You have already been using scripts!",
+    "text": "You have already been using scripts!\n\n\nGitHub repo: append_version_to_environment_yml\npython update_enviroment_yml.py --root_dir=\".\" --env_name=\"ai_env\" --yml_name=\"environment.yml\""
+  },
+  {
+    "objectID": "lectures/lec5.html#read-eval-print-loop-repl-framework-i.e.-interactive-mode",
+    "href": "lectures/lec5.html#read-eval-print-loop-repl-framework-i.e.-interactive-mode",
+    "title": "DSCI 522 Lecture 5",
+    "section": "Read-eval-print-loop (REPL) framework (i.e., interactive mode)",
+    "text": "Read-eval-print-loop (REPL) framework (i.e., interactive mode)\n\n\nRead-eval-print-loop (REPL) framework is when the machine reads the input, evalutes/executes them through functions, print out the result to the user. 👀 –&gt; ✅ –&gt; 🖨️\nREPL example:\n\nRun code in console for R & Python\nRun code in cells of Jupyter Notebook"
+  },
+  {
+    "objectID": "lectures/lec5.html#what-are-the-problems-with-jupyter-notebook",
+    "href": "lectures/lec5.html#what-are-the-problems-with-jupyter-notebook",
+    "title": "DSCI 522 Lecture 5",
+    "section": "What are the problems with Jupyter Notebook?",
+    "text": "What are the problems with Jupyter Notebook?\n\n\n🤔 Example 1: What if we turn update_environment_yml.py into a Jupyter Notebook and always run cell by cell?\n😵‍💫 Example 2: A jupyter notebook to analyze images output by text-to-image generative models. Old commit history in November 2024 for this repository. My Problems are:\n\n4800 images generated\n25 visualization plots generated"
+  },
+  {
+    "objectID": "lectures/lec5.html#what-are-the-problems-with-jupyter-notebook-1",
+    "href": "lectures/lec5.html#what-are-the-problems-with-jupyter-notebook-1",
+    "title": "DSCI 522 Lecture 5",
+    "section": "What are the problems with Jupyter Notebook?",
+    "text": "What are the problems with Jupyter Notebook?\n\n\n😵 Do you want to show every single step of your analysis in one single file to your reader?\n\nRemember my 5000-line R code that you roasted? 🔥"
+  },
+  {
+    "objectID": "lectures/lec5.html#what-are-the-benefits-of-using-scripts",
+    "href": "lectures/lec5.html#what-are-the-benefits-of-using-scripts",
+    "title": "DSCI 522 Lecture 5",
+    "section": "💡 What are the benefits of using scripts?",
+    "text": "💡 What are the benefits of using scripts?\n\n\nAbstraction: Hide the complexity of the code from the user\nReusability: The script can be reused by others\n\ne.g., I moved the update_environment_yml.py script out from my original repository and shared it with you\n\nEfficiency: The script can be run in parallel\nAutomation: Scripts can be used with other tools (e.g., GNU Make) to automate the entire workflow\nEase of use: The script can be run with a single command\nEase of debugging: Modular code is easier to debug"
+  },
+  {
+    "objectID": "lectures/lec5.html#read-eval-print-loop-repl-framework-vs-scripts",
+    "href": "lectures/lec5.html#read-eval-print-loop-repl-framework-vs-scripts",
+    "title": "DSCI 522 Lecture 5",
+    "section": "🌟 Read-eval-print-loop (REPL) framework VS Scripts",
+    "text": "🌟 Read-eval-print-loop (REPL) framework VS Scripts\n\n\n\n\n\n\n\n\n\nAspect\nREPL (e.g., Jupyter Notebook)\nScripts\n\n\n\n\nExecution\nInteractive, line-by-line or cell-by-cell\nBatch mode, top to bottom\n\n\nBest for\nSolving small problems, developing code, exploratory analysis\nAutomation, production workflows, reproducible pipelines\n\n\nAdvantages\nImmediate feedback, easy for small problems and experiments\nEfficiency, automation, reusability, reproducibility\n\n\nExamples\nR/Python console, Jupyter Notebook cells\n.py, .R files run from command line\n\n\nComplexity\nCan become messy with large analyses\nBetter for complex, modular workflows\n\n\nDebugging\nHarder with non-linear execution\nEasier with linear, modular code"
+  },
+  {
+    "objectID": "lectures/lec5.html#lets-dive-into-python-scripts",
+    "href": "lectures/lec5.html#lets-dive-into-python-scripts",
+    "title": "DSCI 522 Lecture 5",
+    "section": "🏄🏻‍♀️ Let’s dive into python scripts!",
+    "text": "🏄🏻‍♀️ Let’s dive into python scripts!\n\nScan through the update_environment_yml.py script and discuss the following questions with your neighbor:\n\nWhat is the structure of this script?\nWhere are the documentation comments?\nWhat is the structure and style of the documentation?\nWhere is the packages get imported?\nWhat is the purpose of @click.option()?\nWhy do we need if __name__ == \"__main__\": at the end?"
+  },
+  {
+    "objectID": "lectures/lec5.html#example-python-script-organization",
+    "href": "lectures/lec5.html#example-python-script-organization",
+    "title": "DSCI 522 Lecture 5",
+    "section": "Example python script organization",
+    "text": "Example python script organization\n# documentation comments\n\n# import libraries/packages\n\n# parse/define command line arguments here\n\n# code for other functions\n\n# define main function\ndef main():\n    # code for \"guts\" of script goes here\n\n# call main function\nif __name__ == \"__main__\":\n    main() # pass any command line args to main here"
+  },
+  {
+    "objectID": "lectures/lec5.html#tips-for-python-scripts",
+    "href": "lectures/lec5.html#tips-for-python-scripts",
+    "title": "DSCI 522 Lecture 5",
+    "section": "Tips for python scripts",
+    "text": "Tips for python scripts\n\n\n\n\n\n\nNote\n\n\n\nif __name__ == \"__main__\": lets you source the other functions in the script without running the main function.\nclick commands need to be placed right above the main function.\n\n\n\n\n\nExample:\nimport click\n\n@click.command()\n@click.argument('num1', type=int)\n@click.argument('num2', type=int)\ndef main(num1, num2):\n    \"\"\"Simple program that adds two numbers.\"\"\"\n    result = num1 + num2\n    click.echo(f\"The sum of {num1} and {num2} is {result}\")\n\nif __name__ == '__main__':\n    main()"
   }
 ]

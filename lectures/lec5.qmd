@@ -54,16 +54,18 @@ format:
 
 ## Q: "I did everything as instructed, why do I still get bugs?" 🥲 
 
+::: {.incremental}
 * Bad news: 🐛  are inevitable
     * Debugging is one of the most important skills to have as a data scientist
 * Good news: Enemies of  🐛:
     * Documentation, attention to details, perseverance, clean code, testing...
+:::
 
 ## Q: "conda is not locking my pip packages!" 😱
 
 
 ::: {.smaller style="font-size: 0.8em;"}
-
+::: {.incremental}
 * Solution: `pip install` packages inside of your Dockerfile
     * (optional but recommended) Still add version numbers for your pip packages in `environment.yml` file for documentation purposes
 
@@ -84,11 +86,14 @@ RUN mamba update --quiet --file /tmp/conda-linux-64.lock \
 RUN pip install openai==1.57.0
 ```
 :::
+:::
 
 ## Q: "The data I'm currently using do not have any missing data, why do I still need to do data validation?"
 
+::: {.incremental}
 * What about your future data? 
 * We set up the data validation pipeline so that we can easily validate new data, and get warnings if there are missing values in the future.
+:::
 
 ## iClicker: Why do we use `docker-compose` file?
 
@@ -157,3 +162,130 @@ RUN pip install openai==1.57.0
 * Docker Cheatsheet is available [here](../cheatsheets/cheatsheet_docker.html)
 
 # Today's topic: Non-interactive scripts 📜
+
+## You have already been using scripts!
+
+::: {.smaller style="font-size: 0.8em;"}
+* [GitHub repo: append_version_to_environment_yml](https://github.com/skysheng7/append_version_to_environment_yml.git)
+* `python update_enviroment_yml.py --root_dir="." --env_name="ai_env" --yml_name="environment.yml"`
+:::
+
+![](../images/conda3.png){width="5600px" style="margin-bottom: 0px;"}
+
+# What is a script? 
+
+::: {.incremental}
+* A script is a plain text file that contains sequence of commands (e.g., written in R or Python). It is usually executed from top to bottom from the command line. 
+* Example: [update_environment_yml.py](https://github.com/skysheng7/append_version_to_environment_yml/blob/main/update_enviroment_yml.py)
+:::
+
+<p style="position: fixed; bottom: 0px; left: 0px; font-size: 18px; color: gray; z-index: 1000;">Source: [Timbers, T. A., Ostblom, J., D'Andrea, F., Lourenzutti, R., & Chen, D. Reproducible and Trustworthy Workflows for Data Science
+](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/150-scripts.html)</p> 
+
+
+## Read-eval-print-loop (REPL) framework (i.e., interactive mode)
+
+::: {.incremental}
+* Read-eval-print-loop (REPL) framework is when the machine reads the input, evalutes/executes them through functions, print out the result to the user. 👀 --> ✅ --> 🖨️
+* REPL example: 
+    * Run code in console for R & Python
+    * Run code in cells of Jupyter Notebook
+
+:::
+
+## What are the problems with Jupyter Notebook? 
+
+::: {.incremental}
+* 🤔 Example 1: What if we turn [update_environment_yml.py](https://github.com/skysheng7/DSCI522_data_validation_demo/blob/main/problematic_notebooks/update_enviroment_yml.ipynb) into a Jupyter Notebook and always run cell by cell?
+* 😵‍💫 Example 2: [A jupyter notebook](https://github.com/skysheng7/DSCI522_data_validation_demo/blob/main/problematic_notebooks/Megadata%20Plot%20Generation.ipynb) to analyze images output by text-to-image generative models. [Old commit history in November 2024 for this repository](https://github.com/skysheng7/AI_bias_in_farming/tree/639fd7b8515a411995793d761adb1f1e9661775b). My Problems are:
+    * 4800 images generated
+    * 25 visualization plots generated
+:::
+
+## What are the problems with Jupyter Notebook? 
+
+::: {.incremental}
+* 😵 Do you want to show every single step of your analysis in one single file to your reader? 
+    * Remember my [5000-line R code](https://github.com/skysheng7/moo4feed/blob/main/data-raw/old_scripts/master_script_HOBO_Insentec_combined_Sockeye_v12.R) that you roasted? 🔥
+:::
+
+## 💡 What are the benefits of using scripts?
+
+::: {.incremental}
+* Abstraction: Hide the complexity of the code from the user
+* Reusability: The script can be reused by others
+    * e.g., I moved the [update_environment_yml.py](https://github.com/skysheng7/append_version_to_environment_yml/blob/main/update_enviroment_yml.py) script out from my original repository and shared it with you
+* Efficiency: The script can be run in parallel
+* Automation: Scripts can be used with other tools (e.g., GNU Make) to automate the entire workflow
+* Ease of use: The script can be run with a single command
+* Ease of debugging: Modular code is easier to debug
+:::
+
+## 🌟 Read-eval-print-loop (REPL) framework VS Scripts
+
+::: {.smaller style="font-size: 0.7em;"}
+| Aspect | REPL (e.g., Jupyter Notebook) | Scripts |
+|----|-------------|---------|
+| **Execution** | Interactive, line-by-line or cell-by-cell | Batch mode, top to bottom |
+| **Best for** | Solving small problems, developing code, exploratory analysis | Automation, production workflows, reproducible pipelines |
+| **Advantages** | Immediate feedback, easy for small problems and experiments | Efficiency, automation, reusability, reproducibility |
+| **Examples** | R/Python console, Jupyter Notebook cells | `.py`, `.R` files run from command line |
+| **Complexity** | Can become messy with large analyses | Better for complex, modular workflows |
+| **Debugging** | Harder with non-linear execution | Easier with linear, modular code |
+:::
+
+## 🏄🏻‍♀️ Let's dive into python scripts!
+
+* Scan through the [update_environment_yml.py](https://github.com/skysheng7/append_version_to_environment_yml/blob/main/update_enviroment_yml.py) script and discuss the following questions with your neighbor:
+  * What is the structure of this script? 
+  * Where are the documentation comments? 
+  * What is the structure and style of the documentation? 
+  * Where is the packages get imported? 
+  * What is the purpose of `@click.option()`?
+  * Why do we need `if __name__ == "__main__":` at the end?
+
+## Example python script organization
+
+```python
+# documentation comments
+
+# import libraries/packages
+
+# parse/define command line arguments here
+
+# code for other functions
+
+# define main function
+def main():
+    # code for "guts" of script goes here
+
+# call main function
+if __name__ == "__main__":
+    main() # pass any command line args to main here
+```
+
+## Tips for python scripts
+
+:::{.callout-note}
+* `if __name__ == "__main__":` lets you source the other functions in the script without running the main function.
+* `click` commands need to be placed right above the main function. 
+:::
+
+::: {.smaller style="font-size: 0.9em;"}
+Example:
+
+```python
+import click
+
+@click.command()
+@click.argument('num1', type=int)
+@click.argument('num2', type=int)
+def main(num1, num2):
+    """Simple program that adds two numbers."""
+    result = num1 + num2
+    click.echo(f"The sum of {num1} and {num2} is {result}")
+
+if __name__ == '__main__':
+    main()
+```
+:::
