@@ -59,13 +59,13 @@ format:
 
 ## iClicker: Why do we use `docker-compose` file?
 
-(A) To create and customize our own docker
+-(A) To create and customize our own docker
 
-(B) To easily launch and stop our docker container in one command
+-(B) To easily launch and stop our docker container in one command
 
-(C) To document the packages we used so that we can easily share with others
+-(C) To document the packages we used so that we can easily share with others
 
-(D) To prepare for publishing our docker image on Docker Hub
+-(D) To prepare for publishing our docker image on Docker Hub
 
 ## Something to look forward to at the end of DSCI 522... 🤩
 
