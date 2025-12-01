@@ -676,7 +676,7 @@
     "href": "lectures/lec5.html#q-conda-is-not-locking-my-pip-packages",
     "title": "DSCI 522 Lecture 5",
     "section": "Q: “conda is not locking my pip packages!” 😱",
-    "text": "Q: “conda is not locking my pip packages!” 😱\n\n\n\nSolution: pip install packages inside of your Dockerfile\n\n(optional but recommended) Still add version numbers for your pip packages in environment.yml file for documentation purposes\n\n\n# build on top of template of minimal notebook\nFROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8\n\n# copy all conda environment dependencies\nCOPY conda-linux-64.lock /tmp/conda-linux-64.lock\n\n# conda install all the other packages\nRUN mamba update --quiet --file /tmp/conda-linux-64.lock \\\n    && mamba clean --all -y -f \\\n    && fix-permissions \"${CONDA_DIR}\" \\\n    && fix-permissions \"/home/${NB_USER}\"\n\n# install openai using pip\nRUN pip install openai==1.57.0"
+    "text": "Q: “conda is not locking my pip packages!” 😱\n\n\n\nSolution: pip install packages inside of your Dockerfile\n\n(optional but recommended) Still add version numbers for your pip packages in environment.yml file for documentation purposes\n\n# build on top of template of minimal notebook\nFROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8\n\n# copy all conda environment dependencies\nCOPY conda-linux-64.lock /tmp/conda-linux-64.lock\n\n# conda install all the other packages\nRUN mamba update --quiet --file /tmp/conda-linux-64.lock \\\n    && mamba clean --all -y -f \\\n    && fix-permissions \"${CONDA_DIR}\" \\\n    && fix-permissions \"/home/${NB_USER}\"\n\n# install openai using pip\nRUN pip install openai==1.57.0"
   },
   {
     "objectID": "lectures/lec5.html#q-the-data-im-currently-using-do-not-have-any-missing-data-why-do-i-still-need-to-do-data-validation",
@@ -684,6 +684,13 @@
     "title": "DSCI 522 Lecture 5",
     "section": "Q: “The data I’m currently using do not have any missing data, why do I still need to do data validation?”",
     "text": "Q: “The data I’m currently using do not have any missing data, why do I still need to do data validation?”\n\n\nWhat about your future data?\nWe set up the data validation pipeline so that we can easily validate new data, and get warnings if there are missing values in the future."
+  },
+  {
+    "objectID": "lectures/lec5.html#q-why-do-we-need-to-standardize-repository-structure",
+    "href": "lectures/lec5.html#q-why-do-we-need-to-standardize-repository-structure",
+    "title": "DSCI 522 Lecture 5",
+    "section": "Q: “Why do we need to standardize repository structure?”",
+    "text": "Q: “Why do we need to standardize repository structure?”\n\n🫣 Here is a shameless bad example of what happens when you don’t use standardized, well-organized repository structure:"
   },
   {
     "objectID": "lectures/lec5.html#iclicker-why-do-we-use-docker-compose-file",
@@ -732,7 +739,7 @@
     "href": "lectures/lec5.html#docker-image-data-code-all-in-one-place",
     "title": "DSCI 522 Lecture 5",
     "section": "Docker image, data, code: all in one place?",
-    "text": "Docker image, data, code: all in one place?\n\n🐳 Docker image ➡️ Docker Hub\n📜 Code ➡️ GitHub repository\n📊 Data (small) ➡️ GitHub repository\n📊 Data (large) ➡️ Cloud storage (e.g., AWS S3); Zenodo; Borealis Dataverse"
+    "text": "Docker image, data, code: all in one place?\n\n\nNO 🙅‍♀️\n🐳 Docker image ➡️ Docker Hub\n📜 Code ➡️ GitHub repository\n📊 Data (small) ➡️ GitHub repository\n📊 Data (large) ➡️ Cloud storage (e.g., AWS S3); Zenodo; Borealis Dataverse"
   },
   {
     "objectID": "lectures/lec5.html#real-world-example-nature",
@@ -781,7 +788,7 @@
     "href": "lectures/lec5.html#what-are-the-benefits-of-using-scripts",
     "title": "DSCI 522 Lecture 5",
     "section": "💡 What are the benefits of using scripts?",
-    "text": "💡 What are the benefits of using scripts?\n\n\nAbstraction: Hide the complexity of the code from the user\nReusability: The script can be reused by others\n\ne.g., I moved the update_environment_yml.py script out from my original repository and shared it with you\n\nEfficiency: The script can be run in parallel\nAutomation: Scripts can be used with other tools (e.g., GNU Make) to automate the entire workflow\nEase of use: The script can be run with a single command\nEase of debugging: Modular code is easier to debug"
+    "text": "💡 What are the benefits of using scripts?\n\n\nAbstraction: Hide the complexity of the code from the user\nReusability: The script can be reused by others\n\ne.g., I moved the update_environment_yml.py script out from my original repository and shared it with you\n\nEfficiency: Jupyter Notebook runs in linear fashion, while the script can be run in parallel\nAutomation: Scripts can be used with other tools (e.g., GNU Make) to automate the entire workflow\nEase of use: The script can be run with a single command\nEase of debugging: Modular code is easier to debug"
   },
   {
     "objectID": "lectures/lec5.html#read-eval-print-loop-repl-framework-vs-scripts",
@@ -823,7 +830,7 @@
     "href": "lectures/lec5.html#why-does-docstring-style-matter",
     "title": "DSCI 522 Lecture 5",
     "section": "Why does docstring style matter?",
-    "text": "Why does docstring style matter?\n\n\n\nReadability: Your collaborators, future users, and future you will thank you for writing clear and concise docstrings.\nGood docstring should be both human-readable and machine-readable.\nPython Example:\n\nSource code for pandas.DataFrame.head\nAPI for pandas.DataFrame.head\n\nR Example:\n\nSource code for moo4feed package cluster_meals\nAPI for moo4feed package cluster_meals"
+    "text": "Why does docstring style matter?\n\n\n\nReadability: Your collaborators, future users, and future you will thank you for writing clear and concise docstrings. 🙏\nGood docstring should be both human-readable and machine-readable.\nPython Example:\n\nSource code for pandas.DataFrame.head\nAPI for pandas.DataFrame.head\n\nR Example:\n\nSource code for moo4feed package cluster_meals\nAPI for moo4feed package cluster_meals"
   },
   {
     "objectID": "lectures/lec5.html#tips-for-python-scripts",

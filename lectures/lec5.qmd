@@ -69,22 +69,22 @@ format:
 * Solution: `pip install` packages inside of your Dockerfile
     * (optional but recommended) Still add version numbers for your pip packages in `environment.yml` file for documentation purposes
 
-```bash
-# build on top of template of minimal notebook
-FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
+*   ```bash
+    # build on top of template of minimal notebook
+    FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
 
-# copy all conda environment dependencies
-COPY conda-linux-64.lock /tmp/conda-linux-64.lock
+    # copy all conda environment dependencies
+    COPY conda-linux-64.lock /tmp/conda-linux-64.lock
 
-# conda install all the other packages
-RUN mamba update --quiet --file /tmp/conda-linux-64.lock \
-    && mamba clean --all -y -f \
-    && fix-permissions "${CONDA_DIR}" \
-    && fix-permissions "/home/${NB_USER}"
+    # conda install all the other packages
+    RUN mamba update --quiet --file /tmp/conda-linux-64.lock \
+        && mamba clean --all -y -f \
+        && fix-permissions "${CONDA_DIR}" \
+        && fix-permissions "/home/${NB_USER}"
 
-# install openai using pip
-RUN pip install openai==1.57.0
-```
+    # install openai using pip
+    RUN pip install openai==1.57.0
+    ```
 :::
 :::
 
@@ -94,6 +94,14 @@ RUN pip install openai==1.57.0
 * What about your future data? 
 * We set up the data validation pipeline so that we can easily validate new data, and get warnings if there are missing values in the future.
 :::
+
+## <span style="font-size: 0.7em;">Q: "Why do we need to standardize repository structure?"</span>
+
+::: {.smaller style="font-size: 0.8em;"}
+🫣 Here is a shameless bad example of what happens when you don't use standardized, well-organized repository structure:
+:::
+
+![](../images/unorganized_repo.png){width="4500px" style="margin-bottom: 0px; display: block; margin-left: auto; margin-right: auto;"}
 
 ## iClicker: Why do we use `docker-compose` file?
 
@@ -139,11 +147,13 @@ RUN pip install openai==1.57.0
 
 ## Docker image, data, code: all in one place? 
 
+:::{.incremental}
+* NO 🙅‍♀️
 * 🐳 Docker image ➡️ [Docker Hub](https://hub.docker.com/)
 * 📜 Code ➡️ GitHub repository
 * 📊 Data (small) ➡️ GitHub repository
 * 📊 Data (large) ➡️ Cloud storage (e.g., [AWS S3](https://aws.amazon.com/s3/)); [Zenodo](https://zenodo.org/); [Borealis Dataverse](https://borealisdata.ca/dataverse/ubc)
-
+:::
 
 ## Real-world example: Nature
 
@@ -223,7 +233,7 @@ RUN pip install openai==1.57.0
 * Abstraction: Hide the complexity of the code from the user
 * Reusability: The script can be reused by others
     * e.g., I moved the [update_environment_yml.py](https://github.com/skysheng7/append_version_to_environment_yml/blob/main/update_enviroment_yml.py) script out from my original repository and shared it with you
-* Efficiency: The script can be run in parallel
+* Efficiency: Jupyter Notebook runs in linear fashion, while the script can be run in parallel
 * Automation: Scripts can be used with other tools (e.g., GNU Make) to automate the entire workflow
 * Ease of use: The script can be run with a single command
 * Ease of debugging: Modular code is easier to debug
@@ -337,7 +347,7 @@ def func(arg1, arg2):
 
 ::: {.incremental}
 ::: {.smaller style="font-size: 0.9em;"}
-* Readability: Your collaborators, future users, and future you will thank you for writing clear and concise docstrings.
+* Readability: Your collaborators, future users, and future you will thank you for writing clear and concise docstrings. 🙏 
 * Good docstring should be both human-readable and machine-readable.
 
 * Python Example:
