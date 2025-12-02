@@ -191,7 +191,7 @@ git clone https://github.com/skysheng7/DSCI522_data_validation_demo.git
 
 2. Pull the docker image:
 ```bash
-docker pull docker pull skysheng7/dsci522:8fcac44
+docker pull skysheng7/dsci522:8fcac44
 ```
 
 ## You have already been using scripts!

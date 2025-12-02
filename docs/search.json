@@ -760,7 +760,7 @@
     "href": "lectures/lec5.html#early-prep",
     "title": "DSCI 522 Lecture 5",
     "section": "Early Prep:",
-    "text": "Early Prep:\n\nClone the repository:\n\ngit clone https://github.com/skysheng7/DSCI522_data_validation_demo.git\n\nIf you already cloned this repository last time, please git pull to get the latest updates.\n\n\nPull the docker image:\n\ndocker pull docker pull skysheng7/dsci522:8fcac44"
+    "text": "Early Prep:\n\nClone the repository:\n\ngit clone https://github.com/skysheng7/DSCI522_data_validation_demo.git\n\nIf you already cloned this repository last time, please git pull to get the latest updates.\n\n\nPull the docker image:\n\ndocker pull skysheng7/dsci522:8fcac44"
   },
   {
     "objectID": "lectures/lec5.html#you-have-already-been-using-scripts",
