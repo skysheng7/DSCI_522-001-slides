@@ -69,7 +69,6 @@ import main_test
 :::
 
 
-
 ## Today's topic: Reproducible reports
 
 ![](../images/otter_quarto.jpg){width="3600px" style="margin-bottom: 0px;"}

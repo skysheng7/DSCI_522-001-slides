@@ -452,7 +452,7 @@
     "href": "index.html#available-slides",
     "title": "DSCI 522 Slides",
     "section": "Available Slides",
-    "text": "Available Slides\n\nLectures\n\nLecture 1 - Introduction to Reproducible and Trustworthy Data Science Workflow\nLecture 2 - Conda-lock, Containerization, and Docker\nLecture 3 - Customizing and Building Containers\nLecture 4 - Containerizing Python Applications\nLecture 5 - Non-interactive scripts\n\n\n\nLabs\n\nLab 1 Introduction - Introduction to reproducible workflows, lab policies, and getting started\n\n\n\nCheatsheets\n\nCommand Line Cheatsheet - Quick reference for command line operations\nConda & Conda-lock Cheatsheet - Quick reference for conda environment management and conda-lock\nDocker & Docker Compose Cheatsheet - Quick reference for Docker containerization and Docker Compose"
+    "text": "Available Slides\n\nLectures\n\nLecture 1 - Introduction to Reproducible and Trustworthy Data Science Workflow\nLecture 2 - Conda-lock, Containerization, and Docker\nLecture 3 - Customizing and Building Containers\nLecture 4 - Containerizing Python Applications\nLecture 5 - Non-interactive scripts\nLecture 6 - Reproducible reports\n\n\n\nLabs\n\nLab 1 Introduction - Introduction to reproducible workflows, lab policies, and getting started\n\n\n\nCheatsheets\n\nCommand Line Cheatsheet - Quick reference for command line operations\nConda & Conda-lock Cheatsheet - Quick reference for conda environment management and conda-lock\nDocker & Docker Compose Cheatsheet - Quick reference for Docker containerization and Docker Compose"
   },
   {
     "objectID": "index.html#license",

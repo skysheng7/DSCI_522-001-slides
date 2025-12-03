@@ -23,6 +23,7 @@ University of British Columbia
 - [Lecture 3](lectures/lec3.html) - Customizing and Building Containers
 - [Lecture 4](lectures/lec4.html) - Containerizing Python Applications
 - [Lecture 5](lectures/lec5.html) - Non-interactive scripts
+- [Lecture 6](lectures/lec6.html) - Reproducible reports
 
 ### Labs
 
