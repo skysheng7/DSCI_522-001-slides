@@ -1,0 +1,156 @@
+---
+title: "DSCI 522 Lecture 6"
+subtitle: "Reproducible reports"
+author: "Sky Sheng"
+execute:
+  eval: false
+format:
+  revealjs:
+    theme: default
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    logo: ../images/mds-hex-sticker.png
+---
+
+# 📜 Recap from non-interactive scripts
+
+## Recap: What is `__main__`?
+
+`__name__` is a special built-in variable in Python. The value of `__name__` depends on how the Python file is being executed:
+
+* When you run the script directly: `_name__` == "__main__"
+* When you import the script as a module: `__name__` == the module's name (filename without `.py`)
+
+## Try it out yourself! 👩‍💻
+
+::: {.smaller style="font-size: 0.8em;"}
+Let's use the same repostiory as we have been using in the past 2 lectures:
+
+1. Clone the repository if you have not yet done so:
+
+```bash
+git clone https://github.com/skysheng7/DSCI522_data_validation_demo.git
+```
+* If you already cloned this repository last time, please `git pull` to get the latest updates.
+
+2. You can open this folder with any IDE or your choice. You do not neccessarily need to do `docker compose up` to launch the container. 
+
+3. Go to the `scripts` directory, and run the `main_test.py` script. 
+
+4. Run the `import_main_test.py` script. 
+
+5. Observe the outputs.
+
+:::
+
+## Run the scripts and observe how `__name__` changes depending on how the script is being executed.
+
+::: {.smaller style="font-size: 0.8em;"}
+
+`main_test.py` script
+
+```python
+print(f"__name__ is: {__name__}")
+
+def my_function():
+    print("Hello from my_function!")
+
+if __name__ == "__main__":
+    print("Running as main script")
+    my_function()
+```
+
+ `import_main_test.py` script
+```python
+import main_test
+```
+
+:::
+
+
+
+## Today's topic: Reproducible reports
+
+![](../images/otter_quarto.jpg){width="3600px" style="margin-bottom: 0px;"}
+
+# What You See Is What You Get (WYSIWYG) editors
+
+Do you have any complains with Microsoft Word documents? 😅
+
+## Reproducible reports powered by code
+
+* You are very familiar with ***R Markdown*** & ***Jupyter*** already. 
+
+* You might have used ***LaTeX*** in the past. 
+
+* Today we will talk about ***Quarto***! All of the slides, website you have seeen in this course are built with Quarto!
+    * Why we use ***Quarto*** over ***LaTeX***? 🤔
+
+## Converting Jupyter Notebooks to Quarto
+
+:::{.smaller style="font-size: 0.8em;"}
+1. Install quarto in your conda environment if you have not yet done so.
+
+```bash
+conda install quarto
+```
+
+* Note: Please remember to redo conda lock of your enviornment, rebuild docker image after instaling quarto.
+* If you are running things locally, you may need to manually convert your conda enviornment to jupyter kernel: 
+
+```bash
+python -m ipykernel install --user --name <conda_env_name> --display-name "Python (<conda_env_name>)"
+```
+
+2. Convert your Jupyter Notebook to Quarto.
+
+```bash
+quarto convert notebook.ipynb
+```
+:::
+
+# 👩‍💻 Quarto demo
+
+We will use this repository to demo Quarto today: [https://github.com/UBC-MDS/dsci-522-individual-assignment-quarto-python](https://github.com/UBC-MDS/dsci-522-individual-assignment-quarto-python)
+
+* Quarto in RStudio
+* Quarto in VSCode
+
+## Tips for M3
+
+:::{.incremental}
+::: {.smaller style="font-size: 0.95em;"}
+Scripts: 
+
+* At least 4 scripts, living in a folder with reasonable name (e.g., `scripts`). 
+* README should document exactly how to run each in command line (in sequence). 
+* All scripts should run, no error, no warning. 
+* All output (e.g., plots, tables, artifacts) should be saved by code in the script. 
+* Well organized, broken down into smaller scripts. Well documented, consistent namiing and documentation style. 
+:::
+:::
+
+
+# 🎯 Milestone grading policy update
+
+::: {.smaller style="font-size: 0.8em;"}
+* In week 4, you will get the chance to make changes based on TA's feedback. You will be able to get 50% of the points back for each question you lost marks for through M1-M3. 
+:::
+
+## Tips for M3
+
+:::{.incremental}
+::: {.smaller style="font-size: 0.95em;"}
+Reports: 
+
+* No value should be hard-coded in the report. 
+* All plots should be rendered properly, with proper size, font size, etc. 
+* No code should be visible in the final rendered report. 
+
+Reproducibility: 
+
+* Anyone with no knowledge of docker should be able to reproduce your results based on instructions in your README file. 
+
+:::
+:::
