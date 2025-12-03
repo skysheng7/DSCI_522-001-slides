@@ -130,13 +130,6 @@ Scripts:
 :::
 :::
 
-
-# 🎯 Milestone grading policy update
-
-::: {.smaller style="font-size: 0.8em;"}
-* In week 4, you will get the chance to make changes based on TA's feedback. You will be able to get 50% of the points back for each question you lost marks for through M1-M3. 
-:::
-
 ## Tips for M3
 
 :::{.incremental}
@@ -153,3 +146,12 @@ Reproducibility:
 
 :::
 :::
+
+# 🎯 Milestone grading policy update
+
+::: {.smaller style="font-size: 0.8em;"}
+* In week 4, you will get the chance to make changes based on TA's feedback. You will be able to get 50% of the points back for each question you lost marks for through M1-M3. 
+:::
+
+
+# ⭐️ Good luck with M3!
