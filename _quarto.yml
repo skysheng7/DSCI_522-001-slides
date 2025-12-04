@@ -34,6 +34,8 @@ website:
             href: cheatsheets/cheatsheet_conda.html
           - text: "Docker & Docker Compose"
             href: cheatsheets/cheatsheet_docker.html
+          - text: "Quarto"
+            href: cheatsheets/cheatsheet_quarto.html
 
 format:
   html:
