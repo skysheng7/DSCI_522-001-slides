@@ -212,6 +212,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#converting-jupyter-notebooks-to-quarto" id="toc-converting-jupyter-notebooks-to-quarto" class="nav-link" data-scroll-target="#converting-jupyter-notebooks-to-quarto"><span class="header-section-number">1.1</span> Converting Jupyter Notebooks to Quarto</a></li>
   </ul></li>
+  <li><a href="#code-we-run-in-class-individual-assignment-3" id="toc-code-we-run-in-class-individual-assignment-3" class="nav-link" data-scroll-target="#code-we-run-in-class-individual-assignment-3"><span class="header-section-number">2</span> Code we run in class: Individual Assignment 3</a>
+  <ul class="collapse">
+  <li><a href="#create-a-new-repository" id="toc-create-a-new-repository" class="nav-link" data-scroll-target="#create-a-new-repository"><span class="header-section-number">2.1</span> Create a new repository</a></li>
+  <li><a href="#update-.qmd-file" id="toc-update-.qmd-file" class="nav-link" data-scroll-target="#update-.qmd-file"><span class="header-section-number">2.2</span> Update <code>.qmd</code> file</a>
+  <ul class="collapse">
+  <li><a href="#header-formatting-table-of-contents" id="toc-header-formatting-table-of-contents" class="nav-link" data-scroll-target="#header-formatting-table-of-contents"><span class="header-section-number">2.2.1</span> Header formatting &amp; table of contents</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">2.2.2</span> References</a></li>
+  <li><a href="#figure-formatting" id="toc-figure-formatting" class="nav-link" data-scroll-target="#figure-formatting"><span class="header-section-number">2.2.3</span> Figure formatting</a></li>
+  <li><a href="#table-formatting" id="toc-table-formatting" class="nav-link" data-scroll-target="#table-formatting"><span class="header-section-number">2.2.4</span> Table formatting</a></li>
+  <li><a href="#cross-referencing" id="toc-cross-referencing" class="nav-link" data-scroll-target="#cross-referencing"><span class="header-section-number">2.2.5</span> Cross-referencing</a></li>
+  <li><a href="#inline-quarto-code" id="toc-inline-quarto-code" class="nav-link" data-scroll-target="#inline-quarto-code"><span class="header-section-number">2.2.6</span> Inline Quarto code</a></li>
+  <li><a href="#no-code-chunk-visible" id="toc-no-code-chunk-visible" class="nav-link" data-scroll-target="#no-code-chunk-visible"><span class="header-section-number">2.2.7</span> No code chunk visible</a></li>
+  <li><a href="#github-pages" id="toc-github-pages" class="nav-link" data-scroll-target="#github-pages"><span class="header-section-number">2.2.8</span> GitHub Pages</a></li>
+  </ul></li>
+  <li><a href="#clean-up" id="toc-clean-up" class="nav-link" data-scroll-target="#clean-up"><span class="header-section-number">2.3</span> Clean up</a></li>
+  <li><a href="#hosting-on-github-pages" id="toc-hosting-on-github-pages" class="nav-link" data-scroll-target="#hosting-on-github-pages"><span class="header-section-number">2.4</span> Hosting on GitHub Pages</a></li>
+  </ul></li>
+  <li><a href="#congratulations" id="toc-congratulations" class="nav-link" data-scroll-target="#congratulations"><span class="header-section-number">3</span> 🎊 Congratulations!</a></li>
   </ul>
 </nav>
     </div>
@@ -248,7 +266,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="1"><span class="header-section-number">1</span> Quarto Basics</h1>
 <section id="converting-jupyter-notebooks-to-quarto" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="converting-jupyter-notebooks-to-quarto"><span class="header-section-number">1.1</span> Converting Jupyter Notebooks to Quarto</h2>
-<div class="smaller" style="font-size: 0.8em;">
 <ol type="1">
 <li>Install quarto in your conda environment if you have not yet done so.</li>
 </ol>
@@ -262,13 +279,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Convert your Jupyter Notebook to Quarto.</li>
 </ol>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> convert notebook.ipynb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="code-we-run-in-class-individual-assignment-3" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="code-we-run-in-class-individual-assignment-3"><span class="header-section-number">1.2</span> Code we run in class: Individual Assignment 3</h2>
+</section>
+</section>
+<section id="code-we-run-in-class-individual-assignment-3" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Code we run in class: Individual Assignment 3</h1>
+<section id="create-a-new-repository" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="create-a-new-repository"><span class="header-section-number">2.1</span> Create a new repository</h2>
 <ol type="1">
 <li>Use this <a href="https://github.com/UBC-MDS/dsci-522-individual-assignment-quarto-python">github repository</a> as a template, and create a new repository under your own GitHub account.</li>
 </ol>
 <p>Click on “Use this template” button, and then click “create a new repository” button to create a public repository using default settings under your own GitHub account.</p>
-<p><img src="../images/ia3-1.png" class="img-fluid"></p>
+<p><img src="../../images/ia3-1.png" class="img-fluid"></p>
 <ol start="2" type="1">
 <li>Clone the repository and <code>cd</code> into the repository.</li>
 </ol>
@@ -286,10 +307,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--out_dir</span><span class="op">=</span><span class="st">"results"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You will see the results folder now has new plots and csv files saved.</p>
 </section>
-<section id="update-.qmd-file" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="update-.qmd-file"><span class="header-section-number">1.3</span> Update <code>.qmd</code> file</h2>
-<section id="heaer-formatting-table-of-contents" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="heaer-formatting-table-of-contents"><span class="header-section-number">1.3.1</span> Heaer formatting &amp; table of contents</h3>
+<section id="update-.qmd-file" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="update-.qmd-file"><span class="header-section-number">2.2</span> Update <code>.qmd</code> file</h2>
+<section id="header-formatting-table-of-contents" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="header-formatting-table-of-contents"><span class="header-section-number">2.2.1</span> Header formatting &amp; table of contents</h3>
 <blockquote class="blockquote">
 <p><strong>TODO</strong>: Add header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered</p>
 </blockquote>
@@ -316,8 +337,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>...</span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># References</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="references" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="references"><span class="header-section-number">1.3.2</span> References</h3>
+<section id="references" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="references"><span class="header-section-number">2.2.2</span> References</h3>
 <blockquote class="blockquote">
 <p><strong>TODO</strong>: Add correctly formatted inline BibTeX references so that a nicely formatted reference list will be present at the end of the document.</p>
 </blockquote>
@@ -340,7 +361,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-⚠️ High bug zone: inentation &amp; <code>:</code>
+⚠️ High bug zone: indentation &amp; missing colon:
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -350,17 +371,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </div>
 </div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"DSCI 310: Historical Horse Population in Canada"</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Tiffany Timbers &amp; Jordan Bourak"</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Let's render what we have so far to see the result. In your terminal, please run the following commands</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="at">```bash</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># go to the reports directory if you are in the root directory</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="at">cd reports</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># render the html file</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="at">quarto render qmd_example.qmd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s render what we have so far to see the result. In your terminal, please run the following commands:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># go to the reports directory if you are in the root directory</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> reports</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># render the html file</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render qmd_example.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -371,35 +387,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You will noticed that no references are listed in the rendered pdf or html file. This is because we have not added in-text citations to the <code>.qmd</code> file. You can list as many BibTex references as you want in your <code>references.bib</code> file. However, only the references that are cited in the <code>.qmd</code> file will be listed in the rendered pdf or html file under “References” section.</p>
+<p>You will notice that no references are listed in the rendered pdf or html file. This is because we have not added in-text citations to the <code>.qmd</code> file. You can list as many BibTex references as you want in your <code>references.bib</code> file. However, only the references that are cited in the <code>.qmd</code> file will be listed in the rendered pdf or html file under “References” section.</p>
 </div>
 </div>
-<p>Let’s add in-text citations to the <code>.qmd</code> file. We will use the <code>[@reference_key]</code> syntax (or <span class="citation" data-cites="reference_key1 reference_key2">[@reference_key1; @reference_key2]</span> when you have more than 1 reference) to cite references. Please note the <code>reference_key</code> is the first phrase after <code>{</code> in the BibTex entry. For example, for this entry in the <code>references.bib</code> file:</p>
+<p>Let’s add in-text citations to the <code>.qmd</code> file. We will use the <code>[@reference_key]</code> syntax (or <code>[@reference_key1; @reference_key2]</code> when you have more than 1 reference) to cite references. Please note the <code>reference_key</code> is the first phrase after <code>{</code> in the BibTex entry. For example, for this entry in the <code>references.bib</code> file:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">@Manual</span>{<span class="ot">click</span>,</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span>           = {Click},</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span>           = {Click Python Package},</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">author</span>          = {Pallets Team},</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">year</span>            = {2020},</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">url</span>             = {https://click.palletsprojects.com/},</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>reference_key</code> is <code>click</code>.</p>
-<p>I’ve added the following in-text citations to the <code>.qmd</code> file. Please complete all other in-text citations yourself:</p>
+<p>The <code>reference_key</code> is <code>click</code>. We will use <code>[@click]</code> to cite this reference in the <code>.qmd</code> file.</p>
+<p>For example, I’ve added the following in-text citations to the <code>.qmd</code> file. Please complete all other in-text citations yourself:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Horse population data were sourced from the </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Government of Canada's Open Data website</span><span class="co">](http://open.canada.ca/en/open-data)</span> <span class="co">[</span><span class="ot">@horses1; @horses2</span><span class="co">]</span>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="figure-formatting" class="level3" data-number="1.3.3">
-<h3 data-number="1.3.3" class="anchored" data-anchor-id="figure-formatting"><span class="header-section-number">1.3.3</span> Figure formatting</h3>
+<section id="figure-formatting" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="figure-formatting"><span class="header-section-number">2.2.3</span> Figure formatting</h3>
 <blockquote class="blockquote">
 <p><strong>TODO</strong>: Edit the figure formatting so that Quarto:</p>
+<ul>
+<li>automatically numbers them</li>
+<li>has a label for easy cross referencing</li>
+<li>controls the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)</li>
+</ul>
 </blockquote>
-<pre><code>* automatically numbers them
-* has a label for easy cross referencing
-* controls the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)</code></pre>
 <p>We use the syntax <code>![description](relative/path/to/figure.png){#fig-label width=950%}</code> to format the figure. For example, I’ve added the following figure to the <code>.qmd</code> file, and I use <code>@fig-label</code> to refer to it in the text. This will be rendered as <code>Figure 1</code> in the rendered pdf or html file. You will do so for both Figure 1 + 2.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Results</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="al">![Horse populations for all provinces in Canada from 1906 - 1972.](../results/horse_pops_plot.png)</span>{#fig-horse-pop width=60%}</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>We can see from @fig-horse-pop that Ontario, Saskatchewan and Alberta </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Results</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="al">![Horse populations for all provinces in Canada from 1906 - 1972.](../results/horse_pops_plot.png)</span>{#fig-horse-pop width=60%}</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>We can see from @fig-horse-pop that Ontario, Saskatchewan and Alberta </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -418,25 +436,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="table-formatting" class="level3" data-number="1.3.4">
-<h3 data-number="1.3.4" class="anchored" data-anchor-id="table-formatting"><span class="header-section-number">1.3.4</span> Table formatting</h3>
+<section id="table-formatting" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="table-formatting"><span class="header-section-number">2.2.4</span> Table formatting</h3>
 <blockquote class="blockquote">
 <p><strong>TODO</strong>: add a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text</p>
 </blockquote>
 <p>We use the syntax below inside of python code block to format the table:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>#| label: tbl-label</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>#| tbl-cap: Table description</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>#| label: tbl-label</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>#| tbl-cap: Table description</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For example, I’ve added the following table to the <code>.qmd</code> file. <code>@tbl-horse-sd</code> will be rendered as <code>Table 1</code> in the rendered pdf or html file.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>We present the standard deviations in @tbl-horse-sd.</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="in">```\{python}</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: tbl-horse-sd</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| tbl-cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province.</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="in">horses_sd_table = pd.read_csv("../results/horses_sd.csv")</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="in">largest_sd = horses_sd_table['Province'].values[0]</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="in">Markdown(horses_sd_table.to_markdown(index = False))</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>We present the standard deviations in @tbl-horse-sd.</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="in">```\{python}</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: tbl-horse-sd</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| tbl-cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province.</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="in">horses_sd_table = pd.read_csv("../results/horses_sd.csv")</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="in">largest_sd = horses_sd_table['Province'].values[0]</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="in">Markdown(horses_sd_table.to_markdown(index = False))</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -455,68 +473,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="cross-referencing" class="level3" data-number="1.3.5">
-<h3 data-number="1.3.5" class="anchored" data-anchor-id="cross-referencing"><span class="header-section-number">1.3.5</span> Cross-referencing</h3>
+<section id="cross-referencing" class="level3" data-number="2.2.5">
+<h3 data-number="2.2.5" class="anchored" data-anchor-id="cross-referencing"><span class="header-section-number">2.2.5</span> Cross-referencing</h3>
 <blockquote class="blockquote">
 <p><strong>TODO</strong>: Edit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.</p>
 </blockquote>
 <p>In the steps above, we have already used cross-referencing to refer to the figures and tables (e.g., <code>@fig-horse-pop</code> and <code>@tbl-horse-sd</code>).</p>
 </section>
-<section id="inline-quarto-code" class="level3" data-number="1.3.6">
-<h3 data-number="1.3.6" class="anchored" data-anchor-id="inline-quarto-code"><span class="header-section-number">1.3.6</span> Inline Quarto code</h3>
+<section id="inline-quarto-code" class="level3" data-number="2.2.6">
+<h3 data-number="2.2.6" class="anchored" data-anchor-id="inline-quarto-code"><span class="header-section-number">2.2.6</span> Inline Quarto code</h3>
 <blockquote class="blockquote">
 <p><strong>TODO</strong>: replace the ??? in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value</p>
 </blockquote>
 <p>We use the syntax below to do inline Quarto code. It will execute the python / R code inside of the code block and resulting value will be displayed in the text.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="in">`{python} &lt;python_code&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="in">`{python} &lt;python_code&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For example, I’ve added the following inline Quarto code (i.e., <code>{python} largest_sd</code>) to the <code>.qmd</code> file:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="in">```\{python}</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: tbl-horse-sd</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| tbl-cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province.</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="in">horses_sd_table = pd.read_csv("../results/horses_sd.csv")</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="in">largest_sd = horses_sd_table['Province'].values[0]</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="in">Markdown(horses_sd_table.to_markdown(index = False))</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>In @fig-horse-largest we zoom in and look at the province of <span class="in">`{python} largest_sd`</span>, which had the largest spread of values in terms of standard deviation.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="in">```\{python}</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: tbl-horse-sd</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| tbl-cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province.</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="in">horses_sd_table = pd.read_csv("../results/horses_sd.csv")</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="in">largest_sd = horses_sd_table['Province'].values[0]</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="in">Markdown(horses_sd_table.to_markdown(index = False))</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>In @fig-horse-largest we zoom in and look at the province of <span class="in">`{python} largest_sd`</span>, which had the largest spread of values in terms of standard deviation.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="no-code-chunk-visible" class="level3" data-number="1.3.7">
-<h3 data-number="1.3.7" class="anchored" data-anchor-id="no-code-chunk-visible"><span class="header-section-number">1.3.7</span> No code chunk visible</h3>
+<section id="no-code-chunk-visible" class="level3" data-number="2.2.7">
+<h3 data-number="2.2.7" class="anchored" data-anchor-id="no-code-chunk-visible"><span class="header-section-number">2.2.7</span> No code chunk visible</h3>
 <blockquote class="blockquote">
 <p><strong>TODO</strong>: change the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables)</p>
 </blockquote>
 <p>We will set <code>echo: false</code> in the <code>yml</code> header to hide the code chunk in the rendered report.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"DSCI 310: Historical Horse Population in Canada"</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Tiffany Timbers &amp; Jordan Bourak"</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">editor</span><span class="kw">:</span><span class="at"> source</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"DSCI 310: Historical Horse Population in Canada"</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Tiffany Timbers &amp; Jordan Bourak"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">editor</span><span class="kw">:</span><span class="at"> source</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="github-pages" class="level3" data-number="1.3.8">
-<h3 data-number="1.3.8" class="anchored" data-anchor-id="github-pages"><span class="header-section-number">1.3.8</span> GitHub Pages</h3>
+<section id="github-pages" class="level3" data-number="2.2.8">
+<h3 data-number="2.2.8" class="anchored" data-anchor-id="github-pages"><span class="header-section-number">2.2.8</span> GitHub Pages</h3>
 <blockquote class="blockquote">
 <p><strong>TODO</strong>: (optional/bonus) Turn on GitHub pages so that it serves up the docs directory so that the report is viewable on the web.</p>
 </blockquote>
 <p>At the <strong>root directoy</strong> of your repository, please create a new file called <code>_quarto.yml</code> and add the following content:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This file will tell Quarto to output the rendered report to the <code>docs</code> folder, as a website.</p>
 <p>Then, at the <strong>root directoy</strong> of your repository, please run the following command to render the report in the terminal:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You will see that the rendered report is now all in the <code>docs</code> folder. There is a <code>index.html</code> file in the <code>docs</code> folder, you can open it in your browser to view the report.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -533,38 +551,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="clean-up" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="clean-up"><span class="header-section-number">1.4</span> Clean up</h2>
+<section id="clean-up" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="clean-up"><span class="header-section-number">2.3</span> Clean up</h2>
 <ol type="1">
 <li><p>After you are sure that you have completed everything. Close the jupyter lab docker container. In your terminal, press <code>Ctrol + C</code> to stop the container. Then run <code>docker compose rm</code> to remove the docker container.</p></li>
 <li><p>Push your changes to github as usual.</p></li>
 </ol>
 </section>
-<section id="hosting-on-github-pages" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="hosting-on-github-pages"><span class="header-section-number">1.5</span> Hosting on GitHub Pages</h2>
+<section id="hosting-on-github-pages" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="hosting-on-github-pages"><span class="header-section-number">2.4</span> Hosting on GitHub Pages</h2>
 <ol type="1">
-<li>After you pushed all changes to your github pages, please go to your github repository ➡️ Click on “Settings” gear icon ➡️ Click on “Pages” on the left panel ➡️ Under “Source”, select “Deploy from a branch” ➡️ Under “Branch”, select “main” ➡️ Then select “docs” folder from the dropdown menu ➡️ Click on “Save” button.</li>
+<li><p>After you pushed all changes to your github pages, please follow these steps:</p>
+<ul>
+<li>Go to your github repository</li>
+<li>Click on “Settings” gear icon</li>
+<li>Click on “Pages” on the left panel</li>
+<li>Under “Source”, select “Deploy from a branch”</li>
+<li>Under “Branch”, select “main”</li>
+<li>Then select “docs” folder from the dropdown menu</li>
+<li>Click on “Save” button</li>
+</ul></li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/ia3-3.png" class="img-fluid figure-img"></p>
+<p><img src="../../images/ia3-3.png" class="img-fluid figure-img"></p>
 <figcaption>GitHub Pages</figcaption>
 </figure>
 </div>
 <ol start="2" type="1">
 <li>Wait a few minutes, and refresh the page. You will see that github now says something like the message shown below:</li>
 </ol>
-<p><img src="../images/ia3-4.png" class="img-fluid"></p>
+<p><img src="../../images/ia3-4.png" class="img-fluid"></p>
 </section>
-<section id="congratulations" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="congratulations"><span class="header-section-number">1.6</span> 🎊 Congratulations!</h2>
+</section>
+<section id="congratulations" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 🎊 Congratulations!</h1>
 <p>You have successfully fixed the Quarto report and hosted it on GitHub Pages!</p>
 <p>If you want to see all the changes I made in the <code>qmd_example.qmd</code> file, please click on the “Commits” tab in the repository and you will see the changes I made in the <a href="https://github.com/skysheng7/dsci-522-ia3/commit/47c14fc98aba0696ff899f7b8ed0599162dabea8">commit history</a>.</p>
 
 
-</section>
-</div>
-</section>
 </section>
 
 </main> <!-- /main -->

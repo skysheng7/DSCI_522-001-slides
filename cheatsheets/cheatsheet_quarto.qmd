@@ -18,7 +18,6 @@ format:
 
 ## Converting Jupyter Notebooks to Quarto
 
-:::{.smaller style="font-size: 0.8em;"}
 1. Install quarto in your conda environment if you have not yet done so.
 
 ```bash
@@ -38,32 +37,34 @@ python -m ipykernel install --user --name <conda_env_name> --display-name "Pytho
 quarto convert notebook.ipynb
 ```
 
-## Code we run in class: Individual Assignment 3
+# Code we run in class: Individual Assignment 3
 
-1. Use this [github repository](https://github.com/UBC-MDS/dsci-522-individual-assignment-quarto-python) as a template, and create a new repository under your own GitHub account.
+## Create a new repository
+
+1.  Use this [github repository](https://github.com/UBC-MDS/dsci-522-individual-assignment-quarto-python) as a template, and create a new repository under your own GitHub account.
 
 Click on "Use this template" button, and then click "create a new repository" button to create a public repository using default settings under your own GitHub account.
 
-![](../images/ia3-1.png)
+![](../../images/ia3-1.png)
 
-2. Clone the repository and `cd` into the repository. 
+2.  Clone the repository and `cd` into the repository.
 
-```bash
+``` bash
 git clone <repository_url>
 cd <repository_name>
 ```
 
-3. Launch the Docker container using the following command:
+3.  Launch the Docker container using the following command:
 
-```bash
+``` bash
 docker compose up
 ```
 
-4. Copy and open the URL that starts with `http://127.0.0.1:8888/lab?token=` in your browser, to launch jupyter lab docker container. 
+4.  Copy and open the URL that starts with `http://127.0.0.1:8888/lab?token=` in your browser, to launch jupyter lab docker container.
 
-5. Run the python script in the terminal to generate the plots and tables in the results folder. 
+5.  Run the python script in the terminal to generate the plots and tables in the results folder.
 
-```bash
+``` bash
 python scripts/generate_figures.py --input_dir="data/00030067-eng.csv" \
     --out_dir="results"
 ```
@@ -72,13 +73,13 @@ You will see the results folder now has new plots and csv files saved.
 
 ## Update `.qmd` file
 
-### Heaer formatting & table of contents
+### Header formatting & table of contents
 
 > **TODO**: Add header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered
 
 We will update the `yml` header to add table of contents. We will add table of content (toc) with depth 3 for both html and pdf formats. Your `yml` header at the begining of the file (i.e., `qmd_example.qmd`) should be updated to look like this:
 
-```yaml
+``` yaml
 title: "DSCI 310: Historical Horse Population in Canada"
 author: "Tiffany Timbers & Jordan Bourak"
 format: html
@@ -94,7 +95,7 @@ format:
 
 You will format header sections using `#`, `##`, `###`, etc. For example, I've added the following header sections to the `qmd_example.qmd` file:
 
-```markdown
+``` markdown
 # Aim
 ...
 # Data
@@ -112,7 +113,7 @@ You will format header sections using `#`, `##`, `###`, etc. For example, I've a
 
 You already have a `references.bib` file in the repository under the `reports` folder. We will point `bibliography` to look for references in this file in the `yml` header as follows:
 
-```yaml
+``` yaml
 title: "DSCI 310: Historical Horse Population in Canada"
 author: "Tiffany Timbers & Jordan Bourak"
 format: html
@@ -127,19 +128,16 @@ format:
 bibliography: references.bib
 ```
 
-:::{.callout-note}
-## ⚠️ High bug zone: inentation & `:`
-* Quarto's yaml uses 2 whitespaces to indent the yaml fields (not 4 whitespaces!! not tab!!). 
-* Please use `:` to separate the field name and the field value. 
+::: callout-note
+## ⚠️ High bug zone: indentation & missing colon:
+
+-   Quarto's yaml uses 2 whitespaces to indent the yaml fields (not 4 whitespaces!! not tab!!).
+-   Please use `:` to separate the field name and the field value.
 :::
 
-```yaml
-title: "DSCI 310: Historical Horse Population in Canada"
-author: "Tiffany Timbers & Jordan Bourak"
-format: html
-Let's render what we have so far to see the result. In your terminal, please run the following commands: 
+Let's render what we have so far to see the result. In your terminal, please run the following commands:
 
-```bash
+``` bash
 # go to the reports directory if you are in the root directory
 cd reports
 
@@ -147,27 +145,28 @@ cd reports
 quarto render qmd_example.qmd
 ```
 
-:::{.callout-note}
+::: callout-note
 ## 😵 No references listed in the rendered report??
-You will noticed that no references are listed in the rendered pdf or html file. This is because we have not added in-text citations to the `.qmd` file. You can list as many BibTex references as you want in your `references.bib` file. However, only the references that are cited in the `.qmd` file will be listed in the rendered pdf or html file under "References" section.
+
+You will notice that no references are listed in the rendered pdf or html file. This is because we have not added in-text citations to the `.qmd` file. You can list as many BibTex references as you want in your `references.bib` file. However, only the references that are cited in the `.qmd` file will be listed in the rendered pdf or html file under "References" section.
 :::
 
-Let's add in-text citations to the `.qmd` file. We will use the `[@reference_key]` syntax (or [@reference_key1; @reference_key2] when you have more than 1 reference) to cite references. Please note the `reference_key` is the first phrase after `{` in the BibTex entry. For example, for this entry in the `references.bib` file:
+Let's add in-text citations to the `.qmd` file. We will use the `[@reference_key]` syntax (or `[@reference_key1; @reference_key2]` when you have more than 1 reference) to cite references. Please note the `reference_key` is the first phrase after `{` in the BibTex entry. For example, for this entry in the `references.bib` file:
 
-```bibtex
+``` bibtex
 @Manual{click,
-	title           = {Click},
-	author          = {Pallets Team},
-	year            = {2020},
-	url             = {https://click.palletsprojects.com/},
+    title           = {Click Python Package},
+    author          = {Pallets Team},
+    year            = {2020},
+    url             = {https://click.palletsprojects.com/},
 }
 ```
 
-The `reference_key` is `click`.
+The `reference_key` is `click`. We will use `[@click]` to cite this reference in the `.qmd` file.
 
-I've added the following in-text citations to the `.qmd` file. Please complete all other in-text citations yourself: 
+For example, I've added the following in-text citations to the `.qmd` file. Please complete all other in-text citations yourself:
 
-```markdown
+``` markdown
 Horse population data were sourced from the 
 [Government of Canada's Open Data website](http://open.canada.ca/en/open-data) [@horses1; @horses2]...
 ```
@@ -175,14 +174,14 @@ Horse population data were sourced from the
 ### Figure formatting
 
 > **TODO**: Edit the figure formatting so that Quarto:
+>
+> -   automatically numbers them
+> -   has a label for easy cross referencing
+> -   controls the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)
 
-    * automatically numbers them
-    * has a label for easy cross referencing
-    * controls the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)
+We use the syntax `![description](relative/path/to/figure.png){#fig-label width=950%}` to format the figure. For example, I've added the following figure to the `.qmd` file, and I use `@fig-label` to refer to it in the text. This will be rendered as `Figure 1` in the rendered pdf or html file. You will do so for both Figure 1 + 2.
 
-We use the syntax `![description](relative/path/to/figure.png){#fig-label width=950%}` to format the figure. For example, I've added the following figure to the `.qmd` file, and I use `@fig-label` to refer to it in the text. This will be rendered as `Figure 1` in the rendered pdf or html file. You will do so for both Figure 1 + 2. 
-
-```markdown
+``` markdown
 # Results
 
 ![Horse populations for all provinces in Canada from 1906 - 1972.](../results/horse_pops_plot.png){#fig-horse-pop width=60%}
@@ -190,27 +189,28 @@ We use the syntax `![description](relative/path/to/figure.png){#fig-label width=
 We can see from @fig-horse-pop that Ontario, Saskatchewan and Alberta 
 ```
 
-:::{.callout-note}
+::: callout-note
 ## ⚠️ High bug zone: Pay attention to using `fig-label`
-* You have to name your figure with starting with a `fig` prefix (sorry for my mistakes in class!). 
-* You have to use `-` instead of `_` in the figure label.
-* Example: `fig-horse-pop` instead of `horse_pop`.
+
+-   You have to name your figure with starting with a `fig` prefix (sorry for my mistakes in class!).
+-   You have to use `-` instead of `_` in the figure label.
+-   Example: `fig-horse-pop` instead of `horse_pop`.
 :::
 
 ### Table formatting
 
-> **TODO**: add a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text 
+> **TODO**: add a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text
 
 We use the syntax below inside of python code block to format the table:
 
-```markdown
+``` markdown
 #| label: tbl-label
 #| tbl-cap: Table description
 ```
 
 For example, I've added the following table to the `.qmd` file. `@tbl-horse-sd` will be rendered as `Table 1` in the rendered pdf or html file.
 
-`````markdown
+```` markdown
 We present the standard deviations in @tbl-horse-sd.
 
 ```\{python}
@@ -221,20 +221,21 @@ horses_sd_table = pd.read_csv("../results/horses_sd.csv")
 largest_sd = horses_sd_table['Province'].values[0]
 Markdown(horses_sd_table.to_markdown(index = False))
 ```
-`````
+````
 
-:::{.callout-note}
+::: callout-note
 ## ⚠️ High bug zone: Pay attention to using `tbl-label`
-* You have to name your table with starting with a `tbl` prefix (sorry for my mistakes in class!). 
-* You have to use `-` instead of `_` in the table label.
-* Example: `tbl-horse-sd` instead of `horse_sd`.
+
+-   You have to name your table with starting with a `tbl` prefix (sorry for my mistakes in class!).
+-   You have to use `-` instead of `_` in the table label.
+-   Example: `tbl-horse-sd` instead of `horse_sd`.
 :::
 
 ### Cross-referencing
 
 > **TODO**: Edit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.
 
-In the steps above, we have already used cross-referencing to refer to the figures and tables (e.g., `@fig-horse-pop` and `@tbl-horse-sd`). 
+In the steps above, we have already used cross-referencing to refer to the figures and tables (e.g., `@fig-horse-pop` and `@tbl-horse-sd`).
 
 ### Inline Quarto code
 
@@ -242,13 +243,13 @@ In the steps above, we have already used cross-referencing to refer to the figur
 
 We use the syntax below to do inline Quarto code. It will execute the python / R code inside of the code block and resulting value will be displayed in the text.
 
-```markdown
+``` markdown
 `{python} <python_code>`
 ```
 
 For example, I've added the following inline Quarto code (i.e., `{python} largest_sd`) to the `.qmd` file:
 
-`````markdown
+```` markdown
 ```\{python}
 #| label: tbl-horse-sd
 #| tbl-cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province.
@@ -262,15 +263,15 @@ Markdown(horses_sd_table.to_markdown(index = False))
 ...
 
 In @fig-horse-largest we zoom in and look at the province of `{python} largest_sd`, which had the largest spread of values in terms of standard deviation.
-`````
+````
 
 ### No code chunk visible
 
-> **TODO**: change the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) 
+> **TODO**: change the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables)
 
 We will set `echo: false` in the `yml` header to hide the code chunk in the rendered report.
 
-```yaml
+``` yaml
 title: "DSCI 310: Historical Horse Population in Canada"
 author: "Tiffany Timbers & Jordan Bourak"
 format: html
@@ -293,44 +294,53 @@ execute:
 
 At the **root directoy** of your repository, please create a new file called `_quarto.yml` and add the following content:
 
-```yaml
+``` yaml
 project:
   type: website
   output-dir: docs
 ```
 
-This file will tell Quarto to output the rendered report to the `docs` folder, as a website. 
+This file will tell Quarto to output the rendered report to the `docs` folder, as a website.
 
-Then, at the **root directoy** of your repository, please run the following command to render the report in the terminal: 
+Then, at the **root directoy** of your repository, please run the following command to render the report in the terminal:
 
-```bash
+``` bash
 quarto render
 ```
 
-You will see that the rendered report is now all in the `docs` folder. There is a `index.html` file in the `docs` folder, you can open it in your browser to view the report. 
+You will see that the rendered report is now all in the `docs` folder. There is a `index.html` file in the `docs` folder, you can open it in your browser to view the report.
 
-:::{.callout-note}
+::: callout-note
 ## 😵 No image showing in Jupyter lab??
+
 It is normal to not see figures being rendered inside of Jupyter lab. You will need to go to local folder, and double click on the `index.html` file to view the report in a browser.
 :::
 
 ## Clean up
 
-1. After you are sure that you have completed everything. Close the jupyter lab docker container. In your terminal, press `Ctrol + C` to stop the container. Then run `docker compose rm` to remove the docker container. 
+1.  After you are sure that you have completed everything. Close the jupyter lab docker container. In your terminal, press `Ctrol + C` to stop the container. Then run `docker compose rm` to remove the docker container.
 
-2. Push your changes to github as usual. 
+2.  Push your changes to github as usual.
 
 ## Hosting on GitHub Pages
 
-1. After you pushed all changes to your github pages, please go to your github repository ➡️ Click on "Settings" gear icon ➡️ Click on "Pages" on the left panel ➡️ Under "Source", select "Deploy from a branch" ➡️ Under "Branch", select "main" ➡️ Then select "docs" folder from the dropdown menu ➡️ Click on "Save" button.
+1.  After you pushed all changes to your github pages, please follow these steps:
 
-![GitHub Pages](../images/ia3-3.png)
+    -   Go to your github repository
+    -   Click on "Settings" gear icon
+    -   Click on "Pages" on the left panel
+    -   Under "Source", select "Deploy from a branch"
+    -   Under "Branch", select "main"
+    -   Then select "docs" folder from the dropdown menu
+    -   Click on "Save" button
 
-2. Wait a few minutes, and refresh the page. You will see that github now says something like the message shown below:
+![GitHub Pages](../../images/ia3-3.png)
 
-![](../images/ia3-4.png)
+2.  Wait a few minutes, and refresh the page. You will see that github now says something like the message shown below:
 
-## 🎊 Congratulations! 
+![](../../images/ia3-4.png)
+
+# 🎊 Congratulations!
 
 You have successfully fixed the Quarto report and hosted it on GitHub Pages!
 
