@@ -45,7 +45,7 @@ quarto convert notebook.ipynb
 
 Click on "Use this template" button, and then click "create a new repository" button to create a public repository using default settings under your own GitHub account.
 
-![](../../images/ia3-1.png)
+![](../images/ia3-1.png)
 
 2.  Clone the repository and `cd` into the repository.
 
@@ -334,11 +334,11 @@ It is normal to not see figures being rendered inside of Jupyter lab. You will n
     -   Then select "docs" folder from the dropdown menu
     -   Click on "Save" button
 
-![GitHub Pages](../../images/ia3-3.png)
+![GitHub Pages](../images/ia3-3.png)
 
 2.  Wait a few minutes, and refresh the page. You will see that github now says something like the message shown below:
 
-![](../../images/ia3-4.png)
+![](../images/ia3-4.png)
 
 # 🎊 Congratulations!
 
