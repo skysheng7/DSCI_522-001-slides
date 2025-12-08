@@ -1,0 +1,67 @@
+---
+title: "DSCI 522 Lecture 8"
+subtitle: "Testing Code"
+author: "Sky Sheng"
+execute:
+  eval: false
+format:
+  revealjs:
+    theme: default
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    logo: ../images/mds-hex-sticker.png
+---
+
+# 🧹 Clean up your computataional environment!
+
+## 🫧 Clean up your conda environments
+
+1. Check all the conda environments you have created.
+
+```{bash}
+conda env list
+```
+
+2. Remove the environment you are not using anymore.
+
+```{bash}
+conda env remove --name <env_name>
+```
+
+## 🐳 Clean up your docker containers: Command line
+
+1. Check all the docker containers you have created.
+
+```{bash}
+docker ps -a
+```
+
+2. Remove the container you are not using anymore.
+
+```{bash}
+docker rm <container_id>
+```
+
+
+⚠️ **Tip**:You may have containers that are still running, and not stopped properly. You need to stop the container before removing it.
+
+
+```{bash}
+docker stop <container_id>
+docker rm <container_id>
+```
+
+## 🐳 Clean up your docker containers: Docker Dashboard
+
+::: {.smaller style="font-size: 0.8em;"}
+* Click on "Containers" & "Images" on the left sidebar ➡️ trash can icon
+:::
+![](../images/stop_container.png){style="width: 100%;"}
+
+# Fork your group's repository to your own GitHub main page
+
+* What is "Star" ⭐️? 
+* What is "Watch" 🔔? 
+* What is "Fork" 🍴? 
+* What is "Pin" 📌? 

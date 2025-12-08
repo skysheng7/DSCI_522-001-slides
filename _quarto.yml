@@ -22,6 +22,8 @@ website:
             href: lectures/lec5.html
           - text: "Lecture 6"
             href: lectures/lec6.html
+          - text: "Lecture 7"
+            href: lectures/lec7.html
       - text: "Labs"
         menu:
           - text: "Lab 1"

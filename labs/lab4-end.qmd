@@ -1,6 +1,6 @@
 ---
 title: "DSCI 522 Lab 4"
-subtitle: "Peer review, teamwork reflection, and gift bag"
+subtitle: "Peer review, teamwork reflection, and Santa Otter's gift bag"
 author: "Sky Sheng"
 format:
   revealjs:

@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.36">
 
   <meta name="author" content="Sky Sheng">
-  <title>DSCI 522 Slides – DSCI 522 Lab 4</title>
+  <title>DSCI 522 Slides – DSCI 522 Lecture 8</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bbe7401fe57d4b791b917637bb662036.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -129,8 +194,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">DSCI 522 Lab 4</h1>
-  <p class="subtitle">Peer review, teamwork reflection, and Santa Otter’s gift bag</p>
+  <h1 class="title">DSCI 522 Lecture 8</h1>
+  <p class="subtitle">Testing Code</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -141,167 +206,53 @@ Sky Sheng
 </div>
 
 </section>
-<section id="welcome-to-last-lab-of-dsci-522" class="title-slide slide level1 center">
-<h1>Welcome to last lab of DSCI 522! 🎉</h1>
-
-</section>
-
-<section id="deadlines" class="title-slide slide level1 center">
-<h1>⚠️ Deadlines</h1>
-<ul>
-<li><p><strong>Peer Review</strong>: Thursday, December 11th, 2025 at 6PM</p></li>
-<li><p><strong>Milestone 4</strong>: Saturday, December 13th, 2025 at 6PM</p></li>
-<li><p><strong>Individual Assignment 4</strong>: Saturday, December 13th, 2025 at 6PM</p></li>
-<li><p><strong>Teamwork Reflection</strong>: Sunday, December 14th, 2025 at 6PM</p></li>
-<li><p><strong>Milestone 1 + 2 regrade requests</strong>: Saturday, December 13, 2025 at 6PM.</p></li>
-<li><p><strong>Milestone 3 regrade requests</strong>: Wednesday, December 17th, 2025 at 11:59 AM.</p></li>
-</ul>
-</section>
-
 <section>
-<section id="peer-review" class="title-slide slide level1 center">
-<h1>Peer review 🧐</h1>
-<p>You have been assigned to review another group’s project.</p>
-</section>
-<section id="step-1-initiate-review-request-as-a-team" class="slide level2">
-<h2>Step 1: Initiate review request (as a team)</h2>
-<ul>
-<li>Open an issue in <a href="https://github.com/UBC-MDS/data-analysis-review-2025.git"><code>UBC-MDS/data-analysis-review-2025</code></a> repository</li>
-<li>Fill in the issue template with required information</li>
-<li>Do this before (or at the beginning of) the lab</li>
-<li>Find reviewer assignments <a href="https://github.ubc.ca/mds-2025-26/lab-sections/blob/main/peer_review_block3_2025-26.csv">here</a></li>
-</ul>
-</section>
-<section id="step-2-reviewing-individual" class="slide level2">
-<h2>Step 2: Reviewing (individual)</h2>
-<ul>
-<li>View your assigned project number <a href="https://github.ubc.ca/mds-2025-26/lab-sections/blob/main/peer_review_block3_2025-26.csv">here</a></li>
-<li>Use the <a href="https://raw.githubusercontent.com/UBC-MDS/data-analysis-review-checklist/main/data-analysis-review-checklist.md">MDS data analysis checklist</a></li>
-</ul>
-</section>
-<section id="how-to-give-review-feedback" class="slide level2">
-<h2>How to give review feedback?</h2>
-<ul>
-<li>Check all boxes in the template</li>
-<li>Provide <strong>at least 3 pieces</strong> of constructive feedback</li>
-<li>Include <strong>at least 2 unique points</strong> (some overlap with others is OK)</li>
-<li>Encourage discussion in the issue comments</li>
-</ul>
-</section>
-<section id="how-to-give-good-review-feedback" class="slide level2">
-<h2>How to give good review feedback?</h2>
-<ul>
-<li><strong>Be concrete</strong>: Support claims with evidence and examples</li>
-<li><strong>Be empathetic</strong>: Think about what feedback would help you if you are in their shoes</li>
-<li><strong>Be constructive</strong>: Build on strengths, avoid judgmental language (sandwich style: good, bad, good)</li>
-<li><strong>Be kind</strong>: Would you say this face-to-face to a dear friend?</li>
-</ul>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>🦦</strong></p>
-</div>
-<div class="callout-content">
-<p>“How we treat others is a reflection of how we were treated in the past, but also how we treat ourselves.”</p>
-<p>It’s ok to make mistakes. That’s why you are hear. Mistakes are inevitable when you are growing and learning.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="santa-comes-early-this-year" class="slide level2">
-<h2>🎅 Santa comes early this year… 🦦</h2>
-<p>Raise your hand after you finish reviewing for another group’s project. You can choose a gift from Santa Otter’s gift bag!</p>
+<section id="clean-up-your-computataional-environment" class="title-slide slide level1 center">
+<h1>🧹 Clean up your computataional environment!</h1>
 
-<img data-src="../images/santa_otter.png" style="margin-bottom: 0px;" class="r-stretch"></section>
-<section id="first-come-first-serve-gift-bag" class="slide level2">
-<h2>First come first serve gift bag! 🎁</h2>
+</section>
+<section id="clean-up-your-conda-environments" class="slide level2">
+<h2>🫧 Clean up your conda environments</h2>
+<ol type="1">
+<li>Check all the conda environments you have created.</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>conda env list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Remove the environment you are not using anymore.</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>conda env remove --name &lt;env_name&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="clean-up-your-docker-containers-command-line" class="slide level2">
+<h2>🐳 Clean up your docker containers: Command line</h2>
+<ol type="1">
+<li>Check all the docker containers you have created.</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>docker ps -a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Remove the container you are not using anymore.</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>docker rm &lt;container_id&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>⚠️ <strong>Tip</strong>:You may have containers that are still running, and not stopped properly. You need to stop the container before removing it.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>docker stop &lt;container_id&gt;</span>
+<span id="cb5-2"><a></a>docker rm &lt;container_id&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="clean-up-your-docker-containers-docker-dashboard" class="slide level2">
+<h2>🐳 Clean up your docker containers: Docker Dashboard</h2>
+<div class="smaller" style="font-size: 0.8em;">
+<ul>
+<li>Click on “Containers” &amp; “Images” on the left sidebar ➡️ trash can icon</li>
+</ul>
+</div>
 
-<img data-src="../images/gift.jpg" style="margin-bottom: 0px;" class="r-stretch"></section></section>
-<section>
-<section id="teamwork-reflection" class="title-slide slide level1 center">
-<h1>Teamwork reflection 🤝</h1>
+<img data-src="../images/stop_container.png" style="width: 100%;" class="r-stretch"></section></section>
+<section id="fork-your-groups-repository-to-your-own-github-main-page" class="title-slide slide level1 center">
+<h1>Fork your group’s repository to your own GitHub main page</h1>
 <ul>
-<li>After the course ends, we will run a script to calculate everyone’s contribution to the team based on commit history</li>
-<li>We will also read through all your teamwork reflections</li>
-<li>Grade multiplier will be applied if needed</li>
+<li>What is “Star” ⭐️?</li>
+<li>What is “Watch” 🔔?</li>
+<li>What is “Fork” 🍴?</li>
+<li>What is “Pin” 📌?</li>
 </ul>
-</section>
-<section id="reflect-on-your-teamwork-experience" class="slide level2">
-<h2>Reflect on your teamwork experience</h2>
-<div class="smaller" style="font-size: 0.9em;">
-<div>
-<ul>
-<li class="fragment">After you submit Milestone 4 on Saturday, take some time to rest, have a cut of tea ☕️, have a nice sleep 💤</li>
-<li class="fragment">Next day, reflect on your teamwork experience in the past 4 weeks.
-<ul>
-<li class="fragment">What went well?</li>
-<li class="fragment">What could be improved?</li>
-<li class="fragment">What did you learn from your teammates?</li>
-<li class="fragment">What did your teammates learn from you?</li>
-<li class="fragment">Are you happy with how much you contributed to the team?</li>
-</ul></li>
-<li class="fragment">You will reflect the performance of both <strong>yourself</strong> and <strong>your teammates</strong>.</li>
-</ul>
-</div>
-</div>
-</section></section>
-<section id="regrade-requests-for-milestone-1-3" class="title-slide slide level1 center">
-<h1>Regrade requests for Milestone 1-3</h1>
-<div>
-<ul>
-<li class="fragment">Make changes based on TA feedback</li>
-<li class="fragment">Raise regrade request on Gradescope</li>
-<li class="fragment">Provide links to PRs or commit history to demonstrate the changes you made</li>
-<li class="fragment"><strong>Award</strong>: 50% of lost points (after TA confirms)</li>
-</ul>
-</div>
-</section>
-
-<section>
-<section id="milestone-4" class="title-slide slide level1 center">
-<h1>Milestone 4</h1>
-<p>Milestone 4 and Individual Assignment 4 instructions are posted <a href="https://pages.github.ubc.ca/mds-2025-26/DSCI_522_dsci-workflows_students/release/m4/m4.html">here</a>.</p>
-</section>
-<section id="tips" class="slide level2">
-<h2>Tips</h2>
-<div class="smaller" style="font-size: 0.9em;">
-<ul>
-<li>Makefile
-<ul>
-<li>Well organized, documented</li>
-<li>Has both “all” and “clean” targets. “clean” should wipe all artifacts</li>
-</ul></li>
-<li>Functions
-<ul>
-<li>Each function should only do 1 thing</li>
-<li>Well organized, documented, consistent documentation style, meaningful function names</li>
-<li>Your function should check if input is as expected and raise errors if not</li>
-<li>Your function should return an object, unless it is intended to be used for side effects</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="tips-1" class="slide level2">
-<h2>Tips</h2>
-<ul>
-<li>Tests
-<ul>
-<li>All tests should pass</li>
-<li>Please include your test package in your docker image</li>
-<li>Test needs to test for:
-<ul>
-<li>Expected input</li>
-<li>Edge cases</li>
-<li>Error handling</li>
-</ul></li>
-</ul></li>
-</ul>
-</section></section>
-<section id="good-luck-with-your-final-project" class="title-slide slide level1 center">
-<h1>Good luck with your final project! 🦦</h1>
 
 
 </section>

@@ -24,10 +24,12 @@ University of British Columbia
 - [Lecture 4](lectures/lec4.html) - Containerizing Python Applications
 - [Lecture 5](lectures/lec5.html) - Non-interactive scripts
 - [Lecture 6](lectures/lec6.html) - Reproducible reports
+- [Lecture 7](lectures/lec7.html) - Data Analysis Pipeline and GNU Make
 
 ### Labs
 
 - [Lab 1 Introduction](labs/lab1-intro.html) - Introduction to reproducible workflows, lab policies, and getting started
+- [Lab 4 End](labs/lab4-end.html) - Peer review, teamwork reflection, and Santa Otter's gift bag
 
 ### Cheatsheets
 
