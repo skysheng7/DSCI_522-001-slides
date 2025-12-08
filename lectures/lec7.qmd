@@ -261,15 +261,20 @@ quarto render report/breast_cancer_predictor_report.qmd --to pdf
 * Runs all steps every time, even when only small parts changed
 :::
 
-# Makefile to the rescue! 🛠️
+# Makefile saves the day! 🤩
 
-## When do you not want to `make clean` to delete all files? 
+* Individual Assignment 4: Create a Makefile to run all the scripts.
+* [Description here](https://pages.github.ubc.ca/mds-2025-26/DSCI_522_dsci-workflows_students/release/ia4/ia4.html)
+* [Guide here](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/180-pipelines-make.html)
+
+## When do you NOT want to `make clean` to delete all files? 
 
 ::: {.incremental}
+* When the data you generated can not be re-created easilly, e.g., the data was generated interviewing 1000 people.
 * When the data you generated cost money 💰
   * [AI bias repo Makefile example](https://github.com/skysheng7/AI_bias_in_farming/blob/main/Makefile)
 * Be careful with `rm -rf` command!!
-  * Once upon a time, a student was talking to their favorite AI agent on auto-run mode, and said:
+  * 🤖 Once upon a time, a student was talking to their favorite AI agent on auto-run mode, and said:
   * > "Can you delete this for me please ~" 😊
 :::
 

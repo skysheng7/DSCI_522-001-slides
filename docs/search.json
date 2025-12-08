@@ -1046,8 +1046,8 @@
     "objectID": "lectures/lec7.html#when-do-you-not-want-to-make-clean-to-delete-all-files",
     "href": "lectures/lec7.html#when-do-you-not-want-to-make-clean-to-delete-all-files",
     "title": "DSCI 522 Lecture 7",
-    "section": "When do you not want to make clean to delete all files?",
-    "text": "When do you not want to make clean to delete all files?\n\n\nWhen the data you generated cost money 💰\n\nAI bias repo Makefile example\n\nBe careful with rm -rf command!!\n\nOnce upon a time, a student was talking to their favorite AI agent on auto-run mode, and said:\n\n“Can you delete this for me please ~” 😊"
+    "section": "When do you NOT want to make clean to delete all files?",
+    "text": "When do you NOT want to make clean to delete all files?\n\n\nWhen the data you generated can not be re-created easilly, e.g., the data was generated interviewing 1000 people.\nWhen the data you generated cost money 💰\n\nAI bias repo Makefile example\n\nBe careful with rm -rf command!!\n\n🤖 Once upon a time, a student was talking to their favorite AI agent on auto-run mode, and said:\n\n“Can you delete this for me please ~” 😊"
   },
   {
     "objectID": "lectures/lec7.html#never-do-this-rm--rf",
