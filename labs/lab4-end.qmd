@@ -52,10 +52,14 @@ You have been assigned to review another group's project.
 
 ## How to give good review feedback?
 
+::: {.incremental}
 * **Be concrete**: Support claims with evidence and examples
 * **Be empathetic**: Think about what feedback would help you if you are in their shoes
 * **Be constructive**: Build on strengths, avoid judgmental language (sandwich style: good, bad, good)
 * **Be kind**: Would you say this face-to-face to a dear friend?
+:::
+
+## It's ok to make mistakes!
 
 :::{.callout-note}
 ## 🦦 
@@ -113,7 +117,7 @@ Milestone 4 and Individual Assignment 4 instructions are posted [here](https://p
 
 ## Tips
 
-::: {.smaller style="font-size: 0.9em;"}
+::: {.smaller style="font-size: 0.8em;"}
 * Makefile
     * Well organized, documented
     * Has both "all" and "clean" targets. "clean" should wipe all artifacts
