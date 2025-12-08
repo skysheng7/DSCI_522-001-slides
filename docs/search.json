@@ -476,6 +476,69 @@
     "text": "Some Tips 💡\n\n\nInclude estimated computation time if analysis is expected to take long\nRound numbers to 2 decimal places when appropriate\nMake sure packages listed under environment.yml has exact version numbers listed. For example, pandas==2.2.3 instead of pandas&gt;=2.2.3.\nDo not copy and paste data description from the internet, that would be plagiarism. Write your own descriptions, and cite the source you used.\nHow to cite packages?\n\nR : citation(package = \"&lt;package_name&gt;\")\nPython : pip show --verbose &lt;package_name&gt;"
   },
   {
+    "objectID": "labs/lab4-end.html#step-1-initiate-review-request-as-a-team",
+    "href": "labs/lab4-end.html#step-1-initiate-review-request-as-a-team",
+    "title": "DSCI 522 Lab 4",
+    "section": "Step 1: Initiate review request (as a team)",
+    "text": "Step 1: Initiate review request (as a team)\n\nOpen an issue in UBC-MDS/data-analysis-review-2025 repository\nFill in the issue template with required information\nDo this before (or at the beginning of) the lab\nFind reviewer assignments here"
+  },
+  {
+    "objectID": "labs/lab4-end.html#step-2-reviewing-individual",
+    "href": "labs/lab4-end.html#step-2-reviewing-individual",
+    "title": "DSCI 522 Lab 4",
+    "section": "Step 2: Reviewing (individual)",
+    "text": "Step 2: Reviewing (individual)\n\nView your assigned project number here\nUse the MDS data analysis checklist"
+  },
+  {
+    "objectID": "labs/lab4-end.html#how-to-give-review-feedback",
+    "href": "labs/lab4-end.html#how-to-give-review-feedback",
+    "title": "DSCI 522 Lab 4",
+    "section": "How to give review feedback?",
+    "text": "How to give review feedback?\n\nCheck all boxes in the template\nProvide at least 3 pieces of constructive feedback\nInclude at least 2 unique points (some overlap with others is OK)\nEncourage discussion in the issue comments"
+  },
+  {
+    "objectID": "labs/lab4-end.html#how-to-give-good-review-feedback",
+    "href": "labs/lab4-end.html#how-to-give-good-review-feedback",
+    "title": "DSCI 522 Lab 4",
+    "section": "How to give good review feedback?",
+    "text": "How to give good review feedback?\n\nBe concrete: Support claims with evidence and examples\nBe empathetic: Think about what feedback would help you if you are in their shoes\nBe constructive: Build on strengths, avoid judgmental language (sandwich style: good, bad, good)\nBe kind: Would you say this face-to-face to a dear friend?\n\n\n\n\n\n\n\n🦦\n\n\n“How we treat others is a reflection of how we were treated in the past, but also how we treat ourselves.”\nIt’s ok to make mistakes. That’s why you are hear. Mistakes are inevitable when you are growing and learning."
+  },
+  {
+    "objectID": "labs/lab4-end.html#santa-comes-early-this-year",
+    "href": "labs/lab4-end.html#santa-comes-early-this-year",
+    "title": "DSCI 522 Lab 4",
+    "section": "🎅 Santa comes early this year… 🦦",
+    "text": "🎅 Santa comes early this year… 🦦\nRaise your hand after you finish reviewing for another group’s project. You can choose a gift from Santa Otter’s gift bag!"
+  },
+  {
+    "objectID": "labs/lab4-end.html#first-come-first-serve-gift-bag",
+    "href": "labs/lab4-end.html#first-come-first-serve-gift-bag",
+    "title": "DSCI 522 Lab 4",
+    "section": "First come first serve gift bag! 🎁",
+    "text": "First come first serve gift bag! 🎁"
+  },
+  {
+    "objectID": "labs/lab4-end.html#reflect-on-your-teamwork-experience",
+    "href": "labs/lab4-end.html#reflect-on-your-teamwork-experience",
+    "title": "DSCI 522 Lab 4",
+    "section": "Reflect on your teamwork experience",
+    "text": "Reflect on your teamwork experience\n\n\n\nAfter you submit Milestone 4 on Saturday, take some time to rest, have a cut of tea ☕️, have a nice sleep 💤\nNext day, reflect on your teamwork experience in the past 4 weeks.\n\nWhat went well?\nWhat could be improved?\nWhat did you learn from your teammates?\nWhat did your teammates learn from you?\nAre you happy with how much you contributed to the team?\n\nYou will reflect the performance of both yourself and your teammates."
+  },
+  {
+    "objectID": "labs/lab4-end.html#tips",
+    "href": "labs/lab4-end.html#tips",
+    "title": "DSCI 522 Lab 4",
+    "section": "Tips",
+    "text": "Tips\n\n\nMakefile\n\nWell organized, documented\nHas both “all” and “clean” targets. “clean” should wipe all artifacts\n\nFunctions\n\nEach function should only do 1 thing\nWell organized, documented, consistent documentation style, meaningful function names\nYour function should check if input is as expected and raise errors if not\nYour function should return an object, unless it is intended to be used for side effects"
+  },
+  {
+    "objectID": "labs/lab4-end.html#tips-1",
+    "href": "labs/lab4-end.html#tips-1",
+    "title": "DSCI 522 Lab 4",
+    "section": "Tips",
+    "text": "Tips\n\nTests\n\nAll tests should pass\nPlease include your test package in your docker image\nTest needs to test for:\n\nExpected input\nEdge cases\nError handling"
+  },
+  {
     "objectID": "cheatsheets/cheatsheet_conda.html",
     "href": "cheatsheets/cheatsheet_conda.html",
     "title": "Conda & Conda-lock Cheatsheet",

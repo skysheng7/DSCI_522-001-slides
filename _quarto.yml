@@ -26,6 +26,8 @@ website:
         menu:
           - text: "Lab 1"
             href: labs/lab1-intro.html
+          - text: "Lab 4"
+            href: labs/lab4-end.html
       - text: "Cheatsheets"
         menu:
           - text: "Command Line"
