@@ -313,3 +313,38 @@ conda-lock -k explicit --file environment.yml -p linux-64
 ## Docker, your best friend in the cloud!
 🐳 Docker is actually very helpful in real-world data science projects, especially when using cloud computing resources!
 :::
+
+## Instructions
+
+1. Clone and cd into this repository
+
+```bash
+git clone https://github.com/skysheng7/awp-arbutus-login.git
+cd awp-arbutus-login
+```
+
+2. Install the dependencies using `environment.yml` file
+
+```bash
+conda env create -n arbutus
+```
+
+3. Activate the environment
+
+```bash
+conda activate arbutus
+```
+
+## Instructions
+
+4. Install a new package
+
+```bash
+conda install click
+```
+
+5. Run the makefile
+
+```bash
+make env
+```
