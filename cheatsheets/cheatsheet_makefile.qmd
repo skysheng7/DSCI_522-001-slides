@@ -301,7 +301,7 @@ make result
 
 ## Step 3: Complete Makefile
 
-```
+```makefile
 # Makefile
 # Tiffany Timbers, Nov 2018
 

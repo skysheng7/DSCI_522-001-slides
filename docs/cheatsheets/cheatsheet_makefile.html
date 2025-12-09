@@ -544,88 +544,88 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-3-complete-makefile" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="step-3-complete-makefile"><span class="header-section-number">2.3</span> Step 3: Complete Makefile</h2>
-<pre><code># Makefile
-# Tiffany Timbers, Nov 2018
-
-# This driver script completes the textual analysis of
-# 3 novels and creates figures on the 10 most frequently
-# occuring words from each of the 3 novels. This script
-# takes no arguments.
-
-# example usage:
-# make all
-
-.PHONY: all dats figs clean-dats clean-figs clean-all
-
-# run entire analysis
-all: report/count_report.html
-
-# count words
-dats: results/isles.dat \
-results/abyss.dat \
-results/last.dat \
-results/sierra.dat
-
-results/isles.dat : scripts/wordcount.py data/isles.txt
-    python scripts/wordcount.py \
-        --input_file=data/isles.txt \
-        --output_file=results/isles.dat
-results/abyss.dat : scripts/wordcount.py data/abyss.txt
-    python scripts/wordcount.py \
-        --input_file=data/abyss.txt \
-        --output_file=results/abyss.dat
-results/last.dat : scripts/wordcount.py data/last.txt
-    python scripts/wordcount.py \
-        --input_file=data/last.txt \
-        --output_file=results/last.dat
-results/sierra.dat : scripts/wordcount.py data/sierra.txt
-    python scripts/wordcount.py \
-        --input_file=data/sierra.txt \
-        --output_file=results/sierra.dat
-
-# plot
-figs : results/figure/isles.png \
-    results/figure/abyss.png \
-    results/figure/last.png \
-    results/figure/sierra.png
-
-results/figure/isles.png : scripts/plotcount.py results/isles.dat
-    python scripts/plotcount.py \
-        --input_file=results/isles.dat \
-        --output_file=results/figure/isles.png
-results/figure/abyss.png : scripts/plotcount.py results/abyss.dat
-    python scripts/plotcount.py \
-        --input_file=results/abyss.dat \
-        --output_file=results/figure/abyss.png
-results/figure/last.png : scripts/plotcount.py results/last.dat
-    python scripts/plotcount.py \
-        --input_file=results/last.dat \
-        --output_file=results/figure/last.png
-results/figure/sierra.png : scripts/plotcount.py results/sierra.dat
-    python scripts/plotcount.py \
-        --input_file=results/sierra.dat \
-        --output_file=results/figure/sierra.png
-
-# write the report
-report/count_report.html : report/count_report.qmd figs
-    quarto render report/count_report.qmd
-
-clean-dats :
-    rm -f results/isles.dat \
-        results/abyss.dat \
-        results/last.dat \
-        results/sierra.dat
-
-clean-figs :
-    rm -f results/figure/isles.png \
-    results/figure/abyss.png \
-    results/figure/last.png \
-    results/figure/sierra.png
-
-clean-all : clean-dats \
-    clean-figs
-    rm -f report/count_report.html
-    rm -rf report/count_report_files</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode makefile code-with-copy"><code class="sourceCode makefile"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Makefile</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Tiffany Timbers, Nov 2018</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># This driver script completes the textual analysis of</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 3 novels and creates figures on the 10 most frequently</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># occuring words from each of the 3 novels. This script</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># takes no arguments.</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># example usage:</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># make all</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="ot">.PHONY:</span><span class="dt"> all dats figs clean-dats clean-figs clean-all</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co"># run entire analysis</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="dv">all:</span><span class="dt"> report/count_report.html</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="co"># count words</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="dv">dats:</span><span class="dt"> results/isles.dat </span><span class="ch">\</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="dt">results/abyss.dat </span><span class="ch">\</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="dt">results/last.dat </span><span class="ch">\</span></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="dt">results/sierra.dat</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="dv">results/isles.dat :</span><span class="dt"> scripts/wordcount.py data/isles.txt</span></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>python scripts/wordcount.py \</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>        <span class="dt">--input_file</span><span class="ch">=</span><span class="st">data/isles.txt </span><span class="ch">\</span></span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a><span class="st">        --output_file=results/isles.dat</span></span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a><span class="dv">results/abyss.dat :</span><span class="dt"> scripts/wordcount.py data/abyss.txt</span></span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>python scripts/wordcount.py \</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>        <span class="dt">--input_file</span><span class="ch">=</span><span class="st">data/abyss.txt </span><span class="ch">\</span></span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a><span class="st">        --output_file=results/abyss.dat</span></span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a><span class="dv">results/last.dat :</span><span class="dt"> scripts/wordcount.py data/last.txt</span></span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>python scripts/wordcount.py \</span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>        <span class="dt">--input_file</span><span class="ch">=</span><span class="st">data/last.txt </span><span class="ch">\</span></span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a><span class="st">        --output_file=results/last.dat</span></span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a><span class="dv">results/sierra.dat :</span><span class="dt"> scripts/wordcount.py data/sierra.txt</span></span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>python scripts/wordcount.py \</span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a>        <span class="dt">--input_file</span><span class="ch">=</span><span class="st">data/sierra.txt </span><span class="ch">\</span></span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a><span class="st">        --output_file=results/sierra.dat</span></span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a><span class="dv">figs :</span><span class="dt"> results/figure/isles.png </span><span class="ch">\</span></span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a><span class="dt">    results/figure/abyss.png </span><span class="ch">\</span></span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a><span class="dt">    results/figure/last.png </span><span class="ch">\</span></span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a><span class="dt">    results/figure/sierra.png</span></span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a><span class="dv">results/figure/isles.png :</span><span class="dt"> scripts/plotcount.py results/isles.dat</span></span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>python scripts/plotcount.py \</span>
+<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a>        <span class="dt">--input_file</span><span class="ch">=</span><span class="st">results/isles.dat </span><span class="ch">\</span></span>
+<span id="cb28-49"><a href="#cb28-49" aria-hidden="true" tabindex="-1"></a><span class="st">        --output_file=results/figure/isles.png</span></span>
+<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a><span class="dv">results/figure/abyss.png :</span><span class="dt"> scripts/plotcount.py results/abyss.dat</span></span>
+<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>python scripts/plotcount.py \</span>
+<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a>        <span class="dt">--input_file</span><span class="ch">=</span><span class="st">results/abyss.dat </span><span class="ch">\</span></span>
+<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a><span class="st">        --output_file=results/figure/abyss.png</span></span>
+<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a><span class="dv">results/figure/last.png :</span><span class="dt"> scripts/plotcount.py results/last.dat</span></span>
+<span id="cb28-55"><a href="#cb28-55" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>python scripts/plotcount.py \</span>
+<span id="cb28-56"><a href="#cb28-56" aria-hidden="true" tabindex="-1"></a>        <span class="dt">--input_file</span><span class="ch">=</span><span class="st">results/last.dat </span><span class="ch">\</span></span>
+<span id="cb28-57"><a href="#cb28-57" aria-hidden="true" tabindex="-1"></a><span class="st">        --output_file=results/figure/last.png</span></span>
+<span id="cb28-58"><a href="#cb28-58" aria-hidden="true" tabindex="-1"></a><span class="dv">results/figure/sierra.png :</span><span class="dt"> scripts/plotcount.py results/sierra.dat</span></span>
+<span id="cb28-59"><a href="#cb28-59" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>python scripts/plotcount.py \</span>
+<span id="cb28-60"><a href="#cb28-60" aria-hidden="true" tabindex="-1"></a>        <span class="dt">--input_file</span><span class="ch">=</span><span class="st">results/sierra.dat </span><span class="ch">\</span></span>
+<span id="cb28-61"><a href="#cb28-61" aria-hidden="true" tabindex="-1"></a><span class="st">        --output_file=results/figure/sierra.png</span></span>
+<span id="cb28-62"><a href="#cb28-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-63"><a href="#cb28-63" aria-hidden="true" tabindex="-1"></a><span class="co"># write the report</span></span>
+<span id="cb28-64"><a href="#cb28-64" aria-hidden="true" tabindex="-1"></a><span class="dv">report/count_report.html :</span><span class="dt"> report/count_report.qmd figs</span></span>
+<span id="cb28-65"><a href="#cb28-65" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>quarto render report/count_report.qmd</span>
+<span id="cb28-66"><a href="#cb28-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-67"><a href="#cb28-67" aria-hidden="true" tabindex="-1"></a><span class="dv">clean-dats :</span></span>
+<span id="cb28-68"><a href="#cb28-68" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>rm -f results/isles.dat \</span>
+<span id="cb28-69"><a href="#cb28-69" aria-hidden="true" tabindex="-1"></a>        results/abyss.dat \</span>
+<span id="cb28-70"><a href="#cb28-70" aria-hidden="true" tabindex="-1"></a>        results/last.dat \</span>
+<span id="cb28-71"><a href="#cb28-71" aria-hidden="true" tabindex="-1"></a>        results/sierra.dat</span>
+<span id="cb28-72"><a href="#cb28-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-73"><a href="#cb28-73" aria-hidden="true" tabindex="-1"></a><span class="dv">clean-figs :</span></span>
+<span id="cb28-74"><a href="#cb28-74" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>rm -f results/figure/isles.png \</span>
+<span id="cb28-75"><a href="#cb28-75" aria-hidden="true" tabindex="-1"></a>    results/figure/abyss.png \</span>
+<span id="cb28-76"><a href="#cb28-76" aria-hidden="true" tabindex="-1"></a>    results/figure/last.png \</span>
+<span id="cb28-77"><a href="#cb28-77" aria-hidden="true" tabindex="-1"></a>    results/figure/sierra.png</span>
+<span id="cb28-78"><a href="#cb28-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-79"><a href="#cb28-79" aria-hidden="true" tabindex="-1"></a><span class="dv">clean-all :</span><span class="dt"> clean-dats </span><span class="ch">\</span></span>
+<span id="cb28-80"><a href="#cb28-80" aria-hidden="true" tabindex="-1"></a><span class="dt">    clean-figs</span></span>
+<span id="cb28-81"><a href="#cb28-81" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>rm -f report/count_report.html</span>
+<span id="cb28-82"><a href="#cb28-82" aria-hidden="true" tabindex="-1"></a>    rm -rf report/count_report_files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>🎉 Congratulations! You have completed the Makefile for the Individual Assignment 4!</p>
 <p>Test it out by running:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clean-all</span>
