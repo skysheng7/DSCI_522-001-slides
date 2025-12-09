@@ -64,7 +64,13 @@ results/isles.dat : data/isles.txt scripts/wordcount.py
 
 ### Clone repository
 
-Clone the repository and navigate to the root directory using the command line:
+::: {.callout-important}
+## ⭐️ New repo for Individual Assignment 4
+
+Please use this new repository I created for Individual Assignment 4: [https://github.com/skysheng7/ia4.git](https://github.com/skysheng7/ia4.git)
+:::
+
+Use this repository, click on "Use this template", create a new repository under your own account called `data_analysis_pipeline_practice`. Clone your new repository and navigate to the root directory using the command line:
 
 ```bash
 git clone <repo_name>
