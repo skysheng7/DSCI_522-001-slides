@@ -40,6 +40,8 @@ website:
             href: cheatsheets/cheatsheet_docker.html
           - text: "Quarto"
             href: cheatsheets/cheatsheet_quarto.html
+          - text: "Makefile"
+            href: cheatsheets/cheatsheet_makefile.html
 
 format:
   html:

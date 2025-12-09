@@ -1,0 +1,400 @@
+---
+title: "Makefile Cheatsheet"
+subtitle: "Quick Reference Guide for Makefile"
+author: "Sky (Kehan) Sheng"
+execute:
+  eval: false
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-block-bg: true
+    code-block-border-left: "#e0cfea"
+---
+
+
+# Makefile Basics
+
+## Makefile Structure
+
+A Makefile consists of **rules** that tell GNU Make how to build targets. Each rule follows this structure:
+
+```makefile
+target : dependencies
+    action
+```
+
+Example: 
+
+```makefile
+results/isles.dat : data/isles.txt scripts/wordcount.py
+        python scripts/wordcount.py --input_file=data/isles.txt --output_file=results/isles.dat
+```
+
+1. **Target**: The name of the file(s) that will be created or updated.
+   - Example: `results/isles.dat`
+
+2. **Dependencies**: Files we need to build the target(s).
+   - includes input files and scripts we will run to output the target(s)
+   - Example: `data/isles.txt scripts/wordcount.py`
+   - Targets can have 0 or more dependencies
+
+3. **Colon (`:`)** separates targets from dependencies
+
+4. **Action**: Commands to run to build or update the target using the dependencies.
+   - Usually shell commands (e.g., running a Python script from command line)
+   - Example: `python scripts/wordcount.py --input_file=data/isles.txt --output_file=results/isles.dat`
+   - Targets can have zero or more actions
+
+5. **Comments**: starting with `#`
+
+
+::: callout-note
+## ⚠️ High bug zone: TAB required
+
+* Actions MUST be indented using the **TAB**, not spaces!
+* Depending on which computer you are using, sometimes TAB can still be auto-converted to 4 spaces if you are editing Makefile in VS Code or Jupyter Lab. 
+* 🍀 **Safest choice**: create and edit Makefile in command line using `nano` or `vim` from terminal.
+:::
+
+# Code we run in class: Individual Assignment 4
+
+## Step 1: Recreate the environment
+
+### Clone repository
+
+Clone the repository and navigate to the root directory using the command line:
+
+```bash
+git clone <repo_name>
+cd <folder_name>
+```
+
+### Recreate the computational environment
+
+You have three options to recreate the computational environment:
+
+<details>
+<summary><b>Option 1: Use `conda-lock.yml`</b></summary>
+
+1. Run the following command to create the conda environment:
+
+```bash
+conda-lock install --name ia4 conda-lock.yml
+```
+
+2. Activate the conda environment:
+
+```bash
+conda activate ia4
+```
+
+3. Run the analysis:
+
+```bash
+bash runall.sh
+```
+
+</details>
+
+<details>
+<summary><b>Option 2: Use `environment.yml`</b></summary>
+
+1. Create a conda environment using `environment.yml`:
+
+```bash
+conda env create -n ia4 -f environment.yml
+```
+
+2. Activate the conda environment:
+
+```bash
+conda activate ia4
+```
+
+3. Run the analysis:
+
+```bash
+bash runall.sh
+```
+
+</details>
+
+<details>
+<summary><b>Option 3: Use `docker-compose.yml`</b></summary>
+
+1. Pull and launch the docker container. This will direct you to the terminal of the container. 
+
+::: {.callout-note}
+## ⚠️ NOT `docker compose up`
+
+Please note you need to run `docker compose run --rm ia4` instead of `docker compose up` to launch the container. We are only using this container's terminal, there will be no graphical user interface (GUI).
+:::
+
+```bash
+docker compose run --rm ia4
+```
+
+2. You will land directly in the terminal of the container. Run the analysis:
+
+```bash
+bash runall.sh
+```
+
+3. After you are done, type `exit` to leave the docker container.
+
+</details>
+
+## Step 2: Create a Makefile
+
+> TODO: Your task is to add a “smarter” data analysis pipeline using GNU Make! It should accomplish the same task as bash runall.sh when you type make all. It should also reset the analysis the starting point (the state when you first copied this repo) when you type make clean.
+
+We will convert every commands in `run_all.sh` script into rules in Makefile.
+
+### First rule in Makefile
+
+1. We start with converting the following command in `run_all.sh` script:
+
+```bash
+python scripts/wordcount.py --input_file=data/isles.txt --output_file=results/isles.dat
+```
+
+2. Create a new file called `Makefile` in the root directory:
+
+```bash
+nano Makefile
+```
+
+3. Add the following rule (pay attention to **TAB** indentation):
+
+```makefile
+results/isles.dat : data/isles.txt scripts/wordcount.py
+        python scripts/wordcount.py --input_file=data/isles.txt --output_file=results/isles.dat
+```
+
+4. Save the file above and run the make rule in the terminal:
+
+```bash
+make results/isles.dat
+```
+
+::: {.callout-warning collapse="true"}
+## 🐛 Debug error: `make: Nothing to be done for 'results/isles.dat'.`
+
+If you see the following output: 
+
+```bash
+$ make results/isles.dat
+make: Nothing to be done for `results/isles.dat'.
+```
+
+This means you are not using the correct **TAB** indentation. Try edit the Makefile in your terminal and redo all **TAB** key there.
+
+:::
+
+::: {.callout-warning collapse="true"}
+## 🐛 Debug message: `make: 'results/isles.dat' is up to date.`
+
+If you succeed the first time you run the command above, but the second time you run the same command, it says: 
+
+```bash
+$ make results/isles.dat
+make: `results/isles.dat' is up to date.
+```
+
+This is normal, because your output file already exists, and the timestamp of that output file is more recent than the timestamp of the input file. Makefile will not re-run the command if you did not make any changes to the input file. If you update the timestamp of the input file using `touch`: 
+
+```bash
+touch data/isles.txt
+```
+
+then rerun `make results/isles.dat`, it will run again, because now the timestamp of the input file is more recent than the timestamp of the output file, meaning that new changes have been made to the input file after you generated the output file last time. 
+
+:::
+
+
+::: {.callout-tip collapse="true"}
+## 🙋‍♀️ Question: Can I call `Makefile` something else?
+
+Yes you can, for example, if we call it `random_name`, you will just need to run the following command to generate the target output: 
+
+```bash
+make -f random_name results/isles.dat
+```
+:::
+
+### Create target and PHONY targets
+
+1. It's tedious to always type long file path & name, like `results/isles.dat`. You can create a target that is a short name for the long file path & name.
+
+```makefile
+result : results/isles.dat
+```
+
+2. Usually we list those short names as PHONY targets, like this: 
+
+```makefile
+.PHONY : result
+```
+
+We use PHONY targets because:
+
+* It's good practice to document and list all your target names in the begining of the Makefile.
+* If you have a file that is called the same name as a target, PHONY targets will tell GNU Make to ignore the file and use the target instead.
+
+3. You can also add the `clean` target to delete everything: 
+
+```makefile
+clean:
+    rm -f results/isles.dat
+```
+
+4. We update the Makefile to include new target, PHONY targets, clean target, and add a new rule to create the plot too: 
+
+```makefile
+.PHONY : result clean
+
+result : results/isles.dat results/figure/isles.png
+
+# count words
+results/isles.dat : data/isles.txt scripts/wordcount.py
+        python scripts/wordcount.py --input_file=data/isles.txt --output_file=results/isles.dat
+
+# create the plots
+results/figure/isles.png : results/isles.dat scripts/plotcount.py
+        python scripts/plotcount.py \
+                --input_file=results/isles.dat \
+                --output_file=results/figure/isles.png
+
+clean :
+        rm -f results/isles.dat results/figure/isles.png
+```
+
+5. Test out our new Makefile!
+
+* Clean everything: 
+
+```bash
+make clean
+```
+
+* Would this run? Although we did not create `results/isles.dat` yet? 
+
+```bash
+make results/figure/isles.png
+```
+
+* 🤩 Yes it will run! If GNU Make detects that you are missing the input file needed to create the target, it will try to find which rule can create this missing input file, and execute that rule first!
+
+* Clean everything again: 
+
+```bash
+make clean
+```
+
+* Run all the steps: 
+
+```bash
+make result
+```
+
+## Step 3: Complete Makefile
+
+```
+# Makefile
+# Tiffany Timbers, Nov 2018
+
+# This driver script completes the textual analysis of
+# 3 novels and creates figures on the 10 most frequently
+# occuring words from each of the 3 novels. This script
+# takes no arguments.
+
+# example usage:
+# make all
+
+.PHONY: all dats figs clean-dats clean-figs clean-all
+
+# run entire analysis
+all: report/count_report.html
+
+# count words
+dats: results/isles.dat \
+results/abyss.dat \
+results/last.dat \
+results/sierra.dat
+
+results/isles.dat : scripts/wordcount.py data/isles.txt
+	python scripts/wordcount.py \
+		--input_file=data/isles.txt \
+		--output_file=results/isles.dat
+results/abyss.dat : scripts/wordcount.py data/abyss.txt
+	python scripts/wordcount.py \
+		--input_file=data/abyss.txt \
+		--output_file=results/abyss.dat
+results/last.dat : scripts/wordcount.py data/last.txt
+	python scripts/wordcount.py \
+		--input_file=data/last.txt \
+		--output_file=results/last.dat
+results/sierra.dat : scripts/wordcount.py data/sierra.txt
+	python scripts/wordcount.py \
+		--input_file=data/sierra.txt \
+		--output_file=results/sierra.dat
+
+# plot
+figs : results/figure/isles.png \
+	results/figure/abyss.png \
+	results/figure/last.png \
+	results/figure/sierra.png
+
+results/figure/isles.png : scripts/plotcount.py results/isles.dat
+	python scripts/plotcount.py \
+		--input_file=results/isles.dat \
+		--output_file=results/figure/isles.png
+results/figure/abyss.png : scripts/plotcount.py results/abyss.dat
+	python scripts/plotcount.py \
+		--input_file=results/abyss.dat \
+		--output_file=results/figure/abyss.png
+results/figure/last.png : scripts/plotcount.py results/last.dat
+	python scripts/plotcount.py \
+		--input_file=results/last.dat \
+		--output_file=results/figure/last.png
+results/figure/sierra.png : scripts/plotcount.py results/sierra.dat
+	python scripts/plotcount.py \
+		--input_file=results/sierra.dat \
+		--output_file=results/figure/sierra.png
+
+# write the report
+report/count_report.html : report/count_report.qmd figs
+	quarto render report/count_report.qmd
+
+clean-dats :
+	rm -f results/isles.dat \
+		results/abyss.dat \
+		results/last.dat \
+		results/sierra.dat
+
+clean-figs :
+	rm -f results/figure/isles.png \
+	results/figure/abyss.png \
+	results/figure/last.png \
+	results/figure/sierra.png
+
+clean-all : clean-dats \
+	clean-figs
+	rm -f report/count_report.html
+	rm -rf report/count_report_files
+```
+
+🎉 Congratulations! You have completed the Makefile for the Individual Assignment 4!
+
+Test it out by running:
+
+```bash
+make clean-all
+make all
+```
+
+# Submit on Gradescope
+
+Please don't forget to git commit, push your changes and submit on Gradescope!

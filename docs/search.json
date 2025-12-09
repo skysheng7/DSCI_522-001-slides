@@ -490,151 +490,67 @@
     "text": "4 Conda + Docker + GitHub Actions Workflow\n\n\nconda create & conda install\nCreate environment.yml\nAdd version numbers\nGenerate conda-lock file\nWrite Dockerfile\nCreate docker-compose.yml\nPush to GitHub\nAdd GitHub Actions workflow yml file\nAdd Docker Hub Personal Access Token (PAT)\nConfigure GitHub Secrets\nWorkflow runs (auto/manual)\nCheck Docker Hub for new image\nLocally, docker pull new image\nLocally, command line docker run"
   },
   {
-    "objectID": "cheatsheets/cheatsheet_quarto.html",
-    "href": "cheatsheets/cheatsheet_quarto.html",
-    "title": "Quarto Cheatsheet",
+    "objectID": "cheatsheets/cheatsheet_makefile.html",
+    "href": "cheatsheets/cheatsheet_makefile.html",
+    "title": "Makefile Cheatsheet",
     "section": "",
-    "text": "Install quarto in your conda environment if you have not yet done so.\n\nconda install quarto\n\nNote: Please remember to redo conda lock of your enviornment, rebuild docker image after instaling quarto.\nIf you are running things locally, you may need to manually convert your conda enviornment to jupyter kernel:\n\npython -m ipykernel install --user --name &lt;conda_env_name&gt; --display-name \"Python (&lt;conda_env_name&gt;)\"\n\nConvert your Jupyter Notebook to Quarto.\n\nquarto convert notebook.ipynb"
+    "text": "A Makefile consists of rules that tell GNU Make how to build targets. Each rule follows this structure:\ntarget : dependencies\n    action\nExample:\nresults/isles.dat : data/isles.txt scripts/wordcount.py\n        python scripts/wordcount.py --input_file=data/isles.txt --output_file=results/isles.dat\n\nTarget: The name of the file(s) that will be created or updated.\n\nExample: results/isles.dat\n\nDependencies: Files we need to build the target(s).\n\nincludes input files and scripts we will run to output the target(s)\nExample: data/isles.txt scripts/wordcount.py\nTargets can have 0 or more dependencies\n\nColon (:) separates targets from dependencies\nAction: Commands to run to build or update the target using the dependencies.\n\nUsually shell commands (e.g., running a Python script from command line)\nExample: python scripts/wordcount.py --input_file=data/isles.txt --output_file=results/isles.dat\nTargets can have zero or more actions\n\nComments: starting with #\n\n\n\n\n\n\n\n⚠️ High bug zone: TAB required\n\n\n\n\nActions MUST be indented using the TAB, not spaces!\nDepending on which computer you are using, sometimes TAB can still be auto-converted to 4 spaces if you are editing Makefile in VS Code or Jupyter Lab.\n🍀 Safest choice: create and edit Makefile in command line using nano or vim from terminal."
   },
   {
-    "objectID": "cheatsheets/cheatsheet_quarto.html#converting-jupyter-notebooks-to-quarto",
-    "href": "cheatsheets/cheatsheet_quarto.html#converting-jupyter-notebooks-to-quarto",
-    "title": "Quarto Cheatsheet",
+    "objectID": "cheatsheets/cheatsheet_makefile.html#makefile-structure",
+    "href": "cheatsheets/cheatsheet_makefile.html#makefile-structure",
+    "title": "Makefile Cheatsheet",
     "section": "",
-    "text": "Install quarto in your conda environment if you have not yet done so.\n\nconda install quarto\n\nNote: Please remember to redo conda lock of your enviornment, rebuild docker image after instaling quarto.\nIf you are running things locally, you may need to manually convert your conda enviornment to jupyter kernel:\n\npython -m ipykernel install --user --name &lt;conda_env_name&gt; --display-name \"Python (&lt;conda_env_name&gt;)\"\n\nConvert your Jupyter Notebook to Quarto.\n\nquarto convert notebook.ipynb"
+    "text": "A Makefile consists of rules that tell GNU Make how to build targets. Each rule follows this structure:\ntarget : dependencies\n    action\nExample:\nresults/isles.dat : data/isles.txt scripts/wordcount.py\n        python scripts/wordcount.py --input_file=data/isles.txt --output_file=results/isles.dat\n\nTarget: The name of the file(s) that will be created or updated.\n\nExample: results/isles.dat\n\nDependencies: Files we need to build the target(s).\n\nincludes input files and scripts we will run to output the target(s)\nExample: data/isles.txt scripts/wordcount.py\nTargets can have 0 or more dependencies\n\nColon (:) separates targets from dependencies\nAction: Commands to run to build or update the target using the dependencies.\n\nUsually shell commands (e.g., running a Python script from command line)\nExample: python scripts/wordcount.py --input_file=data/isles.txt --output_file=results/isles.dat\nTargets can have zero or more actions\n\nComments: starting with #\n\n\n\n\n\n\n\n⚠️ High bug zone: TAB required\n\n\n\n\nActions MUST be indented using the TAB, not spaces!\nDepending on which computer you are using, sometimes TAB can still be auto-converted to 4 spaces if you are editing Makefile in VS Code or Jupyter Lab.\n🍀 Safest choice: create and edit Makefile in command line using nano or vim from terminal."
   },
   {
-    "objectID": "cheatsheets/cheatsheet_quarto.html#create-a-new-repository",
-    "href": "cheatsheets/cheatsheet_quarto.html#create-a-new-repository",
-    "title": "Quarto Cheatsheet",
-    "section": "2.1 Create a new repository",
-    "text": "2.1 Create a new repository\n\nUse this github repository as a template, and create a new repository under your own GitHub account.\n\nClick on “Use this template” button, and then click “create a new repository” button to create a public repository using default settings under your own GitHub account.\n\n\nClone the repository and cd into the repository.\n\ngit clone &lt;repository_url&gt;\ncd &lt;repository_name&gt;\n\nLaunch the Docker container using the following command:\n\ndocker compose up\n\nCopy and open the URL that starts with http://127.0.0.1:8888/lab?token= in your browser, to launch jupyter lab docker container.\nRun the python script in the terminal to generate the plots and tables in the results folder.\n\npython scripts/generate_figures.py --input_dir=\"data/00030067-eng.csv\" \\\n    --out_dir=\"results\"\nYou will see the results folder now has new plots and csv files saved."
+    "objectID": "cheatsheets/cheatsheet_makefile.html#step-1-recreate-the-environment",
+    "href": "cheatsheets/cheatsheet_makefile.html#step-1-recreate-the-environment",
+    "title": "Makefile Cheatsheet",
+    "section": "2.1 Step 1: Recreate the environment",
+    "text": "2.1 Step 1: Recreate the environment\n\n2.1.1 Clone repository\nClone the repository and navigate to the root directory using the command line:\ngit clone &lt;repo_name&gt;\ncd &lt;folder_name&gt;\n\n\n2.1.2 Recreate the computational environment\nYou have three options to recreate the computational environment:\n\n\nOption 1: Use conda-lock.yml\n\n\nRun the following command to create the conda environment:\n\nconda-lock install --name ia4 conda-lock.yml\n\nActivate the conda environment:\n\nconda activate ia4\n\nRun the analysis:\n\nbash runall.sh\n\n\n\nOption 2: Use environment.yml\n\n\nCreate a conda environment using environment.yml:\n\nconda env create -n ia4 -f environment.yml\n\nActivate the conda environment:\n\nconda activate ia4\n\nRun the analysis:\n\nbash runall.sh\n\n\n\nOption 3: Use docker-compose.yml\n\n\nPull and launch the docker container. This will direct you to the terminal of the container.\n\n\n\n\n\n\n\n⚠️ NOT docker compose up\n\n\n\nPlease note you need to run docker compose run --rm ia4 instead of docker compose up to launch the container. We are only using this container’s terminal, there will be no graphical user interface (GUI).\n\n\ndocker compose run --rm ia4\n\nYou will land directly in the terminal of the container. Run the analysis:\n\nbash runall.sh\n\nAfter you are done, type exit to leave the docker container."
   },
   {
-    "objectID": "cheatsheets/cheatsheet_quarto.html#update-.qmd-file",
-    "href": "cheatsheets/cheatsheet_quarto.html#update-.qmd-file",
-    "title": "Quarto Cheatsheet",
-    "section": "2.2 Update .qmd file",
-    "text": "2.2 Update .qmd file\n\n2.2.1 Header formatting & table of contents\n\nTODO: Add header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered\n\nWe will update the yml header to add table of contents. We will add table of content (toc) with depth 3 for both html and pdf formats. Your yml header at the begining of the file (i.e., qmd_example.qmd) should be updated to look like this:\ntitle: \"DSCI 310: Historical Horse Population in Canada\"\nauthor: \"Tiffany Timbers & Jordan Bourak\"\nformat: html\neditor: source\nformat:\n  html:\n    toc: true\n    toc-depth: 3\n  pdf:\n    toc: true\n    toc-depth: 3\nYou will format header sections using #, ##, ###, etc. For example, I’ve added the following header sections to the qmd_example.qmd file:\n# Aim\n...\n# Data\n...\n# Methods\n...\n# Results\n...\n# References\n\n\n2.2.2 References\n\nTODO: Add correctly formatted inline BibTeX references so that a nicely formatted reference list will be present at the end of the document.\n\nYou already have a references.bib file in the repository under the reports folder. We will point bibliography to look for references in this file in the yml header as follows:\ntitle: \"DSCI 310: Historical Horse Population in Canada\"\nauthor: \"Tiffany Timbers & Jordan Bourak\"\nformat: html\neditor: source\nformat:\n  html:\n    toc: true\n    toc-depth: 3\n  pdf:\n    toc: true\n    toc-depth: 3\nbibliography: references.bib\n\n\n\n\n\n\n⚠️ High bug zone: indentation & missing colon:\n\n\n\n\nQuarto’s yaml uses 2 whitespaces to indent the yaml fields (not 4 whitespaces!! not tab!!).\nPlease use : to separate the field name and the field value.\n\n\n\nLet’s render what we have so far to see the result. In your terminal, please run the following commands:\n# go to the reports directory if you are in the root directory\ncd reports\n\n# render the html file\nquarto render qmd_example.qmd\n\n\n\n\n\n\n😵 No references listed in the rendered report??\n\n\n\nYou will notice that no references are listed in the rendered pdf or html file. This is because we have not added in-text citations to the .qmd file. You can list as many BibTex references as you want in your references.bib file. However, only the references that are cited in the .qmd file will be listed in the rendered pdf or html file under “References” section.\n\n\nLet’s add in-text citations to the .qmd file. We will use the [@reference_key] syntax (or [@reference_key1; @reference_key2] when you have more than 1 reference) to cite references. Please note the reference_key is the first phrase after { in the BibTex entry. For example, for this entry in the references.bib file:\n@Manual{click,\n    title           = {Click Python Package},\n    author          = {Pallets Team},\n    year            = {2020},\n    url             = {https://click.palletsprojects.com/},\n}\nThe reference_key is click. We will use [@click] to cite this reference in the .qmd file.\nFor example, I’ve added the following in-text citations to the .qmd file. Please complete all other in-text citations yourself:\nHorse population data were sourced from the \n[Government of Canada's Open Data website](http://open.canada.ca/en/open-data) [@horses1; @horses2]...\n\n\n2.2.3 Figure formatting\n\nTODO: Edit the figure formatting so that Quarto:\n\nautomatically numbers them\nhas a label for easy cross referencing\ncontrols the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)\n\n\nWe use the syntax ![description](relative/path/to/figure.png){#fig-label width=950%} to format the figure. For example, I’ve added the following figure to the .qmd file, and I use @fig-label to refer to it in the text. This will be rendered as Figure 1 in the rendered pdf or html file. You will do so for both Figure 1 + 2.\n# Results\n\n![Horse populations for all provinces in Canada from 1906 - 1972.](../results/horse_pops_plot.png){#fig-horse-pop width=60%}\n\nWe can see from @fig-horse-pop that Ontario, Saskatchewan and Alberta \n\n\n\n\n\n\n⚠️ High bug zone: Pay attention to using fig-label\n\n\n\n\nYou have to name your figure with starting with a fig prefix (sorry for my mistakes in class!).\nYou have to use - instead of _ in the figure label.\nExample: fig-horse-pop instead of horse_pop.\n\n\n\n\n\n2.2.4 Table formatting\n\nTODO: add a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text\n\nWe use the syntax below inside of python code block to format the table:\n#| label: tbl-label\n#| tbl-cap: Table description\nFor example, I’ve added the following table to the .qmd file. @tbl-horse-sd will be rendered as Table 1 in the rendered pdf or html file.\nWe present the standard deviations in @tbl-horse-sd.\n\n```\\{python}\n#| label: tbl-horse-sd\n#| tbl-cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province.\n\nhorses_sd_table = pd.read_csv(\"../results/horses_sd.csv\")\nlargest_sd = horses_sd_table['Province'].values[0]\nMarkdown(horses_sd_table.to_markdown(index = False))\n```\n\n\n\n\n\n\n⚠️ High bug zone: Pay attention to using tbl-label\n\n\n\n\nYou have to name your table with starting with a tbl prefix (sorry for my mistakes in class!).\nYou have to use - instead of _ in the table label.\nExample: tbl-horse-sd instead of horse_sd.\n\n\n\n\n\n2.2.5 Cross-referencing\n\nTODO: Edit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\n\nIn the steps above, we have already used cross-referencing to refer to the figures and tables (e.g., @fig-horse-pop and @tbl-horse-sd).\n\n\n2.2.6 Inline Quarto code\n\nTODO: replace the ??? in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value\n\nWe use the syntax below to do inline Quarto code. It will execute the python / R code inside of the code block and resulting value will be displayed in the text.\n`{python} &lt;python_code&gt;`\nFor example, I’ve added the following inline Quarto code (i.e., {python} largest_sd) to the .qmd file:\n```\\{python}\n#| label: tbl-horse-sd\n#| tbl-cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province.\n\n\nhorses_sd_table = pd.read_csv(\"../results/horses_sd.csv\")\nlargest_sd = horses_sd_table['Province'].values[0]\nMarkdown(horses_sd_table.to_markdown(index = False))\n```\n\n...\n\nIn @fig-horse-largest we zoom in and look at the province of `{python} largest_sd`, which had the largest spread of values in terms of standard deviation.\n\n\n2.2.7 No code chunk visible\n\nTODO: change the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables)\n\nWe will set echo: false in the yml header to hide the code chunk in the rendered report.\ntitle: \"DSCI 310: Historical Horse Population in Canada\"\nauthor: \"Tiffany Timbers & Jordan Bourak\"\nformat: html\neditor: source\nformat:\n  html:\n    toc: true\n    toc-depth: 3\n  pdf:\n    toc: true\n    toc-depth: 3\nbibliography: references.bib\nexecute:\n  echo: false\n\n\n2.2.8 GitHub Pages\n\nTODO: (optional/bonus) Turn on GitHub pages so that it serves up the docs directory so that the report is viewable on the web.\n\nAt the root directoy of your repository, please create a new file called _quarto.yml and add the following content:\nproject:\n  type: website\n  output-dir: docs\nThis file will tell Quarto to output the rendered report to the docs folder, as a website.\nThen, at the root directoy of your repository, please run the following command to render the report in the terminal:\nquarto render\nYou will see that the rendered report is now all in the docs folder. There is a index.html file in the docs folder, you can open it in your browser to view the report.\n\n\n\n\n\n\n😵 No image showing in Jupyter lab??\n\n\n\nIt is normal to not see figures being rendered inside of Jupyter lab. You will need to go to local folder, and double click on the index.html file to view the report in a browser."
+    "objectID": "cheatsheets/cheatsheet_makefile.html#step-2-create-a-makefile",
+    "href": "cheatsheets/cheatsheet_makefile.html#step-2-create-a-makefile",
+    "title": "Makefile Cheatsheet",
+    "section": "2.2 Step 2: Create a Makefile",
+    "text": "2.2 Step 2: Create a Makefile\n\nTODO: Your task is to add a “smarter” data analysis pipeline using GNU Make! It should accomplish the same task as bash runall.sh when you type make all. It should also reset the analysis the starting point (the state when you first copied this repo) when you type make clean.\n\nWe will convert every commands in run_all.sh script into rules in Makefile.\n\n2.2.1 First rule in Makefile\n\nWe start with converting the following command in run_all.sh script:\n\npython scripts/wordcount.py --input_file=data/isles.txt --output_file=results/isles.dat\n\nCreate a new file called Makefile in the root directory:\n\nnano Makefile\n\nAdd the following rule (pay attention to TAB indentation):\n\nresults/isles.dat : data/isles.txt scripts/wordcount.py\n        python scripts/wordcount.py --input_file=data/isles.txt --output_file=results/isles.dat\n\nSave the file above and run the make rule in the terminal:\n\nmake results/isles.dat\n\n\n\n\n\n\n🐛 Debug error: make: Nothing to be done for 'results/isles.dat'.\n\n\n\n\n\nIf you see the following output:\n$ make results/isles.dat\nmake: Nothing to be done for `results/isles.dat'.\nThis means you are not using the correct TAB indentation. Try edit the Makefile in your terminal and redo all TAB key there.\n\n\n\n\n\n\n\n\n\n🐛 Debug message: make: 'results/isles.dat' is up to date.\n\n\n\n\n\nIf you succeed the first time you run the command above, but the second time you run the same command, it says:\n$ make results/isles.dat\nmake: `results/isles.dat' is up to date.\nThis is normal, because your output file already exists, and the timestamp of that output file is more recent than the timestamp of the input file. Makefile will not re-run the command if you did not make any changes to the input file. If you update the timestamp of the input file using touch:\ntouch data/isles.txt\nthen rerun make results/isles.dat, it will run again, because now the timestamp of the input file is more recent than the timestamp of the output file, meaning that new changes have been made to the input file after you generated the output file last time.\n\n\n\n\n\n\n\n\n\n🙋‍♀️ Question: Can I call Makefile something else?\n\n\n\n\n\nYes you can, for example, if we call it random_name, you will just need to run the following command to generate the target output:\nmake -f random_name results/isles.dat\n\n\n\n\n\n2.2.2 Create target and PHONY targets\n\nIt’s tedious to always type long file path & name, like results/isles.dat. You can create a target that is a short name for the long file path & name.\n\nresult : results/isles.dat\n\nUsually we list those short names as PHONY targets, like this:\n\n.PHONY : result\nWe use PHONY targets because:\n\nIt’s good practice to document and list all your target names in the begining of the Makefile.\nIf you have a file that is called the same name as a target, PHONY targets will tell GNU Make to ignore the file and use the target instead.\n\n\nYou can also add the clean target to delete everything:\n\nclean:\n    rm -f results/isles.dat\n\nWe update the Makefile to include new target, PHONY targets, clean target, and add a new rule to create the plot too:\n\n.PHONY : result clean\n\nresult : results/isles.dat results/figure/isles.png\n\n# count words\nresults/isles.dat : data/isles.txt scripts/wordcount.py\n        python scripts/wordcount.py --input_file=data/isles.txt --output_file=results/isles.dat\n\n# create the plots\nresults/figure/isles.png : results/isles.dat scripts/plotcount.py\n        python scripts/plotcount.py \\\n                --input_file=results/isles.dat \\\n                --output_file=results/figure/isles.png\n\nclean :\n        rm -f results/isles.dat results/figure/isles.png\n\nTest out our new Makefile!\n\n\nClean everything:\n\nmake clean\n\nWould this run? Although we did not create results/isles.dat yet?\n\nmake results/figure/isles.png\n\n🤩 Yes it will run! If GNU Make detects that you are missing the input file needed to create the target, it will try to find which rule can create this missing input file, and execute that rule first!\nClean everything again:\n\nmake clean\n\nRun all the steps:\n\nmake result"
   },
   {
-    "objectID": "cheatsheets/cheatsheet_quarto.html#clean-up",
-    "href": "cheatsheets/cheatsheet_quarto.html#clean-up",
-    "title": "Quarto Cheatsheet",
-    "section": "2.3 Clean up",
-    "text": "2.3 Clean up\n\nAfter you are sure that you have completed everything. Close the jupyter lab docker container. In your terminal, press Ctrol + C to stop the container. Then run docker compose rm to remove the docker container.\nPush your changes to github as usual."
+    "objectID": "cheatsheets/cheatsheet_makefile.html#step-3-complete-makefile",
+    "href": "cheatsheets/cheatsheet_makefile.html#step-3-complete-makefile",
+    "title": "Makefile Cheatsheet",
+    "section": "2.3 Step 3: Complete Makefile",
+    "text": "2.3 Step 3: Complete Makefile\n# Makefile\n# Tiffany Timbers, Nov 2018\n\n# This driver script completes the textual analysis of\n# 3 novels and creates figures on the 10 most frequently\n# occuring words from each of the 3 novels. This script\n# takes no arguments.\n\n# example usage:\n# make all\n\n.PHONY: all dats figs clean-dats clean-figs clean-all\n\n# run entire analysis\nall: report/count_report.html\n\n# count words\ndats: results/isles.dat \\\nresults/abyss.dat \\\nresults/last.dat \\\nresults/sierra.dat\n\nresults/isles.dat : scripts/wordcount.py data/isles.txt\n    python scripts/wordcount.py \\\n        --input_file=data/isles.txt \\\n        --output_file=results/isles.dat\nresults/abyss.dat : scripts/wordcount.py data/abyss.txt\n    python scripts/wordcount.py \\\n        --input_file=data/abyss.txt \\\n        --output_file=results/abyss.dat\nresults/last.dat : scripts/wordcount.py data/last.txt\n    python scripts/wordcount.py \\\n        --input_file=data/last.txt \\\n        --output_file=results/last.dat\nresults/sierra.dat : scripts/wordcount.py data/sierra.txt\n    python scripts/wordcount.py \\\n        --input_file=data/sierra.txt \\\n        --output_file=results/sierra.dat\n\n# plot\nfigs : results/figure/isles.png \\\n    results/figure/abyss.png \\\n    results/figure/last.png \\\n    results/figure/sierra.png\n\nresults/figure/isles.png : scripts/plotcount.py results/isles.dat\n    python scripts/plotcount.py \\\n        --input_file=results/isles.dat \\\n        --output_file=results/figure/isles.png\nresults/figure/abyss.png : scripts/plotcount.py results/abyss.dat\n    python scripts/plotcount.py \\\n        --input_file=results/abyss.dat \\\n        --output_file=results/figure/abyss.png\nresults/figure/last.png : scripts/plotcount.py results/last.dat\n    python scripts/plotcount.py \\\n        --input_file=results/last.dat \\\n        --output_file=results/figure/last.png\nresults/figure/sierra.png : scripts/plotcount.py results/sierra.dat\n    python scripts/plotcount.py \\\n        --input_file=results/sierra.dat \\\n        --output_file=results/figure/sierra.png\n\n# write the report\nreport/count_report.html : report/count_report.qmd figs\n    quarto render report/count_report.qmd\n\nclean-dats :\n    rm -f results/isles.dat \\\n        results/abyss.dat \\\n        results/last.dat \\\n        results/sierra.dat\n\nclean-figs :\n    rm -f results/figure/isles.png \\\n    results/figure/abyss.png \\\n    results/figure/last.png \\\n    results/figure/sierra.png\n\nclean-all : clean-dats \\\n    clean-figs\n    rm -f report/count_report.html\n    rm -rf report/count_report_files\n🎉 Congratulations! You have completed the Makefile for the Individual Assignment 4!\nTest it out by running:\nmake clean-all\nmake all"
   },
   {
-    "objectID": "cheatsheets/cheatsheet_quarto.html#hosting-on-github-pages",
-    "href": "cheatsheets/cheatsheet_quarto.html#hosting-on-github-pages",
-    "title": "Quarto Cheatsheet",
-    "section": "2.4 Hosting on GitHub Pages",
-    "text": "2.4 Hosting on GitHub Pages\n\nAfter you pushed all changes to your github pages, please follow these steps:\n\nGo to your github repository\nClick on “Settings” gear icon\nClick on “Pages” on the left panel\nUnder “Source”, select “Deploy from a branch”\nUnder “Branch”, select “main”\nThen select “docs” folder from the dropdown menu\nClick on “Save” button\n\n\n\n\n\nGitHub Pages\n\n\n\nWait a few minutes, and refresh the page. You will see that github now says something like the message shown below:"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "DSCI 522 Slides",
+    "objectID": "cheatsheets/cheatsheet_conda.html",
+    "href": "cheatsheets/cheatsheet_conda.html",
+    "title": "Conda & Conda-lock Cheatsheet",
     "section": "",
-    "text": "This site contains lecture and lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow, in section 001, for 2025W1."
+    "text": "Task\nCommand\n\n\n\n\nCreate a new conda environment\nconda create -n &lt;env_name&gt;\n\n\nCreate with specific Python version\nconda create --name &lt;env_name&gt; python=3.11\n\n\nCreate with packages\nconda create --name &lt;env_name&gt; numpy pandas\n\n\nList all conda environments\nconda env list or conda info --envs\n\n\nActivate a conda environment\nconda activate &lt;env_name&gt;\n\n\nDeactivate a conda environment\nconda deactivate\n\n\nRemove a conda environment\nconda env remove -n &lt;env_name&gt;\n\n\nDuplicate a conda environment\nconda create --name &lt;new_env&gt; --clone &lt;old_env&gt;\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nList all packages in environment\nconda list\n\n\nRemove a package from current environment\nconda remove &lt;package_name&gt;\n\n\nUpdate a package in current environment\nconda update &lt;package_name&gt;\n\n\nRemove a package in other environment\nconda remove -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate a package in other environment\nconda update -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate all packages in current environment\nconda update --all\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nExport environment (with history)\nconda env export --from-history &gt; environment.yml\n\n\nExport environment (full)\nconda env export &gt; environment.yml\n\n\nCreate environment from environment.yml\nconda env create -n &lt;env_name&gt; or conda env create --file environment.yml\n\n\nUpdate existing environment from file\nconda env update --file environment.yml --prune"
   },
   {
-    "objectID": "index.html#welcome",
-    "href": "index.html#welcome",
-    "title": "DSCI 522 Slides",
+    "objectID": "cheatsheets/cheatsheet_conda.html#conda-basics",
+    "href": "cheatsheets/cheatsheet_conda.html#conda-basics",
+    "title": "Conda & Conda-lock Cheatsheet",
     "section": "",
-    "text": "This site contains lecture and lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow, in section 001, for 2025W1."
+    "text": "Task\nCommand\n\n\n\n\nCreate a new conda environment\nconda create -n &lt;env_name&gt;\n\n\nCreate with specific Python version\nconda create --name &lt;env_name&gt; python=3.11\n\n\nCreate with packages\nconda create --name &lt;env_name&gt; numpy pandas\n\n\nList all conda environments\nconda env list or conda info --envs\n\n\nActivate a conda environment\nconda activate &lt;env_name&gt;\n\n\nDeactivate a conda environment\nconda deactivate\n\n\nRemove a conda environment\nconda env remove -n &lt;env_name&gt;\n\n\nDuplicate a conda environment\nconda create --name &lt;new_env&gt; --clone &lt;old_env&gt;\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nList all packages in environment\nconda list\n\n\nRemove a package from current environment\nconda remove &lt;package_name&gt;\n\n\nUpdate a package in current environment\nconda update &lt;package_name&gt;\n\n\nRemove a package in other environment\nconda remove -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate a package in other environment\nconda update -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate all packages in current environment\nconda update --all\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nExport environment (with history)\nconda env export --from-history &gt; environment.yml\n\n\nExport environment (full)\nconda env export &gt; environment.yml\n\n\nCreate environment from environment.yml\nconda env create -n &lt;env_name&gt; or conda env create --file environment.yml\n\n\nUpdate existing environment from file\nconda env update --file environment.yml --prune"
   },
   {
-    "objectID": "index.html#instructor",
-    "href": "index.html#instructor",
-    "title": "DSCI 522 Slides",
-    "section": "Instructor",
-    "text": "Instructor\nSky (Kehan) Sheng\nUniversity of British Columbia\nwww.skysheng.io"
+    "objectID": "cheatsheets/cheatsheet_conda.html#command-line-notes",
+    "href": "cheatsheets/cheatsheet_conda.html#command-line-notes",
+    "title": "Conda & Conda-lock Cheatsheet",
+    "section": "2 Command Line Notes",
+    "text": "2 Command Line Notes\n\n--name and -n are equivalent\n--file and -f are equivalent\n--platform and -p are equivalent, this is used to specify the platform (e.g., linux-64, osx-arm64, win-64)\nMore command line review cheatsheet is available here"
   },
   {
-    "objectID": "index.html#available-slides",
-    "href": "index.html#available-slides",
-    "title": "DSCI 522 Slides",
-    "section": "Available Slides",
-    "text": "Available Slides\n\nLectures\n\nLecture 1 - Introduction to Reproducible and Trustworthy Data Science Workflow\nLecture 2 - Conda-lock, Containerization, and Docker\nLecture 3 - Customizing and Building Containers\nLecture 4 - Containerizing Python Applications\nLecture 5 - Non-interactive scripts\nLecture 6 - Reproducible reports\nLecture 7 - Data Analysis Pipeline and GNU Make\n\n\n\nLabs\n\nLab 1 Introduction - Introduction to reproducible workflows, lab policies, and getting started\nLab 4 End - Peer review, teamwork reflection, and Santa Otter’s gift bag\n\n\n\nCheatsheets\n\nCommand Line Cheatsheet - Quick reference for command line operations\nConda & Conda-lock Cheatsheet - Quick reference for conda environment management and conda-lock\nDocker & Docker Compose Cheatsheet - Quick reference for Docker containerization and Docker Compose\nQuarto Cheatsheet - Quick reference for Quarto report generation and GitHub Pages hosting"
-  },
-  {
-    "objectID": "index.html#license",
-    "href": "index.html#license",
-    "title": "DSCI 522 Slides",
-    "section": "License",
-    "text": "License\nThis work is licensed under the MIT License."
-  },
-  {
-    "objectID": "labs/lab1-intro.html#lab-attendence-policies",
-    "href": "labs/lab1-intro.html#lab-attendence-policies",
-    "title": "DSCI 522 Lab 1",
-    "section": "⚠️ Lab Attendence Policies",
-    "text": "⚠️ Lab Attendence Policies\n\nLab attendance is mandatory!\n\n\n\n‼️ Students are expected to attend 100% of their scheduled lab hours and attendance will be taken at the beginning of each lab session. Students must make formal requests for academic concession in the event that they cannot attend a lab session by filling out the academic concession form and sending it to the course instructor. Applying for academic concession does not promise the granting of academic concession. Each application will be evaluated in the context of UBC’s Academic concession policy. Students missing more than 20% of the total scheduled lab hours for a course without having received an academic concession will receive a possible maximum course grade of 50% and an “F” standing for the course on the transcript. For all other policies, please see the general MDS policies."
-  },
-  {
-    "objectID": "labs/lab1-intro.html#ai-tools-policy",
-    "href": "labs/lab1-intro.html#ai-tools-policy",
-    "title": "DSCI 522 Lab 1",
-    "section": "AI Tools Policy🤖",
-    "text": "AI Tools Policy🤖\n\n\n\n\n\n\nImportant Guidelines\n\n\n\nAI tools are allowed, but you must include proper acknowledgement.\nDocument:\n\nwhich tool you used?\nhow you interacted with it?\nwhat is your prompts?\nhow do you verify the output?\n…\n\nEveryone in your team holds the equal responsibility for the code and documentation you submit as a group.\nIf genAI tool is used but not acknowledged, everyone in your team will face consequences of academic misconduct."
-  },
-  {
-    "objectID": "labs/lab1-intro.html#once-upon-a-time",
-    "href": "labs/lab1-intro.html#once-upon-a-time",
-    "title": "DSCI 522 Lab 1",
-    "section": "🧚🏻 Once upon a time…",
-    "text": "🧚🏻 Once upon a time…\n📜 Legend says there is a super powerful dragon…\n\n\nSource: Raya and the Last Dragon"
-  },
-  {
-    "objectID": "labs/lab1-intro.html#dont-be-this-dragon",
-    "href": "labs/lab1-intro.html#dont-be-this-dragon",
-    "title": "DSCI 522 Lab 1",
-    "section": "Don’t be this dragon! 🐉",
-    "text": "Don’t be this dragon! 🐉\nEqual Contribution\n\nEveryone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.\nThe full expectations are written out at the end of your milestone 1 assignment."
-  },
-  {
-    "objectID": "labs/lab1-intro.html#communications",
-    "href": "labs/lab1-intro.html#communications",
-    "title": "DSCI 522 Lab 1",
-    "section": "🗣️ Communications",
-    "text": "🗣️ Communications\n\nEnglish only in all group discussions to ensure everyone is involved!\n❌ Do NOT use these platforms: Below is just a list of examples, not exhaustive list:"
-  },
-  {
-    "objectID": "labs/lab1-intro.html#use-github-issues-for-communication",
-    "href": "labs/lab1-intro.html#use-github-issues-for-communication",
-    "title": "DSCI 522 Lab 1",
-    "section": "✅ Use GitHub Issues for Communication",
-    "text": "✅ Use GitHub Issues for Communication\n\n\n\n\n\n\n\n\n\n\nWhy GitHub Issues?\n\n\n\nTransparent and trackable: TAs and instructors can see communications and contributions\nEveryone is included in the loop\n\n\n\n\n\n\n\n\n\n\nNo Mini Groups!\n\n\nEVERYONE must be involved in conversations. Do not create smaller subgroups within your team.\n💙 It’s ok you have your favorite person, but this is a professional setting. Please be fair, collaborative, and inclusive for the group project! Nobody wants to feel left behind or isolated 😢."
-  },
-  {
-    "objectID": "labs/lab1-intro.html#different-work-styles",
-    "href": "labs/lab1-intro.html#different-work-styles",
-    "title": "DSCI 522 Lab 1",
-    "section": "Different Work Styles",
-    "text": "Different Work Styles\n\nLearn from each other. The smartest person in the room is the room itself.\n\n\n\n\n\nImage generated by OpenAI GPT-5"
-  },
-  {
-    "objectID": "labs/lab1-intro.html#simple-simple-simple",
-    "href": "labs/lab1-intro.html#simple-simple-simple",
-    "title": "DSCI 522 Lab 1",
-    "section": "🙏 SIMPLE, SIMPLE, SIMPLE!!",
-    "text": "🙏 SIMPLE, SIMPLE, SIMPLE!!\n\n\nFocus on building a simple project first\nClassification OR regression only\nDon’t use crazy models\nThis is NOT for job interviews\nGroups that achieve a MVP (Minimum Viable Product) at the end of the lab will get stickers and Posit cheatsheet!"
-  },
-  {
-    "objectID": "labs/lab1-intro.html#ice-breaking-activity",
-    "href": "labs/lab1-intro.html#ice-breaking-activity",
-    "title": "DSCI 522 Lab 1",
-    "section": "Ice Breaking Activity ❄️",
-    "text": "Ice Breaking Activity ❄️\nTime to get to know each other!\n\nShare your name and background\nOne fun fact about yourself\n\n\n\n\n\n\n\nWhat do you expect from your team?\n\n\n\nAre you a last-minute genius? procrastinator? planner?\nWhat is your strength (e.g., planning, leadership, proof-reading, etc)?\nShare your experience when a group project went horribly wrong\nShare your experience when a group project went extremely well\nDo you prefer written or verbal communication?"
-  },
-  {
-    "objectID": "labs/lab1-intro.html#some-tips",
-    "href": "labs/lab1-intro.html#some-tips",
-    "title": "DSCI 522 Lab 1",
-    "section": "Some Tips 💡",
-    "text": "Some Tips 💡\n\n\nInclude estimated computation time if analysis is expected to take long\nRound numbers to 2 decimal places when appropriate\nMake sure packages listed under environment.yml has exact version numbers listed. For example, pandas==2.2.3 instead of pandas&gt;=2.2.3.\nDo not copy and paste data description from the internet, that would be plagiarism. Write your own descriptions, and cite the source you used.\nHow to cite packages?\n\nR : citation(package = \"&lt;package_name&gt;\")\nPython : pip show --verbose &lt;package_name&gt;"
+    "objectID": "cheatsheets/cheatsheet_conda.html#conda-lock",
+    "href": "cheatsheets/cheatsheet_conda.html#conda-lock",
+    "title": "Conda & Conda-lock Cheatsheet",
+    "section": "3 Conda-lock",
+    "text": "3 Conda-lock\n\n3.1 📜 Basic Commands\n\n\n\n\n\n\n\n\nCommand\nOutput\nDescription\n\n\n\n\nconda-lock lock --file environment.yml\nconda-lock.yml\nGeneral lock file for all platforms\n\n\nconda-lock lock --file environment.yml -p linux-64\nconda-lock.yml\nGeneral lock file for specific platform (Linux)\n\n\nconda-lock -k explicit --file environment.yml -p linux-64\nconda-linux-64.lock\nExplicit lock file for one platform (Linux)\n\n\nconda-lock render -p linux-64\nconda-linux-64.lock\nExplicit lock file from existing conda-lock.yml\n\n\n\n\n\n3.2 🙀 Comparing conda-lock.yml vs conda-linux-64.lock\n\n\n\n\n\n\n\n\nFeature\nconda-lock.yml\nconda-linux-64.lock\n\n\n\n\nFormat\nUnified YAML (multi-platform)\nExplicit (single-platform)\n\n\nContent\nStructured metadata + dependencies for all platforms\nSimple list of package URLs\n\n\nFile Size\nLarger (contains all platforms)\nSmaller (one platform only)\n\n\nInstallation\nconda-lock install --name &lt;env_name&gt; conda-lock.yml\nconda create --name &lt;env_name&gt; --file conda-linux-64.lock\n\n\nUse case\nDevelopment across multiple platforms\nProduction deployment, Docker, single platform\n\n\nSpeed\nSlightly slower (conda-lock processes it)\nFastest\n\n\n\n\n\n3.3 Creating Environments from Lock Files\nFrom conda-lock.yml:\nconda-lock install --name &lt;env_name&gt; conda-lock.yml\nFrom explicit lock file (e.g., conda-linux-64.lock):\nconda create --name &lt;env_name&gt; --file conda-linux-64.lock"
   },
   {
     "objectID": "labs/lab4-end.html#step-1-initiate-review-request-as-a-team",
@@ -707,32 +623,151 @@
     "text": "Tips\n\nTests\n\nAll tests should pass\nPlease include your test package in your docker image\nTest needs to test for:\n\nExpected input\nEdge cases\nError handling"
   },
   {
-    "objectID": "cheatsheets/cheatsheet_conda.html",
-    "href": "cheatsheets/cheatsheet_conda.html",
-    "title": "Conda & Conda-lock Cheatsheet",
+    "objectID": "labs/lab1-intro.html#lab-attendence-policies",
+    "href": "labs/lab1-intro.html#lab-attendence-policies",
+    "title": "DSCI 522 Lab 1",
+    "section": "⚠️ Lab Attendence Policies",
+    "text": "⚠️ Lab Attendence Policies\n\nLab attendance is mandatory!\n\n\n\n‼️ Students are expected to attend 100% of their scheduled lab hours and attendance will be taken at the beginning of each lab session. Students must make formal requests for academic concession in the event that they cannot attend a lab session by filling out the academic concession form and sending it to the course instructor. Applying for academic concession does not promise the granting of academic concession. Each application will be evaluated in the context of UBC’s Academic concession policy. Students missing more than 20% of the total scheduled lab hours for a course without having received an academic concession will receive a possible maximum course grade of 50% and an “F” standing for the course on the transcript. For all other policies, please see the general MDS policies."
+  },
+  {
+    "objectID": "labs/lab1-intro.html#ai-tools-policy",
+    "href": "labs/lab1-intro.html#ai-tools-policy",
+    "title": "DSCI 522 Lab 1",
+    "section": "AI Tools Policy🤖",
+    "text": "AI Tools Policy🤖\n\n\n\n\n\n\nImportant Guidelines\n\n\n\nAI tools are allowed, but you must include proper acknowledgement.\nDocument:\n\nwhich tool you used?\nhow you interacted with it?\nwhat is your prompts?\nhow do you verify the output?\n…\n\nEveryone in your team holds the equal responsibility for the code and documentation you submit as a group.\nIf genAI tool is used but not acknowledged, everyone in your team will face consequences of academic misconduct."
+  },
+  {
+    "objectID": "labs/lab1-intro.html#once-upon-a-time",
+    "href": "labs/lab1-intro.html#once-upon-a-time",
+    "title": "DSCI 522 Lab 1",
+    "section": "🧚🏻 Once upon a time…",
+    "text": "🧚🏻 Once upon a time…\n📜 Legend says there is a super powerful dragon…\n\n\nSource: Raya and the Last Dragon"
+  },
+  {
+    "objectID": "labs/lab1-intro.html#dont-be-this-dragon",
+    "href": "labs/lab1-intro.html#dont-be-this-dragon",
+    "title": "DSCI 522 Lab 1",
+    "section": "Don’t be this dragon! 🐉",
+    "text": "Don’t be this dragon! 🐉\nEqual Contribution\n\nEveryone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.\nThe full expectations are written out at the end of your milestone 1 assignment."
+  },
+  {
+    "objectID": "labs/lab1-intro.html#communications",
+    "href": "labs/lab1-intro.html#communications",
+    "title": "DSCI 522 Lab 1",
+    "section": "🗣️ Communications",
+    "text": "🗣️ Communications\n\nEnglish only in all group discussions to ensure everyone is involved!\n❌ Do NOT use these platforms: Below is just a list of examples, not exhaustive list:"
+  },
+  {
+    "objectID": "labs/lab1-intro.html#use-github-issues-for-communication",
+    "href": "labs/lab1-intro.html#use-github-issues-for-communication",
+    "title": "DSCI 522 Lab 1",
+    "section": "✅ Use GitHub Issues for Communication",
+    "text": "✅ Use GitHub Issues for Communication\n\n\n\n\n\n\n\n\n\n\nWhy GitHub Issues?\n\n\n\nTransparent and trackable: TAs and instructors can see communications and contributions\nEveryone is included in the loop\n\n\n\n\n\n\n\n\n\n\nNo Mini Groups!\n\n\nEVERYONE must be involved in conversations. Do not create smaller subgroups within your team.\n💙 It’s ok you have your favorite person, but this is a professional setting. Please be fair, collaborative, and inclusive for the group project! Nobody wants to feel left behind or isolated 😢."
+  },
+  {
+    "objectID": "labs/lab1-intro.html#different-work-styles",
+    "href": "labs/lab1-intro.html#different-work-styles",
+    "title": "DSCI 522 Lab 1",
+    "section": "Different Work Styles",
+    "text": "Different Work Styles\n\nLearn from each other. The smartest person in the room is the room itself.\n\n\n\n\n\nImage generated by OpenAI GPT-5"
+  },
+  {
+    "objectID": "labs/lab1-intro.html#simple-simple-simple",
+    "href": "labs/lab1-intro.html#simple-simple-simple",
+    "title": "DSCI 522 Lab 1",
+    "section": "🙏 SIMPLE, SIMPLE, SIMPLE!!",
+    "text": "🙏 SIMPLE, SIMPLE, SIMPLE!!\n\n\nFocus on building a simple project first\nClassification OR regression only\nDon’t use crazy models\nThis is NOT for job interviews\nGroups that achieve a MVP (Minimum Viable Product) at the end of the lab will get stickers and Posit cheatsheet!"
+  },
+  {
+    "objectID": "labs/lab1-intro.html#ice-breaking-activity",
+    "href": "labs/lab1-intro.html#ice-breaking-activity",
+    "title": "DSCI 522 Lab 1",
+    "section": "Ice Breaking Activity ❄️",
+    "text": "Ice Breaking Activity ❄️\nTime to get to know each other!\n\nShare your name and background\nOne fun fact about yourself\n\n\n\n\n\n\n\nWhat do you expect from your team?\n\n\n\nAre you a last-minute genius? procrastinator? planner?\nWhat is your strength (e.g., planning, leadership, proof-reading, etc)?\nShare your experience when a group project went horribly wrong\nShare your experience when a group project went extremely well\nDo you prefer written or verbal communication?"
+  },
+  {
+    "objectID": "labs/lab1-intro.html#some-tips",
+    "href": "labs/lab1-intro.html#some-tips",
+    "title": "DSCI 522 Lab 1",
+    "section": "Some Tips 💡",
+    "text": "Some Tips 💡\n\n\nInclude estimated computation time if analysis is expected to take long\nRound numbers to 2 decimal places when appropriate\nMake sure packages listed under environment.yml has exact version numbers listed. For example, pandas==2.2.3 instead of pandas&gt;=2.2.3.\nDo not copy and paste data description from the internet, that would be plagiarism. Write your own descriptions, and cite the source you used.\nHow to cite packages?\n\nR : citation(package = \"&lt;package_name&gt;\")\nPython : pip show --verbose &lt;package_name&gt;"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DSCI 522 Slides",
     "section": "",
-    "text": "Task\nCommand\n\n\n\n\nCreate a new conda environment\nconda create -n &lt;env_name&gt;\n\n\nCreate with specific Python version\nconda create --name &lt;env_name&gt; python=3.11\n\n\nCreate with packages\nconda create --name &lt;env_name&gt; numpy pandas\n\n\nList all conda environments\nconda env list or conda info --envs\n\n\nActivate a conda environment\nconda activate &lt;env_name&gt;\n\n\nDeactivate a conda environment\nconda deactivate\n\n\nRemove a conda environment\nconda env remove -n &lt;env_name&gt;\n\n\nDuplicate a conda environment\nconda create --name &lt;new_env&gt; --clone &lt;old_env&gt;\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nList all packages in environment\nconda list\n\n\nRemove a package from current environment\nconda remove &lt;package_name&gt;\n\n\nUpdate a package in current environment\nconda update &lt;package_name&gt;\n\n\nRemove a package in other environment\nconda remove -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate a package in other environment\nconda update -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate all packages in current environment\nconda update --all\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nExport environment (with history)\nconda env export --from-history &gt; environment.yml\n\n\nExport environment (full)\nconda env export &gt; environment.yml\n\n\nCreate environment from environment.yml\nconda env create -n &lt;env_name&gt; or conda env create --file environment.yml\n\n\nUpdate existing environment from file\nconda env update --file environment.yml --prune"
+    "text": "This site contains lecture and lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow, in section 001, for 2025W1."
   },
   {
-    "objectID": "cheatsheets/cheatsheet_conda.html#conda-basics",
-    "href": "cheatsheets/cheatsheet_conda.html#conda-basics",
-    "title": "Conda & Conda-lock Cheatsheet",
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "DSCI 522 Slides",
     "section": "",
-    "text": "Task\nCommand\n\n\n\n\nCreate a new conda environment\nconda create -n &lt;env_name&gt;\n\n\nCreate with specific Python version\nconda create --name &lt;env_name&gt; python=3.11\n\n\nCreate with packages\nconda create --name &lt;env_name&gt; numpy pandas\n\n\nList all conda environments\nconda env list or conda info --envs\n\n\nActivate a conda environment\nconda activate &lt;env_name&gt;\n\n\nDeactivate a conda environment\nconda deactivate\n\n\nRemove a conda environment\nconda env remove -n &lt;env_name&gt;\n\n\nDuplicate a conda environment\nconda create --name &lt;new_env&gt; --clone &lt;old_env&gt;\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nList all packages in environment\nconda list\n\n\nRemove a package from current environment\nconda remove &lt;package_name&gt;\n\n\nUpdate a package in current environment\nconda update &lt;package_name&gt;\n\n\nRemove a package in other environment\nconda remove -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate a package in other environment\nconda update -n &lt;env_name&gt; &lt;package_name&gt;\n\n\nUpdate all packages in current environment\nconda update --all\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nExport environment (with history)\nconda env export --from-history &gt; environment.yml\n\n\nExport environment (full)\nconda env export &gt; environment.yml\n\n\nCreate environment from environment.yml\nconda env create -n &lt;env_name&gt; or conda env create --file environment.yml\n\n\nUpdate existing environment from file\nconda env update --file environment.yml --prune"
+    "text": "This site contains lecture and lab slides for DSCI 522 - Reproducible and Trustworthy Data Science Workflow, in section 001, for 2025W1."
   },
   {
-    "objectID": "cheatsheets/cheatsheet_conda.html#command-line-notes",
-    "href": "cheatsheets/cheatsheet_conda.html#command-line-notes",
-    "title": "Conda & Conda-lock Cheatsheet",
-    "section": "2 Command Line Notes",
-    "text": "2 Command Line Notes\n\n--name and -n are equivalent\n--file and -f are equivalent\n--platform and -p are equivalent, this is used to specify the platform (e.g., linux-64, osx-arm64, win-64)\nMore command line review cheatsheet is available here"
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "DSCI 522 Slides",
+    "section": "Instructor",
+    "text": "Instructor\nSky (Kehan) Sheng\nUniversity of British Columbia\nwww.skysheng.io"
   },
   {
-    "objectID": "cheatsheets/cheatsheet_conda.html#conda-lock",
-    "href": "cheatsheets/cheatsheet_conda.html#conda-lock",
-    "title": "Conda & Conda-lock Cheatsheet",
-    "section": "3 Conda-lock",
-    "text": "3 Conda-lock\n\n3.1 📜 Basic Commands\n\n\n\n\n\n\n\n\nCommand\nOutput\nDescription\n\n\n\n\nconda-lock lock --file environment.yml\nconda-lock.yml\nGeneral lock file for all platforms\n\n\nconda-lock lock --file environment.yml -p linux-64\nconda-lock.yml\nGeneral lock file for specific platform (Linux)\n\n\nconda-lock -k explicit --file environment.yml -p linux-64\nconda-linux-64.lock\nExplicit lock file for one platform (Linux)\n\n\nconda-lock render -p linux-64\nconda-linux-64.lock\nExplicit lock file from existing conda-lock.yml\n\n\n\n\n\n3.2 🙀 Comparing conda-lock.yml vs conda-linux-64.lock\n\n\n\n\n\n\n\n\nFeature\nconda-lock.yml\nconda-linux-64.lock\n\n\n\n\nFormat\nUnified YAML (multi-platform)\nExplicit (single-platform)\n\n\nContent\nStructured metadata + dependencies for all platforms\nSimple list of package URLs\n\n\nFile Size\nLarger (contains all platforms)\nSmaller (one platform only)\n\n\nInstallation\nconda-lock install --name &lt;env_name&gt; conda-lock.yml\nconda create --name &lt;env_name&gt; --file conda-linux-64.lock\n\n\nUse case\nDevelopment across multiple platforms\nProduction deployment, Docker, single platform\n\n\nSpeed\nSlightly slower (conda-lock processes it)\nFastest\n\n\n\n\n\n3.3 Creating Environments from Lock Files\nFrom conda-lock.yml:\nconda-lock install --name &lt;env_name&gt; conda-lock.yml\nFrom explicit lock file (e.g., conda-linux-64.lock):\nconda create --name &lt;env_name&gt; --file conda-linux-64.lock"
+    "objectID": "index.html#available-slides",
+    "href": "index.html#available-slides",
+    "title": "DSCI 522 Slides",
+    "section": "Available Slides",
+    "text": "Available Slides\n\nLectures\n\nLecture 1 - Introduction to Reproducible and Trustworthy Data Science Workflow\nLecture 2 - Conda-lock, Containerization, and Docker\nLecture 3 - Customizing and Building Containers\nLecture 4 - Containerizing Python Applications\nLecture 5 - Non-interactive scripts\nLecture 6 - Reproducible reports\nLecture 7 - Data Analysis Pipeline and GNU Make\n\n\n\nLabs\n\nLab 1 Introduction - Introduction to reproducible workflows, lab policies, and getting started\nLab 4 End - Peer review, teamwork reflection, and Santa Otter’s gift bag\n\n\n\nCheatsheets\n\nCommand Line Cheatsheet - Quick reference for command line operations\nConda & Conda-lock Cheatsheet - Quick reference for conda environment management and conda-lock\nDocker & Docker Compose Cheatsheet - Quick reference for Docker containerization and Docker Compose\nQuarto Cheatsheet - Quick reference for Quarto report generation and GitHub Pages hosting\nMakefile Cheatsheet - Quick reference for Makefile"
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "DSCI 522 Slides",
+    "section": "License",
+    "text": "License\nThis work is licensed under the MIT License."
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_quarto.html",
+    "href": "cheatsheets/cheatsheet_quarto.html",
+    "title": "Quarto Cheatsheet",
+    "section": "",
+    "text": "Install quarto in your conda environment if you have not yet done so.\n\nconda install quarto\n\nNote: Please remember to redo conda lock of your enviornment, rebuild docker image after instaling quarto.\nIf you are running things locally, you may need to manually convert your conda enviornment to jupyter kernel:\n\npython -m ipykernel install --user --name &lt;conda_env_name&gt; --display-name \"Python (&lt;conda_env_name&gt;)\"\n\nConvert your Jupyter Notebook to Quarto.\n\nquarto convert notebook.ipynb"
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_quarto.html#converting-jupyter-notebooks-to-quarto",
+    "href": "cheatsheets/cheatsheet_quarto.html#converting-jupyter-notebooks-to-quarto",
+    "title": "Quarto Cheatsheet",
+    "section": "",
+    "text": "Install quarto in your conda environment if you have not yet done so.\n\nconda install quarto\n\nNote: Please remember to redo conda lock of your enviornment, rebuild docker image after instaling quarto.\nIf you are running things locally, you may need to manually convert your conda enviornment to jupyter kernel:\n\npython -m ipykernel install --user --name &lt;conda_env_name&gt; --display-name \"Python (&lt;conda_env_name&gt;)\"\n\nConvert your Jupyter Notebook to Quarto.\n\nquarto convert notebook.ipynb"
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_quarto.html#create-a-new-repository",
+    "href": "cheatsheets/cheatsheet_quarto.html#create-a-new-repository",
+    "title": "Quarto Cheatsheet",
+    "section": "2.1 Create a new repository",
+    "text": "2.1 Create a new repository\n\nUse this github repository as a template, and create a new repository under your own GitHub account.\n\nClick on “Use this template” button, and then click “create a new repository” button to create a public repository using default settings under your own GitHub account.\n\n\nClone the repository and cd into the repository.\n\ngit clone &lt;repository_url&gt;\ncd &lt;repository_name&gt;\n\nLaunch the Docker container using the following command:\n\ndocker compose up\n\nCopy and open the URL that starts with http://127.0.0.1:8888/lab?token= in your browser, to launch jupyter lab docker container.\nRun the python script in the terminal to generate the plots and tables in the results folder.\n\npython scripts/generate_figures.py --input_dir=\"data/00030067-eng.csv\" \\\n    --out_dir=\"results\"\nYou will see the results folder now has new plots and csv files saved."
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_quarto.html#update-.qmd-file",
+    "href": "cheatsheets/cheatsheet_quarto.html#update-.qmd-file",
+    "title": "Quarto Cheatsheet",
+    "section": "2.2 Update .qmd file",
+    "text": "2.2 Update .qmd file\n\n2.2.1 Header formatting & table of contents\n\nTODO: Add header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered\n\nWe will update the yml header to add table of contents. We will add table of content (toc) with depth 3 for both html and pdf formats. Your yml header at the begining of the file (i.e., qmd_example.qmd) should be updated to look like this:\ntitle: \"DSCI 310: Historical Horse Population in Canada\"\nauthor: \"Tiffany Timbers & Jordan Bourak\"\nformat: html\neditor: source\nformat:\n  html:\n    toc: true\n    toc-depth: 3\n  pdf:\n    toc: true\n    toc-depth: 3\nYou will format header sections using #, ##, ###, etc. For example, I’ve added the following header sections to the qmd_example.qmd file:\n# Aim\n...\n# Data\n...\n# Methods\n...\n# Results\n...\n# References\n\n\n2.2.2 References\n\nTODO: Add correctly formatted inline BibTeX references so that a nicely formatted reference list will be present at the end of the document.\n\nYou already have a references.bib file in the repository under the reports folder. We will point bibliography to look for references in this file in the yml header as follows:\ntitle: \"DSCI 310: Historical Horse Population in Canada\"\nauthor: \"Tiffany Timbers & Jordan Bourak\"\nformat: html\neditor: source\nformat:\n  html:\n    toc: true\n    toc-depth: 3\n  pdf:\n    toc: true\n    toc-depth: 3\nbibliography: references.bib\n\n\n\n\n\n\n⚠️ High bug zone: indentation & missing colon:\n\n\n\n\nQuarto’s yaml uses 2 whitespaces to indent the yaml fields (not 4 whitespaces!! not tab!!).\nPlease use : to separate the field name and the field value.\n\n\n\nLet’s render what we have so far to see the result. In your terminal, please run the following commands:\n# go to the reports directory if you are in the root directory\ncd reports\n\n# render the html file\nquarto render qmd_example.qmd\n\n\n\n\n\n\n😵 No references listed in the rendered report??\n\n\n\nYou will notice that no references are listed in the rendered pdf or html file. This is because we have not added in-text citations to the .qmd file. You can list as many BibTex references as you want in your references.bib file. However, only the references that are cited in the .qmd file will be listed in the rendered pdf or html file under “References” section.\n\n\nLet’s add in-text citations to the .qmd file. We will use the [@reference_key] syntax (or [@reference_key1; @reference_key2] when you have more than 1 reference) to cite references. Please note the reference_key is the first phrase after { in the BibTex entry. For example, for this entry in the references.bib file:\n@Manual{click,\n    title           = {Click Python Package},\n    author          = {Pallets Team},\n    year            = {2020},\n    url             = {https://click.palletsprojects.com/},\n}\nThe reference_key is click. We will use [@click] to cite this reference in the .qmd file.\nFor example, I’ve added the following in-text citations to the .qmd file. Please complete all other in-text citations yourself:\nHorse population data were sourced from the \n[Government of Canada's Open Data website](http://open.canada.ca/en/open-data) [@horses1; @horses2]...\n\n\n2.2.3 Figure formatting\n\nTODO: Edit the figure formatting so that Quarto:\n\nautomatically numbers them\nhas a label for easy cross referencing\ncontrols the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)\n\n\nWe use the syntax ![description](relative/path/to/figure.png){#fig-label width=950%} to format the figure. For example, I’ve added the following figure to the .qmd file, and I use @fig-label to refer to it in the text. This will be rendered as Figure 1 in the rendered pdf or html file. You will do so for both Figure 1 + 2.\n# Results\n\n![Horse populations for all provinces in Canada from 1906 - 1972.](../results/horse_pops_plot.png){#fig-horse-pop width=60%}\n\nWe can see from @fig-horse-pop that Ontario, Saskatchewan and Alberta \n\n\n\n\n\n\n⚠️ High bug zone: Pay attention to using fig-label\n\n\n\n\nYou have to name your figure with starting with a fig prefix (sorry for my mistakes in class!).\nYou have to use - instead of _ in the figure label.\nExample: fig-horse-pop instead of horse_pop.\n\n\n\n\n\n2.2.4 Table formatting\n\nTODO: add a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text\n\nWe use the syntax below inside of python code block to format the table:\n#| label: tbl-label\n#| tbl-cap: Table description\nFor example, I’ve added the following table to the .qmd file. @tbl-horse-sd will be rendered as Table 1 in the rendered pdf or html file.\nWe present the standard deviations in @tbl-horse-sd.\n\n```\\{python}\n#| label: tbl-horse-sd\n#| tbl-cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province.\n\nhorses_sd_table = pd.read_csv(\"../results/horses_sd.csv\")\nlargest_sd = horses_sd_table['Province'].values[0]\nMarkdown(horses_sd_table.to_markdown(index = False))\n```\n\n\n\n\n\n\n⚠️ High bug zone: Pay attention to using tbl-label\n\n\n\n\nYou have to name your table with starting with a tbl prefix (sorry for my mistakes in class!).\nYou have to use - instead of _ in the table label.\nExample: tbl-horse-sd instead of horse_sd.\n\n\n\n\n\n2.2.5 Cross-referencing\n\nTODO: Edit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\n\nIn the steps above, we have already used cross-referencing to refer to the figures and tables (e.g., @fig-horse-pop and @tbl-horse-sd).\n\n\n2.2.6 Inline Quarto code\n\nTODO: replace the ??? in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value\n\nWe use the syntax below to do inline Quarto code. It will execute the python / R code inside of the code block and resulting value will be displayed in the text.\n`{python} &lt;python_code&gt;`\nFor example, I’ve added the following inline Quarto code (i.e., {python} largest_sd) to the .qmd file:\n```\\{python}\n#| label: tbl-horse-sd\n#| tbl-cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province.\n\n\nhorses_sd_table = pd.read_csv(\"../results/horses_sd.csv\")\nlargest_sd = horses_sd_table['Province'].values[0]\nMarkdown(horses_sd_table.to_markdown(index = False))\n```\n\n...\n\nIn @fig-horse-largest we zoom in and look at the province of `{python} largest_sd`, which had the largest spread of values in terms of standard deviation.\n\n\n2.2.7 No code chunk visible\n\nTODO: change the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables)\n\nWe will set echo: false in the yml header to hide the code chunk in the rendered report.\ntitle: \"DSCI 310: Historical Horse Population in Canada\"\nauthor: \"Tiffany Timbers & Jordan Bourak\"\nformat: html\neditor: source\nformat:\n  html:\n    toc: true\n    toc-depth: 3\n  pdf:\n    toc: true\n    toc-depth: 3\nbibliography: references.bib\nexecute:\n  echo: false\n\n\n2.2.8 GitHub Pages\n\nTODO: (optional/bonus) Turn on GitHub pages so that it serves up the docs directory so that the report is viewable on the web.\n\nAt the root directoy of your repository, please create a new file called _quarto.yml and add the following content:\nproject:\n  type: website\n  output-dir: docs\nThis file will tell Quarto to output the rendered report to the docs folder, as a website.\nThen, at the root directoy of your repository, please run the following command to render the report in the terminal:\nquarto render\nYou will see that the rendered report is now all in the docs folder. There is a index.html file in the docs folder, you can open it in your browser to view the report.\n\n\n\n\n\n\n😵 No image showing in Jupyter lab??\n\n\n\nIt is normal to not see figures being rendered inside of Jupyter lab. You will need to go to local folder, and double click on the index.html file to view the report in a browser."
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_quarto.html#clean-up",
+    "href": "cheatsheets/cheatsheet_quarto.html#clean-up",
+    "title": "Quarto Cheatsheet",
+    "section": "2.3 Clean up",
+    "text": "2.3 Clean up\n\nAfter you are sure that you have completed everything. Close the jupyter lab docker container. In your terminal, press Ctrol + C to stop the container. Then run docker compose rm to remove the docker container.\nPush your changes to github as usual."
+  },
+  {
+    "objectID": "cheatsheets/cheatsheet_quarto.html#hosting-on-github-pages",
+    "href": "cheatsheets/cheatsheet_quarto.html#hosting-on-github-pages",
+    "title": "Quarto Cheatsheet",
+    "section": "2.4 Hosting on GitHub Pages",
+    "text": "2.4 Hosting on GitHub Pages\n\nAfter you pushed all changes to your github pages, please follow these steps:\n\nGo to your github repository\nClick on “Settings” gear icon\nClick on “Pages” on the left panel\nUnder “Source”, select “Deploy from a branch”\nUnder “Branch”, select “main”\nThen select “docs” folder from the dropdown menu\nClick on “Save” button\n\n\n\n\n\nGitHub Pages\n\n\n\nWait a few minutes, and refresh the page. You will see that github now says something like the message shown below:"
   },
   {
     "objectID": "cheatsheets/cheatsheet_command_line.html",
