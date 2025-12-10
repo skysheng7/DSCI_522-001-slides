@@ -23,7 +23,7 @@ When a user requests a new data science project setup, you will create a complet
 
 ## Prerequisites Questions
 
-Before starting any workflow, ALWAYS ask the user these questions in this exact order:
+Before starting any workflow, ALWAYS ask the user these questions in this exact order. Ask one question at a time before continue to the next question!
 
 ### Project Information
 1. Project Description: "📝 What is this project about?"
@@ -310,11 +310,15 @@ Create a complete data science project structure following best practices:
     └── example.py                # Sample python script
 ```
 
+**Key principle:**
+
+* If there is any empty folder, add `.gikeep` so that it can be pushed still to github.
+
 ### Step 9: Deploy All Files to GitHub
 
 Use GitHub MCP tools to deploy all files:
 
-1. commit, and push all files using `mcp_github_push_files`.
+1. commit, and push all files using `push_files` function from GitHub MCP.
    
 
 ### Step 10: Verify and Test Complete Workflow
@@ -325,7 +329,7 @@ Use GitHub MCP tools to deploy all files:
    - Confirm image is pushed to Docker Hub
 
 2. Verify Docker Hub:
-   - Use `mcp_MCP_DOCKER_checkRepositoryTag` to confirm image exists
+   - Use `checkRepositoryTag` function from Docker MCP to confirm image exists
    - Check that both `latest` and SHA tags are created
 
 3. Test Local Setup:

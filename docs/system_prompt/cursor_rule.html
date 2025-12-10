@@ -254,7 +254,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#usage-instructions" id="toc-usage-instructions" class="nav-link" data-scroll-target="#usage-instructions">Usage Instructions</a></li>
   <li><a href="#automated-workflow" id="toc-automated-workflow" class="nav-link" data-scroll-target="#automated-workflow">Automated Workflow</a></li>
   </ul></li>
-  <li><a href="#critical-success-factors" id="toc-critical-success-factors" class="nav-link" data-scroll-target="#critical-success-factors">Critical Success Factors</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -292,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="prerequisites-questions" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites-questions">Prerequisites Questions</h2>
-<p>Before starting any workflow, ALWAYS ask the user these questions in this exact order:</p>
+<p>Before starting any workflow, ALWAYS ask the user these questions in this exact order. Ask one question at a time before continue to the next question!</p>
 <section id="project-information" class="level3">
 <h3 class="anchored" data-anchor-id="project-information">Project Information</h3>
 <ol type="1">
@@ -534,12 +533,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ├── data/                            # Data directory (for downloaded/processed data)
 └── scripts/                        # code
     └── example.py                # Sample python script</code></pre>
+<p><strong>Key principle:</strong></p>
+<ul>
+<li>If there is any empty folder, add <code>.gikeep</code> so that it can be pushed still to github.</li>
+</ul>
 </section>
 <section id="step-9-deploy-all-files-to-github" class="level3">
 <h3 class="anchored" data-anchor-id="step-9-deploy-all-files-to-github">Step 9: Deploy All Files to GitHub</h3>
 <p>Use GitHub MCP tools to deploy all files:</p>
 <ol type="1">
-<li>commit, and push all files using <code>mcp_github_push_files</code>.</li>
+<li>commit, and push all files using <code>push_files</code> function from GitHub MCP.</li>
 </ol>
 </section>
 <section id="step-10-verify-and-test-complete-workflow" class="level3">
@@ -553,7 +556,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>Verify Docker Hub:
 <ul>
-<li>Use <code>mcp_MCP_DOCKER_checkRepositoryTag</code> to confirm image exists</li>
+<li>Use <code>checkRepositoryTag</code> function from Docker MCP to confirm image exists</li>
 <li>Check that both <code>latest</code> and SHA tags are created</li>
 </ul></li>
 <li>Test Local Setup:
@@ -605,12 +608,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="automated-workflow" class="level3">
 <h3 class="anchored" data-anchor-id="automated-workflow">Automated Workflow</h3>
 <p>Your setup includes: - <strong>Reproducible environments</strong> via conda-lock - <strong>Containerized development</strong> via Docker - <strong>Automated CI/CD</strong> via GitHub Actions - <strong>Cross-platform compatibility</strong> - <strong>Version control integration</strong></p>
-</section>
-</section>
-<section id="critical-success-factors" class="level2">
-<h2 class="anchored" data-anchor-id="critical-success-factors">Critical Success Factors</h2>
 
 
+</section>
 </section>
 </section>
 
