@@ -25,6 +25,7 @@ University of British Columbia
 - [Lecture 5](lectures/lec5.html) - Non-interactive scripts
 - [Lecture 6](lectures/lec6.html) - Reproducible reports
 - [Lecture 7](lectures/lec7.html) - Data Analysis Pipeline and GNU Make
+- [Lecture 8](lectures/lec8.html) - Testing Code & Conclusion
 
 ### Labs
 
