@@ -188,7 +188,6 @@ services:
 Create `.github/workflows/docker-publish.yml` with security best practices:
 
 ```yaml
-
 # Publishes docker image, pinning actions to a commit SHA,
 # and updating most recently built image with the latest tag.
 # Can be triggered by either pushing a commit that changes the `Dockerfile`,
@@ -223,8 +222,8 @@ jobs:
         with:
           images: {USER_DOCKERHUB_USERNAME}/{USER_REPO_NAME}
           tags: |
-            type=raw,value={{sha}},enable=${{github.ref_type != 'tag' }}
-            type=raw,value=latest
+            type=raw, value={{sha}},enable=${{github.ref_type != 'tag' }}
+            type=raw, value=latest
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
@@ -246,11 +245,9 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add docker-compose.yml
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update docker-compose.yml with new image tag [skip ci]"
-            git push
+          git commit -m "Update docker-compose.yml with new image tag"
+          git push
+
 ```
 
 Security principles applied:

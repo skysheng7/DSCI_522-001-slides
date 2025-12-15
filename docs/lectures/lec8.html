@@ -940,198 +940,195 @@ Source: <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflo
 <span id="cb7-188"><a></a>Create <span class="in">`.github/workflows/docker-publish.yml`</span> with security best practices:</span>
 <span id="cb7-189"><a></a></span>
 <span id="cb7-190"><a></a><span class="in">```yaml</span></span>
-<span id="cb7-191"><a></a></span>
-<span id="cb7-192"><a></a><span class="co"># Publishes docker image, pinning actions to a commit SHA,</span></span>
-<span id="cb7-193"><a></a><span class="co"># and updating most recently built image with the latest tag.</span></span>
-<span id="cb7-194"><a></a><span class="co"># Can be triggered by either pushing a commit that changes the `Dockerfile`,</span></span>
-<span id="cb7-195"><a></a><span class="co"># or manually dispatching the workflow.</span></span>
-<span id="cb7-196"><a></a></span>
-<span id="cb7-197"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Publish Docker image</span></span>
-<span id="cb7-198"><a></a></span>
-<span id="cb7-199"><a></a><span class="fu">on</span><span class="kw">:</span></span>
-<span id="cb7-200"><a></a><span class="at">  </span><span class="fu">workflow_dispatch</span><span class="kw">:</span></span>
-<span id="cb7-201"><a></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
-<span id="cb7-202"><a></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
-<span id="cb7-203"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'Dockerfile'</span></span>
-<span id="cb7-204"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'conda-linux-64.lock'</span></span>
-<span id="cb7-205"><a></a></span>
-<span id="cb7-206"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
-<span id="cb7-207"><a></a><span class="at">  </span><span class="fu">push_to_registry</span><span class="kw">:</span></span>
-<span id="cb7-208"><a></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Push Docker image to Docker Hub</span></span>
-<span id="cb7-209"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
-<span id="cb7-210"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
-<span id="cb7-211"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check out the repo</span></span>
-<span id="cb7-212"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
-<span id="cb7-213"><a></a></span>
-<span id="cb7-214"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Log in to Docker Hub</span></span>
-<span id="cb7-215"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/login-action@v3</span></span>
-<span id="cb7-216"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb7-217"><a></a><span class="at">          </span><span class="fu">username</span><span class="kw">:</span><span class="at"> ${{ secrets.DOCKER_USERNAME }}</span></span>
-<span id="cb7-218"><a></a><span class="at">          </span><span class="fu">password</span><span class="kw">:</span><span class="at"> ${{ secrets.DOCKER_PASSWORD }}</span></span>
-<span id="cb7-219"><a></a></span>
-<span id="cb7-220"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Extract metadata (tags, labels) for Docker</span></span>
-<span id="cb7-221"><a></a><span class="at">        </span><span class="fu">id</span><span class="kw">:</span><span class="at"> meta</span></span>
-<span id="cb7-222"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/metadata-action@v5</span></span>
-<span id="cb7-223"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb7-224"><a></a><span class="at">          </span><span class="fu">images</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="at">USER_DOCKERHUB_USERNAME</span><span class="kw">}</span><span class="at">/{USER_REPO_NAME}</span></span>
-<span id="cb7-225"><a></a><span class="fu">          tags</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb7-226"><a></a>            type=raw,value={{sha}},enable=${{github.ref_type != 'tag' }}</span>
-<span id="cb7-227"><a></a>            type=raw,value=latest</span>
-<span id="cb7-228"><a></a></span>
-<span id="cb7-229"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build and push Docker image</span></span>
-<span id="cb7-230"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/build-push-action@v6</span></span>
-<span id="cb7-231"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb7-232"><a></a><span class="at">          </span><span class="fu">context</span><span class="kw">:</span><span class="at"> .</span></span>
-<span id="cb7-233"><a></a><span class="at">          </span><span class="fu">file</span><span class="kw">:</span><span class="at"> ./Dockerfile</span></span>
-<span id="cb7-234"><a></a><span class="at">          </span><span class="fu">push</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb7-235"><a></a><span class="at">          </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> ${{ steps.meta.outputs.tags }}</span></span>
-<span id="cb7-236"><a></a><span class="at">          </span><span class="fu">labels</span><span class="kw">:</span><span class="at"> ${{ steps.meta.outputs.labels }}</span></span>
-<span id="cb7-237"><a></a></span>
-<span id="cb7-238"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Update docker-compose.yml with new image tag</span></span>
-<span id="cb7-239"><a></a><span class="at">        </span><span class="fu">if</span><span class="kw">:</span><span class="at"> success()</span></span>
-<span id="cb7-240"><a></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb7-241"><a></a>          sed -i "s|image: {USER_DOCKERHUB_USERNAME}/{USER_REPO_NAME}:.*|image: {USER_DOCKERHUB_USERNAME}/{USER_REPO_NAME}:${{ steps.meta.outputs.version }}|" docker-compose.yml</span>
-<span id="cb7-242"><a></a></span>
-<span id="cb7-243"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Commit and push updated docker-compose.yml</span></span>
-<span id="cb7-244"><a></a><span class="at">        </span><span class="fu">if</span><span class="kw">:</span><span class="at"> success()</span></span>
-<span id="cb7-245"><a></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb7-246"><a></a>          git config --global user.name "github-actions[bot]"</span>
-<span id="cb7-247"><a></a>          git config --global user.email "github-actions[bot]@users.noreply.github.com"</span>
-<span id="cb7-248"><a></a>          git add docker-compose.yml</span>
-<span id="cb7-249"><a></a>          if git diff --staged --quiet; then</span>
-<span id="cb7-250"><a></a>            echo "No changes to commit"</span>
-<span id="cb7-251"><a></a>          else</span>
-<span id="cb7-252"><a></a>            git commit -m "Update docker-compose.yml with new image tag [skip ci]"</span>
-<span id="cb7-253"><a></a>            git push</span>
-<span id="cb7-254"><a></a><span class="in">```</span></span>
-<span id="cb7-255"><a></a></span>
-<span id="cb7-256"><a></a>Security principles applied:</span>
-<span id="cb7-257"><a></a></span>
-<span id="cb7-258"><a></a><span class="ss">- </span>Pinned action versions to specific commit SHAs</span>
-<span id="cb7-259"><a></a><span class="ss">- </span>Minimal permissions for GitHub token</span>
-<span id="cb7-260"><a></a><span class="ss">- </span>Secure secrets handling for Docker Hub credentials</span>
-<span id="cb7-261"><a></a></span>
-<span id="cb7-262"><a></a><span class="fu">### Step 7: Configure Repository Secrets and Permissions</span></span>
-<span id="cb7-263"><a></a></span>
-<span id="cb7-264"><a></a>CRITICAL: Instruct the user to manually configure GitHub repository settings:</span>
-<span id="cb7-265"><a></a></span>
-<span id="cb7-266"><a></a>**A. Create Docker Hub Personal Access Token (PAT):**</span>
-<span id="cb7-267"><a></a><span class="ss">1. </span>Go to Docker Hub → Account Settings → Security → Personal Access Tokens</span>
-<span id="cb7-268"><a></a><span class="ss">2. </span>Click "New Access Token"</span>
-<span id="cb7-269"><a></a><span class="ss">3. </span>Give it a descriptive name (e.g., "GitHub Actions for {PROJECT_NAME}")</span>
-<span id="cb7-270"><a></a><span class="ss">4. </span>Set permissions to "Read, Write, Delete" </span>
-<span id="cb7-271"><a></a><span class="ss">5. </span>Click "Generate" and copy the token immediately (you won't see it again)</span>
-<span id="cb7-272"><a></a></span>
-<span id="cb7-273"><a></a>**B. Configure GitHub Repository Secrets:**</span>
-<span id="cb7-274"><a></a><span class="ss">1. </span>Go to your GitHub repository Settings → Secrets and variables → Actions</span>
-<span id="cb7-275"><a></a><span class="ss">2. </span>Click "New repository secret" and add:</span>
-<span id="cb7-276"><a></a><span class="ss">   - </span>Name: <span class="in">`DOCKER_USERNAME`</span>, Value: Your Docker Hub username</span>
-<span id="cb7-277"><a></a><span class="ss">   - </span>Name: <span class="in">`DOCKER_PASSWORD`</span>, Value: Your Docker Hub Personal Access Token (from step A)</span>
+<span id="cb7-191"><a></a><span class="co"># Publishes docker image, pinning actions to a commit SHA,</span></span>
+<span id="cb7-192"><a></a><span class="co"># and updating most recently built image with the latest tag.</span></span>
+<span id="cb7-193"><a></a><span class="co"># Can be triggered by either pushing a commit that changes the `Dockerfile`,</span></span>
+<span id="cb7-194"><a></a><span class="co"># or manually dispatching the workflow.</span></span>
+<span id="cb7-195"><a></a></span>
+<span id="cb7-196"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Publish Docker image</span></span>
+<span id="cb7-197"><a></a></span>
+<span id="cb7-198"><a></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb7-199"><a></a><span class="at">  </span><span class="fu">workflow_dispatch</span><span class="kw">:</span></span>
+<span id="cb7-200"><a></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb7-201"><a></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
+<span id="cb7-202"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'Dockerfile'</span></span>
+<span id="cb7-203"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'conda-linux-64.lock'</span></span>
+<span id="cb7-204"><a></a></span>
+<span id="cb7-205"><a></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb7-206"><a></a><span class="at">  </span><span class="fu">push_to_registry</span><span class="kw">:</span></span>
+<span id="cb7-207"><a></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Push Docker image to Docker Hub</span></span>
+<span id="cb7-208"><a></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb7-209"><a></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb7-210"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Check out the repo</span></span>
+<span id="cb7-211"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
+<span id="cb7-212"><a></a></span>
+<span id="cb7-213"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Log in to Docker Hub</span></span>
+<span id="cb7-214"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/login-action@v3</span></span>
+<span id="cb7-215"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb7-216"><a></a><span class="at">          </span><span class="fu">username</span><span class="kw">:</span><span class="at"> ${{ secrets.DOCKER_USERNAME }}</span></span>
+<span id="cb7-217"><a></a><span class="at">          </span><span class="fu">password</span><span class="kw">:</span><span class="at"> ${{ secrets.DOCKER_PASSWORD }}</span></span>
+<span id="cb7-218"><a></a></span>
+<span id="cb7-219"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Extract metadata (tags, labels) for Docker</span></span>
+<span id="cb7-220"><a></a><span class="at">        </span><span class="fu">id</span><span class="kw">:</span><span class="at"> meta</span></span>
+<span id="cb7-221"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/metadata-action@v5</span></span>
+<span id="cb7-222"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb7-223"><a></a><span class="at">          </span><span class="fu">images</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="at">USER_DOCKERHUB_USERNAME</span><span class="kw">}</span><span class="at">/{USER_REPO_NAME}</span></span>
+<span id="cb7-224"><a></a><span class="fu">          tags</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb7-225"><a></a>            type=raw, value={{sha}},enable=${{github.ref_type != 'tag' }}</span>
+<span id="cb7-226"><a></a>            type=raw, value=latest</span>
+<span id="cb7-227"><a></a></span>
+<span id="cb7-228"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Build and push Docker image</span></span>
+<span id="cb7-229"><a></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> docker/build-push-action@v6</span></span>
+<span id="cb7-230"><a></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb7-231"><a></a><span class="at">          </span><span class="fu">context</span><span class="kw">:</span><span class="at"> .</span></span>
+<span id="cb7-232"><a></a><span class="at">          </span><span class="fu">file</span><span class="kw">:</span><span class="at"> ./Dockerfile</span></span>
+<span id="cb7-233"><a></a><span class="at">          </span><span class="fu">push</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb7-234"><a></a><span class="at">          </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> ${{ steps.meta.outputs.tags }}</span></span>
+<span id="cb7-235"><a></a><span class="at">          </span><span class="fu">labels</span><span class="kw">:</span><span class="at"> ${{ steps.meta.outputs.labels }}</span></span>
+<span id="cb7-236"><a></a></span>
+<span id="cb7-237"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Update docker-compose.yml with new image tag</span></span>
+<span id="cb7-238"><a></a><span class="at">        </span><span class="fu">if</span><span class="kw">:</span><span class="at"> success()</span></span>
+<span id="cb7-239"><a></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb7-240"><a></a>          sed -i "s|image: {USER_DOCKERHUB_USERNAME}/{USER_REPO_NAME}:.*|image: {USER_DOCKERHUB_USERNAME}/{USER_REPO_NAME}:${{ steps.meta.outputs.version }}|" docker-compose.yml</span>
+<span id="cb7-241"><a></a></span>
+<span id="cb7-242"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Commit and push updated docker-compose.yml</span></span>
+<span id="cb7-243"><a></a><span class="at">        </span><span class="fu">if</span><span class="kw">:</span><span class="at"> success()</span></span>
+<span id="cb7-244"><a></a><span class="fu">        run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb7-245"><a></a>          git config --global user.name "github-actions[bot]"</span>
+<span id="cb7-246"><a></a>          git config --global user.email "github-actions[bot]@users.noreply.github.com"</span>
+<span id="cb7-247"><a></a>          git add docker-compose.yml</span>
+<span id="cb7-248"><a></a>          git commit -m "Update docker-compose.yml with new image tag"</span>
+<span id="cb7-249"><a></a>          git push</span>
+<span id="cb7-250"><a></a></span>
+<span id="cb7-251"><a></a><span class="in">```</span></span>
+<span id="cb7-252"><a></a></span>
+<span id="cb7-253"><a></a>Security principles applied:</span>
+<span id="cb7-254"><a></a></span>
+<span id="cb7-255"><a></a><span class="ss">- </span>Pinned action versions to specific commit SHAs</span>
+<span id="cb7-256"><a></a><span class="ss">- </span>Minimal permissions for GitHub token</span>
+<span id="cb7-257"><a></a><span class="ss">- </span>Secure secrets handling for Docker Hub credentials</span>
+<span id="cb7-258"><a></a></span>
+<span id="cb7-259"><a></a><span class="fu">### Step 7: Configure Repository Secrets and Permissions</span></span>
+<span id="cb7-260"><a></a></span>
+<span id="cb7-261"><a></a>CRITICAL: Instruct the user to manually configure GitHub repository settings:</span>
+<span id="cb7-262"><a></a></span>
+<span id="cb7-263"><a></a>**A. Create Docker Hub Personal Access Token (PAT):**</span>
+<span id="cb7-264"><a></a><span class="ss">1. </span>Go to Docker Hub → Account Settings → Security → Personal Access Tokens</span>
+<span id="cb7-265"><a></a><span class="ss">2. </span>Click "New Access Token"</span>
+<span id="cb7-266"><a></a><span class="ss">3. </span>Give it a descriptive name (e.g., "GitHub Actions for {PROJECT_NAME}")</span>
+<span id="cb7-267"><a></a><span class="ss">4. </span>Set permissions to "Read, Write, Delete" </span>
+<span id="cb7-268"><a></a><span class="ss">5. </span>Click "Generate" and copy the token immediately (you won't see it again)</span>
+<span id="cb7-269"><a></a></span>
+<span id="cb7-270"><a></a>**B. Configure GitHub Repository Secrets:**</span>
+<span id="cb7-271"><a></a><span class="ss">1. </span>Go to your GitHub repository Settings → Secrets and variables → Actions</span>
+<span id="cb7-272"><a></a><span class="ss">2. </span>Click "New repository secret" and add:</span>
+<span id="cb7-273"><a></a><span class="ss">   - </span>Name: <span class="in">`DOCKER_USERNAME`</span>, Value: Your Docker Hub username</span>
+<span id="cb7-274"><a></a><span class="ss">   - </span>Name: <span class="in">`DOCKER_PASSWORD`</span>, Value: Your Docker Hub Personal Access Token (from step A)</span>
+<span id="cb7-275"><a></a></span>
+<span id="cb7-276"><a></a>**C. Enable GitHub Actions Workflow Permissions (Manual Configuration Required):**</span>
+<span id="cb7-277"><a></a>*Note: GitHub MCP does not support repository settings configuration - this must be done manually.*</span>
 <span id="cb7-278"><a></a></span>
-<span id="cb7-279"><a></a>**C. Enable GitHub Actions Workflow Permissions (Manual Configuration Required):**</span>
-<span id="cb7-280"><a></a>*Note: GitHub MCP does not support repository settings configuration - this must be done manually.*</span>
-<span id="cb7-281"><a></a></span>
-<span id="cb7-282"><a></a><span class="ss">1. </span>Go to repository Settings → Actions → General</span>
-<span id="cb7-283"><a></a><span class="ss">2. </span>Scroll down to "Workflow permissions"</span>
-<span id="cb7-284"><a></a><span class="ss">3. </span>Select "Read and write permissions"</span>
-<span id="cb7-285"><a></a><span class="ss">4. </span>Check "Allow GitHub Actions to create and approve pull requests"</span>
-<span id="cb7-286"><a></a><span class="ss">5. </span>Click "Save"</span>
-<span id="cb7-287"><a></a></span>
-<span id="cb7-288"><a></a>Security note: Never use actual Docker Hub passwords. Always use Personal Access Tokens for automated workflows.</span>
-<span id="cb7-289"><a></a></span>
-<span id="cb7-290"><a></a><span class="fu">### Step 8: Create Data Science Project Structure</span></span>
-<span id="cb7-291"><a></a></span>
-<span id="cb7-292"><a></a>Create a complete data science project structure following best practices:</span>
-<span id="cb7-293"><a></a></span>
-<span id="cb7-294"><a></a><span class="ss">1. </span>Required Project Structure:</span>
-<span id="cb7-295"><a></a><span class="in">```</span></span>
-<span id="cb7-296"><a></a><span class="in">{USER_REPO_NAME}/</span></span>
-<span id="cb7-297"><a></a><span class="in">├── README.md                         # Project overview and setup instructions</span></span>
-<span id="cb7-298"><a></a><span class="in">├── CODE_OF_CONDUCT.md               # Community guidelines and behavior expectations</span></span>
-<span id="cb7-299"><a></a><span class="in">├── CONTRIBUTING.md                  # How others can contribute to the project</span></span>
-<span id="cb7-300"><a></a><span class="in">├── LICENSE.md                       # Project licensing (MIT + CC BY-NC-ND 4.0)</span></span>
-<span id="cb7-301"><a></a><span class="in">├── environment.yml                  # Conda environment specification</span></span>
-<span id="cb7-302"><a></a><span class="in">├── conda-lock.yml                   # General lock file for all platforms</span></span>
-<span id="cb7-303"><a></a><span class="in">├── conda-linux-64.lock             # Explicit lock file for Docker/GitHub Actions</span></span>
-<span id="cb7-304"><a></a><span class="in">├── Dockerfile                       # Container specification</span></span>
-<span id="cb7-305"><a></a><span class="in">├── docker-compose.yml              # Local development setup</span></span>
-<span id="cb7-306"><a></a><span class="in">├── .github/workflows/docker-publish.yml  # CI/CD pipeline</span></span>
-<span id="cb7-307"><a></a><span class="in">├── .gitignore                       # Git ignore rules</span></span>
-<span id="cb7-308"><a></a><span class="in">├── data/                            # Data directory (for downloaded/processed data)</span></span>
-<span id="cb7-309"><a></a><span class="in">└── scripts/                        # code</span></span>
-<span id="cb7-310"><a></a><span class="in">    └── example.py                # Sample python script</span></span>
-<span id="cb7-311"><a></a><span class="in">```</span></span>
-<span id="cb7-312"><a></a></span>
-<span id="cb7-313"><a></a>**Key principle:**</span>
-<span id="cb7-314"><a></a></span>
-<span id="cb7-315"><a></a><span class="ss">* </span>If there is any empty folder, add <span class="in">`.gikeep`</span> so that it can be pushed still to github.</span>
-<span id="cb7-316"><a></a></span>
-<span id="cb7-317"><a></a><span class="fu">### Step 9: Deploy All Files to GitHub</span></span>
-<span id="cb7-318"><a></a></span>
-<span id="cb7-319"><a></a>Use GitHub MCP tools to deploy all files:</span>
+<span id="cb7-279"><a></a><span class="ss">1. </span>Go to repository Settings → Actions → General</span>
+<span id="cb7-280"><a></a><span class="ss">2. </span>Scroll down to "Workflow permissions"</span>
+<span id="cb7-281"><a></a><span class="ss">3. </span>Select "Read and write permissions"</span>
+<span id="cb7-282"><a></a><span class="ss">4. </span>Check "Allow GitHub Actions to create and approve pull requests"</span>
+<span id="cb7-283"><a></a><span class="ss">5. </span>Click "Save"</span>
+<span id="cb7-284"><a></a></span>
+<span id="cb7-285"><a></a>Security note: Never use actual Docker Hub passwords. Always use Personal Access Tokens for automated workflows.</span>
+<span id="cb7-286"><a></a></span>
+<span id="cb7-287"><a></a><span class="fu">### Step 8: Create Data Science Project Structure</span></span>
+<span id="cb7-288"><a></a></span>
+<span id="cb7-289"><a></a>Create a complete data science project structure following best practices:</span>
+<span id="cb7-290"><a></a></span>
+<span id="cb7-291"><a></a><span class="ss">1. </span>Required Project Structure:</span>
+<span id="cb7-292"><a></a><span class="in">```</span></span>
+<span id="cb7-293"><a></a><span class="in">{USER_REPO_NAME}/</span></span>
+<span id="cb7-294"><a></a><span class="in">├── README.md                         # Project overview and setup instructions</span></span>
+<span id="cb7-295"><a></a><span class="in">├── CODE_OF_CONDUCT.md               # Community guidelines and behavior expectations</span></span>
+<span id="cb7-296"><a></a><span class="in">├── CONTRIBUTING.md                  # How others can contribute to the project</span></span>
+<span id="cb7-297"><a></a><span class="in">├── LICENSE.md                       # Project licensing (MIT + CC BY-NC-ND 4.0)</span></span>
+<span id="cb7-298"><a></a><span class="in">├── environment.yml                  # Conda environment specification</span></span>
+<span id="cb7-299"><a></a><span class="in">├── conda-lock.yml                   # General lock file for all platforms</span></span>
+<span id="cb7-300"><a></a><span class="in">├── conda-linux-64.lock             # Explicit lock file for Docker/GitHub Actions</span></span>
+<span id="cb7-301"><a></a><span class="in">├── Dockerfile                       # Container specification</span></span>
+<span id="cb7-302"><a></a><span class="in">├── docker-compose.yml              # Local development setup</span></span>
+<span id="cb7-303"><a></a><span class="in">├── .github/workflows/docker-publish.yml  # CI/CD pipeline</span></span>
+<span id="cb7-304"><a></a><span class="in">├── .gitignore                       # Git ignore rules</span></span>
+<span id="cb7-305"><a></a><span class="in">├── data/                            # Data directory (for downloaded/processed data)</span></span>
+<span id="cb7-306"><a></a><span class="in">└── scripts/                        # code</span></span>
+<span id="cb7-307"><a></a><span class="in">    └── example.py                # Sample python script</span></span>
+<span id="cb7-308"><a></a><span class="in">```</span></span>
+<span id="cb7-309"><a></a></span>
+<span id="cb7-310"><a></a>**Key principle:**</span>
+<span id="cb7-311"><a></a></span>
+<span id="cb7-312"><a></a><span class="ss">* </span>If there is any empty folder, add <span class="in">`.gikeep`</span> so that it can be pushed still to github.</span>
+<span id="cb7-313"><a></a></span>
+<span id="cb7-314"><a></a><span class="fu">### Step 9: Deploy All Files to GitHub</span></span>
+<span id="cb7-315"><a></a></span>
+<span id="cb7-316"><a></a>Use GitHub MCP tools to deploy all files:</span>
+<span id="cb7-317"><a></a></span>
+<span id="cb7-318"><a></a><span class="ss">1. </span>commit, and push all files using <span class="in">`push_files`</span> function from GitHub MCP.</span>
+<span id="cb7-319"><a></a>   </span>
 <span id="cb7-320"><a></a></span>
-<span id="cb7-321"><a></a><span class="ss">1. </span>commit, and push all files using <span class="in">`push_files`</span> function from GitHub MCP.</span>
-<span id="cb7-322"><a></a>   </span>
-<span id="cb7-323"><a></a></span>
-<span id="cb7-324"><a></a><span class="fu">### Step 10: Verify and Test Complete Workflow</span></span>
-<span id="cb7-325"><a></a></span>
-<span id="cb7-326"><a></a><span class="ss">1. </span>Monitor GitHub Actions:</span>
-<span id="cb7-327"><a></a><span class="ss">   - </span>Check that workflow triggers successfully</span>
-<span id="cb7-328"><a></a><span class="ss">   - </span>Verify Docker image builds without errors</span>
-<span id="cb7-329"><a></a><span class="ss">   - </span>Confirm image is pushed to Docker Hub</span>
-<span id="cb7-330"><a></a></span>
-<span id="cb7-331"><a></a><span class="ss">2. </span>Verify Docker Hub:</span>
-<span id="cb7-332"><a></a><span class="ss">   - </span>Use <span class="in">`checkRepositoryTag`</span> function from Docker MCP to confirm image exists</span>
-<span id="cb7-333"><a></a><span class="ss">   - </span>Check that both <span class="in">`latest`</span> and SHA tags are created</span>
-<span id="cb7-334"><a></a></span>
-<span id="cb7-335"><a></a><span class="ss">3. </span>Test Local Setup:</span>
-<span id="cb7-336"><a></a><span class="ss">   - </span>Instruct user to clone repository</span>
-<span id="cb7-337"><a></a><span class="ss">   - </span>Test <span class="in">`docker-compose up`</span> functionality</span>
-<span id="cb7-338"><a></a><span class="ss">   - </span>Verify Jupyter Lab accessibility</span>
-<span id="cb7-339"><a></a></span>
-<span id="cb7-340"><a></a><span class="fu">### Step 11: Provide Complete User Instructions</span></span>
-<span id="cb7-341"><a></a></span>
-<span id="cb7-342"><a></a>Deliver comprehensive handoff documentation:</span>
-<span id="cb7-343"><a></a></span>
-<span id="cb7-344"><a></a><span class="fu">## Setup Complete!</span></span>
-<span id="cb7-345"><a></a></span>
-<span id="cb7-346"><a></a><span class="fu">### Your Resources</span></span>
+<span id="cb7-321"><a></a><span class="fu">### Step 10: Verify and Test Complete Workflow</span></span>
+<span id="cb7-322"><a></a></span>
+<span id="cb7-323"><a></a><span class="ss">1. </span>Monitor GitHub Actions:</span>
+<span id="cb7-324"><a></a><span class="ss">   - </span>Check that workflow triggers successfully</span>
+<span id="cb7-325"><a></a><span class="ss">   - </span>Verify Docker image builds without errors</span>
+<span id="cb7-326"><a></a><span class="ss">   - </span>Confirm image is pushed to Docker Hub</span>
+<span id="cb7-327"><a></a></span>
+<span id="cb7-328"><a></a><span class="ss">2. </span>Verify Docker Hub:</span>
+<span id="cb7-329"><a></a><span class="ss">   - </span>Use <span class="in">`checkRepositoryTag`</span> function from Docker MCP to confirm image exists</span>
+<span id="cb7-330"><a></a><span class="ss">   - </span>Check that both <span class="in">`latest`</span> and SHA tags are created</span>
+<span id="cb7-331"><a></a></span>
+<span id="cb7-332"><a></a><span class="ss">3. </span>Test Local Setup:</span>
+<span id="cb7-333"><a></a><span class="ss">   - </span>Instruct user to clone repository</span>
+<span id="cb7-334"><a></a><span class="ss">   - </span>Test <span class="in">`docker-compose up`</span> functionality</span>
+<span id="cb7-335"><a></a><span class="ss">   - </span>Verify Jupyter Lab accessibility</span>
+<span id="cb7-336"><a></a></span>
+<span id="cb7-337"><a></a><span class="fu">### Step 11: Provide Complete User Instructions</span></span>
+<span id="cb7-338"><a></a></span>
+<span id="cb7-339"><a></a>Deliver comprehensive handoff documentation:</span>
+<span id="cb7-340"><a></a></span>
+<span id="cb7-341"><a></a><span class="fu">## Setup Complete!</span></span>
+<span id="cb7-342"><a></a></span>
+<span id="cb7-343"><a></a><span class="fu">### Your Resources</span></span>
+<span id="cb7-344"><a></a></span>
+<span id="cb7-345"><a></a><span class="ss">- </span>GitHub Repository: <span class="in">`https://github.com/{GITHUB_USERNAME}/{USER_REPO_NAME}`</span></span>
+<span id="cb7-346"><a></a><span class="ss">- </span>Docker Hub Repository: <span class="in">`https://hub.docker.com/r/{USER_DOCKERHUB_USERNAME}/{USER_REPO_NAME}`</span></span>
 <span id="cb7-347"><a></a></span>
-<span id="cb7-348"><a></a><span class="ss">- </span>GitHub Repository: <span class="in">`https://github.com/{GITHUB_USERNAME}/{USER_REPO_NAME}`</span></span>
-<span id="cb7-349"><a></a><span class="ss">- </span>Docker Hub Repository: <span class="in">`https://hub.docker.com/r/{USER_DOCKERHUB_USERNAME}/{USER_REPO_NAME}`</span></span>
-<span id="cb7-350"><a></a></span>
-<span id="cb7-351"><a></a><span class="fu">### Required Manual Steps</span></span>
-<span id="cb7-352"><a></a></span>
-<span id="cb7-353"><a></a><span class="ss">1. </span>Configure GitHub Secrets (one-time setup):</span>
-<span id="cb7-354"><a></a><span class="ss">   - </span>Go to: Repository Settings → Secrets and variables → Actions</span>
-<span id="cb7-355"><a></a><span class="ss">   - </span>Add <span class="in">`DOCKER_USERNAME`</span>: <span class="in">`{USER_DOCKERHUB_USERNAME}`</span></span>
-<span id="cb7-356"><a></a><span class="ss">   - </span>Add <span class="in">`DOCKER_PASSWORD`</span>: Your Docker Hub Personal Access Token</span>
-<span id="cb7-357"><a></a></span>
-<span id="cb7-358"><a></a><span class="ss">2. </span>**Create Docker Hub PAT** (if needed):</span>
-<span id="cb7-359"><a></a><span class="ss">   - </span>Go to Docker Hub → Account Settings → Security</span>
-<span id="cb7-360"><a></a><span class="ss">   - </span>Create new Access Token with Read/Write permissions</span>
-<span id="cb7-361"><a></a></span>
-<span id="cb7-362"><a></a><span class="fu">### Usage Instructions</span></span>
-<span id="cb7-363"><a></a></span>
-<span id="cb7-364"><a></a>**Start Development Environment:**</span>
-<span id="cb7-365"><a></a><span class="in">```bash</span></span>
-<span id="cb7-366"><a></a><span class="fu">git</span> clone https://github.com/{GITHUB_USERNAME}/{USER_REPO_NAME}.git</span>
-<span id="cb7-367"><a></a><span class="bu">cd</span> {USER_REPO_NAME}</span>
-<span id="cb7-368"><a></a><span class="ex">docker-compose</span> up</span>
-<span id="cb7-369"><a></a><span class="in">```</span></span>
-<span id="cb7-370"><a></a></span>
-<span id="cb7-371"><a></a>**Monitor Builds:**</span>
-<span id="cb7-372"><a></a><span class="ss">- </span>GitHub Actions: Repository → Actions tab</span>
-<span id="cb7-373"><a></a><span class="ss">- </span>Docker Hub: Check for new image tags</span>
-<span id="cb7-374"><a></a></span>
-<span id="cb7-375"><a></a><span class="fu">### Automated Workflow</span></span>
-<span id="cb7-376"><a></a></span>
-<span id="cb7-377"><a></a>Your setup includes:</span>
-<span id="cb7-378"><a></a><span class="ss">- </span>**Reproducible environments** via conda-lock</span>
-<span id="cb7-379"><a></a><span class="ss">- </span>**Containerized development** via Docker</span>
-<span id="cb7-380"><a></a><span class="ss">- </span>**Automated CI/CD** via GitHub Actions</span>
-<span id="cb7-381"><a></a><span class="ss">- </span>**Cross-platform compatibility** </span>
-<span id="cb7-382"><a></a><span class="ss">- </span>**Version control integration**</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-348"><a></a><span class="fu">### Required Manual Steps</span></span>
+<span id="cb7-349"><a></a></span>
+<span id="cb7-350"><a></a><span class="ss">1. </span>Configure GitHub Secrets (one-time setup):</span>
+<span id="cb7-351"><a></a><span class="ss">   - </span>Go to: Repository Settings → Secrets and variables → Actions</span>
+<span id="cb7-352"><a></a><span class="ss">   - </span>Add <span class="in">`DOCKER_USERNAME`</span>: <span class="in">`{USER_DOCKERHUB_USERNAME}`</span></span>
+<span id="cb7-353"><a></a><span class="ss">   - </span>Add <span class="in">`DOCKER_PASSWORD`</span>: Your Docker Hub Personal Access Token</span>
+<span id="cb7-354"><a></a></span>
+<span id="cb7-355"><a></a><span class="ss">2. </span>**Create Docker Hub PAT** (if needed):</span>
+<span id="cb7-356"><a></a><span class="ss">   - </span>Go to Docker Hub → Account Settings → Security</span>
+<span id="cb7-357"><a></a><span class="ss">   - </span>Create new Access Token with Read/Write permissions</span>
+<span id="cb7-358"><a></a></span>
+<span id="cb7-359"><a></a><span class="fu">### Usage Instructions</span></span>
+<span id="cb7-360"><a></a></span>
+<span id="cb7-361"><a></a>**Start Development Environment:**</span>
+<span id="cb7-362"><a></a><span class="in">```bash</span></span>
+<span id="cb7-363"><a></a><span class="fu">git</span> clone https://github.com/{GITHUB_USERNAME}/{USER_REPO_NAME}.git</span>
+<span id="cb7-364"><a></a><span class="bu">cd</span> {USER_REPO_NAME}</span>
+<span id="cb7-365"><a></a><span class="ex">docker-compose</span> up</span>
+<span id="cb7-366"><a></a><span class="in">```</span></span>
+<span id="cb7-367"><a></a></span>
+<span id="cb7-368"><a></a>**Monitor Builds:**</span>
+<span id="cb7-369"><a></a><span class="ss">- </span>GitHub Actions: Repository → Actions tab</span>
+<span id="cb7-370"><a></a><span class="ss">- </span>Docker Hub: Check for new image tags</span>
+<span id="cb7-371"><a></a></span>
+<span id="cb7-372"><a></a><span class="fu">### Automated Workflow</span></span>
+<span id="cb7-373"><a></a></span>
+<span id="cb7-374"><a></a>Your setup includes:</span>
+<span id="cb7-375"><a></a><span class="ss">- </span>**Reproducible environments** via conda-lock</span>
+<span id="cb7-376"><a></a><span class="ss">- </span>**Containerized development** via Docker</span>
+<span id="cb7-377"><a></a><span class="ss">- </span>**Automated CI/CD** via GitHub Actions</span>
+<span id="cb7-378"><a></a><span class="ss">- </span>**Cross-platform compatibility** </span>
+<span id="cb7-379"><a></a><span class="ss">- </span>**Version control integration**</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section id="course-evaluation" class="title-slide slide level1 center">
 <h1>⭐️ Course evaluation</h1>
